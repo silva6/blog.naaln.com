@@ -5,15 +5,21 @@ branches:
   only:
   - master
 before_install:
-- git init
+- openssl aes-256-cbc -K $encrypted_3e10d11e4aff_key -iv $encrypted_3e10d11e4aff_iv
+  -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/id_rsa
+- cp .travis/ssh_config ~/.ssh/config
+
 - git config --global user.name 'whyliam'
 - git config --global user.email liamzhuce@gmail.com
-- npm install -g hexo-cli
+- npm install -g hexo
 install:
 - npm install
 script:
 - git submodule update --init --recursive
 - hexo clean
-# - hexo algolia
+- hexo algolia
 after_success:
-# - hexo deploy
+- hexo deploy
