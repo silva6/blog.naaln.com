@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- '0.12'
+branches:
+  only:
+  - master
+before_install:
+- git init
+- git config --global user.name 'whyliam'
+- git config --global user.email liamzhuce@gmail.com
+- npm install -g hexo-cli
+install:
+- npm install
+script:
+- git submodule update --init --recursive
+- hexo clean
+# - hexo algolia
+after_success:
+# - hexo deploy
