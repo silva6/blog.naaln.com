@@ -4,6 +4,9 @@ node_js:
 branches:
   only:
   - master
+cache:
+  directories:
+  - node_modules
 before_install:
 - openssl aes-256-cbc -K $encrypted_3e10d11e4aff_key -iv $encrypted_3e10d11e4aff_iv
   -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
@@ -11,7 +14,6 @@ before_install:
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/id_rsa
 - cp .travis/ssh_config ~/.ssh/config
-
 - git config --global user.name 'whyliam'
 - git config --global user.email liamzhuce@gmail.com
 - npm install -g hexo
