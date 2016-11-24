@@ -50,13 +50,13 @@ Items {
 
 国外玩家经过讨论，可能需要大师球来进行捕捉。
 
-![](http://ww1.sinaimg.cn/large/006tNbRwgw1f5yz6phrrpj30go06ggmc)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahqbia28lj30go06ggmc.jpg)
 
 
 4.神兽的参数比非神兽多一个，之后可以确定目前来说，野外是抓不到神兽的了。
 
 ```
-![](http://ww4.sinaimg.cn/large/006tNbRwgw1f5yz78olz9j30go07pmyq)
+![](http://ww4.sinaimg.cn/large/65e4f1e6gw1fahqbkjd51j20go07pmyq.jpg)
 ```
 
 5.训练家最高等级LV.100
@@ -80,7 +80,7 @@ Items {
 
 7.扔球存在一个里程碑阈值，正作里捕获度受图鉴已捕获数量影响，所以这里可能是当你抓一种PM超过多少数量之后（达到里程碑），之后再抓这种PM就会容易一些了；也有人猜测是和游戏中的奖牌（Metal）系统挂钩的。
 
-![](http://ww1.sinaimg.cn/large/006tNbRwgw1f5yz7t7or1j30go0crq4e)
+![](http://ww1.sinaimg.cn/large/006y8lVagw1fahqblzc5hj30go07pmyq.jpg)
 
 8.树果还存在其他类型，树果总共有五种类型，分别是：
 
@@ -92,7 +92,7 @@ RAZZ BERRY
 WEPAR BERRY
 ```
 
-![](http://ww4.sinaimg.cn/large/006tNbRwgw1f5yz8bt597j30go06ldgk)
+![](http://ww4.sinaimg.cn/large/006y8mN6gw1fahqbmsu2tj30go07pmyq.jpg)
 
 ```
 Items {
@@ -134,7 +134,7 @@ Items {
 
 9.精灵的MAX LEVEL为40，孵蛋得到的精灵最高等级20，野外精灵最高等级30，另外游戏中的精灵还存在一个的“family types”属性，可能以后会推出繁殖系统
 
-![](http://ww4.sinaimg.cn/large/006tNbRwgw1f5yz8y80fhj30go05tt9n)
+![](http://ww2.sinaimg.cn/large/65e4f1e6gw1fahqboa68dj20go0crq4e.jpg)
 
 ```
 Items {
@@ -150,7 +150,7 @@ Items {
 
 10.三维公式，CP公式已经得出
 
-![](http://ww3.sinaimg.cn/large/006tNbRwgw1f5yz9cg9l0j30go07u0tp)
+![](http://ww2.sinaimg.cn/large/006y8mN6gw1fahqbr5imcj30go07u0tp.jpg)
 
 11.在捕捉精灵的时候，将精灵球在屏幕底端进行顺时针或逆时针旋转几圈之后，精灵球会开始转动，之后需要用弧线投法投出精灵球（顺时针从屏幕左侧投出，逆时针从屏幕右侧投出），应该对捕捉率有所提升
 

@@ -15,7 +15,7 @@ categories:
 3. Travis CI 检测到代码变化
 4. Travis CI 构建代码环境，编译代码，生产博客文件，并自动部署
 
-![](http://7xp57v.com1.z0.glb.clouddn.com/coryphaei/travis-hexo-flowing.png)
+![](http://ww2.sinaimg.cn/large/006y8lVagw1fahq962ihmj30b50d1dga.jpg)
 
 ### Travis CI
 
@@ -25,7 +25,7 @@ categories:
 
 首先去travis-ci官网，点击右上角Sign in with GitHub通过github授权登录。然后去到个人信息页面，开启需要使用travis的项目关：
 
-![](http://ww1.sinaimg.cn/large/72f96cbagw1f564z6pvbdj210g0sswhj)
+![](http://ww2.sinaimg.cn/large/006y8lVagw1fahq98zwspj310g0sswhj.jpg)
 
 #### 创建 SSH key
 
@@ -37,7 +37,7 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 得到 `id_rsa.pub` 和 `id_rsa`，然后将有 pub 后缀的配置到 `gh-page` 的 Deploy key。
 
-![](http://ww3.sinaimg.cn/large/72f96cbagw1f5650tg6anj20m80cct99)
+![](http://ww2.sinaimg.cn/large/65e4f1e6gw1fahq9b9hpbj20m80cct99.jpg)
 
 记得要将 `Allow write access` 的选项选上，这样 Travis CI 才能获得 push 代码的权限。
 
@@ -83,18 +83,18 @@ Host github.com
     IdentitiesOnly yes
 ```
 
-![](http://ww4.sinaimg.cn/large/72f96cbagw1f5652qmemej20js03mq32)
+![](http://ww1.sinaimg.cn/large/65e4f1e6gw1fahq9bn7nqj20js03mq32.jpg)
 
 可以看到刚刚 travis 命令行生成的解密 key
 
 
 现在进入 travis CI 设置页面
 
-![](http://ww3.sinaimg.cn/large/72f96cbagw1f565367874j20m802n74d)
+![](http://ww1.sinaimg.cn/large/65e4f1e6gw1fahq9dbj9cj20m802n74d.jpg)
 
 顺便把上面的开关打开
 
-![](http://ww1.sinaimg.cn/large/72f96cbagw1f5653f1n46j20m8047mxb)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq9f6lomj30m8047mxb.jpg)
 
 这样，当向项目 push 代码的时候 travis CI 就会根据 .travis.yml 的内容去部署我们的项目了。
 

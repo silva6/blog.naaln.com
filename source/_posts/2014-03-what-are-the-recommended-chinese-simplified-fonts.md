@@ -12,63 +12,63 @@ tags:
 
 1. 方正宋刻本秀楷简体 
 
-![](http://ww1.sinaimg.cn/large/006tNc79gw1f510txuqbtj30cb03njrf)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq2ya5s9j30cb03njrf.jpg)
 
 2. 康熙字典体 
 
-![](http://ww3.sinaimg.cn/large/006tNc79gw1f510u8c0b1j30cb03nglk)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq2znczxj30cb03nglk.jpg)
 
 3. 欧体楷书 
 
-![](http://ww1.sinaimg.cn/large/006tNc79gw1f510uwkaa5j30cb03nq2y)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq321jwtj30cb03nq2y.jpg)
 
 4. 方正苏新诗柳楷简体 
 
-![](http://ww2.sinaimg.cn/large/006tNc79gw1f510v3vdg1j30cb03n74a)  
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq3380r5j30cb03n74a.jpg)  
 
 ## 柔美型：
 
 1. 迷你简启体 
 
-![](http://ww3.sinaimg.cn/large/006tNc79gw1f510v8wsxoj30cb03nq2y)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq33n69oj30cb03nq2y.jpg)
 
 2. 长城中行书体 
 
-![](http://ww3.sinaimg.cn/large/006tNc79gw1f510vl1vj5j30cb03nq2x) 
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq36d71dj30cb03nq2x.jpg) 
 
 ## 灵动型：
 
 1. 书体坊米芾体 
 
-![](http://ww1.sinaimg.cn/large/006tNc79gw1f510vs13y6j30cb03n0so)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq36ly66j30cb03n0so.jpg)
 
 2. 祥南行书体 
 
-![](http://ww3.sinaimg.cn/large/006tNc79gw1f510vxsabxj30cb03nq2w)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq38gea5j30cb03nq2w.jpg)
 
 3. 迷你简黄草 
 
-![](http://ww4.sinaimg.cn/large/006tNc79gw1f510w3diyij30cb03n0sp) 
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq3bilh6j30cb03n0sp.jpg) 
 
 ## 精致型：
 
 1. 冬青黑体 
 
-![](http://ww4.sinaimg.cn/large/006tNc79gw1f510w97xofj30cb03naa1)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq3d6j3zj30cb03naa1.jpg)
 
 2. 昆仑细圆 
 
-![](http://ww3.sinaimg.cn/large/006tNc79gw1f510weqgp1j30cb03nweg) 
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq3f37r9j30cb03nweg.jpg) 
 
 ---
 
 1. 方正幼线简体 
 
-![](http://ww3.sinaimg.cn/large/006tNc79gw1f510ws1cbkj30cb03n3yi)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq3g0zogj30cb03n3yi.jpg)
 
 2. 方正兰亭刊宋 
 
-![](http://ww3.sinaimg.cn/large/006tNc79gw1f510wy5ibsj30cb03nwei)  
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq3kc6x4j30cb03nwei.jpg)  
 
 via：[http://www.zhihu.com/question/20727176#answer-4194549][1]
 

@@ -5,7 +5,7 @@ categories:
 - 随笔
 ---
 
-![](http://pic2.zhimg.com/d57251ab7e519b51144944cff5795b15.jpg)
+![](http://ww1.sinaimg.cn/large/006y8lVagw1fahqbywrgvj30hs0hsmxm.jpg)
 
 ### 结局一：
 

@@ -20,7 +20,7 @@ tags:
 
    
 
-![](http://farm5.static.flickr.com/4148/4844653817_3373084ca4.jpg) 
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpzpmnhmj30dw0b976s.jpg) 
 
 *   但是如果需要在一个界面内显示多幅图片 就需要SubPlot命令帮助了
 
@@ -98,7 +98,7 @@ tags:
 
    imshow(f10);%显示该图像 
 
-![](http://farm5.static.flickr.com/4092/4845298204_a827021c2f.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpzsexa7j30dw0a1402.jpg)
 
 缺点是我不知道怎么比较好的控制图片的大小（请高手指教），好像每个子区域的大小是默认设置的，而且图片会默认的四周留空，不过反正只是为了更清楚的看到实验结果，这个没什么关系。
 
@@ -120,7 +120,7 @@ tags:
 
     plot(t,y2)
 
-![](http://farm5.static.flickr.com/4108/4844679895_d244c2d5c2.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpzurl8zj30dw0af3zt.jpg)
 
 或者通过axes函数来重新规定子窗口的大小和位置
 
@@ -132,5 +132,5 @@ tags:
 
    pcolor([1:10;1:10]);
 
-![](http://farm5.static.flickr.com/4088/4845251090_0ced059d1b.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpzy968kj30dw0catbg.jpg)
 

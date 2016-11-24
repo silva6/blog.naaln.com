@@ -92,7 +92,7 @@ hooks:
 
 6. 之后可以查看到代码意见部署到`ec2`中，并且按照脚步正在运行。
 
-![](http://ww1.sinaimg.cn/large/48910e01gw1f40j0zdgsaj20zh06z3zq.jpg)
+![](http://ww3.sinaimg.cn/large/65e4f1e6gw1fahq818g02j20kv09mtbz.jpg)
 
 随后继续讲`codeship`的部署过程。
 

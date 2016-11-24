@@ -9,11 +9,11 @@ tags:
 
 今日微信 朋友圈语音 又爆红了朋友圈。
 
-![](http://ww1.sinaimg.cn/mw690/48910e01jw1epuvz0s8mrj20k00zkwfd.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq464v49j30j60y3754.jpg)
 
 起先我以为是官方的版本，因为如上图片所示，左上角只有返回按钮，右上角并没有分享按钮。
 
-![](http://ww1.sinaimg.cn/mw690/48910e01jw1epuvybk8hlj20k00zk3z8.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq49m6kkj30j60y3jru.jpg)
 
 并且他还有个超级超级山寨的 `公众号`！！！（帐号是：wxexpand）一不小心就以为是腾讯新的功能。
 
@@ -25,9 +25,9 @@ ps.这个链接做了限制，必须在手机查看。可以使用手机浏览�
 
 ----------
 
-![](http://ww4.sinaimg.cn/mw690/48910e01jw1epuws5xik9j20gw0doaau.jpg)  
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq4btlrrj30gw0doaau.jpg)  
 
-![](http://ww3.sinaimg.cn/mw690/48910e01jw1epuwsnv6x7j20bs063q2z.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq4e3175j30bs063q2z.jpg)
 
 类似的应用还有很多，但是这个是做的最逼真的一个。
 
@@ -43,23 +43,23 @@ ps.这个链接做了限制，必须在手机查看。可以使用手机浏览�
 
 1. 录音&播放
 
-   ![](http://ww1.sinaimg.cn/mw690/48910e01jw1epuxcf02e9j20lo0dq75y.jpg)
+   ![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq4grvu7j30j60c5q46.jpg)
 
 2. 隐藏右上角菜单
 
-   ![](http://ww4.sinaimg.cn/mw690/48910e01jw1epuxex63fej20lu0aujt4.jpg)
+   ![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq4irqloj30j609ita0.jpg)
 
 3. 微信扫一扫
 
-   ![](http://ww3.sinaimg.cn/mw690/48910e01jw1epuxft237vj20ls02ut8t.jpg)
+   ![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq4kp357j30j602idfv.jpg)
 
 4. 分享
 
-   ![](http://ww4.sinaimg.cn/mw690/48910e01jw1epuxh08dp5j20lq02qmxn.jpg)
+   ![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq4m7gcpj30j602eq38.jpg)
 
 5. 自定义菜单
 
-   ![](http://ww1.sinaimg.cn/mw690/48910e01jw1epuxmgpmg0j20dw08uaak.jpg)
+   ![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq4oqppsj30dw08uaak.jpg)
 
 有这几个SDK足以欺骗大部分人。
 

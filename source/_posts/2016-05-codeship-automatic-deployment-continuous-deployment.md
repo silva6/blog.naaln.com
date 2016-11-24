@@ -14,7 +14,7 @@ tags:
 
 1. 登入 `codeship`，绑定`github`或者`bitbucket`，选择一个项目
 
-2. 修改`README`，加入`Codeship Status`，如 [ ![Codeship Status for whyliam/wechat4c](https://codeship.com/projects/e8ac4df0-fdd6-0133-2857-0a77685148eb/status?branch=Develop)](https://codeship.com/projects/152315)
+2. 修改`README`，加入`Codeship Status`，如 [ ![Codeship Status for whyliam/wechat4c](http://ww3.sinaimg.cn/large/65e4f1e6gw1fahq839oelj20zh06z3zq.jpg)](https://codeship.com/projects/152315)
 
 3. 在`Project Configyration`中配置`test setting`和`deployment`
 
@@ -62,11 +62,11 @@ tags:
 
 9. 等待部署成功
 
-![](http://ww1.sinaimg.cn/large/48910e01gw1f40jg5yqayj20ov0fl41v.jpg)
+![](http://ww4.sinaimg.cn/large/006y8mN6gw1fahq88duzcj30ov0fl41v.jpg)
 
 在 `codedeply`中可以看到部署结果
 
-![](http://ww1.sinaimg.cn/large/48910e01gw1f40j0zdgsaj20zh06z3zq.jpg)
+![](http://ww4.sinaimg.cn/large/65e4f1e6gw1fahq89norcj20ov0fl41v.jpg)
 
 打开网页可以执行结果
 

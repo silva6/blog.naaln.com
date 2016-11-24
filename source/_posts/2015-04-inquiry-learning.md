@@ -7,7 +7,7 @@ categories:
 tags: 
 ---
 
-![](http://ww2.sinaimg.cn/mw690/48910e01jw1eqxz8v467jj20xs0rvn7j.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq50j5cfj30sg0fbdnt.jpg)
 
 本文根据[提问的智慧](http://www.beiww.com/doc/oss/smart-questions.html)整理
 

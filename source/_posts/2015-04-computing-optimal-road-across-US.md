@@ -23,7 +23,7 @@ With those objectives in mind, Tracy compiled a list of 50 major U.S. landmarks 
 
 The result was an epic itinerary with a mix of inner city exploration, must-see historical sites, and beautiful natural landscapes. All that was left was to figure out the path that would minimize our time spent driving and maximize our time spent enjoying the landmarks.
 
-![mount_rushmore_pictures](http://www.randalolson.com/wp-content/uploads/mount_rushmore_pictures-1024x683.jpg)
+![mount_rushmore_pictures](http://ww3.sinaimg.cn/large/006tNc79gw1fahq4r4h3fj30sg0iz0xm.jpg)
 
 Image credit: [Dean Franklin](http://commons.wikimedia.org/wiki/File:Dean_Franklin_-_06.04.03_Mount_Rushmore_Monument_(by-sa)-3_new.jpg)
 
@@ -41,7 +41,7 @@ To provide some context: If you started computing this problem on your home comp
 
 The traveling salesman problem is so notoriously difficult to solve that even [xkcd](http://xkcd.com/399/) poked fun at it:
 
-![travelling_salesman_problem](http://www.randalolson.com/wp-content/uploads/travelling_salesman_problem.png)
+![travelling_salesman_problem](http://ww4.sinaimg.cn/large/006tNc79gw1fahq4t0v4bj30sg0iz0xm.jpg)
 
 Clearly, we need a smarter solution if we want to take this epic road trip in our lifetime. Thankfully, the traveling salesman problem has been [well-studied](http://en.wikipedia.org/wiki/Travelling_salesman_problem#Computing_a_solution) over the years and there are many ways for us to solve it in a reasonable amount of time.
 
@@ -55,7 +55,7 @@ After less than a minute, the genetic algorithm reached a near-perfect solution 
 
 Note: There’s an extra stop in Cleveland to force the route between Vermont and Michigan to stay in the U.S. rather than go through Canada. If you’re able to drive through Canada without issue, then take the direct route through Canada instead.
 
-![best-road-trip-major-landmarks](http://www.randalolson.com/wp-content/uploads/best-road-trip-major-landmarks-1024x548.png)
+![best-road-trip-major-landmarks](http://ww2.sinaimg.cn/large/006tNc79gw1fahq4ualqjj30sg0iz0xm.jpg)
 
 _Click [here](http://rhiever.github.io/optimal-roadtrip-usa/major-landmarks.html) for the interactive version_
 
@@ -173,7 +173,7 @@ If you’re more of a city slicker, the road trip above may not look very appeal
 
 Note: Again, there’s an extra stop in Cleveland to force the route between New Hampshire and Michigan to stay in the U.S. rather than go through Canada. If you’re able to drive through Canada without issue, then take the direct route through Canada instead. But really, Cleveland is a nice city to stop in (ranked #53 on TripAdvisor).
 
-![best-road-trip-popular-cities](http://www.randalolson.com/wp-content/uploads/best-road-trip-popular-cities-1024x551.png)
+![best-road-trip-popular-cities](http://ww2.sinaimg.cn/large/006tNc79gw1fahq4y37knj30sg0f8jzl.jpg)
 
 **Click [here](http://rhiever.github.io/optimal-roadtrip-usa/popular-cities.html) for the interactive version**
 

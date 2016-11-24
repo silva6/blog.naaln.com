@@ -10,7 +10,7 @@ tags:
 
 **创业时的“415”原则你知道吗?创始团队不要超过四个人，中间一定要有一个人是老大，而且此人股份必须超过50%，否则团队必定分崩离析。近日，在中信出版社承办的《从0到1》新书分享会上，《21世纪商业评论》主编吴伯凡对创业者阐述自己的观点。** 
 
-![](http://ww2.sinaimg.cn/large/006tNc79gw1f5107fxir0j30hs0bwjsq)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq40e6gcj30hs0bwjsq.jpg)
 
 本文由演讲录音整理： 
 
@@ -26,7 +26,7 @@ tags:
 
 **创业团队的“415”原则**
 
-![](http://ww4.sinaimg.cn/large/006tNc79gw1f5107p82dvj30hb0be3zh)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq426i37j30hb0be3zh.jpg)
 
 在创业的时候，有一个“415”原则，就是创始团队的最初的人，不要超过四个，最好是三个。因为超过四个以后一定会形成帮派。 
 

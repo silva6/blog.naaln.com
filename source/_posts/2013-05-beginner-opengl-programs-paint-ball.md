@@ -408,6 +408,6 @@ tags:
 
 运行结果如下图： 
 
-![](http://1844.img.pp.sohu.com.cn/images/blog/2008/11/6/19/27/11e199c2625g214.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpl1m63hj30e80eu764.jpg)
 
 望多多指教！！！！！

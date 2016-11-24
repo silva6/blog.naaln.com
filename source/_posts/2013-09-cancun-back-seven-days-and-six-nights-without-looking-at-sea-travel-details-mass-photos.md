@@ -16,39 +16,39 @@ tags:
 
 Tulum，一个海边的玛雅遗址。据信是玛雅人修建的最后一个城市，立于加勒比海绝壁之上。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4110.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahprbmneaj31kw0rmtu1.jpg)
 
 酒店：RIU Palace Las Americas，位于Cancún的Zona Hotelera（Hotel Zone），隶属于西班牙RIU集团旗下，提供包吃住喝的All-Inclusive服务。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_z93h_471a0001bd08125c.jpg) 
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahprd9qeqj31kw0rmtu1.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_wrlv_4be7000175fe1190.jpg) 
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahprmoyk2j31kw0rmtu1.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_jblz_77b100003def125b.jpg) 
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahproj5kij31kw0rmtu1.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4110.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahprbmneaj31kw0rmtu1.jpg)
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4441.jpg) 
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahprysw8qj31kw11v1kx.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4508.jpg) 
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahps34f4cj31kw11vkji.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc43282.jpg) 
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahps7rvamj31kw11vx3i.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4347.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpsd1bn2j31kw11vx3i.jpg)
 
 Valladolid，位于Yucatán半岛中部，与西班牙城市同名，是一座典型的西班牙殖民城市。修建在原玛雅城市Zaci之上，其中这座教堂的建筑材料完全来源于之前位于此处的玛雅神庙。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4248.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpsfp8y4j31kw11vtwg.jpg)
 
 Chichén Itzá：从公元前2世纪到公元10世纪左右，这里都是Yucatán半岛上最主要的玛雅城市。世界新七大奇迹之一，其中以El Castillo金字塔（Kukulkan神庙）最为著名。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4254.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpskvj1uj31kw11ve81.jpg)
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_5wjl_16250001bc50118f.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpslm7uaj31kw11ve81.jpg)
 
 Cenote：中文不知道应该如何翻译，Yucatán半岛上有很多因为石灰岩塌陷形成的溶洞（和传统溶洞的形成机理不同），上方洞口极小，内部空间很大。Yucatán半岛上大量的Cenotes据称与希克苏鲁伯陨石坑有关。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_l4hq_0f5b00003b81118c.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpspt772j31kw11vb29.jpg)
 
 **前期准备**
 
@@ -79,7 +79,7 @@ Automatic revalidation的适用范围如下：a. 前往墨西哥和加拿大的�
 
 解决了签证问题，就需要研究交通和食宿了。Cancun是个旅游城市，地图如下：
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_uugr_6ede000035a0125c.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpssdy9lj30k00dbdit.jpg)
 
 区域1是Cancun Downtown，并非旅游区，但有一些生活设施比如超市银行等等，最主要的是ADO公交车总站在Cancun Downtown；所以如果想乘坐公交车去其他地区，几乎都需要在Cancun Downtown转车。
 
@@ -101,7 +101,7 @@ Automatic revalidation的适用范围如下：a. 前往墨西哥和加拿大的�
 
 墨西哥分为31个州和1个联邦特区（首都墨西哥城），官方语言为西班牙语，总人口1.1亿（60%为混血，30%为印第安人，5%为白人，是世界上最大的西班牙语国家），89%的人口信奉天主教（世界第二大天主教国家，仅次于巴西）。另外，墨西哥使用公制单位，比如千米。货币为peso，与美元汇率约为13：1。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_basr_6dda0000366e125c.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpsu724uj30k00d0wh4.jpg)
 
 2\. Yucatan半岛
 
@@ -109,7 +109,7 @@ Yucatan半岛位于墨西哥东南部，墨西哥湾和加勒比海之间，总�
 
 另外，导致白垩纪生物大规模灭亡的Chicxulub陨石撞击坑，就在Yucatan半岛的西北角。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/original_gco4_666000003699118d.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpsumv0uj30k00d0wh4.jpg)
 
 3\. Quintana Roo州
 
@@ -123,41 +123,41 @@ Yucatan半岛位于墨西哥东南部，墨西哥湾和加勒比海之间，总�
 
 如果你读到这里还没有开始骂娘，恭喜你可以去读Ph D了。接下来介绍景点。由于Yucatan半岛上古迹众多，风景秀丽，所以本文不可能详细列举所有景点，只能按个人趣味挑选一些来介绍了。如果大家想要更详细地了解，还是去买一本LP吧！（相关的LP有三本：[http://www.amazon.com/s?field-keywords=lonely+planet+cancun](http://rrurl.cn/e60a2P)）
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_jvkq_5487000037f6125d.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpswptfhj30k008g74w.jpg)
 
 1\. 海岛：Isla Mujeres（女人岛）和Cozumel。除此之外还有北部的Isla Contoy和Isla Holbox。（图片来自网络）
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/original_gvnf_0bc100002f1e1191.jpg) 
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpszhf9tj30ci08hmxq.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/original_vupb_1d280000396a125b.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpt20dlbj30ak08cdgo.jpg)
 
 2\. 玛雅遗址：Chichen Itza（意为Itza的水井口，世界新七大奇迹，UNESCO世界自然遗产），Coba，Tulum（靠加勒比海，风景秀美），Uxmal（保存最为完整）。此外酒店区还有一个小型玛雅遗址El Rey。（部分图片来自网络）
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4110.jpg) 
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahprbmneaj31kw0rmtu1.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4254.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpskvj1uj31kw11ve81.jpg)
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_2asl_54ed00003822125d.jpg) 
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpt8796aj31kw11ve81.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_zuzj_35b200003800118c.jpg) 
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahptagywej31kw11vb29.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/original_yjha_34880000380d118c.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpth1a7mj30k00f0dj8.jpg)
 
 3\. 游乐场Xel-Ha（天然泻湖，适合浮潜，提供All-Inclusive门票），Xcaret，Xplore等。Xel-Ha还有与海豚游泳，海底Trekking等附加收费项目。（图片来自网络）
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_jtyz_6dee0000388b125c.jpg) 
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpthxd19j30hg0f0wi0.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/original_e1us_6b880000385e118f.jpg) 
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahptkfvi5j30hg0f0wi0.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/original_u3l0_7dd70000383f118e.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahptlgpmoj30j608rq54.jpg)
 
 4\. 西班牙殖民城市：Merida和Valladolid。（图片来自网络）值得一提的是，Valladolid附近有几个巨大的Cenote值得一看。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4248.jpg) 
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpsfp8y4j31kw11vtwg.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_l4hq_0f5b00003b81118c.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpspt772j31kw11vb29.jpg)
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/original_tktb_36180000381d118c.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahptqxezoj30h80cmmyj.jpg)
 
 最后，介绍一下玛雅文明。玛雅历史分成前古典期、古典期、后古典期。前古典期（公元前1500年－公元300年）也称形成期，历法及文字的发明、纪念碑的设立及建筑的兴建均在此时期；古典期是全盛期（约4世纪－9世纪），此时期文字的使用、纪念碑的设立、建筑的兴建及艺术的发挥均在此时期达于极盛；后古典期（约9世纪－16世纪 )，此时期北部兴起Chichen Itza及Uxmal等城邦兴起，文化也逐渐式微。
 
@@ -171,31 +171,31 @@ Yucatan半岛位于墨西哥东南部，墨西哥湾和加勒比海之间，总�
 
 1.1 07:00AM PVD-PHL-CUN，01:30 PM左右到达Cancun。从PHL登机前，航空公司检查了护照有效期和墨西哥签证。飞过Florida之后，就可以欣赏墨西哥湾湛蓝的海水了。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_5jui_789b000039ba118c.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahptskf6gj30b80f03zg.jpg)
 
 飞到Cancun附近的时候，就已经可以看到一望无际的热带雨林了。这一带的Jungle属于Dry Jungle，所以树不高但却特别密，从空中看起来像地毯一样，和想象中Amazon 雨林差别还是很大的。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_pnxv_53bd000039be125c.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahptujyzcj30b80f03zg.jpg)
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/original_otqd_435e0000001e1191.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahptwrd6wj30b80f0myh.jpg)
 
 Cancun属于UTC-6时区，和美国中部时间一样。墨西哥同样采用夏至时，但始末时间与美国不同，从四月第一个周日到十月最后一个周日。
 
 飞机降落以后，一出机舱门立刻感觉到一阵阵湿热的空气。和美国的CBP一样，外国人进入墨西哥需要填写海关申报表和移民表格（名为FMM，分为两联，出境时把下联交给航空公司，与I-94功能类似）。绝大多数从美国到访Cancun的旅客都不需要墨西哥签证，于是当我们拿着墨西哥签证站在移民局官员面前时，他反而不知道应该怎么处理了。于是把我们带到旁边的办公室，等待了大约10分钟左右，把入境手续办完了。之后的海关检查基本上只是形式，交了海关申报表按一个按钮就完成了入境的全部手续。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/original_dfyr_4356000000f3118e.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahptz9n8qj30g40ciq3x.jpg)
 
 在Cancun机场国际到达部的厕所旁边找到了Santander的ATM，直接用BOA的卡取Peso。网上说今年四月这个银行的ATM上兑换Peso汇率有13.x，但是经过实践发现现在的汇率只有12.8左右，早知道直接用美元了！（Cancun的公交出租商贩等等普遍都接受美元，汇率按13计算。当然还是带一些Peso以防万一。）取了2,000 pesos以后，钱包立刻鼓了不少。 出门以后就看到预定的Bestday的机场shuttle（[http://www.bestday.com](http://rrurl.cn/kNhRkM)）。这里介绍一下机场和酒店区之间的交通。如果选择公交车，可以乘坐ADO的Bus去Cancun市区的Bus Station，然后乘坐R-1到达酒店区；如果打车，花费大约在$30美元左右；而我们预定的Bestday的Shuttle，只需要每人$9美元，沿着Blvd. Kukulkan车程约20分钟，就到达了位于酒店区7字型拐角的Riu Palace Las Americas酒店（[http://www.riu.com/en/Paises/mexico/cancun/hotel-riu-palace-las-americas/index.jsp](http://rrurl.cn/9DIagN)）。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_bdqk_0e5800000038118c.jpg) 
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpu24sq6j30k00db77z.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_bxyy_222d00000188125c.jpg) 
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpu3lzyuj30k00db77s.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_of6r_0e5800000051118c.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpu7ls85j30k00db768.jpg)
 
 办理入住手续的时候，会在手腕上扣一个无法解除的腕带，只有在checkout的时候才能剪断，在酒店期间凭借腕带就可以免费吃喝玩乐了。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_xt7o_522300000113125b.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpubl52pj30b90f0750.jpg)
 
 接下来就出门去订trip。这边街上各种小商小贩基本都是旅行社的代理，随便逮一家砍价即可。付了定金之后会给你一个收据，上面有参加的旅行团，时间，人数等。我们最后订好两个trip，一个是第二天Tulum＋Xel-Ha，$100美元/人，另一个是第四天Chichen Itza，$40美元/人。
 
@@ -203,41 +203,41 @@ Cancun属于UTC-6时区，和美国中部时间一样。墨西哥同样采用夏
 
 回到酒店天色已经开始发黑，于是去Don Roberto（这是唯一不需要预约晚餐的餐厅，实际上是一个International Buffet）。然后喝了一会饮料就回去睡了。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_k1wf_41be000000ac118f.jpg) 
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpuft0fmj30k00dbq61.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_ocyu_52db000000b3118d.jpg) 
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpuhvbn7j30k00dbdj8.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_z0d9_0961000000e1125d.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpukc983j30k00dbdj8.jpg)
 
 **Day 2**
 
 第二天一早，倾盆暴雨如期而至，还好并不影响吃早饭的心情。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4175.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpupg5bdj31kw11vnil.jpg)
 
 出去的时候还是淋了一点雨，虽然并不冷。提前半个小时到达预定的check in地点，凭借昨天下午预定trip的收据交了钱（现金收美元和peso，刷卡Visa＋3%，AMEX只有6人以上一起支付才收）。然后就排队上大巴，开往Tulum。Cancun附近的高速限速在100 km/hr，local上很多bump（一个个的铁球，高速驶过估计会车毁人亡）。结果从Cancun酒店区到Tulum的150公里走了两个多小时，引起诸多人的不满。到Tulum已经是中午十一点光景。这是后话，按下不表。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_brou_5b9e00003a7e1191.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpusvkyxj31kw11vnil.jpg)
 
 Tulum是玛雅文明末期建造的城市之一，主要作为港口使用，兴起于公元1200 年左右，在十六世纪西班牙人来临后数十年间渐遭废弃。当年的玛雅城市被称作Zama，意为“黎明”，源于此城位于Yucatan半岛最东段紧邻加勒比海，与香港明星黎明无关。Tulum 其实只是一个细小的玛雅遗址，没有大型建筑物，遗址内的古迹本身并不算吸引，全因它位于加勒比海海岸12米高的峭壁上使它成为一处热门的旅游地点。Tulum 遗址内有一小沙滩，有人会在那里嬉波逐浪，不过那里的海浪很大。当然很多人来到Tulum，其实就是为了拍这样一张照片：蓝天绿海，碧波银沙，还有修建在峭壁顶端的风神庙。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4110.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahprbmneaj31kw0rmtu1.jpg)
 
 既然写到这里，就再补几张图吧。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_cku8_69810000049a125c.jpg) 
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpuxkj5ej31kw0rmtu1.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_nlyk_4da00000020f118e.jpg) 
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpuzupypj30k00db77s.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_wdck_1e410000029b118f.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpv3p6vxj30k00dbdii.jpg)
 
 还有一件事情必须要说，那就是Yucatan半岛上很常见的一种生物：Iguana，中文貌似叫美洲鬣蜥？其长度可达一米以上，以昆虫和植物为食，目测性情不凶暴（“目测”的意思是不去殴打它），在一定距离内对人蛋定。Iguana在各个玛雅文明遗址内都极为常见，且目中无人，四处横行。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_4q2j_216300000244118f.jpg) 
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpv5opjkj30k00dcq6n.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_5w4p_4e09000004d8118d.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpv8n2l2j30a00f0gn0.jpg)
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_rr0u_2cf00000002d1190.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpvcm4k6j30k00dbjvc.jpg)
 
 在Tulum逗留溜达了一个多小时，坐车到Xel-Ha（X在Yucatec玛雅语中发音类似sh，但是在Xcaret发音为ish。如果你硬要问我X在Xplor中怎么发音，那我只能告诉你这是英文，你已经傻了。Xel-Ha意为“水诞生的地方”。）已经是下午一点多，而且各个locker爆满，找了一大圈才把东西全存掉。由于买了All-Inclusive的门票，所以先去餐厅吃了一顿。顺便说一句，这里提供Corona啤酒。
 
@@ -247,25 +247,25 @@ Tulum是玛雅文明末期建造的城市之一，主要作为港口使用，兴
 
 由于相机锁起来了，所以就传一些网上找到的照片供参考。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_1zv4_1efb000000d7125b.jpg) 
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpvfcsyej30k00dbjvc.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/original_bkqr_292900000081118f.jpg) 
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpvhku6aj30k008tdi9.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/original_qzhp_45f100000593118e.jpg) 
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpvk29hfj30j60eeta0.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/original_scmh_53d900000071118e.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpvn25lvj30j60edtb5.jpg)
 
 下午五点半园子关门的时候在门口拍到的。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_djio_016b000004ee1191.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpvqkhk3j30j60edtb5.jpg)
 
 回到酒店，休息了一会就去前一天预约的日本餐厅。不是很正宗，总体味道还不错。吃完饭看了酒店每日歌舞表演，喝了一些饮料就回房休息去了～
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_rqwy_5e2900000041118d.jpg) 
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpvsoszsj30k00dcgpm.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_rsfd_30fb00003ab9125b.jpg) 
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpvw57xrj30b90f03zu.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_xt3l_72f600000263125c.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpvwfj5oj30k00dbq5e.jpg)
 
 **Day 3**
 
@@ -277,29 +277,29 @@ Tulum是玛雅文明末期建造的城市之一，主要作为港口使用，兴
 
 10:00 AM 早饭。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_lv7n_0f9a000017a51191.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpw6hibqj30k00dbgo1.jpg)
 
 11:00AM 乘R-2去了Cancun  Downtown的Walmart，买了些东西，顺便预定了第六天的Jungle Tour。
 
 一天里剩下的时间：游泳散步晒太阳吃东西喝饮料游泳散步晒太阳吃东西喝饮料游泳散步晒太阳吃东西喝饮料游泳散步晒太阳吃东西喝饮料。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_bawu_057600000615118c.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpw7n264j30k00dbgo2.jpg)
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_4o0d_7857000000ba125c.jpg) 
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpwag0q9j30k00f0410.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_nua2_28f6000016421191.jpg) 
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpwb78hdj30k00f0410.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_u2jt_1efb0000020b125b.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpwdrxb1j30k00f00uj.jpg)
 
 不过还是稍微介绍一下晚餐，是酒店里的牛排餐厅，一道烤Rib很喜欢，把肋骨都锤松抽掉了，松软鲜嫩可口。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_vnf7_53bd00000185118e.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpwe2wd9j30k00f00uj.jpg)
 
 之后，照旧是酒店表演＋各种饮料，喝了不少Margarita和Mango Tango。明天，也就是一月四号，一早去Chichen Itza，世界新七大奇迹之一。这将是最重要的旅程。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_5cyv_0661000009ab118c.jpg) 
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpwf94d2j30k00dbacc.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_vyg2_13f50000045c118c.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpwgusqmj30f00f0abr.jpg)
 
 **Day 4**
 
@@ -329,7 +329,7 @@ Chichen Itza在Cancun西边200公里，一路上都是Dry Jungle，树不高，�
 
 1 alautun ＝ 20 kinchiltun ＝ 大约6300万年
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_crlr_770e000009d21190.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpwjxrafj30k00db0vb.jpg)
 
 2012年12月21日是玛雅历法中第十三个baktun结束的日子，在玛雅文化中，与其说是世界末日，不如说是迎来一个新世界的日子。后来在对Palenque和Coba的遗址进行考古发掘过程中，又发现了新的玛雅历法定义了第14 baktun至第20 baktun，一直延续到公元4772年。
 
@@ -337,57 +337,57 @@ Chichen Itza在Cancun西边200公里，一路上都是Dry Jungle，树不高，�
 
 接下来介绍一下Chichen Itza遗址的主要建筑物。 El Castillo（西班牙语“城堡”之意）El Castillo金字塔（Kukulcan神庙）雄居Chichen Itza的正中。金字塔的地基呈方形，四边依阶梯上升，直至顶端的庙宇。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4254.jpg) 
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpskvj1uj31kw11ve81.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_5wjl_16250001bc50118f.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpslm7uaj31kw11ve81.jpg)
 
 金字塔高约24米，每面共有91级台阶，四面总共364级台阶，加上顶层的神庙共365阶，与Haab历中一个循环日期相同。在春季和秋季的昼夜平分点，日出日落时，建筑的拐角在金字塔北面的阶梯上投下羽蛇状的阴影，并随着太阳的位置在北面滑行下降。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_me67_4d8b000008d2118d.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpwt7r8uj31kw11vb29.jpg)
 
 古代中美洲城市中，在旧金字塔之上加盖更大更雄伟的金字塔是一种惯例，El Castillo金字塔正是其实例之一。考古学家在金字塔北面阶梯上发现的一个入口通往一个隧道，人们在隧道内可以沿着掩盖在金字塔内部的老金字塔的台阶向上攀登，直到顶端，并能见到刻在石头中，漆成红色镶着玉点的Kukulkan的美洲虎王冠。内部老金字塔的设计据说是按照月亮历而来，而外面的新金字塔则是太阳历。曾经游客可以登上顶部神庙看到其中的文物，可惜自从有人从上面掉下来摔死以后，金字塔已经不对游客开放了。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/original_hm1s_10dd00000434118c.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpwvbq3fj30c808yjst.jpg)
 
 大球场  
 在Chichen Itza一共有7个球场，金字塔西北150米左右的球场最为引人注目。这是古代中美洲最大的球场，有166米长68米宽。球场内部两侧排列着雕刻着球员形象的石板，球员需用下体将球打进悬于上方数米的石环洞内，输球一方的队长（一说获胜一方的队长）被斩首用于祭祀。球场的一面外墙上建有美洲虎神庙，上面有另一个美洲虎王冠。因为在地下掩埋了一千年，上面的红漆以及镶的玉点都已经消磨不见了。球场旁边是露天平台，两个平台相对。因为有着独特的声学设计，球场两边的人可以相互交谈，声音十分清晰。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_bwj4_1ff6000003eb125b.jpg) 
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpwyxyc0j30k00db419.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_eo6v_09dd0000071e118c.jpg) 
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpx1xsn4j30k00dbq5h.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_xckn_55410000038c118e.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpx4ixxcj30k00dbq5h.jpg)
 
 椭圆形天文台椭圆形天文台又名El Caracol（西班牙语“蜗牛”之意），得名于圆形建筑内部螺旋状的石头阶梯。天文台是为掌管风和学习的Kukulkan神而设，门设在可以观察春季昼夜平分点、月亮最大南北倾斜及其他天文现象的位置。玛雅人用太阳照射在门上在屋内形成的阴影来判断夏至与冬至的到来。在建筑的边缘放着很大的石头杯子，玛雅人在里面装上水并通过反射来观察星宿，以确定他们相当复杂且极为精确的日历系统。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_nchx_0deb000005c2118c.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpx61xk5j30k00dc416.jpg)
 
 最后再补两张照片吧！第一张是骷髅平台的雕刻，据称是用于埋葬当时的统治者；第二张是广场上柱廊。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_vj1p_115700000489118c.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpx7xsmdj30k00dc416.jpg)
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_hlzm_265800000188125b.jpg)[  
-](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_vj1p_115700000489118c.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpxabk2qj30k00db77s.jpg)[  
+](http://ww1.sinaimg.cn/large/006tNc79gw1fahpx7xsmdj30k00dc416.jpg)
 
 在到达Chichen Itza之前，我们还路过了Valladollid，并参观了附近的一个Cenote。Valladollid所在的地方曾经有一个名为Zaci的玛雅城市。1543年，西班牙征服者最早在Chouac-Ha泻湖边建立了殖民地，但却受到热带蚊子的骚扰，于是于1545年将城市迁到现在的位置，并摧毁了原来的玛雅城市。如今很多Valladollid建筑的石材，都是直接来源于当时被拆毁的玛雅建筑。在1847年，这里还曾经爆发过玛雅原住民反抗西班牙统治者的暴动。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4248.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpsfp8y4j31kw11vtwg.jpg)
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_lc2a_77a70000046e125c.jpg) 
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpxh8p4ij31kw11ve81.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_ll1u_0c7400000ad5125b.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpxhz0u9j30k00dbq53.jpg)
 
 Cenote则是Yucatan半岛上常见的自然形成的陷坑，口部极小，下部由于水的冲蚀溶解，形成了体积巨大的洞穴。其形成据称与Chicxulub陨石坑撞击有关。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_ogdr_4b05000017221190.jpg) 
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpxk6iexj30k00dbdit.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_qxfw_216400000461125b.jpg) 
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpxm8afij309z0f0abw.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_tvre_4f9c000009a1118d.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpxo6ymmj309z0f0abw.jpg)
 
 晚上回到酒店，去了酒店的墨西哥餐厅吃晚饭。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_feqw_17ca00000218118c.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpxr78oxj30b90f040c.jpg)
 
 **Day 5**
 
@@ -405,41 +405,41 @@ Isla Mujeres：意为“女人岛”。位于Cancun东北约10 km的加勒比海
 
 Isla Contoy：位于女人岛以北30 km处，长约8 km。1981年墨西哥政府在这里建立的国家公园，目前由非营利组织Amigos del Isla Contoy（Contoy岛的朋友们）管理。每天仅允许200名游客上岛。这里同样有世界第二大珊瑚礁——中美洲珊瑚礁（仅次于澳大利亚Great Barrier珊瑚礁）。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/original_wkjr_55150000002c125c.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpxuy98cj30ef09q0t8.jpg)
 
 我们的原计划是：07:00AM从Hotel Zone乘坐R-1公交车到Cancun市区，然后乘坐出租车去Puerto Juarez，乘坐07:30AM的轮渡前往Isla Mujeres，找到当地渔民组织的Fisherman’s Cooperative，乘坐渔船前往Isla Contoy浮浅和观鸟。
 
 结果因为把时间调错了，到Puerto Juarez的时候晚了几分钟，刚好错过了轮渡船。等到了岛上，去Isla Contoy的船已经出发了。。。。于是Isla Contoy潜水就改成了乘坐渔船在Isla Mujeres周边潜水。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_yfey_68df000003861190.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpxx73knj30k00f0dir.jpg)
 
 在岛上走走逛逛，这里的建筑都很有墨西哥特色：色彩浓烈，饱和度与对比度都很高。到了十点半，终于凑齐了一船人，大家起锚出发。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_hfc2_1665000000d2118f.jpg) 
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpxzpkq4j30k00f0q56.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_neh6_127400000181118f.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpy27y7pj30k00f0di1.jpg)
 
 船行驶了大约半个小时，到了一处珊瑚礁。开始先在一处大约1.4 m深的浅滩，不需要救生衣，但是鱼的数量依然很多。海水极为清澈，能见度在50 m以上。值得一提的是这里能看到很多Barracuda，体长在一米以上。而且游得极快。每次我刚拿出相机，它就溜走了。Barracuda性情凶猛，成群结队，会对人发动攻击，所以还是得小心一些。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_cbsb_2b6600000266118e.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpy2ytbpj30k00f0di1.jpg)
 
 在这里潜了大约二十分钟，大家穿上救生衣和脚蹼，向更深的海域进发。这里的洋流略大，如果逆着洋流很难前进。4-6米深的海底有大片的珊瑚，各色鱼类游弋期间，实在是美不胜收。可惜没法用相机拍清楚。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_b6ht_321b00000044118e.jpg) 
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpy4q6rlj30k00f0wgp.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_dr6t_228e00000039125d.jpg) 
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpy79iqaj30k00f0q4u.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_dylw_79ca000000be125b.jpg) 
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpy98ivej30k00f0q59.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/original_18ew_398f0000044b118d.jpg) 
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpycc7dij30k00f076m.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/original_qavq_256b0000048c118e.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpyefqa9j30hs0dctag.jpg)
 
 前后游了一个小时，上船去第二个潜水地点。可惜由于风浪过大＋喝了一口死咸的海水吐了，所以就留在船上看别人潜了。从船上不时也能看到海面下的鱼和海龟。
 
 两小时的Trip结束后，从Isla Mujeres直接乘船返回Hotel Zone。坐在船顶，海风很大。一个歌手在风浪中弹唱着西班牙民歌，唱得人心中一片苍凉。远远地，看到酒店和前方的Puerto Tortuga。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_ciu4_525a000001e5125c.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpyfs6vlj30hs0dctag.jpg)
 
 回到酒店以后才下午四点多，应该干点什么呢？当然是吃东西喝酒吹风游泳晒太阳了！
 
@@ -447,31 +447,31 @@ Isla Contoy：位于女人岛以北30 km处，长约8 km。1981年墨西哥政�
 ](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4392.jpg)[  
 ](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4475.jpg)
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4441.jpg) 
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahprysw8qj31kw11v1kx.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc43282.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahps7rvamj31kw11vx3i.jpg)
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4373.jpg) 
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpyjhb8uj31kw11vx3i.jpg) 
 
-![]](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/dsc4514.jpg)
+![]](http://ww3.sinaimg.cn/large/006tNc79gw1fahpyle88ej31kw11vx3i.jpg)
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_jblz_77b100003def125b.jpg) 
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahproj5kij31kw0rmtu1.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_3vhy_450e0001bd0f125d.jpg) 
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpynzn8aj30k00dbgnj.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_u7v1_5b6a0001bdb9118c.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpyr3gm4j30k00dbq60.jpg)
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_bcsw_114c000002e7118f.jpg) 
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpysijqvj30k00dbdi6.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_h73s_156b000001ed118f.jpg) 
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpyuyh2yj30k00db0uy.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_ieit_437e00000274118d.jpg) 
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpywtamsj30k00db41b.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_vm5r_437e000002c3118d.jpg) 
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpyxjdasj30k00db41b.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_wjyg_1db1000002f3125d.jpg) 
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpyzd88mj30k00dc0vo.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_zsnq_24ea0000003d125d.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpz1w8eej30k00db40f.jpg)
 
 **Day 6**
 
@@ -481,7 +481,7 @@ Isla Contoy：位于女人岛以北30 km处，长约8 km。1981年墨西哥政�
 
 按照计划，中午十二点去Jungle Tour。所谓Jungle Tour，其实和Jungle关系不大。其内容包括：驾驶摩托艇穿过Nichupte泻湖，然后经过一段狭窄的森林水道，约45分钟后到达加勒比海上的潜水区域；浮浅约一小时后，再驾驶摩托艇回到出发的地方。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/original_d09p_5c0e00003c971191.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpz38a27j30b408pwfo.jpg)
 
 首先我们从Nichupte泻湖开始说。这个泻湖大致就是Cancun的7字形酒店区围起来的水域。泻湖中风浪较小，所以非常适合开展摩托艇，jet ski等水上机械运动。这个时候一定会有人问，可以游泳吗？可以潜水吗？可以钓鱼吗？
 
@@ -495,23 +495,23 @@ Isla Contoy：位于女人岛以北30 km处，长约8 km。1981年墨西哥政�
 
 原因是这样的：
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_hqop_307b00003c9a125b.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpz5swdrj30b408pwfo.jpg)
 
 当我第一次看到这块牌子的时候，想法和大家是一样的：老子从小就是吓大的，别用鳄鱼吓人。
 
 于是，在码头上走了几步之后：
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_yap7_726800003c6c1190.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpz76jzsj30k00f0q4w.jpg)
 
 好吧，既然不让游泳，咱还是别游了，你说对吧？
 
 在码头上换好衣服，穿上救生衣，花了五分钟学习了一下摩托艇驾驶（其实就是一个没有刹车和离合的手动档汽车）和水上交流的手势，浩浩荡荡的船队就出发了。所有船排成一对，间隔约100米。由于前边船只掀起的余波，所以有些时候还是很颠的。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_p04p_30fb00003d94125b1.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpza87hej30k00f0tai.jpg)
 
 临近出海口，大家减速通过一片蜿蜒的雨林，期间有水鸟捕食，也有当地人在游泳潜水洗澡钓鱼玩耍晒太阳……
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/original_vcdr_78be00003daf118c.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpzc0ersj30ge0ca0u3.jpg)
 
 加勒比海上风浪比泻湖里要大，全速前进的时候会非常颠，如果你和胖子十年修得同船渡，那就自求多福吧。
 
@@ -519,7 +519,7 @@ Isla Contoy：位于女人岛以北30 km处，长约8 km。1981年墨西哥政�
 
 游了几十分钟，上船喝光一瓶淡水，但嘴里还是咸得跟一口气吃了8个咸鸭蛋一样。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_zngh_30ab00003dbc125b.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpzcvefcj30ge0ca0u3.jpg)
 
 开船回到码头的时候，还不到下午三点。看看还早，就去了El Rey遗址参观。这个遗址大约在7字形一竖的中间，乘坐公车可达。遗址规模不大，门票大约50 peso。这里目前尚存47座建筑遗址，据信从公元前900年开始就有玛雅人居住。
 
@@ -527,9 +527,9 @@ Isla Contoy：位于女人岛以北30 km处，长约8 km。1981年墨西哥政�
 
 整个遗址已经成为Iguana之家，于Tulum和Chichen Itza相比，这里的Iguana不但体型暴大，而其不怕人。一些体型弱小的幼年Iguana看到人走过来还会哧溜一声缩回洞里去，而那些体型巨大的，最多抬起头看你一眼，甚至还有堂而皇之躺在草地上晒太阳的。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_gnzo_30bb00003dfb125b.jpg) 
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpzduegoj30k00f040i.jpg) 
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_hlo7_403500003d59118f.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpzehubcj30k00f040i.jpg)
 
 至此，旅行中主要的活动都结束了。明天，就要踏上归途，回到寒风凛冽的新英格兰。
 
@@ -541,7 +541,7 @@ Isla Contoy：位于女人岛以北30 km处，长约8 km。1981年墨西哥政�
 
 过了安检居然是免税店，里面卖酒的很多，结账排着长队，基本都是买Rum和Tequila的。
 
-![](http://www.yimingchen.org/blog/wp-content/uploads/2013/01/large_trrd_730800003dcf1190.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahpzhob80j30b90f00uj.jpg)
 
 机场里面吃饭的地方不少，人依旧很多。
 

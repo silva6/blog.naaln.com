@@ -11,7 +11,7 @@ tags:
 
 ### iTerm2+zsh+tmux的终端环境
 
-![](http://ww1.sinaimg.cn/large/006tNc79gw1f510kczrw7j30vq0irtbf)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq3nmnljj30vq0irtbf.jpg)
 
 # iTerm2
 

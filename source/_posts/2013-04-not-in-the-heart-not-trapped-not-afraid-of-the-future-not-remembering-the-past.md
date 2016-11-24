@@ -9,11 +9,11 @@ tags:
 
 
 
-![](http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/04/original_41Wy_7414000017721190.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahpez0jvyj30k87wgnpd.jpg)
 
 孤独，是一个内心整合的过程，能让自己清醒地看世界，也能让自己理性地看自己。 
 
-![](http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/04/original_qVJD_7567000016bf1190.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahpeydmzyj30k87wgnpd.jpg)
 
 有很多路，走的时候忘记了回头，等想回头时，已经沧海桑田。 
 

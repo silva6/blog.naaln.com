@@ -80,7 +80,7 @@ tags:
 
 ![][7]
 
-![](http://ww3.sinaimg.cn/large/006tNc79gw1f510g35lzyj30hs0dcjrq)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq3pac9qj30hs0dcjrq.jpg)
 
 1.艺术精神 
 2.我们正在做的事情不是已经有人做过的东西 

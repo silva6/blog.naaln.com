@@ -31,5 +31,5 @@ tags:
 
 **关于项目**
 
-![](http://ww3.sinaimg.cn/large/48910e01gw1f0g2wodyoqj20wm0byaav.jpg)
+![](http://ww4.sinaimg.cn/large/65e4f1e6gw1fahq7i0uc4j20wm0byaav.jpg)
 

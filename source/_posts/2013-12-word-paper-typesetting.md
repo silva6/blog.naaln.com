@@ -23,7 +23,7 @@ tags:
 
 ## 页面布局 
 
-![](http://p3.zhimg.com/22/14/2214e8fcd14866fa64e27cbe200084cb_m.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq0qyuctj309503qdfy.jpg)
 
 如果是新建一个 Word 文件，这里「页面布局」一般不用设置了：
 
@@ -39,7 +39,7 @@ tags:
 
 接着，在「视图」中，将「导航窗格」选上，方便不同的章节跳转导航。
 
-![](http://p2.zhimg.com/3a/bf/3abf51a3eecd9e29fac743a8637208bc_m.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq0sjig0j305j043dfu.jpg)
 
 ## 封面与页眉页脚
 
@@ -49,13 +49,13 @@ tags:
 
 **1、插入表格 **
 
-![](http://p2.zhimg.com/0e/f8/0ef81bd31b6c910ab370dbc7b7b4fb53_m.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq0twuzvj306606fmxg.jpg)
 
 为什么是表格呢？因为表格是一个标准格式化的布局方式，与直接手动码字快速方便很多。
 
 **2、插入文档部件 **
 
-![](http://p4.zhimg.com/b4/2a/b42a7a92e00d40cc2a564f51ce6ab860_m.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq0vondbj30go0c13zp.jpg)
 
 在建立的表格中插入文档部件——文档属性，标题、作者、单位、发布日期。
 
@@ -63,25 +63,25 @@ tags:
 
 格子不够则右击某个单元格，插入——在下方插入行。
 
-![](http://p1.zhimg.com/d2/30/d23040db1c487fbbc711bb013f7779e8_m.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq0x0jc6j30a207xmxl.jpg)
 
 **3、设置格式**
 
 根据要求，设置格式，拖动表格放好位置，
 
-![](http://p3.zhimg.com/a7/71/a77166df014bb85b0c6c052c2393a3a2_m.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq0ykgmej306x09a0sq.jpg)
 
 并选择整个表格，将对齐方式设置为全居中。
 
-![](http://p3.zhimg.com/45/f7/45f7ea8085d53492377f751639cd5218_m.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq112hdyj306906v0sz.jpg)
 
 接着，选择整个表格，设计——表框——无框线。
 
-![](http://p4.zhimg.com/0d/20/0d20b25e5d673984a203d0548c93f633_m.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq117o0qj306206l3yq.jpg)
 
 这样，一个比较正式的封面就做好了。
 
-![](http://p4.zhimg.com/66/23/6623b4e6cc5f49759f8893c4f0713dae_m.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq1408dxj307y0ba748.jpg)
 
 同理内封也是如此制作。
 
@@ -91,15 +91,15 @@ tags:
 
 在封面的最后，页面布局——分隔符——分节符——下一页。
 
-![](http://p1.zhimg.com/58/04/58040f42ab88de7894b5100b33519e8a_m.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq15au7qj30ch09pmy3.jpg)
 
 这样，在页眉页脚设置中就能看到效果了。
 
-![](http://p2.zhimg.com/08/dc/08dcd9fbd3d7baac601041cf1ed77fea_m.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq16z4fqj30ab06eaa9.jpg)
 
 接着，我们在焦点放在第 2 节页眉（页脚）上，在页眉页脚设计中，将「链接到前一条页眉（页脚）」取消掉。这样，我们便可以分开设置不同节的页眉页脚了。
 
-![](http://p2.zhimg.com/65/14/65145a91ce0648dd830f411f1c2b2391_m.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq198oi7j306m04ht8u.jpg)
 
 同理设置多章节内容是也是如此。
 
@@ -111,15 +111,15 @@ tags:
 
 双击页眉，进入页眉编辑模式
 
-![](http://p1.zhimg.com/af/62/af628ceae534abbf34ab1196087acb49_m.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq1adhsjj30go03o74t.jpg)
 
 在需要的位置，插入文档部件 —— 域
 
-![](http://p2.zhimg.com/8b/bb/8bbb57329b0234b9ace69568135bf02d_m.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq1c9tj4j30go07nwf7.jpg)
 
 选择 StyleRef 如上图设置，即可得到在不同章显示不同的页眉了。
 
-![](http://p1.zhimg.com/d2/a6/d2a68eda4b30c25297a0268469871e3e_m.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq1fhc8aj30go03wmxh.jpg)
 
 又比如单页要章，双页要节，同理。勾选奇偶页不同，分开设置即可。
 
@@ -131,21 +131,21 @@ tags:
 
 于是，我们首先来定这个框架，每一部分的标题，换行输入，然后在开始——样式处，选择「标题 1」
 
-![](http://p4.zhimg.com/53/b8/53b8f22e9303f0f5a6558574031b39c2_m.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq1fybdgj30go07c3z4.jpg)
 
 同时，我们在导航窗格中清楚的看到了文字结构。当然这还不够，接着，我们将光标放在某个章节标题处，选择开始——段落——多级列表。
 
-![](http://p2.zhimg.com/03/31/0331560cd92d102e916c244dbd6d093d_m.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq1id9z0j30go04zmxn.jpg)
 
 当然，一般选择默认的即可，不过根据论文格式要求，需要自定义。
 
 「定义新的多级列表」，将数字附近添加额外内容即可。
 
-![](http://p3.zhimg.com/77/4f/774facc6e07bc4585c09ee689f7830a2_m.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq1ky7mtj30by0biabc.jpg)
 
 同理，我们在节标题（标题 2）等，也如此设置。于是得到一个结构明了的文档框架了。
 
-![](http://p3.zhimg.com/03/a8/03a8a8e491cfedc8b4110b44e81368f0_m.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq1m9cthj30by0biabc.jpg)
 
 值得注意的，在导航窗格中，我们选中某个标题，敲击回车，便可得到一个同级的新标题，这对布局相当管用，特别是对于编了章节号的标题，它也会自动生成相同格式的章节号，并且，在这里拖动章节标题的位置，会相当智能。
 
@@ -153,11 +153,11 @@ tags:
 
 一般来说，默认样式可以满足日常需求，但是论文要求不同，于是这些样式需要逐个修改。
 
-![](http://p3.zhimg.com/83/24/83246213bbfe63e77af86a1c1389ef82_m.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq1o04s3j30go033t90.jpg)
 
-![](http://p1.zhimg.com/f3/c2/f3c2482bf2fe99a16594258efde7f4f5_m.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq1qdzs6j307a0320sr.jpg)
 
-![](http://p4.zhimg.com/e8/0d/e80db0e3b9d9f94d6321864011e9a822_m.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq1s1507j30fe0e40un.jpg)
 
 这些没有固定格式，所以自行修改，注意在样式基准处，务必选择（无样式），同时这样式设置请在上一小节前进行。
 
@@ -167,17 +167,17 @@ tags:
 
 文章编写差不多后，需要为之添加目录，在前面的章节框架设置的基础上，我们便可以自动添加目录了。引用——目录——插入目录：
 
-![](http://p2.zhimg.com/eb/4b/eb4b1f47a311666516da548de3cc765d_m.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq1uok7pj308j03kglq.jpg)
 
-![](http://p1.zhimg.com/80/96/8096412f8731e6b62a8ab65198501c59_m.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq1w9jcyj30fw0bz0tz.jpg)
 
-![](http://p3.zhimg.com/9a/54/9a54a5c72508dad3c87d3709897dc46a_m.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq1ynsncj30b70ahdgp.jpg)
 
 在任意位置均可添加。
 
 需要更新目录时，右击目录内容——更新域，即可。
 
-![](http://p3.zhimg.com/e4/82/e482e9abca42681a0062b2db24156b96_m.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq1zxzqtj305a04awei.jpg)
 
 # 细节优化 
 
@@ -185,13 +185,13 @@ tags:
 
 图表公式都是依靠「插入题注」和「交叉应用」。
 
-![](http://p4.zhimg.com/f2/5b/f25bb1a55d93958e8e349a0a38ccee30_m.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq21t9g3j30av03fdfx.jpg)
 
 ### 图表 
 
 如上图，选中图片后，引用——单击插入题注（或者右击图片——插入题注）。新建标签——图。
 
-![](http://p2.zhimg.com/2c/52/2c52577b04fcc6a157280de8ef1c3c73_m.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq24poukj30c208nab5.jpg)
 
 章节起始样式根据需要设置。比如我们设定成标题 2，这样图片便编号为 3.4.1。然后在后面输入需要内容。
 
@@ -199,11 +199,11 @@ tags:
 
 接着我们需要引用。单击「交叉引用」。如下选择。插入。
 
-![](http://p1.zhimg.com/22/8c/228ccfb69e9944d15ac9e72c01fa637e_m.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq25sr9oj30c208nab5.jpg)
 
 这样
 
-![](http://p1.zhimg.com/7b/53/7b53cc85bdd85b8e87db73fd5eeee40d_m.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq26j6ksj30c208nab5.jpg)
 
 以实现图的跳转。
 
@@ -213,13 +213,13 @@ tags:
 
 选择表格，插入题注
 
-![](http://p1.zhimg.com/8b/4a/8b4acfea0279988a94af778207311b43_m.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq28ofqdj30c207zgmj.jpg)
 
-![](http://p2.zhimg.com/87/62/8762d9e5e6046c0c371e36029202067b_m.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq2b6d2oj30bz02d749.jpg)
 
 然后我们把这个标号拷贝到表格里面。设置好格式
 
-![](http://p1.zhimg.com/5b/21/5b214ec2450b1069a2adc9d3c731f952_m.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq2cdh15j30bu01gmx2.jpg)
 
 这样，在交叉引用中，balabala，同图表引用。
 
@@ -227,25 +227,25 @@ tags:
 
 其一，Mathtype 软件，可与 LaTeX 公式统一起来。（其实，这工具自带公式标注，不过，为了后面的功能——公式目录，标注用自带的）
 
-![](http://p4.zhimg.com/ec/e7/ece775ae7f77fa4985cc12896e266f8f_m.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq2dtyrij30go01wmxb.jpg)
 
 圈出来的是我最常用的，输入 LaTeX 公式文本后，然后选定前后段落，用这个，便可自动格式化为对应的公式。特别是在公式文字混输的时候，相当便捷，如图，使用前后。
 
-![](http://p2.zhimg.com/ff/a7/ffa7d66b4e5bb84d97c187ada03c9b37_m.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq2hfdnuj30go0c3my5.jpg)
 
 其二，自带插入——公式。 （快捷键 Atl + = ，直接输入也可，语法其实和 LaTeX 类似，当然也可按钮操作）
 
-![](http://p2.zhimg.com/f1/29/f12959bdcdc6f1e7bc3bfe495264d5e7_m.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq2gvd2ij30go0c3my5.jpg)
 
 其三，Win7 开始——所有程序——附件——数学输入面板。 （或者直接 Win + R 运行，mip）
 
-![](http://p4.zhimg.com/0f/06/0f067329013d2af8baa96bb7eb88263f_m.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq2hn0msj30go01wmxb.jpg)
 
 ### 优点
 
 其实以上工作均可手动进行，不过如果需要添加图表目录的时候，便不得不如此做了。
 
-![](http://p4.zhimg.com/8c/33/8c337e5ce8a69888a6967ceff7049c85_m.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq2ju400j30fh0fjjte.jpg)
 
 ## 参考文献 
 
@@ -255,15 +255,15 @@ tags:
 
 论文往往是需要反复修订的，于是，审阅这一系列工具就很有用了。
 
-![](http://p3.zhimg.com/0a/91/0a91623e32f518f5dda2e872b7bb4ee6_m.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq2kkssgj30fh0fjjte.jpg)
 
-![](http://p3.zhimg.com/67/09/67096aa232302ed61bc861fe0ea33ecb_m.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq2ms764j308k02nglk.jpg)
 
 利用更改可以直接设置修订内容，上一条、下一条，接受或拒绝。
 
 当然有时候老师并没使用这种方法给与修订，那么，使用比较即可。
 
-![](http://p1.zhimg.com/c6/a2/c6a243a356489d75b1bfdd0b328ad6dc_m.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq2o1di6j304r06a0su.jpg)
 
 当然，英文写作中，这里的辅助工具也是很有用的。
 
@@ -271,7 +271,7 @@ tags:
 
 另存为。
 
-![](http://p1.zhimg.com/e8/f1/e8f1cdab60bd5d479ee8f234ab45da01_m.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq2psy3ej30go0d2q4m.jpg)
 
 这样生成的 PDF 是带完整书签的，便于收藏查阅，同时去打印的时候不至于被打印处将格式破坏。
 
@@ -289,11 +289,11 @@ tags:
 
 从这里切换到大纲视图中，或者右下角。
 
-**![](http://p4.zhimg.com/34/1c/341cbdbd198add97f3b53d4428ee7e0c_m.jpg)**
+**![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq2repp6j30go0d2q4m.jpg)**
 
 随后，会出现大纲工具选项卡
 
-![](http://p1.zhimg.com/5f/d3/5fd30345388f3974e7f7f2b7f564e6b9_m.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq2uhipjj30go032dg4.jpg)
 
 一方面，大纲视图可帮助你我进行思维导图，理清文档结构，
 
@@ -303,9 +303,9 @@ tags:
 
 只需要，单击 创建 按钮，再保存一下，文档就自动分割开来。
 
-![](http://p3.zhimg.com/3d/15/3d15a2e71f15e1b5277d655238f1f7c5_m.jpg)
+![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq2wloqpj30e30fgjt5.jpg)
 
-![](http://p1.zhimg.com/55/7f/557f00984018407d56f64fe4b9c4cad1_m.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq2y29vlj30e30fgjt5.jpg)
 
 当然也可以将其他子文档，插入进来。
 
