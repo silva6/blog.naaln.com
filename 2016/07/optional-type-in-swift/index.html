@@ -1,0 +1,904 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next muse" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="ByVfaP_E3b9ZYRUGhNAUFSQKL8mJQwUehpQwoxJ5n-c" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Why, Liam, 李承璋" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Why·Liam·Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Objective-C 中的 nil在Objective-C中当某个变量或表达式没有任何内容时，可以使用nil来表示。nil在Objective-C中void指针指向数字 0，本质上来讲nil就是一个数字。比如这个例子：
+1int i = (int)(nil)+20; //可以这样吗？
+因为nil指向数字 0，确切的说nil就是Int类型数据，所以上述的代码不仅可以通过编译，而且得到的结果是 20">
+<meta property="og:type" content="article">
+<meta property="og:title" content="理解Swift中Optional类型">
+<meta property="og:url" content="https://blog.naaln.com/2016/07/optional-type-in-swift/index.html">
+<meta property="og:site_name" content="Why·Liam·Blog">
+<meta property="og:description" content="Objective-C 中的 nil在Objective-C中当某个变量或表达式没有任何内容时，可以使用nil来表示。nil在Objective-C中void指针指向数字 0，本质上来讲nil就是一个数字。比如这个例子：
+1int i = (int)(nil)+20; //可以这样吗？
+因为nil指向数字 0，确切的说nil就是Int类型数据，所以上述的代码不仅可以通过编译，而且得到的结果是 20">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/0065ty76gw1ey65j132fej30ks07naac.jpg">
+<meta property="og:updated_time" content="2016-10-20T19:59:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="理解Swift中Optional类型">
+<meta name="twitter:description" content="Objective-C 中的 nil在Objective-C中当某个变量或表达式没有任何内容时，可以使用nil来表示。nil在Objective-C中void指针指向数字 0，本质上来讲nil就是一个数字。比如这个例子：
+1int i = (int)(nil)+20; //可以这样吗？
+因为nil指向数字 0，确切的说nil就是Int类型数据，所以上述的代码不仅可以通过编译，而且得到的结果是 20">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/mw690/0065ty76gw1ey65j132fej30ks07naac.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'XILKIWTAM9',
+      apiKey: '99d43a85f328d00214c5de8007ce7920',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.naaln.com/2016/07/optional-type-in-swift/"/>
+
+
+
+
+
+  <title> 理解Swift中Optional类型 | Why·Liam·Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47966442-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Why·Liam·Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生若如初見</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-technology">
+          <a href="/categories/technology/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-code"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-jottings">
+          <a href="/categories/jottings/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-language"></i> <br />
+            
+            随笔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tour">
+          <a href="/categories/tour/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            旅游
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://blog.naaln.com/2016/07/optional-type-in-swift/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Liam">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/3387850?v=3&s=460">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Why·Liam·Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Why·Liam·Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                理解Swift中Optional类型
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-23T10:32:08-04:00">
+                2016-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/technology/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/07/optional-type-in-swift/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/optional-type-in-swift/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Objective-C-中的-nil"><a href="#Objective-C-中的-nil" class="headerlink" title="Objective-C 中的 nil"></a>Objective-C 中的 nil</h3><p>在<code>Objective-C</code>中当某个变量或表达式没有任何内容时，可以使用<code>nil</code>来表示。<code>nil</code>在<code>Objective-C</code>中void指针指向数字 0，本质上来讲nil就是一个数字。比如这个例子：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i = (<span class="keyword">int</span>)(<span class="literal">nil</span>)+<span class="number">20</span>; <span class="comment">//可以这样吗？</span></div></pre></td></tr></table></figure>
+<p>因为<code>nil</code>指向数字 <code>0</code>，确切的说<code>nil</code>就是Int类型数据，所以上述的代码不仅可以通过编译，而且得到的结果是 20。显然，<code>Objective-C</code>编译器对<code>nil</code>的处理方式非常简单粗暴，直接将<code>nil</code>当作是数字对待了。这样做表面看起来平安无事，但在某些特定的情境下，却可能造成歧义。既然nil不能表示「纯粹无」，的确需要表示「这个变量没有任何值」该怎么办？看来，<code>Objective-C</code>对此是无解了。</p>
+<h3 id="Optional基础概念"><a href="#Optional基础概念" class="headerlink" title="Optional基础概念"></a>Optional基础概念</h3><p>或许是因为上述例子中提到的问题，在某些特定的场景下的确需要表示「无」的存在，因此Swift中引入了<code>Optional</code>类型。</p>
+<p>在深入讨论之前，先看看<code>Optional</code>是什么吧！</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">Optional</span>&lt;<span class="title">Wrapped</span>&gt; : <span class="title">_Reflectable</span>, <span class="title">NilLiteralConvertible</span> </span>&#123;</div><div class="line">  <span class="keyword">case</span> <span class="type">None</span></div><div class="line"></div><div class="line">  <span class="keyword">case</span> <span class="type">Some</span>(<span class="type">Wrapped</span>)</div><div class="line"></div><div class="line">  <span class="keyword">public</span> <span class="keyword">init</span>()</div><div class="line">  <span class="keyword">public</span> <span class="keyword">init</span>(<span class="number">_</span> some: <span class="type">Wrapped</span>)</div><div class="line"></div><div class="line">  <span class="meta">@warn_unused_result</span></div><div class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">map</span>&lt;U&gt;<span class="params">(@noescape f: <span class="params">(Wrapped)</span></span></span> <span class="keyword">throws</span> -&gt; <span class="type">U</span>) <span class="keyword">rethrows</span> -&gt; <span class="type">U</span>?</div><div class="line"></div><div class="line">  <span class="meta">@warn_unused_result</span></div><div class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">flatMap</span>&lt;U&gt;<span class="params">(@noescape f: <span class="params">(Wrapped)</span></span></span> <span class="keyword">throws</span> -&gt; <span class="type">U</span>?) <span class="keyword">rethrows</span> -&gt; <span class="type">U</span>?</div><div class="line">        </div><div class="line">  <span class="keyword">public</span> <span class="keyword">init</span>(nilLiteral: ())</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以看到Swift中Optional其实是一个枚举类型，其中包含了None、Some两个值和应用某个规则并返回结果的map、flatMap两个方法，此外还有三个构造方法。我们可以使用上述的构造方法创造一个Optional类型的变量，但在实际开发过程中会更多的使用?表示一个变量是Optional类型。例如下面的示例：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> someNumber: Int?</div><div class="line"><span class="keyword">var</span> anotherNumber: Int = <span class="number">100</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> someStr: <span class="built_in">String</span>?</div><div class="line"><span class="keyword">var</span> anotherStr: <span class="built_in">String</span> = <span class="string">"Hello World"</span></div></pre></td></tr></table></figure>
+<p>使用问号?表示某个变量是Optional类型，如果没有显示赋值Swift会自动给Optional类型变量赋值nil。上述的代码中，声明了两个Int类型的变量，其中someNumber是Optional类型，而 anotherNumber是普通的Int类型并且值为 100 。我们可以把Optional类型想象成为一个容器，装东西用的盒子。someNumber所代表的盒子里面是空的，等着用户往里面装东西「当然，能装的东西已经规定好了，必须是Int类型」，而anotherNumber所代表的盒子里面已经装好了东西。如下图：</p>
+<p><img src="http://ww4.sinaimg.cn/mw690/0065ty76gw1ey65j132fej30ks07naac.jpg" alt=""></p>
+<p>变量存在的意义在于：可以参与运算并完成一定的业务要求。接下来我们对上述示例代码中的变量进行一定的运算，再观察结果分析。假设，给someNumber、anotherNumber分别加上100并输出结果，那么代码如下：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> someNumber: <span class="built_in">Int</span>?    <span class="comment">//值为nil</span></div><div class="line"><span class="keyword">var</span> anotherNumber: <span class="built_in">Int</span> = <span class="number">100</span>    <span class="comment">//值为100</span></div><div class="line"></div><div class="line">someNumber = someNumber + <span class="number">100</span>    <span class="comment">//编译错误，不能对nil进行操作</span></div><div class="line">anotherNumber = anotherNumber + <span class="number">100</span>    <span class="comment">//正常</span></div></pre></td></tr></table></figure>
+<p>为什么会这样呢？按照在Objective-C中的理解看来：一个变量的值是nil，则指向数字0，是可以进行运算的「一开始的示例中我们正是这么做的」。显然，nil在Swift中已经不再是指向数字0的指针，而是真的指向「纯粹无」。既然当前这个变量的值是「纯粹无」，在它被初始化之前当然是不允许进行操作的。</p>
+<p>变量someNumber盒子中没有任何值，所以不能进行运算，那么我们做如下的赋值再尝试：</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">var</span> someNumb<span class="symbol">er:</span> <span class="built_in">Int</span>?</div></pre></td></tr></table></figure>
+<p>someNumber = 100 //赋值<br>someNumber = someNumber + 100 //还是无法通过编译，不能对Optional直接操作<br>在Swift中对一个Optional类型的变量直接进行操作，是不允许的。这又是为什么呢？大家还记得吗？Optional是枚举类型，不经过任何转换直接和Int类型相加，当然是不允许的。那么，如果想要对Optional的值进行运算，要怎么办呢？</p>
+<h3 id="Optional类型转换"><a href="#Optional类型转换" class="headerlink" title="Optional类型转换"></a>Optional类型转换</h3><p>在对一个Optional类型的变量进行操作之前，需要先将其转换成可操作的具体类型。你可以把它理解成：在吃掉盒子里面存放的苹果之前，需要先将苹果从盒子中取出来。这个过程可以使用符号!来完成。</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> someNumber: <span class="built_in">Int</span>?</div><div class="line"></div><div class="line">someNumber = <span class="number">100</span> <span class="comment">//赋值</span></div><div class="line">someNumber = someNumber! + <span class="number">100</span>  <span class="comment">//将苹果从盒子中取出来，再加上100</span></div></pre></td></tr></table></figure>
+<p>但是在将苹果从盒子中取出来的时候，你却需要面对一个严肃的哲学问题：盒子中确实有苹果吗？如果上述代码中缺少赋值表达式someNumber = 100，那么这段代码虽然可以躲过编译器的检查，但却会在程序运行过程中出现异常，导致应用崩溃。所以，为了保证程序的健壮性，在吃掉苹果之前，应该判断盒子中是否真的存在苹果，大致如下所示：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> someNumber: Int?</div><div class="line"></div><div class="line"><span class="comment">// someNumber = 100</span></div><div class="line"><span class="keyword">if</span>(someNumber != <span class="literal">nil</span>) &#123;</div><div class="line">    someNumber = someNumber! + <span class="number">100</span></div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"盒子中根本木有苹果"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上述代码安全了，可是每个Optional类型的变量在使用之前，都需要对其进行if-else判断显然是一件很麻烦的事情，而人类是最喜欢偷懒的群体，那该怎么办呢？</p>
+<p>其中第一个办法，称之为if-let绑定，通过if-let的判断对其进行操作，大致如下：</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> authorName: <span class="keyword">String</span>? = <span class="string">"Barat Semet"</span></div><div class="line"><span class="keyword">let</span> authorAge: Int? = <span class="number">30</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="keyword">let</span> name: <span class="keyword">String</span> = authorName,</div><div class="line">    age: Int = authorAge &#123;</div><div class="line">        <span class="keyword">print</span>(<span class="string">"本文作者 \(name) 今年 \(age) 岁了"</span>)</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">print</span>(<span class="string">"作者名称or年龄未指定"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>另外一种方法称之为nil合并，使用两个??符号连接在一起表示：如果存在值则获取当前值，如果不存在则获取给定的默认值，大致代码如下：</p>
+<figure class="highlight zephir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> someNumber: <span class="keyword">Int</span>? </div><div class="line"></div><div class="line"><span class="keyword">var</span> number: <span class="keyword">Int</span> = someNumber ?? <span class="number">0</span> <span class="comment">//若someNumber不为nil则获取其值，若为nil则获取0</span></div><div class="line">上述打代码大致等价于：</div><div class="line"></div><div class="line"><span class="keyword">var</span> someNumber: <span class="keyword">Int</span>?</div><div class="line"><span class="keyword">var</span> number: <span class="keyword">Int</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="keyword">let</span> unwrapped:<span class="keyword">Int</span> = someNumber &#123;</div><div class="line">    number = unwrapped</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    number = <span class="number">0</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="最后的总结"><a href="#最后的总结" class="headerlink" title="最后的总结"></a>最后的总结</h3><p>和Objective-C不同，在Swift代码中我们拿到某个表达式返回的Optional值时，如果非常确定该表达式的结果不会是nil则可以使用!将其强制转换为我们需要的结果。否则，在我们不确定的情况，一定要使用if-else、if-let、swait-case、guard之中的一种对Optional返回的结果进行判断后再处理。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
+<li><a href="http://blog.teamtreehouse.com/understanding-optionals-swift" target="_blank" rel="external">Understanding Optionals in Swift</a></li>
+</ol>
+<p>来源： </p>
+<p><a href="http://blog.barat.cc/ios/understanding-swift-optional/" target="_blank" rel="external">理解Swift中Optional类型－有和无的哲学</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://ww1.sinaimg.cn/mw690/48910e01gw1evkbf70jcgj20cg0cidh5.jpg" alt="Liam WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://ww3.sinaimg.cn/mw690/48910e01gw1evkbfendrjj20ci0ci0uf.jpg" alt="Liam Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/skill-of-pokemon-go/" rel="next" title="Pokemon Go 的奇技淫巧">
+                <i class="fa fa-chevron-left"></i> Pokemon Go 的奇技淫巧
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/extension-swift/" rel="prev" title="理解Swift中Extension类型">
+                理解Swift中Extension类型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/07/optional-type-in-swift/"
+     data-title="理解Swift中Optional类型"
+     data-content=""
+     data-url="https://blog.naaln.com/2016/07/optional-type-in-swift/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/optional-type-in-swift/"
+           data-title="理解Swift中Optional类型" data-url="https://blog.naaln.com/2016/07/optional-type-in-swift/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/3387850?v=3&s=460"
+               alt="Liam" />
+          <p class="site-author-name" itemprop="name">Liam</p>
+          <p class="site-description motion-element" itemprop="description">人生若如初見</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">672</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/liszd" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/whyliam" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.naaln.com/" title="纳兰主页" target="_blank">纳兰主页</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://photo.naaln.com/" title="纳兰相册" target="_blank">纳兰相册</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Objective-C-中的-nil"><span class="nav-number">1.</span> <span class="nav-text">Objective-C 中的 nil</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Optional基础概念"><span class="nav-number">2.</span> <span class="nav-text">Optional基础概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Optional类型转换"><span class="nav-number">3.</span> <span class="nav-text">Optional类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后的总结"><span class="nav-number">4.</span> <span class="nav-text">最后的总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2003 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liam</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"naalnblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+</body>
+</html>

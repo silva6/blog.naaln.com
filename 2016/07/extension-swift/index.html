@@ -1,0 +1,867 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next muse" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="ByVfaP_E3b9ZYRUGhNAUFSQKL8mJQwUehpQwoxJ5n-c" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Why, Liam, 李承璋" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Why·Liam·Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="13.times &amp;#123; puts &apos;hello world&apos; &amp;#125;
+这是一条Ruby语句，它会打印“hello world”三次，意图清晰，语法简洁。
+如果你是C或者Java等语言的使用者，而从未接触过Ruby，此时是不是有种打开了新世界的大门的感觉^_^。反正当初我刚接触Ruby那会儿时常会感叹，啊原来代码还可以这么写。。。Ruby的灵活与优雅当然远不仅于此，这里就不展开了。今天">
+<meta property="og:type" content="article">
+<meta property="og:title" content="理解Swift中Extension类型">
+<meta property="og:url" content="https://blog.naaln.com/2016/07/extension-swift/index.html">
+<meta property="og:site_name" content="Why·Liam·Blog">
+<meta property="og:description" content="13.times &amp;#123; puts &apos;hello world&apos; &amp;#125;
+这是一条Ruby语句，它会打印“hello world”三次，意图清晰，语法简洁。
+如果你是C或者Java等语言的使用者，而从未接触过Ruby，此时是不是有种打开了新世界的大门的感觉^_^。反正当初我刚接触Ruby那会儿时常会感叹，啊原来代码还可以这么写。。。Ruby的灵活与优雅当然远不仅于此，这里就不展开了。今天">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/626506-3454eb6f89bd0f99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-10-20T19:59:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="理解Swift中Extension类型">
+<meta name="twitter:description" content="13.times &amp;#123; puts &apos;hello world&apos; &amp;#125;
+这是一条Ruby语句，它会打印“hello world”三次，意图清晰，语法简洁。
+如果你是C或者Java等语言的使用者，而从未接触过Ruby，此时是不是有种打开了新世界的大门的感觉^_^。反正当初我刚接触Ruby那会儿时常会感叹，啊原来代码还可以这么写。。。Ruby的灵活与优雅当然远不仅于此，这里就不展开了。今天">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/626506-3454eb6f89bd0f99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'XILKIWTAM9',
+      apiKey: '99d43a85f328d00214c5de8007ce7920',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.naaln.com/2016/07/extension-swift/"/>
+
+
+
+
+
+  <title> 理解Swift中Extension类型 | Why·Liam·Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47966442-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Why·Liam·Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生若如初見</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-technology">
+          <a href="/categories/technology/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-code"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-jottings">
+          <a href="/categories/jottings/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-language"></i> <br />
+            
+            随笔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tour">
+          <a href="/categories/tour/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            旅游
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://blog.naaln.com/2016/07/extension-swift/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Liam">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/3387850?v=3&s=460">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Why·Liam·Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Why·Liam·Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                理解Swift中Extension类型
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-26T10:32:08-04:00">
+                2016-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/technology/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/07/extension-swift/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/extension-swift/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span><span class="selector-class">.times</span> &#123; puts <span class="string">'hello world'</span> &#125;</div></pre></td></tr></table></figure>
+<p>这是一条Ruby语句，它会打印<code>“hello world”</code>三次，意图清晰，语法简洁。</p>
+<p>如果你是C或者Java等语言的使用者，而从未接触过Ruby，此时是不是有种打开了新世界的大门的感觉^_^。反正当初我刚接触Ruby那会儿时常会感叹，啊原来代码还可以这么写。。。Ruby的灵活与优雅当然远不仅于此，这里就不展开了。今天的重点是，Swift也可以这么写。</p>
+<p>首先我们要明确，Ruby之所以可以这么写是因为它是一个纯面向对象的语言，在Ruby的世界中，一切皆对象，所有的事物都有一个共同的祖先——Object。3的类型是Fixnum,当然也是一个对象，所以它有自己的方法。times就是一个方法，可以看出应该是接收一个代码块（本例中为<code>{puts &#39;hello world&#39;}</code>），然后调用它self（本例中self即为3）次。</p>
+<p>而在Swift中，Int是一个struct(结构体)，并不是个class。但是Swift中的struct与别的语言中的struct不同的是，struct内部也可以定义方法。所以条件满足了，现在就差个times方法了。</p>
+<p>嗯，很遗憾Swift的Int并没有times方法。不过没关系，这个时候<code>extension</code>就派上用场了。没有我们就自己写一个嘛，私人化定制，满足一切突如其来的需求。先上代码好了：<br>定义：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Int</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">times</span><span class="params">(closure: <span class="params">()</span></span></span> -&gt; ()) &#123;</div><div class="line">       <span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">1</span>...<span class="keyword">self</span> &#123;</div><div class="line">            closure()</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>调用： <code>3.times { println(&quot;hello world&quot;) }</code></p>
+<p>是不是跟开头Ruby语句有异曲同工之妙？<code>extension</code>不仅可以扩展方法，还可以扩展计算属性。比如《The Swift Programming Language》中的一个例子：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span>​ ​<span class="title">Double</span>​ </span>&#123;</div><div class="line">​    ​<span class="keyword">var</span>​ ​km​: ​<span class="type">Double</span>​ &#123; ​<span class="keyword">return</span>​ ​<span class="keyword">self</span>​ * ​<span class="number">1_000.0</span>​ &#125;</div><div class="line">​    ​<span class="keyword">var</span>​ ​m​: ​<span class="type">Double</span>​ &#123; ​<span class="keyword">return</span>​ ​<span class="keyword">self</span>​ &#125;</div><div class="line">​    ​<span class="keyword">var</span>​ ​cm​: ​<span class="type">Double</span>​ &#123; ​<span class="keyword">return</span>​ ​<span class="keyword">self</span>​ / ​<span class="number">100.0</span>​ &#125;</div><div class="line">​    ​<span class="keyword">var</span>​ ​mm​: ​<span class="type">Double</span>​ &#123; ​<span class="keyword">return</span>​ ​<span class="keyword">self</span>​ / ​<span class="number">1_000.0</span>​ &#125;</div><div class="line">​    ​<span class="keyword">var</span>​ ​ft​: ​<span class="type">Double</span>​ &#123; ​<span class="keyword">return</span>​ ​<span class="keyword">self</span>​ / ​<span class="number">3.28084</span>​ &#125;</div><div class="line">​&#125;</div><div class="line">​<span class="keyword">let</span>​ ​oneInch​ = ​<span class="number">25.4</span>​.​mm</div><div class="line">​<span class="built_in">println</span>​(​<span class="string">"One inch is ​<span class="subst">\(​oneInch​)</span>​ meters"</span>​)</div><div class="line">​<span class="comment">// prints "One inch is 0.0254 meters"</span></div><div class="line">​<span class="keyword">let</span>​ ​threeFeet​ = ​<span class="number">3</span>​.​ft</div><div class="line">​<span class="built_in">println</span>​(​<span class="string">"Three feet is ​<span class="subst">\(​threeFeet​)</span>​ meters"</span>​)</div><div class="line">​<span class="comment">// prints "Three feet is 0.914399970739201 meters”</span></div></pre></td></tr></table></figure>
+<p><code>extension</code>在实际的开发中可以有很多应用，使用得当能显著提高代码的可读性，平常我们自己写的大多数辅助类其实都可以转化为<code>extension</code>。譬如我最近在自己的项目中给被点击的UIView（比如button）写了一个小动画，点击了之后组件会上浮一下，并且同时会有一下阴影效果。<br>定义：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">extension <span class="built_in">UIView</span> &#123;</div><div class="line">    func animateWhenClicked() &#123;</div><div class="line">        <span class="keyword">self</span>.backgroundColor = <span class="built_in">UIColor</span>(white: <span class="number">0.9</span>, alpha: <span class="number">0.5</span>)</div><div class="line">        <span class="keyword">self</span>.layer.transform = <span class="built_in">CATransform3DMakeScale</span>(<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>)</div><div class="line">        <span class="built_in">UIView</span>.animateWithDuration(<span class="number">0.9</span>, animations: &#123;</div><div class="line">            <span class="keyword">self</span>.backgroundColor = <span class="built_in">UIColor</span>.whiteColor()</div><div class="line">            <span class="keyword">self</span>.layer.transform = <span class="built_in">CATransform3DMakeTranslation</span>(<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>)</div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用（仅点击动画部分代码）：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">button</span><span class="selector-class">.addTarget</span>(viewCtrl, <span class="attribute">action</span>: <span class="string">"clicked:"</span>, <span class="attribute">forControlEvents</span>: .TouchUpInside)</div><div class="line"><span class="selector-tag">func</span> <span class="selector-tag">clicked</span>(<span class="attribute">sender</span>: UIButton) &#123;</div><div class="line">    <span class="selector-tag">sender</span><span class="selector-class">.superview</span>!<span class="selector-class">.animateWhenClicked</span>()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/626506-3454eb6f89bd0f99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>大概就是右上角的效果，呃，静态图看不出来，各位要是有兴趣可以拿我的扩展方法然后自己初始化个Button去跑跑看(直接<code>sender.animateWhenClicked()</code>就好，不用<code>superview)</code>。因为我在项目中的Button是一个自定义的贪婪Button，只要点击Button的父视图就会响应点击事件,所以是Button的superview调用了animateWhenClicked，这也是我把这个动画扩展到UIView而不是UIButton的原因。</p>
+<p>我个人很喜欢<code>extension</code>，平常也经常使用。<code>extension</code>也可用于后期项目维护，可以在不修改旧代码的前提下扩展旧代码的功能。而且对于<code>NSObject</code>的子类或者有dynamic标记的方法，利用扩展还可以在运行时对某些方法的实现进行替换，类似于OC的Swizzle，今天就不展开了，下次有空继续。</p>
+<p>文／Sheepy</p>
+<p>原文链接：<a href="http://www.jianshu.com/p/f41bf33fac0b" target="_blank" rel="external">http://www.jianshu.com/p/f41bf33fac0b</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://ww1.sinaimg.cn/mw690/48910e01gw1evkbf70jcgj20cg0cidh5.jpg" alt="Liam WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://ww3.sinaimg.cn/mw690/48910e01gw1evkbfendrjj20ci0ci0uf.jpg" alt="Liam Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/optional-type-in-swift/" rel="next" title="理解Swift中Optional类型">
+                <i class="fa fa-chevron-left"></i> 理解Swift中Optional类型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/tuple-struct-enum-swift/" rel="prev" title="Swift中元组,结构体,枚举之间的区别">
+                Swift中元组,结构体,枚举之间的区别 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/07/extension-swift/"
+     data-title="理解Swift中Extension类型"
+     data-content=""
+     data-url="https://blog.naaln.com/2016/07/extension-swift/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/extension-swift/"
+           data-title="理解Swift中Extension类型" data-url="https://blog.naaln.com/2016/07/extension-swift/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/3387850?v=3&s=460"
+               alt="Liam" />
+          <p class="site-author-name" itemprop="name">Liam</p>
+          <p class="site-description motion-element" itemprop="description">人生若如初見</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">672</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/liszd" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/whyliam" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.naaln.com/" title="纳兰主页" target="_blank">纳兰主页</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://photo.naaln.com/" title="纳兰相册" target="_blank">纳兰相册</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2003 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liam</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"naalnblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+</body>
+</html>

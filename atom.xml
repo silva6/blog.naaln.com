@@ -1,0 +1,1175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Why·Liam·Blog</title>
+  <subtitle>人生若如初見</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://blog.naaln.com/"/>
+  <updated>2016-11-24T14:48:30.000Z</updated>
+  <id>https://blog.naaln.com/</id>
+  
+  <author>
+    <name>Liam</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何备份导出 IOS 微信聊天数据库</title>
+    <link href="https://blog.naaln.com/2016/11/backup-wechat-history/"/>
+    <id>https://blog.naaln.com/2016/11/backup-wechat-history/</id>
+    <published>2016-11-24T14:31:24.000Z</published>
+    <updated>2016-11-24T14:48:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>网络上已经有一些关于探讨如何导出 IOS 版微信聊天记录的导出，比如 WeBack 和 iTools ，但这两类工具主导针对的都是小白用户，并没有给出如何获取完整数据库的方案，尽管实际原理相差无几，但想要程序更好地进行操作数据，还是所有差别，特此记录。</p>
+<p>目前最新的 IOS 版本为 10.1.1，据观察该版本的备份文件存储格式与 IOS9 略有不同，因此部分没有及时更新的导出工具暂时无法使用。</p>
+<h3 id="创建-iPhone-备份"><a href="#创建-iPhone-备份" class="headerlink" title="创建 iPhone 备份"></a>创建 iPhone 备份</h3><p>想要获取到应用的具体数据，就先要将数据以备份的形式先存储在电脑上，本文以 Mac 系统为例。</p>
+<p>首先，使用数据线将手机连接上电脑，如果是首次连接，需要选择 信任该电脑。</p>
+<p>然后打开 iTunes，找到正在连接的手机：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/2946214/20511361/b77acfc0-b045-11e6-80fe-54f7534ccba6.png" alt=""></p>
+<p>在<code>备份</code>区域内，选择<code>本电脑</code>，并务必取消勾选<code>给 iPhone 备份加密</code>，否则之后我们取出的数据也是无法使用的：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/2946214/20511398/106dafc6-b046-11e6-8823-89696f8f5139.png" alt=""></p>
+<p>接着，点击<code>立即备份</code>并等待备份完成：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/2946214/20511409/30258014-b046-11e6-95ff-382a5bcb32f3.png" alt=""></p>
+<h3 id="获取微信数据库"><a href="#获取微信数据库" class="headerlink" title="获取微信数据库"></a>获取微信数据库</h3><p>为了方便地取出相应的备份数据，我们需要借助工具 <a href="http://www.iphonebackupextractor.com/free-download/" target="_blank" rel="external">iPhone Backup Extractor</a> ，虽然这是一款收费软件，但是试用的功能已经完全满足我们的需求。</p>
+<p>下载安装后，在左侧列表找到我们刚刚创建的备份文件（图标为 iTunes 样式的）：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/2946214/20511494/df4f2ea0-b046-11e6-8396-3572c1d40678.png" alt=""></p>
+<p>单击之后需要等待加载完成，大约需要几十秒。加载完毕之后，我们就可以选择专家模式（Expert Mode）：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/2946214/20511520/05a78ae8-b047-11e6-9144-f282b921d5c4.png" alt=""></p>
+<p>我们需要的文件为 <code>Application Domains/com.tencent.xin/{UUID}/DB/MM.sqlite</code>，将其勾选：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/2946214/20511550/4335587c-b047-11e6-91fc-268611ab3dc6.png" alt=""></p>
+<p>在 com.tencent.xin 目录下会有多个 UUID 组成的目录，其中一个全部为 0 可以忽略。剩下就需要根据你的微信用户来选择了（如果知道算法的小伙伴请不吝赐教！），我的手机只登陆过一个微信号，所以没有这个麻烦：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/2946214/20511596/8913614a-b047-11e6-9f4e-92e0febfce71.png" alt=""></p>
+<p>最后，就可以单击右下角的 Extract 按钮导出数据库了：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/2946214/20511619/b4ac3822-b047-11e6-8382-024006608f95.png" alt=""></p>
+<p>大功告成！</p>
+<p>至于数据库里面的具体关系，大家可以参阅文章 <a href="/2016/11/wechat-data-structure/">iOS 微信的本地存储结构简析</a>。</p>
+<p>来源： <a href="https://github.com/Unknwon/wuwen.org/issues/15?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="external">如何备份导出 IOS 微信聊天数据库</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;网络上已经有一些关于探讨如何导出 IOS 版微信聊天记录的导出，比如 WeBack 和 iTools ，但这两类工具主导针对的都是小白用户，并没有给出如何获取完整数据库的方案，尽管实际原理相差无几，但想要程序更好地进行操作数据，还是所有差别，特此记录。&lt;/p&gt;
+&lt;p&gt;目前最
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.naaln.com/categories/technology/"/>
+    
+    
+      <category term="微信" scheme="https://blog.naaln.com/tags/%E5%BE%AE%E4%BF%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iOS 微信的本地存储结构简析</title>
+    <link href="https://blog.naaln.com/2016/11/wechat-data-structure/"/>
+    <id>https://blog.naaln.com/2016/11/wechat-data-structure/</id>
+    <published>2016-11-24T14:30:24.000Z</published>
+    <updated>2016-11-24T14:48:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>大约四年前，我有了一个暗恋对象，所以想要把微信的聊天记录保存起来。那时在网上只有一种要付费的类似软件，所以我想，写一个开源的工具好了。于是这件事<a href="https://github.com/tiancaihb/SaWechat-iOS" target="_blank" rel="external">很快就完成了</a>（对应微信 6.0；那时的代码质量很低我知道）。</p>
+<p>后来我没有了暗恋对象，也就不再关心这件事。最近，因为有不少人认为这样的功能仍然很有用，并且据我搜索到的情况，仍然没有能让每个人拿来直接用的工具。因为在几年之间文件结构发生了一些变化，我在这里记录下来，方便其他的开发者（对应现在的版本 6.3.25；虽然我没想到还能有什么用）。</p>
+<h3 id="怎么得到这些文件"><a href="#怎么得到这些文件" class="headerlink" title="怎么得到这些文件"></a>怎么得到这些文件</h3><p>过去，我可以提示用户在越狱之后用软件自行把微信 App 所在文件夹复制出来。然而自从某个版本的 iOS 开始，在不越狱的情况下，我们只能看到 <code>/User/Media</code> 这里的文件，而需要的本地数据在 <code>/User/Containers/Data/Application/</code> 微信的 UID。强迫用户为了这么一件事前去越狱显然不太友好，而对“聊天记录迁移”抓包也不方便，所以我想到另一种途径。</p>
+<p>这就是 iTunes 备份。从经验判断，恢复备份之后微信里的聊天记录都还在，说明肯定这些文件在备份的时候保存到了电脑上。它们在哪里？<a href="https://support.apple.com/zh-cn/HT204215" target="_blank" rel="external">苹果官方给了答案</a>。简单地说，Windows 下在<code>\用户\（用户名）\AppData\Roaming\Apple Computer\MobileSync\Backup\</code>，然后我不喜欢用 Mac OS。</p>
+<p>不过，iTunes 备份的文件夹结构不是很友好，似乎每个手机上的文件名都变成了一串序号，当然打开相关的 plist 然后看出规律也不难。好消息是，已经有很多人做了类似的事情，例如 <a href="https://code.google.com/archive/p/iphonebackupbrowser/" target="_blank" rel="external">iphonebackupbrowser</a>，它也是用 C# 写的，用起来比较方便。</p>
+<p>因此，我做的第一步是让用户选取做好的 iTunes 备份，从上面那个源码，稍微修改一下就可以找到 com.tencent.xin 的相关文件，从而在程序里直接通过 iOS 上的路径找到对应的文件。</p>
+<h3 id="主要的数据库：MM-sqlite"><a href="#主要的数据库：MM-sqlite" class="headerlink" title="主要的数据库：MM.sqlite"></a>主要的数据库：MM.sqlite</h3><p>从很久以前，iOS 微信的大部分数据就保存在这个 SQLite 3 数据库里。没有安卓上可恶的加密，直接可以打开。这个文件在 Documets/xxxx/DB/MM.sqlite，中间是对应用户名的 MD5，稍后会讲它的具体含义。不过一般只需要遍历所有的。</p>
+<p><img src="https://pic3.zhimg.com/94103a48241ebc4fecb947db31a3a5e2_b.png" alt=""></p>
+<p>我们感兴趣的是 Chat_ 开头的表，分别是和一个人（或群聊、公众号）的对话内容；以及记录朋友列表的 Friend 和 Friend_Ext。下面两图是朋友表的内容：</p>
+<p><img src="https://pic4.zhimg.com/231c54f86ad0db1f43a2fbe5776a9bff_b.png" alt=""></p>
+<p><img src="https://pic1.zhimg.com/daeae17863884f588c317879024a87bc_b.png" alt=""></p>
+<p>很明显，微信号是 UsrName，昵称是 NickName，备注名在 ConRemark。</p>
+<p>此外在 ConStrRes2 里面（XML 格式）还有一些有用的信息。比如地区、签名、来源、LinkedIn……我们更需要的是头像的地址 HeadImgUrl，下面会用到。</p>
+<p><img src="https://pic2.zhimg.com/dcc464dcc31bf9f3f8015a1be7796141_b.png" alt=""></p>
+<p>特别有个属性叫 alias 需要处理。我们知道每个用户最多可以修改一次微信号，那么新的微信号就会保存在 alias 当中。因为很多地方是用微信号作为 key 来索引到用户的（尽管每个用户也有一个数字的 ID），我们对两种微信号都要检查。</p>
+<p>既然已经知道所有人的信息，下面就来看聊天记录。不过在这之前，我还遇到了一个意想不到的新问题。</p>
+<h3 id="消失的-Friend"><a href="#消失的-Friend" class="headerlink" title="消失的 Friend"></a>消失的 Friend</h3><p>程序写到一半，在某次备份之后，突然读不到朋友们的名字了。打开 MM.sqlite，发现 Friend 表当中确实几乎已经没有记录。那么微信究竟把这么多信息藏到哪里了？</p>
+<p>我发现在同一个文件夹下面还有名叫 WCDB_Contact.sqlite 的文件。打开之后一目了然：</p>
+<p><img src="https://pic1.zhimg.com/4d7af05fbccc5b9cdabfd693a38d2d18_b.png" alt=""></p>
+<p>猜想是因为随着中老年用户大量加入各种群聊，用户表的长度急速增长（聊天室里的陌生人可能也需要记录信息呀！），所以微信在最近的版本里选择了分表，而我刚好赶上了它转存数据的这个时间。</p>
+<p>后面那些列都是 BLOB 格式的二进制，打开之后是这样的：</p>
+<p><img src="https://pic4.zhimg.com/9a3bd9f6434f5b49576b6bcb65a4df03_b.png" alt=""></p>
+<p>以人类的视角，我们很容易看出所有内容的含义，只要多一些耐心，都可以直接找到需要的内容。问题在于，让程序怎么分割呢？</p>
+<p><img src="https://pic4.zhimg.com/afc9c49ef5b65f9a6d6dcfea9fbc280f_b.png" alt=""></p>
+<p>我们来观察一下这位微信号为 suan<strong><em>*</em></strong>cai 的朋友的信息。图片中选中了他的微信号字符串，那么微信如何知道这是需要的字符串呢？一种猜想是用分隔符，例如 C 字符串的 ‘\0’ 结尾。但是，这字符串之后是 0x1a （或者其他很多可能性），无法与正常字符区分。另一种选择是在文件开始记录每一个变量的偏移量，但是观察其他文件发现开头部分非常短，最多 3 字节，不足以保存这样的内容。</p>
+<p>自然只剩字符串的前一字节。0x0e，这刚好是选中字符串的长度。我们再往后看，例如有一个拼音首字母 XXK，刚好前一个字节是 0x03。后面的备注 INI-Mob，所以前一个字节是 0x07。于是这个疑问解决了。</p>
+<p>再前面一个字节，例如第一行的 0x12，可以发现在同类每个文件的相应位置都不变。我猜想是下一个字符串的类型。</p>
+<p>这样，这种记录的结构我们已经大致了解：</p>
+<p>开头若干字节未知信息 –&gt; (1 字节类型说明 –&gt; 1(?) 字节长度 –&gt; 字符串) 若干个</p>
+<p>不过，在 dbContact 的上空还飘着两朵乌云：</p>
+<p>(1) 文件开头究竟应该跳过几个字节，开始真正的内容？这好像在文件自身当中找不到线索，但在同一列当中是相同的，例如 dbContactRemark 是 0x0a，dbContactProfile 是 0x08 0x?? 0x12。问号表示可能有差别，但长度是确定的。所以相应地，可以人为让每种类型跳过若干个字节。至少我没有找到任何反例。</p>
+<p>(2) 如果字符串长度超过一字节的表示范围，怎么办？一种合理的猜想是类似 UTF-8 或者 SQLite 的数值类型的表示法，也就是让某些高位为 1 来表示这个数字还要加上下一个字节。我暂时没有过多检验这个说法，因为唯一涉及这个问题的地方是 dbContactHeadImage 和 dbContactChatRoom。而这二者都有很明显的分隔位置，例如头像的链接总是以 http 开始，到 \/\d+ 为止。我在这里偷懒直接去匹配了。</p>
+<h3 id="聊天文字记录"><a href="#聊天文字记录" class="headerlink" title="聊天文字记录"></a>聊天文字记录</h3><p>有了前面的准备，我们已经可以解析 <code>Chat_[0-9a-f]{32}</code> 表，并且以文本形式导出每个对话的聊天记录。怎么知道聊天的对象是谁？Chat_ 后面是 UsrName 或 alias 的 MD5 值。</p>
+<p><img src="https://pic3.zhimg.com/68499f7761d5384b2801c87bde22d7c6_b.png" alt=""></p>
+<p>首先看一下聊天记录的结构。MesLocalID 是一个比较重要的数字，虽然暂时还用不到。CreateTime 顾名思义，并且应该是 UTC+0 的。Message 就是消息本身。Type 表示消息的类型，可以自己试验一下，最后 Des 应该表示我是否为消息的接收方。</p>
+<p>下面简单描述一下我见到过的 Type 和对应的 Message 处理：</p>
+<p>10000: 系统消息，就是那种居中的。</p>
+<p>34: 语音，消息里会有</p>
+<p>47: 表情，</p>
+<p>62: 小视频，&lt;videomsg。</p>
+<p>50: 视频 / 语音通话，&lt;voipinvitemsg。本来在微信里二者就可以切换，对用户解释得太细也没啥用。</p>
+<p>3: 图片。</p>
+<p>48: 位置。</p>
+<p>42: 名片。</p>
+<p>49: 链接。这里面包含的类别比较多，在 Message 里面会有、、、 等信息。微信应该是通过 标签来确定一些特殊的应用，比如 2001 是红包，2000 转账，17 实时位置共享，6 文件。（我试过把它或者后面的模板地址改成别的，好像不管用。）</p>
+<p>对于导出文字来说，这些特殊的东西就给用户显示个“[图片]”、“[表情]”吧。</p>
+<p>还有一个问题是群聊，特点是用户名为 \d+@chatroom。在群聊当中，每个人（除了自己）的发言前面都会有“微信号:\n”，好让我们知道对方身份。问题在于，有些人在群聊当中可以改自己显示的名字。这个信息如果在新版数据库当中，包含在 dbContactChatRoom 列。它有 … 的结构，处理起来应该不难。</p>
+<h3 id="其他多媒体资源"><a href="#其他多媒体资源" class="headerlink" title="其他多媒体资源"></a>其他多媒体资源</h3><p>为了给用户初恋般的体验，我还希望能尽量还原聊天的全部内容，这就需要加入对应的图片（头像）、语音、视频、动画表情等元素。</p>
+<p>我们自然会想在“Documents/ 微信号的 MD5”文件夹下面找这些内容。这时很容易发现：</p>
+<p>(1) Img 文件夹中有一些以 MD5 命名的文件夹，它们对应数据库中的各 Chat_ 表，而具体文件是以数字编号的，这个编号等于对应消息的 MesLocalID（上面提到过）。文件有三种后缀：.pic、.pic_hd、.pic_thum，顾名思义是正常大小的图片、原图、缩略图。基本上是 JPEG 格式吧，这个影响不大。</p>
+<p>(2) Video 文件夹类似，有 .video_thum 扩展名的缩略图，以及 .mp4 的视频本体。视频是 AVC+AAC 编码的，不过仍然不重要吧。</p>
+<p>(3) Audio 是语音，以前是 3GP 格式，现在打开之后可以看到 SILK_V3 的字样，搜索可以直接发现<a href="https://github.com/kn007/silk-v3-decoder" target="_blank" rel="external">编译好的转换程序</a>。不过没有源码，也可以自行搜索其他解决方案。</p>
+<p>然而在这个版本中，我始终没有从备份当中找到动画表情和头像这两项资源。怎么回事？</p>
+<p>正好那段时间盘古越狱出现了，我把完整的 Documents 和 Library 文件夹复制出来，看了一遍。原来它们在 Library/WechatPrivate 里，而这个文件夹设置成了不备份。这也有道理，因为前面的几个是个人的资源，而头像和表情随时都可以再去下载，所以并不需要放在 iTunes 备份当中。</p>
+<p>那么不越狱的情况下，我们怎么获得它们呢？记得上面提到过，在每个好友的 dbContactHeadImage 当中有正常和放大头像的地址；如果看一下含有动画表情的消息，其中也有这个表情的 GIF 地址。好的，下载就可以了。</p>
+<p>最后，还有一件小事有点麻烦。</p>
+<p>当前用户的微信号和头像在哪？</p>
+<p>打开 mmsetting.archive，这是一个 plist 文件，在里面有几项是我的微信号、昵称、头像地址……</p>
+<p><img src="https://pic3.zhimg.com/68499f7761d5384b2801c87bde22d7c6_b.png" alt=""></p>
+<p>问题在于这里没有很清楚的 key-value 形式，所以只能猜测出来一些找到相应内容的方法。如果能改进一下就更好了。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>以上描述了找到微信聊天记录涉及的文件的方法，不过讲道理它们都只能算是“有根据的推测”。因为聊天记录这件事不太方便收集测试数据，只能保证它们符合我能找到的记录。</p>
+<p>我写了一个<a href="https://github.com/tiancaihb/WechatExport-iOS" target="_blank" rel="external">新的微信聊天记录导出工具</a>放在 GitHub 上，请有兴趣的读者尽情地 Fork 走修改之类的！</p>
+<p>来源：<a href="http://zhuanlan.zhihu.com/p/22474033" target="_blank" rel="external">查看知乎原文</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;大约四年前，我有了一个暗恋对象，所以想要把微信的聊天记录保存起来。那时在网上只有一种要付费的类似软件，所以我想，写一个开源的工具好了。于是这件事&lt;a href=&quot;https://github.com/tiancaihb/SaWechat-iOS&quot; target=&quot;_blan
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.naaln.com/categories/technology/"/>
+    
+    
+      <category term="微信" scheme="https://blog.naaln.com/tags/%E5%BE%AE%E4%BF%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>张小龙说 &quot;好的产品应该是用完即走的&quot;</title>
+    <link href="https://blog.naaln.com/2016/11/leave-your-app/"/>
+    <id>https://blog.naaln.com/2016/11/leave-your-app/</id>
+    <published>2016-11-03T21:05:33.000Z</published>
+    <updated>2016-11-03T21:27:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>张小龙在2016微信公开课的演讲在朋友圈刷屏了。很多的观点是否的有意思，这里体现了了小龙的简练、深邃的产品哲学。</p>
+<p>其中有个一观点十分值得讨论。<code>好的产品应该是用完即走的</code>，就是说，“一个好的产品不是黏住用户，而是尽量让这个用户离开你的产品”。张小龙还谈到<code>我们要考虑的则是怎么样更高效率帮助用户完成任务，而不是让用户在微信里面永远都有处理不完的事情</code>，<code>我们希望用户在用微信的时候，最高效率把必须要做的在微信里面做完，把时间留出来去做很多别的事情</code>。</p>
+<p>其实类似的观点Google很久之前就讲过。</p>
+<blockquote>
+<p>我们很清楚，您的时间非常宝贵，因此，当在网络上寻找某个问题的答案时，您一定希望瞬间就能找到，而我们的目标就是满足您的这些需求。我们的目标是让用户尽快离开我们的网站</p>
+</blockquote>
+<p>我当然十分的认同这个观点：</p>
+<blockquote>
+<p>好的工具就是应该最高效率的完成用户的目的，然后尽快的离开。如果一个用户要沉浸在里面，离不开，就像你买一辆汽车，你开完了，你到了目的地，你说汽车里面的空调特别好，所以要待在里面，那不是它应该做的事情。所以业界很羡慕微信是用户的时间杀手，但是我们要考虑的则是怎么样更高效率帮助用户完成任务，而不是让用户在微信里面永远都有处理不完的事情，所以大家会看到微信的朋友圈会限制很严，各种营销在朋友圈里面我们都会很严格的对待。我们刚开始看朋友圈里面都是一些朋友的动态，可是慢慢发现朋友圈里面有很多心灵鸡汤，被各种各样地诱导上来发了一些内容，如果这样的信息多了其实最终的结果未必好，最终的结果可能是用户觉得朋友圈里面的信息太水了、太杂了，慢慢他再看朋友圈的意愿越来越低，这会变得非常可怕。因为朋友圈的进入次数特别多，平均一个用户每天大概有30、40次进入朋友圈，这是一个反复的过程，我们希望每次进来用户都不是很快的刷屏，而是看到的都是他愿意看到的内容。</p>
+<p>如果是很早期的微信用户就会发现，微信其实一直不鼓励你加太多好友，所有的加好友都要经过你的验证通过才会加进来，其实如果微信作为一个产品要让好友变得很多的话很简单，只要把QQ好友、手机通讯录导进来默认变成你的好友就好了。但是我们一直非常谨慎，一直希望用户的好友不要太多，所以每次加好友都提示用户是不是确定要添加他，从来没有说批量导入过，我们业界经常说少即是多，但其实这也会变成一句口头禅，因为没有人真正明白，更少的信息意味着用户可以更高效的处理，意味着他可以腾出更多的时间，意味着这个产品的未来会变得更大。</p>
+</blockquote>
+<p>微信是一个十分克制的产品，希望用户用完就走，希望微信的关系纯粹。</p>
+<p>可以说这是一个理想主义成功的产品，这不经让我开始思考：</p>
+<p>微信的产品可以做到<code>用完即走，下次回来</code>，我的软件是不是 <code>用完即走，再不回来</code>。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;张小龙在2016微信公开课的演讲在朋友圈刷屏了。很多的观点是否的有意思，这里体现了了小龙的简练、深邃的产品哲学。&lt;/p&gt;
+&lt;p&gt;其中有个一观点十分值得讨论。&lt;code&gt;好的产品应该是用完即走的&lt;/code&gt;，就是说，“一个好的产品不是黏住用户，而是尽量让这个用户离开你的产品
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.naaln.com/categories/technology/"/>
+    
+    
+      <category term="产品" scheme="https://blog.naaln.com/tags/%E4%BA%A7%E5%93%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>最完美的相恋</title>
+    <link href="https://blog.naaln.com/2016/11/awsome-love/"/>
+    <id>https://blog.naaln.com/2016/11/awsome-love/</id>
+    <published>2016-11-03T17:52:56.000Z</published>
+    <updated>2016-11-03T17:55:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://pic2.zhimg.com/d57251ab7e519b51144944cff5795b15.jpg" alt=""></p>
+<h3 id="结局一："><a href="#结局一：" class="headerlink" title="结局一："></a>结局一：</h3><p>她走了之后，他便忘了怎样活了。明明之前几十年活的都那么自然的。活着这件最简单的事情，他却做不好了。他院子的山茶都谢了，壶里的东阳酒都干了。家里的几幅字画都被尽皆扯烂。</p>
+<p>自她一去，他再也写不出半个字了。</p>
+<p>又过了几日，他恍恍惚间坐起，把干了的墨又润湿，写下苍劲的六字。</p>
+<p>“可惜余生无乐。”</p>
+<p>他便饮一壶烈酒，醉倒在竹林里，也不愿醒来。</p>
+<h3 id="结局二："><a href="#结局二：" class="headerlink" title="结局二："></a>结局二：</h3><p>他把她葬了，葬在甘棠旁，看着落花把她盖满。</p>
+<p>但是他一点哭的意思也没有，心口竟也没有半点伤痛。他想起庄子的妻子死后，庄子鼓盆而歌，像是要兴奋的乐舞。他的感觉大致于此，竟然忍不住要欢呼。</p>
+<p>她久病已经一年有余，她的病也是他心中的一块顽疾。他积年累月的忧虑，而今她就这样走了，却释然下来，好像终于了无牵挂一样。</p>
+<p>他把她去世的消息避而不言，反而召集同僚好友，在庭中痛饮。他把家里最陈年的佳酿搬出来，把酒杯举的豪迈，醉意醺的他脸颊泛红，他说：“各位，今日欢聚兴至，我有一喜事要告诉大家。”</p>
+<p>众人抬起头来，看着他笑容僵住，突然说不出话来。</p>
+<p>他看着雪白的甘棠花飘过，忍不住嚎啕大哭。</p>
+<h3 id="结局三："><a href="#结局三：" class="headerlink" title="结局三："></a>结局三：</h3><p>那年他还在边疆，蛮夷的战线越逼越紧，他的数万兵马都现在了敌阵的泥潭里。</p>
+<p>他眉头紧锁，在沙地上跟策士排兵布阵直到夜深，军帐被掀起一角。</p>
+<p>“将军，夫人昨夜去了。”</p>
+<p>他心中轻了数许，恍然一切包袱都没有了。他骑上战马，背起长枪，带着一众精锐突围。</p>
+<p>后人称他那夜骁勇如神，斩敌三百，腹背受刀伤十余处不倒。</p>
+<p>现在先皇已逝，他也老了，糊涂了，没人记得这个塞外第一战将。他就站在猎猎军旗旁，是他和她初见的地方，双目无神，形容枯槁。</p>
+<p>只是偶尔喃喃的说：“军马性烈，搂着我，别怕。”</p>
+<h3 id="结局四："><a href="#结局四：" class="headerlink" title="结局四："></a>结局四：</h3><p>她姿色平平，只是按父母之命，配给他的一段姻缘。所以即便她伴了他十年，就这样去了，他好像也没些许挂念。</p>
+<p>他父亲是雄踞一方的富商。他自然出手阔绰，纨绔成性。光是贪享过的烟花柳巷，就不知道多少。</p>
+<p>女人在他身边来来往往，他夜夜欢度春宵。他风流成性，却也翩翩有礼，温文尔雅，成了风尘女子中的一段佳话。</p>
+<p>这夜那妩媚的舞娘又缠上他，问他要银两。他一掷千金，笑的欢畅。舞娘又要他腰间绣的精妙的香囊，他一怔，却是冷颜相拒。</p>
+<p>他看着舞娘故作嗔怒的样子，一阵厌恶，默然转身离去。</p>
+<p>“便是你们再妖娆，也抵不过她绣的一个香囊。”</p>
+<h3 id="结局五："><a href="#结局五：" class="headerlink" title="结局五："></a>结局五：</h3><p>他本是宫里最有灵性的琴师，曲子激悦清澈，有如天籁。可自从她死之后，他谱的曲子越发压抑低缓。</p>
+<p>那是中秋佳节，本是欢喜团圆的好日子。他却为皇上奏了一曲至哀至伤的悲乐，如若曲终断肠。皇上自然震怒，但又怜惜他是琴中奇才，只好把贬入西苑三年，不得奏乐。</p>
+<p>三年已至，又是中秋。皇上想起他还在西苑软禁，又回忆起他旧日极妙的曲，便去探视。</p>
+<p>路至西苑旁，听见清婉琴声，玄妙如月下流苏，那境界非但没有哀沉，反而更胜往日几分。皇上大喜，连忙跑入苑中。</p>
+<p>看见他沉醉痴迷的对着她的画像弹奏，面上含着浅笑。</p>
+<p>via. <a href="http://daily.zhihu.com/story/8944597" target="_blank" rel="external">方糖。</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://pic2.zhimg.com/d57251ab7e519b51144944cff5795b15.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;结局一：&quot;&gt;&lt;a href=&quot;#结局一：&quot; class=&quot;headerlink&quot; title=
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://blog.naaln.com/categories/jottings/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>在美国推广支付宝和微信支付方式</title>
+    <link href="https://blog.naaln.com/2016/11/widely-accepted-payment-system/"/>
+    <id>https://blog.naaln.com/2016/11/widely-accepted-payment-system/</id>
+    <published>2016-11-02T20:46:29.000Z</published>
+    <updated>2016-11-02T21:13:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>2016年，我回了一趟中国。中国的手机支付环境犹如春后的竹笋遍地生长。在支付宝和微信的推动之下，中国人几乎可以出门不用带钱包了。没想到这一步走得比美国还快。</p>
+<p>在美国，最流行的支付方式还是信用卡，信用卡的先天优势显著限制了手机支付方式的发展。</p>
+<p>回美国后一个问题就困扰着我，如何在美国推行支付宝和微信支付。</p>
+<p>这是一个“广泛接受”的问题，如何使人们在现有的支付环境中跳出来，去接受一个新的支付方式。</p>
+<p>其中一个核心的问题是商家是不是有意愿使用你的服务。就个例子，在美国，人们的付款习惯是，吃完饭出来一张账单，用户看一眼账单后给服务员银行卡，服务员刷完卡后上写下小费，并签名。就可以离去了。但是使用手机支付后的步骤大大减少，用户吃完饭后，掏出手机，付完账单后就自行离去。</p>
+<p>其中，有几个的问题，餐馆不知道用户是不是要手机付款，服务员不知道用户有没有付小费（小费是服务员的工资），餐馆不知道用户离去的时候是否已经把账单结清了，还有用户不知道付完款后需不需要向餐馆确认自己已经可以离去了。</p>
+<p>在14年，OpenTable在尝试做手机付款的时候就遇到了以上问题。</p>
+<blockquote>
+<p>在实际操作中，直接通过手机 App 直接支付餐费很可能会带来一些尴尬的问题。比如，顾客在付完餐费后往往会直接离开，而不知情的服务员很可能会指责顾客“逃单”。为此，OpenTable 特别为餐厅设计了一套通知系统。在系统内，支持 OpenTable 支付的顾客会在名字前面被标注“OT”。同样，在正确的时间向用户推送账单也是 OpenTable 十分关注的。</p>
+</blockquote>
+<p><img src="http://cdn.pingwest.com/wp-content/uploads/2014/03/OT-Mobile-Payments-iPhone-Shot-2.6.2014.jpg?imageView2/2/w/750/q/90" alt=""></p>
+<blockquote>
+<p>顾客通过 OpenTable App 收到账单后，可以在上面添加小费，然后滑动屏幕下方即可完成支付。随后，顾客会通过 E-mail 收到收据。OpenTable 最近在旧金山小范围测试的目的，就是希望发现支付环节的问题与不通畅，最终使顾客在一种完全不被强迫与打扰的环境下完成用餐和结款。只有这样，才能实现这项功能的 “广泛接受”。</p>
+</blockquote>
+<p>我提出了自己一套反放的付款方式，将手机付款向信用卡付款流程靠拢。</p>
+<p>用户吃完饭后出来账单，用户在手机上选择小费，付款方式等，富付款后，服务员拿来一张账单签字，用户可以自行离去。 这套流程在于增加了事情的复杂度，向人们的习惯即（信用卡的支付流程靠拢），达到用户付款后离去的传统支付体验。从而带来“广泛接受”的支付体验。</p>
+<p>最后一步，服务员拿单来签字存粹是多余的步骤，这个解决的核心问题是 用户暂时不接受 手机支付的这个场景。可能两三月后会完全抛弃这个多余的步骤。</p>
+<p>这个就很像 乔布斯在发明iPhone的时候使用的是拟物的图标，主要的原因是教育人们使用手机，学习教育形成使用手机习惯。广泛接受后推行扁平化的图标，开始真正简洁的设计风格。</p>
+<p>以上</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2016年，我回了一趟中国。中国的手机支付环境犹如春后的竹笋遍地生长。在支付宝和微信的推动之下，中国人几乎可以出门不用带钱包了。没想到这一步走得比美国还快。&lt;/p&gt;
+&lt;p&gt;在美国，最流行的支付方式还是信用卡，信用卡的先天优势显著限制了手机支付方式的发展。&lt;/p&gt;
+&lt;p&gt;回美
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.naaln.com/categories/technology/"/>
+    
+    
+      <category term="产品" scheme="https://blog.naaln.com/tags/%E4%BA%A7%E5%93%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>技术人员怎样转型成为产品经理？</title>
+    <link href="https://blog.naaln.com/2016/10/coder-to-producter/"/>
+    <id>https://blog.naaln.com/2016/10/coder-to-producter/</id>
+    <published>2016-10-20T21:17:07.000Z</published>
+    <updated>2016-10-20T21:20:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>一个优秀的技术人员，通常已经具备了产品经理所需要的基本素质：「抽象思维能力」，「逻辑推理能力」，以及「数据分析能力」，这是一个很好的起点。</p>
+</blockquote>
+<p>但是仅仅有好的起点是远远不够的，技术人员在思考产品的时候，很容易遇到一些误区，如果陷在误区里面出不来，那么会变成一个很糟糕的产品经理。</p>
+<p>下面我们看看技术人员和产品经理之间需要跨越的误区：</p>
+<p><img src="http://image.woshipm.com/wp-files/2016/01/12123.png" alt=""></p>
+<p>优秀的技术人员做产品设计，总是假设用户和自己一样的聪明，自然而然就会把产品界面和交互设计得非常复杂，让一般的小白用户难以上手。</p>
+<p>有些颇为自负的技术人员甚至潜意识里认为：「那些垃圾用户我管他们作甚，我要做就要做有逼格的产品！」对小白用户不屑一顾。</p>
+<p>其实无论是不是技术人员出身的普通用户，在接触一个新产品的时候，都是非常菜鸟的，都需要按照自己的习惯去尝试，技术人员不见得比其他菜鸟用户更善于发现产品的各项功能，更不见得对复杂产品能有更高的容忍度。</p>
+<p>拿我自己为例，很多新款的比较复杂的电子产品和智能硬件，如果没有说明书，我也经常搞不定。朋友看到就会惊呼：原来IT大牛也和我们普通人一样呀！我说术业有专攻呀，不是我擅长的软件领域，我也确实外行嘛。</p>
+<p>我十年前的时候创业做JavaEye网站——一个定位中高端用户的程序员社区——注册用户当时也有几十万，网站很多用户会经常对一些非常简单的产品功能搞不明白，不会用，反复找我求助。我挺惊讶的，没有想到即使是程序员里的中高端群体，其实也跟普通用户没有两样。后来我们总结出来一句产品经验：</p>
+<blockquote>
+<p>用户的弱智是没有下限的</p>
+</blockquote>
+<p>你永远不要假设用户是聪明的，用户的弱智程度永远超出你想象力的下限。所以，当你设计产品的界面和交互的时候，一定不要拿自己的经验去想当然，一定要假设是在给一个弱智做产品，尽量简化，让产品非常易用才行。</p>
+<p>张小龙也有过类似的言论：</p>
+<blockquote>
+<p>当我们研究不到用户需求时，我们就会说只要让我们自己用得爽，这个是比较容易做到的一点。怎么样让用户用得爽呢？如果光凭一些体验的话，其实是有一个比较简单的方法，把自己当作一个傻瓜来用产品，傻瓜心态。<br>把自己当作傻瓜，这个挺难的，但据我所知乔布斯也是用这个方法，而且他这方面功力特别强，他能瞬间把自己变成一个傻瓜。我就不行，我要经过 5-10 分钟的酝酿才能进入到这个状况，这是非常难的一个功力。我观察公司里面有一个人也很厉害，就是Pony，他大概能在1分钟的时间内酝酿成。但是我发现我们的产品经理经常花了3天还达不到一个傻瓜的状态，所以他们总是太专家了。你要知道我们有上亿的用户，他没有这么多的背景，他们用这个东西只是第一眼的感觉或者用一次，一两分钟的体验就决定了。</p>
+</blockquote>
+<p>同样，周鸿祎也感同身受：</p>
+<blockquote>
+<p>最近微信产品的负责人张小龙的观点，他的观点，跟我几年前说的观点是不谋而合的，三年前我在主导这个话题，大道理是一样的，进入白痴状态或者进入傻瓜模式，你们每个人有没有一个按钮，能够快速地进入傻瓜模式，我在公司里很多时候讨论产品，我对产品经理一个挑战，也是因为我能够这么多年被用户骂得多，经常到第一线看用户的帖子，在微博做用户的客服，这不是为了作秀，为了保持真正掌握用户的想法，我最喜欢的杂志不是行业高端杂志，类似电脑迷、电脑爱好者、电脑软件，在地摊上卖的中低用户的普及杂志，上面有很可笑的文章，这么简单的功能早就用了，为什么写一篇文章教育用户，那是用户真的不知道怎么用。</p>
+</blockquote>
+<p>马化腾(Pony)，张小龙，周鸿祎都是程序员出身的、中国最优秀的互联网产品经理。只有当你跨越了傻瓜心态之后，才算是迈出了成功转型产品经理的第一步。</p>
+<h3 id="以兴趣为导向"><a href="#以兴趣为导向" class="headerlink" title="以兴趣为导向"></a>以兴趣为导向</h3><p>技术人员做产品，特别喜欢以个人兴趣为导向，设计产品功能的时候，总是从个人的趣味出发，不太考虑到普通用户的口味。这样的产品很容易导致曲高和寡，用者寥寥。</p>
+<p>还有些技术人员，因为自己掌握了某些很酷炫的技能，在设计产品功能的时候，脑子里面总想着怎样设计一个功能点出来，好把我这个牛逼的技术展示出来，这样我的产品就有核心竞争力了，不怕其它产品抄袭了。</p>
+<p>例如我以前创业JavaEye网站，我们当时掌握了一项很牛叉的网页转成PDF电子书的技术，于是专门设计出来了一个博客出版PDF电子书的功能。</p>
+<p>一经推出，顿时各种酷炫狂拽屌炸天，好评如云，不少人尝试着去玩。但是，然并卵呀，网络媒体就是取代传统平面媒体的，你这个功能做的再好，本质上也是反潮流的，所以最终叫好不叫座，使用者虽然有一些，但始终未能成为网站的杀手级功能。</p>
+<p>而且这个功能的推出给网站的维护带来了不少的成本，从此每次网站改版都要耗费时间测试生成PDF电子书的兼容性，得不偿失啊。</p>
+<p>而真正好的产品经理应该是以结果为导向的，考虑任何功能点，都有足够的理由支撑，要么不上，要么就要成为非常有用的功能。</p>
+<p>一旦上线的功能没有达到预期，就要坚决地砍掉。产品就怕变得臃肿，功能点五花八门，眼花缭乱，每个功能点都说的过去，但是都缺乏足够的竞争力。</p>
+<p>这样的产品会给用户带来很高的学习门槛，也会给自己的产品研发和运营团队增加不少维护负担，最终压垮产品本身。</p>
+<p>因此做产品不是为了满足个人的兴趣，而是为了产品的成功，从这一点来说，优秀的产品经理应该都是实用主义导向的。</p>
+<h3 id="完美主义综合症"><a href="#完美主义综合症" class="headerlink" title="完美主义综合症"></a>完美主义综合症</h3><p>技术人员如果没有追求完美的心，就无法成为一个优秀的技术人员。然而带有「完美主义综合症」的产品经理是可怕的。</p>
+<p>我自己就经常难以克服「完美主义综合症」，一旦心里设定了一个目标，就总是想达到心里觉得完美的程度。</p>
+<p>但这对于程序员来说，绝对是美德，可以让你写出干净漂亮，bug很少的代码，在架构的扩展性上也留有了足够的余地。</p>
+<p>但是对于产品经理来说，一行代码有完美的标准化，但是产品这个东西永远没有完美的可能性。</p>
+<p>一旦产品经理陷入了对完美的追求，就开始了无止境的对产品细节的追求，强迫症一般拿着放大镜看产品的每个角落，试图扫除一些使得产品不完美的苍蝇蚊子。</p>
+<p>在这个方面，乔布斯把很多人带到沟里去了。乔布斯追求完美的前提是：他对未来的发展方向有足够的预见性和洞察力，苹果强大的供应链整合能力又可以在追求完美的同时，保障产品的开发周期、节奏和供货。</p>
+<p>在不具备前提条件的时候，你试试看追求完美？罗永浩就被带到坑里去了，T1经历了漫长的周期才发布，在发布会后又缺货很久；T2在等到同时代手机过气快半年后才姗姗来迟，硬件配置就慢了一步。</p>
+<p>以上是硬件领域，对于互联网产品来说，很多时候下一项产品功能在推出之前，产品经理自己都很难预测是否会受到用户的欢迎，用户的口味是很难把握的。</p>
+<p>在不确定的情况下，唯一正确的做法就是精益创业的做法：快速迭代发布MVP产品，快速反馈修改。在行进中开火，根据用户反馈来寻找正确的方向。</p>
+<p>代码不能一上线到处都是bug，这样的代码根本跑不起来；然而产品不是一经推出就完美的，必须经常快速发布快速迭代来逐渐接近完美。</p>
+<p>技术人员转型为产品经理，可能最困难的地方就在于克服自己的对于完美主义的强迫症倾向了。</p>
+<p>总之，技术人员转型成为产品经理，应该记住的三点是：</p>
+<ul>
+<li>用户的弱智无下限</li>
+<li>以结果为导向</li>
+<li>MVP产品够用就好</li>
+</ul>
+<p>作者：范凯（robbin），微信公众号：技术创业空间（ID：itstarter）</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;一个优秀的技术人员，通常已经具备了产品经理所需要的基本素质：「抽象思维能力」，「逻辑推理能力」，以及「数据分析能力」，这是一个很好的起点。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;但是仅仅有好的起点是远远不够的，技术人员在思考产品的时候，很容易遇
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.naaln.com/categories/technology/"/>
+    
+    
+      <category term="产品" scheme="https://blog.naaln.com/tags/%E4%BA%A7%E5%93%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>升级 Xcode 7 到 Xcode 8</title>
+    <link href="https://blog.naaln.com/2016/09/xcode-7-to-xcode-8/"/>
+    <id>https://blog.naaln.com/2016/09/xcode-7-to-xcode-8/</id>
+    <published>2016-09-18T00:14:20.000Z</published>
+    <updated>2016-10-20T19:59:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>遇到的问题</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">XXX has conflicting provisioning settings. XXX is automatically provisioned, but provisioning profile WildCard has been manually specified. <span class="keyword">Set</span> the provisioning profile <span class="keyword">value</span> <span class="keyword">to</span> <span class="string">"Automatic"</span> <span class="keyword">in</span> the <span class="keyword">build</span> <span class="keyword">settings</span> editor, <span class="keyword">or</span> <span class="keyword">switch</span> <span class="keyword">to</span> <span class="keyword">manual</span> provisioning <span class="keyword">in</span> the target editor. Code signing <span class="keyword">is</span> <span class="keyword">required</span> <span class="keyword">for</span> product <span class="keyword">type</span> <span class="string">'Application'</span> <span class="keyword">in</span> SDK <span class="string">'iOS 10.0'</span></div></pre></td></tr></table></figure>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><h4 id="一、证书管理"><a href="#一、证书管理" class="headerlink" title="一、证书管理"></a>一、证书管理</h4><p>用Xcode8打开工程后，比较明显的就是下图了，这个是苹果的新特性，可以帮助我们自动管理证书。建议大家勾选这个Automatically manage signing</p>
+<p><img src="http://ww3.sinaimg.cn/large/65e4f1e6gw1f7wun9wz2fj20tt0hctar.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/65e4f1e6gw1f7wunprhk6j20e3089gm8.jpg" alt=""></p>
+<p>解决办法是：大家在Xcode的偏好设置中，添加苹果账号，即可。</p>
+<h4 id="Pod-管理"><a href="#Pod-管理" class="headerlink" title="Pod 管理"></a>Pod 管理</h4><p>在最后加入</p>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">post_install <span class="built_in">do</span> |<span class="type">installer</span>|</div><div class="line">    <span class="type">installer</span>.pods_project.targets.each <span class="built_in">do</span> |<span class="type">target</span>|</div><div class="line">        <span class="type">target</span>.build_configurations.each <span class="built_in">do</span> |<span class="type">config</span>|</div><div class="line">            <span class="type">config</span>.build_settings['SWIFT_VERSION'] = '<span class="number">2.3</span>'</div><div class="line">        <span class="keyword">end</span></div><div class="line">    <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>重新 <code>pod update</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;遇到的问题&lt;/p&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.naaln.com/categories/technology/"/>
+    
+    
+      <category term="Xcode" scheme="https://blog.naaln.com/tags/Xcode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Swift中元组,结构体,枚举之间的区别</title>
+    <link href="https://blog.naaln.com/2016/07/tuple-struct-enum-swift/"/>
+    <id>https://blog.naaln.com/2016/07/tuple-struct-enum-swift/</id>
+    <published>2016-07-26T15:17:22.000Z</published>
+    <updated>2016-10-20T19:59:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Swift有许多种存储数据方式,你可以用枚举(<code>enums</code>),元组(<code>tuples</code>),结构体(<code>structs</code>),类(<code>classes</code>),在这篇文章中我们将比较枚举、元组、结构体之间区别,首先从最简单的开始-元组(<code>tuples</code>)。</p>
+<h3 id="元组-tuple"><a href="#元组-tuple" class="headerlink" title="元组(tuple)"></a>元组(tuple)</h3><p>元组是多个值组成的复合值类型,例如,你可以定义一个含有整形和字符串的tuple</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">let</span> amout=(100,<span class="string">"USD"</span>)</div></pre></td></tr></table></figure>
+<p>当你函数需要返回多个值时,元组这个时候非常有用,你可以使用下标方式来访问元组中的值,如.0,.1以此类推，如下：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">let currency = <span class="section">money</span><span class="number">.1</span> <span class="comment">// "USD"</span></div></pre></td></tr></table></figure>
+<p>如果想要给元组多增加些信息,你也可以给元组每个元素命名:</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">let money = (<span class="string">amount:</span> <span class="number">100</span>, <span class="string">currency:</span> <span class="string">"USD"</span>)</div></pre></td></tr></table></figure>
+<p>现在,你不仅可以通过.1,而且可以通过.currency访问元素值。</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> <span class="attr">currency</span> = money.currency // <span class="string">"USD"</span></div></pre></td></tr></table></figure>
+<p>如果想给货币增加格式化,我们可以这样做：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">format</span><span class="params">(input: <span class="params">(Int,String)</span></span></span>) -&gt; <span class="type">String</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"I have <span class="subst">\(input.<span class="number">0</span>)</span> <span class="subst">\(input.<span class="number">1</span>)</span> in my wallet"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">println(<span class="name">format</span>(<span class="name">money</span>)) // This prints <span class="string">"I have 100 USD in my wallet"</span></div></pre></td></tr></table></figure>
+<p>我们的格式化方法在任何（<code>Int,String</code>）类型<code>Tuple</code>都能正常运行。</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> <span class="attr">mass</span> = (<span class="number">1</span>, <span class="string">"kg"</span>)</div><div class="line"><span class="keyword">let</span> <span class="attr">formatted</span> = format(mass) // <span class="string">"I have 1 kg in my wallet"</span></div></pre></td></tr></table></figure>
+<h3 id="结构体-Struct"><a href="#结构体-Struct" class="headerlink" title="结构体(Struct)"></a>结构体(Struct)</h3><p>事实上,“我有1kg在我的钱包”没有任何意义,因此,接下来我们介绍另外一个结构体类型,结构体(<code>struct</code>)不仅能够有元组类似的数据存储功能,而且能够给结构体定义函数(是元组<code>tuple</code>话,只能定义非成员函数来实现)，让我们看看下面的结构体：</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Money</span></span> &#123;</div><div class="line">    <span class="keyword">let</span> amount: Int</div><div class="line">    <span class="keyword">let</span> currency: <span class="built_in">String</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> wallet = Money(amount: <span class="number">100</span>, currency: <span class="string">"USD"</span>)</div></pre></td></tr></table></figure>
+<p>现在结构体已经有了元组相同的数据存储功能,现在我们来给他增加一个函数</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Money</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">func</span> <span class="title">format</span><span class="params">()</span></span> -&gt; <span class="type">String</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"I have <span class="subst">\(<span class="keyword">self</span>.amount)</span> <span class="subst">\(<span class="keyword">self</span>.currency)</span> in my wallet"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">println</span>(wallet.format())</div></pre></td></tr></table></figure>
+<p>如果我们想给重量mass增加一个特有类型,我们可以这样做：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Mass</span> </span>&#123;</div><div class="line">    <span class="keyword">let</span> quantity: <span class="type">Int</span></div><div class="line">    <span class="keyword">let</span> unit: <span class="type">String</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">format</span><span class="params">()</span></span> -&gt; <span class="type">String</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"I have <span class="subst">\(<span class="keyword">self</span>.quantity)</span> <span class="subst">\(<span class="keyword">self</span>.unit)</span> in my backpack."</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>现在<code>Money</code>类型不仅有函数,而且有明确的名称,在后面一部分代码中,我们不能像<code>mass</code>那样<code>(1,&#39;kg&#39;)</code>传参数。</p>
+<p>结构体也叫<code>nomial type:</code>即明确了定义类型的名称,如果对象的类型名称相同即相同的类型,在上面的例子代码中,<code>mass</code>和第一次定义的<code>wallet</code>对象有相同的类型成员,但是他们的类型<code>Money</code>和<code>Mass</code>的是属于不同的类型。如果我们调用他们的<code>format</code>函数,会得到不同的结果。</p>
+<h3 id="枚举（Enums）"><a href="#枚举（Enums）" class="headerlink" title="枚举（Enums）"></a>枚举（Enums）</h3><p>如果你想要将一些值存储在一起,我们可以根据具体情况使用<code>tuple</code>或者<code>struct</code>,当然也可以使用<code>classes</code>,但是如果遇到特殊情况,比如,有些时候我们需要在多项值中选择一个,例如,我们先看看<code>currencies</code>,在之前的代码中,我们用字符串<code>string</code>来做货币单位,假如只允许已知的货币在代码中出现,该怎么办? 我们可以使用<code>enum</code>,假如我们只允许有<code>euros</code>, <code>US dollars</code> 和 <code>yen</code>,我们可以建立一个<code>enum</code>类型:</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Currency</span> &#123;</span></div><div class="line">   <span class="keyword">case</span> EUR</div><div class="line">   <span class="keyword">case</span> USD</div><div class="line">   <span class="keyword">case</span> YEN</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>现在,假如我们有个<code>Current</code>类型的值,我们知道它是<code>EUR</code>、<code>USD</code> or <code>YEN</code> 其中的一种,但是现在没有办法表示成员代表其他的具体含义,或者当它同时有多个值时也没办法表示和<code>struct</code>一样,枚举也能定义函数。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Currency</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">symbol</span><span class="params">()</span></span> -&gt; <span class="type">String</span> &#123;</div><div class="line">        <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</div><div class="line">            <span class="keyword">case</span> .<span class="type">EUR</span>: <span class="keyword">return</span> <span class="string">"€"</span></div><div class="line">            <span class="keyword">case</span> .<span class="type">USD</span>: <span class="keyword">return</span> <span class="string">"$"</span></div><div class="line">            <span class="keyword">case</span> .<span class="type">YEN</span>: <span class="keyword">return</span> <span class="string">"¥"</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们可以根据需要增加<code>case</code>,当然也可以给枚举定义只有一个带实际值的成员：</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Angle</span> &#123;</span></div><div class="line">   <span class="keyword">case</span> Radian(<span class="symbol">radians:</span> Double)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面相当一个结构体:可以增加函数,而且区分了<code>Angle</code>的值与<code>double</code>类型值,如果有需要,我们可以给它增加更多的<code>case</code>(枚举成员)。</p>
+<h3 id="该使用哪一种呢"><a href="#该使用哪一种呢" class="headerlink" title="该使用哪一种呢?"></a>该使用哪一种呢?</h3><p>现在我们总结一下怎么选择<code>tuples</code>,<code>struct</code>，<code>enums</code>。首先,优先选择<code>tuple</code>如果它能胜任.如果有2个值他们有相同的结构(例如:一对String和Int),如想要体现更加类型安全、“名称化”<code>nominal</code>的类型,那么应该使用<code>struct</code>，例如,你想要区分<code>currency</code>和<code>mass</code>.最后,如果需要多个值互斥(比如<code>EUR</code>,<code>USD</code>,<code>YEN</code>只能选一),那么使用枚举<code>enums</code>。</p>
+<p>本文@solar 译,欢迎拍砖及指正。</p>
+<p>原文:<a href="http://chris.eidhof.nl/posts/tuples-structs-enums.html" target="_blank" rel="external">Tuples, Structs and Enums</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Swift有许多种存储数据方式,你可以用枚举(&lt;code&gt;enums&lt;/code&gt;),元组(&lt;code&gt;tuples&lt;/code&gt;),结构体(&lt;code&gt;structs&lt;/code&gt;),类(&lt;code&gt;classes&lt;/code&gt;),在这篇文章中我们将比较枚举、元组、结构体
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.naaln.com/categories/technology/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>理解Swift中Extension类型</title>
+    <link href="https://blog.naaln.com/2016/07/extension-swift/"/>
+    <id>https://blog.naaln.com/2016/07/extension-swift/</id>
+    <published>2016-07-26T14:32:08.000Z</published>
+    <updated>2016-10-20T19:59:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span><span class="selector-class">.times</span> &#123; puts <span class="string">'hello world'</span> &#125;</div></pre></td></tr></table></figure>
+<p>这是一条Ruby语句，它会打印<code>“hello world”</code>三次，意图清晰，语法简洁。</p>
+<p>如果你是C或者Java等语言的使用者，而从未接触过Ruby，此时是不是有种打开了新世界的大门的感觉^_^。反正当初我刚接触Ruby那会儿时常会感叹，啊原来代码还可以这么写。。。Ruby的灵活与优雅当然远不仅于此，这里就不展开了。今天的重点是，Swift也可以这么写。</p>
+<p>首先我们要明确，Ruby之所以可以这么写是因为它是一个纯面向对象的语言，在Ruby的世界中，一切皆对象，所有的事物都有一个共同的祖先——Object。3的类型是Fixnum,当然也是一个对象，所以它有自己的方法。times就是一个方法，可以看出应该是接收一个代码块（本例中为<code>{puts &#39;hello world&#39;}</code>），然后调用它self（本例中self即为3）次。</p>
+<p>而在Swift中，Int是一个struct(结构体)，并不是个class。但是Swift中的struct与别的语言中的struct不同的是，struct内部也可以定义方法。所以条件满足了，现在就差个times方法了。</p>
+<p>嗯，很遗憾Swift的Int并没有times方法。不过没关系，这个时候<code>extension</code>就派上用场了。没有我们就自己写一个嘛，私人化定制，满足一切突如其来的需求。先上代码好了：<br>定义：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Int</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">times</span><span class="params">(closure: <span class="params">()</span></span></span> -&gt; ()) &#123;</div><div class="line">       <span class="keyword">for</span> <span class="number">_</span> <span class="keyword">in</span> <span class="number">1</span>...<span class="keyword">self</span> &#123;</div><div class="line">            closure()</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>调用： <code>3.times { println(&quot;hello world&quot;) }</code></p>
+<p>是不是跟开头Ruby语句有异曲同工之妙？<code>extension</code>不仅可以扩展方法，还可以扩展计算属性。比如《The Swift Programming Language》中的一个例子：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">extension</span>​ ​<span class="title">Double</span>​ </span>&#123;</div><div class="line">​    ​<span class="keyword">var</span>​ ​km​: ​<span class="type">Double</span>​ &#123; ​<span class="keyword">return</span>​ ​<span class="keyword">self</span>​ * ​<span class="number">1_000.0</span>​ &#125;</div><div class="line">​    ​<span class="keyword">var</span>​ ​m​: ​<span class="type">Double</span>​ &#123; ​<span class="keyword">return</span>​ ​<span class="keyword">self</span>​ &#125;</div><div class="line">​    ​<span class="keyword">var</span>​ ​cm​: ​<span class="type">Double</span>​ &#123; ​<span class="keyword">return</span>​ ​<span class="keyword">self</span>​ / ​<span class="number">100.0</span>​ &#125;</div><div class="line">​    ​<span class="keyword">var</span>​ ​mm​: ​<span class="type">Double</span>​ &#123; ​<span class="keyword">return</span>​ ​<span class="keyword">self</span>​ / ​<span class="number">1_000.0</span>​ &#125;</div><div class="line">​    ​<span class="keyword">var</span>​ ​ft​: ​<span class="type">Double</span>​ &#123; ​<span class="keyword">return</span>​ ​<span class="keyword">self</span>​ / ​<span class="number">3.28084</span>​ &#125;</div><div class="line">​&#125;</div><div class="line">​<span class="keyword">let</span>​ ​oneInch​ = ​<span class="number">25.4</span>​.​mm</div><div class="line">​<span class="built_in">println</span>​(​<span class="string">"One inch is ​<span class="subst">\(​oneInch​)</span>​ meters"</span>​)</div><div class="line">​<span class="comment">// prints "One inch is 0.0254 meters"</span></div><div class="line">​<span class="keyword">let</span>​ ​threeFeet​ = ​<span class="number">3</span>​.​ft</div><div class="line">​<span class="built_in">println</span>​(​<span class="string">"Three feet is ​<span class="subst">\(​threeFeet​)</span>​ meters"</span>​)</div><div class="line">​<span class="comment">// prints "Three feet is 0.914399970739201 meters”</span></div></pre></td></tr></table></figure>
+<p><code>extension</code>在实际的开发中可以有很多应用，使用得当能显著提高代码的可读性，平常我们自己写的大多数辅助类其实都可以转化为<code>extension</code>。譬如我最近在自己的项目中给被点击的UIView（比如button）写了一个小动画，点击了之后组件会上浮一下，并且同时会有一下阴影效果。<br>定义：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">extension <span class="built_in">UIView</span> &#123;</div><div class="line">    func animateWhenClicked() &#123;</div><div class="line">        <span class="keyword">self</span>.backgroundColor = <span class="built_in">UIColor</span>(white: <span class="number">0.9</span>, alpha: <span class="number">0.5</span>)</div><div class="line">        <span class="keyword">self</span>.layer.transform = <span class="built_in">CATransform3DMakeScale</span>(<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>)</div><div class="line">        <span class="built_in">UIView</span>.animateWithDuration(<span class="number">0.9</span>, animations: &#123;</div><div class="line">            <span class="keyword">self</span>.backgroundColor = <span class="built_in">UIColor</span>.whiteColor()</div><div class="line">            <span class="keyword">self</span>.layer.transform = <span class="built_in">CATransform3DMakeTranslation</span>(<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>)</div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用（仅点击动画部分代码）：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">button</span><span class="selector-class">.addTarget</span>(viewCtrl, <span class="attribute">action</span>: <span class="string">"clicked:"</span>, <span class="attribute">forControlEvents</span>: .TouchUpInside)</div><div class="line"><span class="selector-tag">func</span> <span class="selector-tag">clicked</span>(<span class="attribute">sender</span>: UIButton) &#123;</div><div class="line">    <span class="selector-tag">sender</span><span class="selector-class">.superview</span>!<span class="selector-class">.animateWhenClicked</span>()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/626506-3454eb6f89bd0f99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>大概就是右上角的效果，呃，静态图看不出来，各位要是有兴趣可以拿我的扩展方法然后自己初始化个Button去跑跑看(直接<code>sender.animateWhenClicked()</code>就好，不用<code>superview)</code>。因为我在项目中的Button是一个自定义的贪婪Button，只要点击Button的父视图就会响应点击事件,所以是Button的superview调用了animateWhenClicked，这也是我把这个动画扩展到UIView而不是UIButton的原因。</p>
+<p>我个人很喜欢<code>extension</code>，平常也经常使用。<code>extension</code>也可用于后期项目维护，可以在不修改旧代码的前提下扩展旧代码的功能。而且对于<code>NSObject</code>的子类或者有dynamic标记的方法，利用扩展还可以在运行时对某些方法的实现进行替换，类似于OC的Swizzle，今天就不展开了，下次有空继续。</p>
+<p>文／Sheepy</p>
+<p>原文链接：<a href="http://www.jianshu.com/p/f41bf33fac0b" target="_blank" rel="external">http://www.jianshu.com/p/f41bf33fac0b</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;li
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.naaln.com/categories/technology/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>理解Swift中Optional类型</title>
+    <link href="https://blog.naaln.com/2016/07/optional-type-in-swift/"/>
+    <id>https://blog.naaln.com/2016/07/optional-type-in-swift/</id>
+    <published>2016-07-23T14:32:08.000Z</published>
+    <updated>2016-10-20T19:59:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Objective-C-中的-nil"><a href="#Objective-C-中的-nil" class="headerlink" title="Objective-C 中的 nil"></a>Objective-C 中的 nil</h3><p>在<code>Objective-C</code>中当某个变量或表达式没有任何内容时，可以使用<code>nil</code>来表示。<code>nil</code>在<code>Objective-C</code>中void指针指向数字 0，本质上来讲nil就是一个数字。比如这个例子：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> i = (<span class="keyword">int</span>)(<span class="literal">nil</span>)+<span class="number">20</span>; <span class="comment">//可以这样吗？</span></div></pre></td></tr></table></figure>
+<p>因为<code>nil</code>指向数字 <code>0</code>，确切的说<code>nil</code>就是Int类型数据，所以上述的代码不仅可以通过编译，而且得到的结果是 20。显然，<code>Objective-C</code>编译器对<code>nil</code>的处理方式非常简单粗暴，直接将<code>nil</code>当作是数字对待了。这样做表面看起来平安无事，但在某些特定的情境下，却可能造成歧义。既然nil不能表示「纯粹无」，的确需要表示「这个变量没有任何值」该怎么办？看来，<code>Objective-C</code>对此是无解了。</p>
+<h3 id="Optional基础概念"><a href="#Optional基础概念" class="headerlink" title="Optional基础概念"></a>Optional基础概念</h3><p>或许是因为上述例子中提到的问题，在某些特定的场景下的确需要表示「无」的存在，因此Swift中引入了<code>Optional</code>类型。</p>
+<p>在深入讨论之前，先看看<code>Optional</code>是什么吧！</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">Optional</span>&lt;<span class="title">Wrapped</span>&gt; : <span class="title">_Reflectable</span>, <span class="title">NilLiteralConvertible</span> </span>&#123;</div><div class="line">  <span class="keyword">case</span> <span class="type">None</span></div><div class="line"></div><div class="line">  <span class="keyword">case</span> <span class="type">Some</span>(<span class="type">Wrapped</span>)</div><div class="line"></div><div class="line">  <span class="keyword">public</span> <span class="keyword">init</span>()</div><div class="line">  <span class="keyword">public</span> <span class="keyword">init</span>(<span class="number">_</span> some: <span class="type">Wrapped</span>)</div><div class="line"></div><div class="line">  <span class="meta">@warn_unused_result</span></div><div class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">map</span>&lt;U&gt;<span class="params">(@noescape f: <span class="params">(Wrapped)</span></span></span> <span class="keyword">throws</span> -&gt; <span class="type">U</span>) <span class="keyword">rethrows</span> -&gt; <span class="type">U</span>?</div><div class="line"></div><div class="line">  <span class="meta">@warn_unused_result</span></div><div class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">flatMap</span>&lt;U&gt;<span class="params">(@noescape f: <span class="params">(Wrapped)</span></span></span> <span class="keyword">throws</span> -&gt; <span class="type">U</span>?) <span class="keyword">rethrows</span> -&gt; <span class="type">U</span>?</div><div class="line">        </div><div class="line">  <span class="keyword">public</span> <span class="keyword">init</span>(nilLiteral: ())</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以看到Swift中Optional其实是一个枚举类型，其中包含了None、Some两个值和应用某个规则并返回结果的map、flatMap两个方法，此外还有三个构造方法。我们可以使用上述的构造方法创造一个Optional类型的变量，但在实际开发过程中会更多的使用?表示一个变量是Optional类型。例如下面的示例：</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> someNumber: Int?</div><div class="line"><span class="keyword">var</span> anotherNumber: Int = <span class="number">100</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> someStr: <span class="built_in">String</span>?</div><div class="line"><span class="keyword">var</span> anotherStr: <span class="built_in">String</span> = <span class="string">"Hello World"</span></div></pre></td></tr></table></figure>
+<p>使用问号?表示某个变量是Optional类型，如果没有显示赋值Swift会自动给Optional类型变量赋值nil。上述的代码中，声明了两个Int类型的变量，其中someNumber是Optional类型，而 anotherNumber是普通的Int类型并且值为 100 。我们可以把Optional类型想象成为一个容器，装东西用的盒子。someNumber所代表的盒子里面是空的，等着用户往里面装东西「当然，能装的东西已经规定好了，必须是Int类型」，而anotherNumber所代表的盒子里面已经装好了东西。如下图：</p>
+<p><img src="http://ww4.sinaimg.cn/mw690/0065ty76gw1ey65j132fej30ks07naac.jpg" alt=""></p>
+<p>变量存在的意义在于：可以参与运算并完成一定的业务要求。接下来我们对上述示例代码中的变量进行一定的运算，再观察结果分析。假设，给someNumber、anotherNumber分别加上100并输出结果，那么代码如下：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> someNumber: <span class="built_in">Int</span>?    <span class="comment">//值为nil</span></div><div class="line"><span class="keyword">var</span> anotherNumber: <span class="built_in">Int</span> = <span class="number">100</span>    <span class="comment">//值为100</span></div><div class="line"></div><div class="line">someNumber = someNumber + <span class="number">100</span>    <span class="comment">//编译错误，不能对nil进行操作</span></div><div class="line">anotherNumber = anotherNumber + <span class="number">100</span>    <span class="comment">//正常</span></div></pre></td></tr></table></figure>
+<p>为什么会这样呢？按照在Objective-C中的理解看来：一个变量的值是nil，则指向数字0，是可以进行运算的「一开始的示例中我们正是这么做的」。显然，nil在Swift中已经不再是指向数字0的指针，而是真的指向「纯粹无」。既然当前这个变量的值是「纯粹无」，在它被初始化之前当然是不允许进行操作的。</p>
+<p>变量someNumber盒子中没有任何值，所以不能进行运算，那么我们做如下的赋值再尝试：</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">var</span> someNumb<span class="symbol">er:</span> <span class="built_in">Int</span>?</div></pre></td></tr></table></figure>
+<p>someNumber = 100 //赋值<br>someNumber = someNumber + 100 //还是无法通过编译，不能对Optional直接操作<br>在Swift中对一个Optional类型的变量直接进行操作，是不允许的。这又是为什么呢？大家还记得吗？Optional是枚举类型，不经过任何转换直接和Int类型相加，当然是不允许的。那么，如果想要对Optional的值进行运算，要怎么办呢？</p>
+<h3 id="Optional类型转换"><a href="#Optional类型转换" class="headerlink" title="Optional类型转换"></a>Optional类型转换</h3><p>在对一个Optional类型的变量进行操作之前，需要先将其转换成可操作的具体类型。你可以把它理解成：在吃掉盒子里面存放的苹果之前，需要先将苹果从盒子中取出来。这个过程可以使用符号!来完成。</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> someNumber: <span class="built_in">Int</span>?</div><div class="line"></div><div class="line">someNumber = <span class="number">100</span> <span class="comment">//赋值</span></div><div class="line">someNumber = someNumber! + <span class="number">100</span>  <span class="comment">//将苹果从盒子中取出来，再加上100</span></div></pre></td></tr></table></figure>
+<p>但是在将苹果从盒子中取出来的时候，你却需要面对一个严肃的哲学问题：盒子中确实有苹果吗？如果上述代码中缺少赋值表达式someNumber = 100，那么这段代码虽然可以躲过编译器的检查，但却会在程序运行过程中出现异常，导致应用崩溃。所以，为了保证程序的健壮性，在吃掉苹果之前，应该判断盒子中是否真的存在苹果，大致如下所示：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> someNumber: Int?</div><div class="line"></div><div class="line"><span class="comment">// someNumber = 100</span></div><div class="line"><span class="keyword">if</span>(someNumber != <span class="literal">nil</span>) &#123;</div><div class="line">    someNumber = someNumber! + <span class="number">100</span></div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"盒子中根本木有苹果"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上述代码安全了，可是每个Optional类型的变量在使用之前，都需要对其进行if-else判断显然是一件很麻烦的事情，而人类是最喜欢偷懒的群体，那该怎么办呢？</p>
+<p>其中第一个办法，称之为if-let绑定，通过if-let的判断对其进行操作，大致如下：</p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> authorName: <span class="keyword">String</span>? = <span class="string">"Barat Semet"</span></div><div class="line"><span class="keyword">let</span> authorAge: Int? = <span class="number">30</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="keyword">let</span> name: <span class="keyword">String</span> = authorName,</div><div class="line">    age: Int = authorAge &#123;</div><div class="line">        <span class="keyword">print</span>(<span class="string">"本文作者 \(name) 今年 \(age) 岁了"</span>)</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">print</span>(<span class="string">"作者名称or年龄未指定"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>另外一种方法称之为nil合并，使用两个??符号连接在一起表示：如果存在值则获取当前值，如果不存在则获取给定的默认值，大致代码如下：</p>
+<figure class="highlight zephir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> someNumber: <span class="keyword">Int</span>? </div><div class="line"></div><div class="line"><span class="keyword">var</span> number: <span class="keyword">Int</span> = someNumber ?? <span class="number">0</span> <span class="comment">//若someNumber不为nil则获取其值，若为nil则获取0</span></div><div class="line">上述打代码大致等价于：</div><div class="line"></div><div class="line"><span class="keyword">var</span> someNumber: <span class="keyword">Int</span>?</div><div class="line"><span class="keyword">var</span> number: <span class="keyword">Int</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="keyword">let</span> unwrapped:<span class="keyword">Int</span> = someNumber &#123;</div><div class="line">    number = unwrapped</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    number = <span class="number">0</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="最后的总结"><a href="#最后的总结" class="headerlink" title="最后的总结"></a>最后的总结</h3><p>和Objective-C不同，在Swift代码中我们拿到某个表达式返回的Optional值时，如果非常确定该表达式的结果不会是nil则可以使用!将其强制转换为我们需要的结果。否则，在我们不确定的情况，一定要使用if-else、if-let、swait-case、guard之中的一种对Optional返回的结果进行判断后再处理。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
+<li><a href="http://blog.teamtreehouse.com/understanding-optionals-swift" target="_blank" rel="external">Understanding Optionals in Swift</a></li>
+</ol>
+<p>来源： </p>
+<p><a href="http://blog.barat.cc/ios/understanding-swift-optional/" target="_blank" rel="external">理解Swift中Optional类型－有和无的哲学</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Objective-C-中的-nil&quot;&gt;&lt;a href=&quot;#Objective-C-中的-nil&quot; class=&quot;headerlink&quot; title=&quot;Objective-C 中的 nil&quot;&gt;&lt;/a&gt;Objective-C 中的 nil&lt;/h3&gt;&lt;p&gt;在&lt;code
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.naaln.com/categories/technology/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Pokemon Go 的奇技淫巧</title>
+    <link href="https://blog.naaln.com/2016/07/skill-of-pokemon-go/"/>
+    <id>https://blog.naaln.com/2016/07/skill-of-pokemon-go/</id>
+    <published>2016-07-19T01:46:10.000Z</published>
+    <updated>2016-10-20T19:59:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>消息来源主要是贴吧，Reddit，pokemon一个数据网站，以及我自己的一点经验。</p>
+<p>Reddit已经有人把游戏数据解包，解包结果：<a href="https://gist.github.com/anonymous/077d6dea82d58b8febde54ae9729b1bf" target="_blank" rel="external">https://gist.github.com/anonymous/077d6dea82d58b8febde54ae9729b1bf</a></p>
+<p>贴吧翻译结果：<a href="http://tieba.baidu.com/p/4674928820?see_lz=1" target="_blank" rel="external">【重要消息】Reddit已经有人解包了游戏数据，一大波信息来袭_pokemongo吧</a></p>
+<p>pokemon网站：<a href="http://pokemongo.gamepress.gg/" target="_blank" rel="external">Pokemon Go Database</a></p>
+<p>1.当使用熏香时，站立不动的刷新频率为5分钟，如果处于移动状态并且位移超过200m，刷新频率为1分钟。</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class">Incense </span>&#123;</div><div class="line"><span class="symbol">      IncenseLifetimeSeconds:</span> <span class="number">1800</span></div><div class="line"><span class="symbol">      StandingTimeBetweenEncountersSec:</span> <span class="number">300</span></div><div class="line"><span class="symbol">      MovingTimeBetweenEncounterSec:</span> <span class="number">60</span></div><div class="line"><span class="symbol">      DistanceRequiredForShorterIntervalMeters:</span> <span class="number">200</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>2.游戏中的属性一致加成（Same-type attack bonus）确实存在，加成系数为1.2。</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="class">Items </span>&#123;</div><div class="line"><span class="symbol">  TemplateId:</span> <span class="string">"BATTLE_SETTINGS"</span></div><div class="line">  <span class="class">BattleSettings </span>&#123;</div><div class="line"><span class="symbol">    RetargetSeconds:</span> <span class="number">0.5</span></div><div class="line"><span class="symbol">    EnemyAttackInterval:</span> <span class="number">1.5</span></div><div class="line"><span class="symbol">    AttackServerInterval:</span> <span class="number">5</span></div><div class="line"><span class="symbol">    RoundDurationSeconds:</span> <span class="number">99</span></div><div class="line"><span class="symbol">    BonusTimePerAllySeconds:</span> <span class="number">10</span></div><div class="line"><span class="symbol">    MaximumAttackersPerBattle:</span> <span class="number">20</span></div><div class="line"><span class="symbol">    SameTypeAttackBonusMultiplier:</span> <span class="number">1.25</span></div><div class="line"><span class="symbol">    MaximumEnergy:</span> <span class="number">100</span></div><div class="line"><span class="symbol">    EnergyDeltaPerHealthLost:</span> <span class="number">0.5</span></div><div class="line"><span class="symbol">    DodgeDurationMs:</span> <span class="number">500</span></div><div class="line"><span class="symbol">    MinimumPlayerLevel:</span> <span class="number">5</span></div><div class="line"><span class="symbol">    SwapDurationMs:</span> <span class="number">1000</span></div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>3.超梦和梦幻的数据有逃跑率，但是没有捕捉率。</p>
+<p>国外玩家经过讨论，可能需要大师球来进行捕捉。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006tNbRwgw1f5yz6phrrpj30go06ggmc" alt=""></p>
+<p>4.神兽的参数比非神兽多一个，之后可以确定目前来说，野外是抓不到神兽的了。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">!<span class="selector-attr">[]</span>(<span class="attribute">http</span>:<span class="comment">//ww4.sinaimg.cn/large/006tNbRwgw1f5yz78olz9j30go07pmyq)</span></div></pre></td></tr></table></figure>
+<p>5.训练家最高等级LV.100</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">TrainerLevelMin:</span> <span class="number">1</span></div><div class="line"><span class="symbol">TrainerLevelMax:</span> <span class="number">100</span></div></pre></td></tr></table></figure>
+<p>6.游戏中有大师球，根据目前的数据，12级之前只有poke ball，12级之后出现great ball，20级之后出现ultra ball，master ball可能需要30级甚至更高的等级才能解锁。（根据@刘昊伯 的评论， Reddit上已经有人到30级了，然而升级奖励当中并没有master ball，看来还需要更高的等级才行）</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class">Items </span>&#123;</div><div class="line"><span class="symbol">  TemplateId:</span> <span class="string">"ITEM_MASTER_BALL"</span></div><div class="line">  <span class="class">Item </span>&#123;</div><div class="line"><span class="symbol">    UniqueId:</span> ITEM_MASTER_BALL</div><div class="line"><span class="symbol">    ItemType:</span> ITEM_TYPE_POKEBALL</div><div class="line"><span class="symbol">    Category:</span> ITEM_CATEGORY_POKEBALL</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>7.扔球存在一个里程碑阈值，正作里捕获度受图鉴已捕获数量影响，所以这里可能是当你抓一种PM超过多少数量之后（达到里程碑），之后再抓这种PM就会容易一些了；也有人猜测是和游戏中的奖牌（Metal）系统挂钩的。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006tNbRwgw1f5yz7t7or1j30go0crq4e" alt=""></p>
+<p>8.树果还存在其他类型，树果总共有五种类型，分别是：</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">BLUK </span><span class="keyword">BERRY</span></div><div class="line"><span class="symbol">NANAB</span> <span class="keyword">BERRY</span></div><div class="line"><span class="symbol">PINAP</span> <span class="keyword">BERRY</span></div><div class="line"><span class="symbol">RAZZ</span> <span class="keyword">BERRY</span></div><div class="line"><span class="symbol">WEPAR</span> <span class="keyword">BERRY</span></div></pre></td></tr></table></figure>
+<p><img src="http://ww4.sinaimg.cn/large/006tNbRwgw1f5yz8bt597j30go06ldgk" alt=""></p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="class">Items </span>&#123;</div><div class="line"><span class="symbol">  TemplateId:</span> <span class="string">"ITEM_BLUK_BERRY"</span></div><div class="line">  <span class="class">Item </span>&#123;</div><div class="line"><span class="symbol">    UniqueId:</span> <span class="number">702</span></div><div class="line"><span class="symbol">    ItemType:</span> ITEM_TYPE_FOOD</div><div class="line"><span class="symbol">    Category:</span> ITEM_CATEGORY_FOOD</div><div class="line">  &#125;</div><div class="line"><span class="class">Items </span>&#123;</div><div class="line"><span class="symbol">  TemplateId:</span> <span class="string">"ITEM_NANAB_BERRY"</span></div><div class="line">  <span class="class">Item </span>&#123;</div><div class="line"><span class="symbol">    UniqueId:</span> <span class="number">703</span></div><div class="line"><span class="symbol">    ItemType:</span> ITEM_TYPE_FOOD</div><div class="line"><span class="symbol">    Category:</span> ITEM_CATEGORY_FOOD</div><div class="line">  &#125;</div><div class="line"><span class="class">Items </span>&#123;</div><div class="line"><span class="symbol">  TemplateId:</span> <span class="string">"ITEM_PINAP_BERRY"</span></div><div class="line">  <span class="class">Item </span>&#123;</div><div class="line"><span class="symbol">    UniqueId:</span> <span class="number">705</span></div><div class="line"><span class="symbol">    ItemType:</span> ITEM_TYPE_FOOD</div><div class="line"><span class="symbol">    Category:</span> ITEM_CATEGORY_FOOD</div><div class="line">  &#125;</div><div class="line"><span class="class">Items </span>&#123;</div><div class="line"><span class="symbol">  TemplateId:</span> <span class="string">"ITEM_RAZZ_BERRY"</span></div><div class="line">  <span class="class">Item </span>&#123;</div><div class="line"><span class="symbol">    UniqueId:</span> <span class="number">701</span></div><div class="line"><span class="symbol">    ItemType:</span> ITEM_TYPE_FOOD</div><div class="line"><span class="symbol">    Category:</span> ITEM_CATEGORY_FOOD</div><div class="line">  &#125;</div><div class="line"><span class="class">Items </span>&#123;</div><div class="line"><span class="symbol">  TemplateId:</span> <span class="string">"ITEM_WEPAR_BERRY"</span></div><div class="line">  <span class="class">Item </span>&#123;</div><div class="line"><span class="symbol">    UniqueId:</span> <span class="number">704</span></div><div class="line"><span class="symbol">    ItemType:</span> ITEM_TYPE_FOOD</div><div class="line"><span class="symbol">    Category:</span> ITEM_CATEGORY_FOOD</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>9.精灵的MAX LEVEL为40，孵蛋得到的精灵最高等级20，野外精灵最高等级30，另外游戏中的精灵还存在一个的“family types”属性，可能以后会推出繁殖系统</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNbRwgw1f5yz8y80fhj30go05tt9n" alt=""></p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Items &#123;</div><div class="line">  TemplateId: "PLAYER_LEVEL_SETTINGS"</div><div class="line">  PlayerLevel &#123;</div><div class="line">    RankNum: "<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01<span class="symbol">\0</span>01"</div><div class="line">    RequiredExp: "<span class="symbol">\0</span>00<span class="symbol">\3</span>50<span class="symbol">\0</span>07<span class="symbol">\2</span>70<span class="symbol">\0</span>27<span class="symbol">\3</span>60.<span class="symbol">\2</span>20N<span class="symbol">\2</span>30u<span class="symbol">\2</span>10<span class="symbol">\2</span>44<span class="symbol">\0</span>01<span class="symbol">\3</span>40<span class="symbol">\3</span>32<span class="symbol">\0</span>01<span class="symbol">\2</span>40<span class="symbol">\2</span>31<span class="symbol">\0</span>02<span class="symbol">\3</span>10<span class="symbol">\3</span>37<span class="symbol">\0</span>02<span class="symbol">\3</span>30<span class="symbol">\2</span>55<span class="symbol">\0</span>03<span class="symbol">\3</span>50<span class="symbol">\3</span>73<span class="symbol">\0</span>03<span class="symbol">\3</span>70<span class="symbol">\3</span>11<span class="symbol">\0</span>04<span class="symbol">\2</span>10<span class="symbol">\2</span>30<span class="symbol">\0</span>05<span class="symbol">\2</span>40<span class="symbol">\2</span>15<span class="symbol">\0</span>06<span class="symbol">\3</span>00<span class="symbol">\2</span>51<span class="symbol">\0</span>07<span class="symbol">\3</span>40<span class="symbol">\3</span>05<span class="symbol">\0</span>10<span class="symbol">\2</span>00<span class="symbol">\3</span>42<span class="symbol">\t</span><span class="symbol">\2</span>50<span class="symbol">\2</span>45<span class="symbol">\0</span>13<span class="symbol">\3</span>20<span class="symbol">\3</span>50<span class="symbol">\0</span>14<span class="symbol">\2</span>40<span class="symbol">\3</span>57<span class="symbol">\0</span>17<span class="symbol">\2</span>30<span class="symbol">\2</span>71<span class="symbol">\0</span>24<span class="symbol">\2</span>70<span class="symbol">\3</span>06<span class="symbol">\0</span>32<span class="symbol">\2</span>00<span class="symbol">\2</span>27<span class="symbol">\"</span><span class="symbol">\3</span>60<span class="symbol">\2</span>52+<span class="symbol">\2</span>40<span class="symbol">\3</span>676<span class="symbol">\3</span>40<span class="symbol">\2</span>21C<span class="symbol">\3</span>60<span class="symbol">\2</span>62R<span class="symbol">\3</span>20<span class="symbol">\3</span>32d<span class="symbol">\2</span>00<span class="symbol">\2</span>11z<span class="symbol">\2</span>40<span class="symbol">\3</span>13<span class="symbol">\2</span>30<span class="symbol">\0</span>01<span class="symbol">\3</span>00<span class="symbol">\2</span>15<span class="symbol">\2</span>67<span class="symbol">\0</span>01<span class="symbol">\3</span>60<span class="symbol">\3</span>60<span class="symbol">\3</span>44<span class="symbol">\0</span>01<span class="symbol">\2</span>60<span class="symbol">\3</span>65<span class="symbol">\2</span>41<span class="symbol">\0</span>02<span class="symbol">\2</span>00<span class="symbol">\2</span>33<span class="symbol">\3</span>56<span class="symbol">\0</span>02<span class="symbol">\3</span>40<span class="symbol">\3</span>41<span class="symbol">\3</span>11<span class="symbol">\0</span>03<span class="symbol">\3</span>40<span class="symbol">\3</span>52<span class="symbol">\3</span>03<span class="symbol">\0</span>04<span class="symbol">\2</span>00<span class="symbol">\2</span>66<span class="symbol">\3</span>34<span class="symbol">\0</span>05<span class="symbol">\3</span>00<span class="symbol">\3</span>03<span class="symbol">\2</span>23<span class="symbol">\0</span>07<span class="symbol">\2</span>00<span class="symbol">\3</span>32<span class="symbol">\3</span>04<span class="symbol">\t</span>"</div><div class="line">    CpMultiplier: "<span class="symbol">\0</span>22<span class="symbol">\2</span>03<span class="symbol">\3</span>00=4d*&gt;<span class="symbol">\3</span>71<span class="symbol">\3</span>50<span class="symbol">\\</span>&gt;<span class="symbol">\2</span>75<span class="symbol">\3</span>55<span class="symbol">\2</span>02&gt;<span class="symbol">\2</span>42<span class="symbol">\2</span>33<span class="symbol">\2</span>24&gt;<span class="symbol">\2</span>30e<span class="symbol">\2</span>44&gt;<span class="symbol">\0</span>01<span class="symbol">\3</span>14<span class="symbol">\2</span>62&gt;<span class="symbol">\3</span>41<span class="symbol">\0</span>36<span class="symbol">\3</span>00&gt;<span class="symbol">\0</span>25<span class="symbol">\2</span>24<span class="symbol">\3</span>14&gt;<span class="symbol">\3</span>54Q<span class="symbol">\3</span>30&gt;<span class="symbol">\3</span>76<span class="symbol">\3</span>36<span class="symbol">\3</span>42&gt;<span class="symbol">\3</span>51<span class="symbol">\3</span>63<span class="symbol">\3</span>54&gt;i<span class="symbol">\2</span>37<span class="symbol">\3</span>66&gt;r<span class="symbol">\3</span>55<span class="symbol">\3</span>77&gt;<span class="symbol">\3</span>56s<span class="symbol">\0</span>04?r<span class="symbol">\3</span>13<span class="symbol">\0</span>10?<span class="symbol">\3</span>00<span class="symbol">\0</span>00<span class="symbol">\r</span>?<span class="symbol">\3</span>23<span class="symbol">\0</span>26<span class="symbol">\0</span>21?;<span class="symbol">\0</span>20<span class="symbol">\0</span>25?5<span class="symbol">\3</span>57<span class="symbol">\0</span>30?W<span class="symbol">\2</span>66<span class="symbol">\0</span>34?<span class="symbol">\2</span>64f ?<span class="symbol">\3</span>25<span class="symbol">\0</span>01$?<span class="symbol">\0</span>30<span class="symbol">\2</span>11<span class="symbol">\'</span>?<span class="symbol">\2</span>71<span class="symbol">\3</span>75*?<span class="symbol">\3</span>23`.?f<span class="symbol">\2</span>631?]<span class="symbol">\3</span>664?<span class="symbol">\2</span>12*8?<span class="symbol">\2</span>61P;?v<span class="symbol">\3</span>36&lt;?<span class="symbol">\3</span>74h&gt;?W<span class="symbol">\3</span>60??<span class="symbol">\2</span>33tA?<span class="symbol">\3</span>31<span class="symbol">\3</span>65B?<span class="keyword">$tD?\215\357E?#hG?\370\335H?\032QJ?"</span></div><div class="line">    MaxEggPlayerLevel: 20</div><div class="line">    MaxEncounterPlayerLevel: 30</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>10.三维公式，CP公式已经得出</p>
+<p><img src="http://ww3.sinaimg.cn/large/006tNbRwgw1f5yz9cg9l0j30go07u0tp" alt=""></p>
+<p>11.在捕捉精灵的时候，将精灵球在屏幕底端进行顺时针或逆时针旋转几圈之后，精灵球会开始转动，之后需要用弧线投法投出精灵球（顺时针从屏幕左侧投出，逆时针从屏幕右侧投出），应该对捕捉率有所提升</p>
+<p>12.关于power up和等级的计算。</p>
+<p>隐藏属性越高，每次power up所增加的CP值越高。每次power up等级增加0.5级。</p>
+<p>一只CP值为该种精灵最小可能数字的精灵即为等级1。</p>
+<p>想要计算自己的精灵等级，公式是将精灵最新的CP值除以power up所增加的CP值，再将结果除以2.</p>
+<p>每power up 4次（等级提高2级）星尘（stardust）的消耗会增加，每power up 20次（等级提高10级）， 糖果使用量增加1.</p>
+<p>训练师不能power up一只等级超过自己训练师等级的精灵。</p>
+<blockquote>
+<p>Powering up costs both Stardust and candies specific to that Pokémon type. When you power up, the Pokémon gains CP following a complicated formula, gaining more CP the better its hidden stats are.<br>Whenever you power up a Pokémon, their level increases by 1/2. A Pokémon at the minimum possible CP is at level 1. To calculate a Pokémon’s level, divide its current CP by how much CP you gain per power up, and then divide that again by 2.<br>Every 2 levels (or 4 power ups), the Stardust cost of powering up increases. Every 10 levels (or 20 power ups), the candy cost of powering up increases by 1. Note that since level determines Stardust cost, it is possible for a lower CP Pokémon to cost more to upgrade since it can gain less CP per level and thus have a lower max CP cap.<br>Don’t forget, you cannot power up a Pokémon past your trainer level.</p>
+</blockquote>
+<p>13.pokemon最大CP值列表已经被发布了，目前为止CP最大值最低的是鲤鱼王，262.70，最高的是超梦，4144.75（真的有人捉到过超梦吗？），第二高的是快龙，3500.06。</p>
+<p>具体列表：<a href="http://pokemongo.gamepress.gg/pokemon-list" target="_blank" rel="external">Pokemon | Pokemon Go</a></p>
+<p>14.有人一直在好奇为什么自己的pokemon列表里面有的呈现蓝色背景，有的没有。甚至一度怀疑是否蓝色背景表示精英或稀有程度。事实上，蓝色背景表示，该只精灵是在过去24小时内被你所捕获的</p>
+<blockquote>
+<p>The blue glow that appears behind Pokémon in your storage mean that you caught it in the last 24 hours.</p>
+</blockquote>
+<p>15.关于进化。<br>当一只精灵进化，它的基础数值会改变从而获得CP和HP的提升，但是该精灵的等级和个体值并不会改变。</p>
+<blockquote>
+<p>When a Pokémon evolves, its base stats change so the displayed HP and CP increase. However, its Pokémon level and IVs do not change, so if you had a naturally powerful basic Pokémon, its evolution will also be naturally powerful.</p>
+</blockquote>
+<p>16.精灵拥有攻击，防御，耐力和个体值这几个隐藏属性。每种精灵都有自己的基础值，而个体值是在这个基础数值上面随机增加0~15.</p>
+<blockquote>
+<p>Pokémon have the following hidden core stats similar to the games:<br>Attack<br>Defense<br>Stamina<br>Each has a base value (predetermined by species) and anindividual value (IV) that is added on top of the base value andranges from 0-15. To have a truly maxed out Pokémon you need to acquire one with maxed out IVs.</p>
+</blockquote>
+<p>17.每种精灵都拥有攻击，防御，耐力这几个属性，从而得到攻击，防御，生命，特攻，特防这几个属性（基于种类，即同类精灵的基础攻击，防御等等是相同的）</p>
+<p>PS：修正：根据某些评论和贴吧的说法，应该是gen6的种族值，即HP, Atk, Def, SpA, SpD, Spe（血 物攻 物防 特攻 特防 速度）转化而来。也就是说不是由三个隐藏属性推导得到六个属性，而是从gen6的六个属性简化合并成PMG的三个隐藏属性。</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Base Attack = <span class="number">2.6</span> * (<span class="name">Atk</span>^<span class="number">0.46</span>)(<span class="name">SpAtk</span>^<span class="number">0.46</span>)(<span class="name">Sp</span>^<span class="number">0.04</span>) + <span class="number">3</span></div><div class="line">Base Defense = <span class="number">2.6</span> * (<span class="name">Def</span>^<span class="number">0.46</span>)(<span class="name">SpDef</span>^<span class="number">0.46</span>)(<span class="name">Sp</span>^<span class="number">0.04</span>) + <span class="number">3</span></div><div class="line">Base Stamina = <span class="number">2</span> * HP</div></pre></td></tr></table></figure>
+<p>举个例子，这是某只精灵的一段base stats的代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">Stats</span> &#123;</div><div class="line">      <span class="attribute">BaseStamina</span>: <span class="number">120</span></div><div class="line">      BaseAttack: <span class="number">144</span></div><div class="line">      BaseDefense: <span class="number">144</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>再通过精灵本身不同的个体值和CP乘数，我们就可以得到该精灵的各项属性：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">Attack</span> = (Base Attack + Individual Attack) * Total_CP_Multiplier</div><div class="line"><span class="attr">Defense</span> = (Base Defense + Individual Defense) * Total_CP_Multiplier</div><div class="line"><span class="attr">Stamina</span> = (Base Stamina + Individual Stamina) * Total_CP_Multiplier</div></pre></td></tr></table></figure>
+<p>即：</p>
+<p>耐力=(耐力种族+耐力个体值)*TCpM</p>
+<p>攻击=(攻击种族+攻击个体值)*TCpM</p>
+<p>防御=(攻击种族+防御个体值)*TCpM</p>
+<p>18.CP乘数计算。</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">Total_CP_Multiplier</span> = CP_Multiplier + Additional_CP_Multiplier</div></pre></td></tr></table></figure>
+<p>精灵的不同等级对应不同的CP乘数，CP乘数由先天乘数（CP_Multiplier）和后天乘数（ Additional_CP_Multiplier）相加而来。</p>
+<p>当你第一次抓到某只精灵时，该精灵的先天乘数为其等级所对应的乘数，后天乘数为0.</p>
+<p>后天乘数取决于你power up的次数。</p>
+<p>乘数与等级对应列表：CP Multiplier</p>
+<p>19.CP最大值的计算。</p>
+<p>CP公式：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CP = (Attack * Defense^<span class="number">0.5</span> * Stamina^<span class="number">0.5</span> * Total_CP_Multiplier^<span class="number">2</span>) / <span class="number">10</span></div></pre></td></tr></table></figure>
+<p>最大CP推算公式：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Max CP = ((Base_Attack + <span class="number">15</span>) * ((Base_Defense + <span class="number">15</span>)^<span class="number">0.5</span> * (Base_Stamina + <span class="number">15</span>)^<span class="number">0.5</span> * <span class="number">0.7903001</span>^<span class="number">2</span>) / <span class="number">10</span></div></pre></td></tr></table></figure>
+<p>所以我们根据精灵等级，种族可以得到下列公式</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Level Formula</div><div class="line"></div><div class="line"><span class="number">1</span><span class="number">-10</span> (Attack * Defense^<span class="number">0.5</span> * Stamina^<span class="number">0.5</span> * <span class="number">0.009426125469</span>) / <span class="number">10</span></div><div class="line"><span class="number">11</span><span class="number">-20</span> (Attack * Defense^<span class="number">0.5</span> * Stamina^<span class="number">0.5</span> * <span class="number">0.008919025675</span>) / <span class="number">10</span></div><div class="line"><span class="number">21</span><span class="number">-30</span> (Attack * Defense^<span class="number">0.5</span> * Stamina^<span class="number">0.5</span> * <span class="number">0.008924905903</span>) / <span class="number">10</span></div><div class="line"><span class="number">31</span><span class="number">-40</span> (Attack * Defense^<span class="number">0.5</span> * Stamina^<span class="number">0.5</span> * <span class="number">0.004459460790</span>) / <span class="number">10</span></div></pre></td></tr></table></figure>
+<p>20.关于身高和体重。</p>
+<p>很多人在纠结身高和体重的问题，甚至为了刷一只双XL的精灵煞费苦心。但是目前从代码来看，身高体重似乎是给了一个随机值····也就是说这两个属性并没有什么卵用</p>
+<p>21.关于捕捉时的反抗和跳跃行为。每个精灵都有自己的反抗和跳跃时长。</p>
+<p>举个例子：</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">MovementType:</span> POKEMON_ENC_MOVEMENT_JUMP</div><div class="line"><span class="symbol">MovementTimerS:</span> <span class="number">8</span></div><div class="line"><span class="symbol">JumpTimeS:</span> <span class="number">1</span></div><div class="line"><span class="symbol">AttackTimerS:</span> <span class="number">23</span></div></pre></td></tr></table></figure>
+<p>随着抓的动物等级越来越高，我的NiaoPHD都排不上最强了…</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;消息来源主要是贴吧，Reddit，pokemon一个数据网站，以及我自己的一点经验。&lt;/p&gt;
+&lt;p&gt;Reddit已经有人把游戏数据解包，解包结果：&lt;a href=&quot;https://gist.github.com/anonymous/077d6dea82d58b8febde5
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.naaln.com/categories/technology/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Swift - 属性观察者（willSet与didSet）</title>
+    <link href="https://blog.naaln.com/2016/07/Swift-willSet-didSet/"/>
+    <id>https://blog.naaln.com/2016/07/Swift-willSet-didSet/</id>
+    <published>2016-07-17T17:09:45.000Z</published>
+    <updated>2016-10-20T19:59:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>属性观察者，类似于触发器。用来监视属性的除初始化之外的属性值变化，当属性值发生改变时可以对此作出响应。有如下特点：</p>
+<ol>
+<li>不仅可以在属性值改变后触发didSet，也可以在属性值改变前触发willSet。</li>
+<li>给属性添加观察者必须要声明清楚属性类型，否则编译器报错。</li>
+<li>willSet可以带一个newName的参数，没有的话，该参数默认命名为newValue。</li>
+<li>didSet可以带一个oldName的参数，表示旧的属性，不带的话默认命名为oldValue。</li>
+<li>属性初始化时，willSet和didSet不会调用。只有在初始化上下文之外，当设置属性值时才会调用。</li>
+<li>即使是设置的值和原来值相同，willSet和didSet也会被调用</li>
+</ol>
+<p>示例如下：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//普通属性</span></div><div class="line">    <span class="keyword">var</span> firstName:<span class="type">String</span> = <span class="string">""</span></div><div class="line">    <span class="keyword">var</span> lastName:<span class="type">String</span>  = <span class="string">""</span></div><div class="line">    <span class="keyword">var</span> nickName:<span class="type">String</span>  = <span class="string">""</span></div><div class="line">     </div><div class="line">    <span class="comment">//计算属性</span></div><div class="line">    <span class="keyword">var</span> fullName:<span class="type">String</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">get</span></div><div class="line">        &#123;</div><div class="line">            <span class="keyword">return</span> nickName + <span class="string">" "</span> + firstName + <span class="string">" "</span> + lastName</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">     </div><div class="line">    <span class="comment">//带属性监视器的普通属性</span></div><div class="line">    <span class="keyword">var</span> age:<span class="type">Int</span> = <span class="number">0</span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">//我们需要在age属性变化前做点什么</span></div><div class="line">        <span class="keyword">willSet</span></div><div class="line">        &#123;</div><div class="line">            <span class="built_in">print</span>(<span class="string">"Will set an new value <span class="subst">\(newValue)</span> to age"</span>)</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//我们需要在age属性发生变化后，更新一下nickName这个属性</span></div><div class="line">        <span class="keyword">didSet</span></div><div class="line">        &#123;</div><div class="line">            <span class="built_in">print</span>(<span class="string">"age filed changed form <span class="subst">\(oldValue)</span> to <span class="subst">\(age)</span>"</span>)</div><div class="line">            <span class="keyword">if</span> age&lt;<span class="number">10</span></div><div class="line">            &#123;</div><div class="line">                nickName = <span class="string">"Little"</span></div><div class="line">            &#125;<span class="keyword">else</span></div><div class="line">            &#123;</div><div class="line">                nickName = <span class="string">"Big"</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">     </div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">toString</span><span class="params">()</span></span> -&gt; <span class="type">String</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"Full Name: <span class="subst">\(fullName)</span> "</span> + <span class="string">", Age: <span class="subst">\(age)</span> "</span></div><div class="line">    &#125;</div><div class="line">     </div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">let</span> me = <span class="type">People</span>()</div><div class="line">me.firstName = <span class="string">"Li"</span></div><div class="line">me.lastName  = <span class="string">"Lei"</span></div><div class="line">me.age = <span class="number">30</span></div><div class="line"> </div><div class="line"><span class="built_in">print</span>(me.<span class="built_in">toString</span>())</div><div class="line"> </div><div class="line"><span class="comment">/*程序输出</span></div><div class="line">Will set an new value 30 to age</div><div class="line">age filed changed form 0 to 30</div><div class="line">Full Name: Big Li Lei , Age: 30</div><div class="line">*/</div></pre></td></tr></table></figure>
+<p>原文: <a href="http://www.hangge.com/blog/cache/detail_519.html" target="_blank" rel="external">http://www.hangge.com/blog/cache/detail_519.html</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;属性观察者，类似于触发器。用来监视属性的除初始化之外的属性值变化，当属性值发生改变时可以对此作出响应。有如下特点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;不仅可以在属性值改变后触发didSet，也可以在属性值改变前触发willSet。&lt;/li&gt;
+&lt;li&gt;给属性添加观察者必须要声明清楚属
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.naaln.com/categories/technology/"/>
+    
+    
+      <category term="Swift" scheme="https://blog.naaln.com/tags/Swift/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iOS 10设计规范（五）：交互 Part 3</title>
+    <link href="https://blog.naaln.com/2016/07/ios-10-design-5/"/>
+    <id>https://blog.naaln.com/2016/07/ios-10-design-5/</id>
+    <published>2016-07-11T01:52:48.000Z</published>
+    <updated>2016-10-20T19:59:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="权限请求"><a href="#权限请求" class="headerlink" title="权限请求"></a>权限请求</h2><p>只有用户批准后，APP才能获取隐私信息，包括当前位置、日历、通讯录、提醒事项和照片。尽管APP利用这类数据后会给用户带来方便，但同时用户也会希望对隐私数据有所控制。比如，用户希望系统自动给照片加上定位信息，或者系统能自动找到附近的朋友，但当用户想关闭这些功能时，有入口可以关闭。</p>
+<p><img src="http://ww3.sinaimg.cn/large/006tNc79gw1f5pr7jheyuj30hs0eujrv" alt=""></p>
+<p>只有在你的APP明确需要个人数据时，再发出请求。请求获取私人信息这件事，会令人自然而然地产生怀疑感，尤其是人们没有看到必要性的时候。确保只有当用户在使用那些明确需要私人信息的功能时，再请求批准。比如，只有当用户开启了追踪定位路线的功能时，才请求用户批准获取位置信息。</p>
+<p>当必要性不明显的时候，向用户解释为什么需要个人数据。你可以在系统自带的请求提示框内添加自定义文字。文字要具体而礼貌，这样用户才不会有压迫感。文字要尽可能短。不需要包含APP名称，因为当你请求的时候系统已经知道你的APP名称了。</p>
+<p>只有当你的APP必须依赖一些个人信息才能运行的时候，才可以在APP启动时请求权限。</p>
+<p>不要有事没事请求获取位置信息。在获取位置信息前，先检查系统的位置服务是否可用。如果不可用，你就可以干脆不弹出提醒框询问了。</p>
+<h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><p>某些APP可能需要用户配置一些设置项，但大多数APP都可以避免或推迟。优秀的APP可以让大多数用户直接使用，同时也会提供一些方便的途径调整使用的体验。当你按大多数用户预期的方式设计你的APP，你就降低了设置的需要。</p>
+<p>从系统获取你需要的信息。如果你需要有关用户、设备或者环境的信息，尽量向系统查询，而不是问用户。比如，当你想要求用户输入邮政编码来展现本地信息时，还不如向用户请求获取定位信息。</p>
+<p>仔细考虑APP内设置项的优先级。你APP的主界面，是放置必要的或者频繁变动的设置项的好地方，第二屏更适合那些偶尔变动的设置项。</p>
+<p>把不常变化的设置项放到系统设置APP中。「设置」APP是全系统做设置操作的中心，只不过配置时用户必须离开你的APP，而那些常用的设置项直接在你的APP内进行设置要方便得多，</p>
+<p>合适的时候，提供前往「设置」APP的快捷路径。比如，你的APP内有一段让用户去「设置」中设置定位服务的提示，可以直接提供一个自动打开对应设置页面的按钮。</p>
+<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>APP中的每一个字都是你和用户对话的一部分。令这些对话让用户在使用APP过程中产生舒适感。</p>
+<p>使用用户熟悉的、容易理解的字眼。太技术化的词语会把人给吓住，应避免使用用户很难理解的字母缩写和行话。根据你对受众的了解来判断措辞是否恰当，要把高技术语言用清晰易懂的方式告诉用户。这类高技术性语言只有在某些定位于高级用户和技术细分人群的APP才适合使用。</p>
+<p>界面上的文字要清晰而简洁。人们往往对短小、直接的文字接受得比较快、比较容易，而不愿意被迫读一大段文字。对于其中最重要的信息，简要地将其表达出来，还要突出地展现出来，让用户不需要全部读完全部内容，就可以找到他们想要的信息和告诉他们接下来要做什么的指引。</p>
+<p>避免使用居高临下的措辞。避免使用「我们、我们的、我、我的」（比如我们的使用说明、我的训练），这有时会给人侮辱感和居高临下感。</p>
+<p>尽量用非正式的、友好的语气表达。非正式的、和蔼可亲的表达方式，应该就像你跟人一起吃午饭时候的谈话一样。尽量少用缩写，直接称呼你的用户「你」或者「你的」。</p>
+<p>当你想用幽默的语言时，谨慎一些。要知道，用户很可能要阅读你界面上的文字非常多次，一开始看起来小机灵的话看就了也惹人烦。也要知道，一种文化中的幽默感在另一种文化中未必幽默了。</p>
+<p>使用相关且统一连贯的语言和图像。永远都确保引导在当前场景下是适合的，比如说用户在使用iPad的时候就不要展示iPhone上的小提示和图形。使用平台上惯用语言，比如点击、轻滑、横滑、捏、拖拽，比如物理按键和3D Touch，比旋转、摇晃手机。</p>
+<p>提及时间的时候，一定要用精确的表达方式。使用「今天」、「明天」这类友好的措辞挺好，但当用户没搞清楚当前日期的时候，这种方式不准确，也容易造成用户困惑。假设有一个今天午夜前发生的事件，在某个时区看是「今天」发生，在另一个时区可能就变成了「昨天」发生。所以一般来说，时间都应该要以用户看到这个事件发生的当下时区为准。但在一些特殊情况，比如航班动态APP，起飞时间和过程都应该以起飞地为准，这样会更容易理解。</p>
+<p>用户应该一眼就知道每个按钮是干嘛的。当给按钮或其他交互元素起标签时，要用动词，比如连接、发送、添加。</p>
+<h2 id="撤销和重做"><a href="#撤销和重做" class="headerlink" title="撤销和重做"></a>撤销和重做</h2><p>很多APP允许用户通过摇晃设备来撤销和重做某些操作，比如输入、删除。当用户如此操作时，会出现一个提示框，询问用户是否要确认或取消接下来的撤销或重做的操作。</p>
+<p><img src="http://ww2.sinaimg.cn/large/006tNc79gw1f5pr8jounyj30hs0euaab" alt=""></p>
+<p>简洁而清晰地描述要撤销或重做的操作。撤销或重做提示框的标题会自动包括「撤销」或「重做」的前缀（也有前缀后边的待填内容）。你需要用一两个词来描述要撤销或重做的东西是什么，填在前缀后边的待填内容处。举个例子，你可以把提示框的标题设置为「撤销输入姓名」或者「重做地址变更」。</p>
+<p>如果你把摇晃手势定义为「触发撤销或重做之前的操作」，就不要再将这个手势用于其他的动作。</p>
+<p>谨慎使用「撤销」和「重做」按钮。如果APP提供了多种方式完成同样的任务，会让用户疑惑。如果你的APP确实需要撤销、重做按钮，就使用系统提供的标准图标，并且把他们放在顶部导航栏这样用户可预期的位置。</p>
+<p>只在当前环境下进行撤销和重做的操作。这两种操作必须且只能在当前场景/页面下产生清晰且实时的效果，而不能作用于之前的场景/页面。</p>
+<p>来源：</p>
+<p><img src="http://ww1.sinaimg.cn/large/006tNc79gw1f5pqkecxeuj30hs07iwfd" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;权限请求&quot;&gt;&lt;a href=&quot;#权限请求&quot; class=&quot;headerlink&quot; title=&quot;权限请求&quot;&gt;&lt;/a&gt;权限请求&lt;/h2&gt;&lt;p&gt;只有用户批准后，APP才能获取隐私信息，包括当前位置、日历、通讯录、提醒事项和照片。尽管APP利用这类数据后会给用户带来方便
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.naaln.com/categories/technology/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iOS 10设计规范（四）：交互 Part 2</title>
+    <link href="https://blog.naaln.com/2016/07/ios-10-design-4/"/>
+    <id>https://blog.naaln.com/2016/07/ios-10-design-4/</id>
+    <published>2016-07-11T01:51:48.000Z</published>
+    <updated>2016-10-20T19:59:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="手势"><a href="#手势" class="headerlink" title="手势"></a>手势</h2><p>用户是通过触摸屏上的手势来跟iOS设备交互，在用户的预期中，下面这些标准手势在跨系统和所有APP中都有同样的效果。<br>点击。触发一个控制或者选择一个物体。</p>
+<ul>
+<li>拖拽。移动屏幕上的元素。</li>
+<li>轻滑。快速的滚屏或移动。</li>
+<li>横扫。当用一根手指操作时，可以返回上一屏（返回）、展示分屏功能（split view）中被遮挡的部分、展示列表中某一行的删除按钮、展示Peek中的操作项。当在iPad中用四根手指操作，可以在APP之间切换。</li>
+<li>双击。放大并且居中内容/图片，在已经放大的状态下缩小。</li>
+<li>捏。往外捏会放大，往里捏合会缩小。</li>
+<li>长按。若针对可编辑或可选中的文本操作，会展示被放大的光标位置界面；若针对固定内容界面操作，比如集合视图，会进入编辑模式。</li>
+<li>摇动。撤销或重做。</li>
+</ul>
+<p>总的原则是：要使用标准手势。人们都熟悉标准手势，也不希望被迫学习新的手势来做同样的事情。不过在游戏或者其他沉浸式的APP中，自定义手势反而会增加乐趣。除此之外，最好还是使用标准手势，这样就不需要付出额外的发现和记忆成本了</p>
+<p>不要禁止系统级手势。除了标准手势，还有一些其他手势会引发系统级的响应。比如控制中心（从屏幕底部往上拉）和通知中心（从屏幕顶部往下拉）。用户在所有APP中还是需要使用这些手势的。</p>
+<p>不要用标准手势完成不标准的操作。除非你的APP是有特殊玩法的游戏，否则重新定义标准手势的意义会导致用户疑惑，增加理解的复杂度。</p>
+<p>提供一些缩短操作路径的手势作为导航或其他操作的补充（而非替代）。很多系统应用都有个清晰、可点的导航栏按钮，可以让用户回到之前的页面，同时，用户也可以用从屏幕边缘横扫的手势来返回。在iPad上，人们可以按压Home键返回桌面，同时，也可以使用4根手指捏合的手势。</p>
+<p>使用多手指手势可以提高某些APP的体验。尽管并非所有APP都适合多手指操作的手势，比在某些APP中可以让体验变得更丰富，比如游戏和绘画APP中。举个栗子，一些游戏需要多点控制（如方向杆和开火按钮），这时候多手指手势允许这些控制同步进行。</p>
+<h2 id="加载过程"><a href="#加载过程" class="headerlink" title="加载过程"></a>加载过程</h2><p>当内容在加载中的时候，一个空白或者静止的页面会让APP看起来像卡住了，导致用户疑惑甚至失望，有可能让用户离开你的APP。</p>
+<p>加载过程中，尽可能让加载过程明确、透明。至少，展示一个活动的「转菊」表示一直有进度。更好一点的话，告诉用户明确的进程/进度，让他们知道还需要等多久。</p>
+<p>加载过程中，可以教育或者娱乐用户。试试展示一些游戏提示、一系列好玩的视频、有趣的占位图形。</p>
+<p>设计个性化的加载界面。虽然标准的进度条通常是够用了，但有时还是会让用户感觉出戏。考虑使用些跟APP或者游戏契合的自创动画和元素，打造一种沉浸式的体验。</p>
+<p>尽快给出内容。不要在给出用户预期的界面前，就让用户一直等着，而是要尽快把界面展示出来。可以在未加载的地方使用占位的文字、图形或者动画，当内容加载完毕后再替换掉这些占位符。可以的话，在后台就加载好下一页的内容，比如在动画播放的时候，或者在用户通过导航菜单跳转的时候。</p>
+<p>关于加载过程提示的更多信息，详见后文的「加载过程提示」。</p>
+<h2 id="模态（Modality）"><a href="#模态（Modality）" class="headerlink" title="模态（Modality）"></a>模态（Modality）</h2><p>模态是指，用户必须停下其他事情，先完成一项任务、关闭一条消息或界面才能继续的状态。浮层表单（Action Sheet）、弹框（Alert）、活动视图（Activity Views）都可以实现模态的体验。一些APP有模态界面，比如当用户在编辑日历中的事件，或者当用户在Safari中选择书签的时候。模态界面有几种形态：可以是全屏的，可以是父界面，可以是悬浮窗，也可以只是屏幕的一部分。一个典型的模态界面包括「确认」、「取消」两种退出模态的选项。</p>
+<p><img src="http://ww3.sinaimg.cn/large/006tNc79gw1f5pr2iapnhj30hs0d60tr" alt=""></p>
+<p>尽量少使用模态。一般来说，用户希望非线性地使用APP，只有必须要吸引用户全部注意的时候再使用。比如说用户必须在「完成」和「放弃」中二选一才能继续使用APP的时候，又比如要用户保存重要信息的时候。</p>
+<p>为用户提供一种明显且安全的方式离开模态。要确保用户在离开模态时，对他们的行为会导致什么结果有明确的认知。</p>
+<p>保持模态任务的的简单、精炼、聚焦。不要将模态设计成好像嵌在APP中的迷你应用。如果模态设计得太复杂，用户很容易忘记进入模态之前的主要任务是什么。在创建那些包含树形视图结构的模态任务时要特别小心，因为这种形式很容易使人们产生迷失感，忘记回退的步骤。如果你的模态任务当中必须包含那些需要通过不同的视图来呈现的子任务，那么一定要给用户提供单一且清晰的信息结构路径。在用户完成模态任务前，避免使用「完成」按钮。</p>
+<p>为模态界面拟一个能够概括任务的标题。你也需要在界面的其他部分提供能完整描述任务或者能引导用户的文字。</p>
+<p>把提醒弹框（Alert）留给需要传递必要——理想情况下还应有可操作项——的信息的时候。提醒框会打断用户的操作，并且需要用户点击一下才能退出。所以让用户感觉这个弹框的出现是合理的，非常重要。更多信息，后文继续展开。</p>
+<p>对通知的体验怀抱敬畏之心。在设置中，用户会定义他们接收你APP通知的方式。记住这一点，可以避免导致用户完全关掉你APP的通知。</p>
+<p>不要在悬浮窗之上再展开一个模态界面。除了提醒弹框，其他东西都不应该在悬浮窗之上出现。在极少数情况下，当用户在悬浮窗上做出操作后需要展现一个模态界面，那就先关闭悬浮窗，再展现模态界面。</p>
+<p>根据你APP的布局，调整模态界面的位置。举个栗子，模态界面有时会包含导航栏，让它的位置跟你APP的导航栏位置重合。</p>
+<p>选择恰当的模态界面样式。你可以使用的样式包括：</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79gw1f5pr2vr1vkj30hs0ahabh" alt=""></p>
+<p>选择一个适合的模态过场。要跟你的APP搭配，不突兀。默认的过场方式是从屏幕下方垂直地向上进入，完成后再落下去。三维翻转的过场方式，在视觉上看好像是当前界面的背面内容，完成模态任务后再翻转回来。需要注意的是，APP中的模态过场方式要保持统一。</p>
+<h2 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h2><p>用户在APP中发生了预期外情况时，就需要导航了。你的任务就是让导航能自然而不突兀地支撑整个APP的结构和想要实现的目标。导航应该是自然的、易理解的，而不是喧宾夺主地令用户的注意力从内容上吸引过来。iOS中，有三种主要的导航结构。</p>
+<h4 id="树形结构"><a href="#树形结构" class="headerlink" title="树形结构"></a>树形结构</h4><p>在每屏都要选择一条路径，直到到达目标页面为止。这时候如果你要去另一个地方，你必须一步步回退，或者从头开始再选择不同路径。设置、邮箱就是这种导航结构。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006tNc79gw1f5pr3b4birj30hs087jre" alt=""></p>
+<h4 id="扁平结构"><a href="#扁平结构" class="headerlink" title="扁平结构"></a>扁平结构</h4><p>可以在很多类别的内容间切换，音乐和AppStore就是这种导航结构。</p>
+<p><img src="http://ww2.sinaimg.cn/large/006tNc79gw1f5pr3ncmljj30hs0530sp" alt=""></p>
+<h4 id="内容或体验驱动的结构"><a href="#内容或体验驱动的结构" class="headerlink" title="内容或体验驱动的结构"></a>内容或体验驱动的结构</h4><p>可以在内容中随意切换，或者内容本身就是导航。游戏、书籍以及其他沉浸式APP大多都使用这种导航结构。</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79gw1f5pr3vqwiuj30hs06gaa5" alt=""></p>
+<p>一些APP也会融合多种导航结构，比如，一个APP可以在使用扁平结构的同时，在每个类别中又使用树形结构。</p>
+<p>永远都要为用户提供清晰的路径。用户应该随时都能够知道他们在APP中的什么位置，而且了解如何去前往一个目的地。除了导航结构，内容之间的路径也应该是有逻辑、可预期的。一般来说，每个页面都要有到达路径。如果用户需要在一个页面上看多种信息，试试使用操作项列表（Action sheet）、提醒框、悬浮窗或者模态界面。这些组件的详细信息，后文展开。</p>
+<p><img src="http://ww3.sinaimg.cn/large/006tNc79gw1f5pr43inzdj30hs0csaad" alt=""></p>
+<p>设计一种能够快而简单地获取内容的信息架构。以尽可能少的点击、滑动和页面来组织所有信息。</p>
+<p>用各种手势营造流畅而优雅的体验。让用户毫无阻拦地在各页面之间移动。比如，你可以允许用户通过从屏幕侧边滑动，以返回上一页。</p>
+<p>使用标准的导航组件。尽量使用页面控制组件（Page Control）、Tab栏、Segmented Control组件、列表组件、集合视图（Collection Views）组件和分割屏组件。用户对这些组件都已经熟悉了，凭直觉就知道怎么使用你的APP。</p>
+<p>在移动过程中使用导航栏（Navigation Bar）。导航栏的标题会告诉用户目前在什么位置，「返回」按钮可以简单返回上一页。更详细信息，在后文「导航栏」展开。</p>
+<p><img src="http://ww3.sinaimg.cn/large/006tNc79gw1f5pr4bynawj30hs09hq32" alt=""></p>
+<p>利用Tab栏代表不同类别的内容或功能。无论用户现在在哪里，tab栏都能让用户快速简单地在不同模块间切换。更多信息，在后文「Tab栏」展开.</p>
+<p>当你要展示多个包含同一类内容的页面时，试试页面控制组件（Page Contro，比如很多APP更新后的功能介绍页底部的导航小圆点）。这个组件会告诉用户一共有几页，以及目前所处位置。「天气」APP就使用了一个页面控制组件来展示不同位置的天气页。更多信息，在后文「页面控制组件」展开。</p>
+<p>Segmented Controls组件（见下图）和工具栏没有导航作用。前者用于将信息组织成不同类别，后者用于与当前内容进行交互。更多信息，在后文「Segmented Controls」和「工具栏」展开。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006tNc79gw1f5pr4jkgilj30hs09hq32" alt=""></p>
+<p>来源：</p>
+<p><img src="http://ww1.sinaimg.cn/large/006tNc79gw1f5pqkecxeuj30hs07iwfd" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;手势&quot;&gt;&lt;a href=&quot;#手势&quot; class=&quot;headerlink&quot; title=&quot;手势&quot;&gt;&lt;/a&gt;手势&lt;/h2&gt;&lt;p&gt;用户是通过触摸屏上的手势来跟iOS设备交互，在用户的预期中，下面这些标准手势在跨系统和所有APP中都有同样的效果。&lt;br&gt;点击。触发一个控制
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.naaln.com/categories/technology/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iOS 10设计规范（三）：交互 Part 2</title>
+    <link href="https://blog.naaln.com/2016/07/ios-10-design-3/"/>
+    <id>https://blog.naaln.com/2016/07/ios-10-design-3/</id>
+    <published>2016-07-11T01:50:48.000Z</published>
+    <updated>2016-10-20T19:59:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://ww1.sinaimg.cn/large/006tNc79gw1f5pqvymva1j30hs0fswfn" alt=""></p>
+<h2 id="信息输入"><a href="#信息输入" class="headerlink" title="信息输入"></a>信息输入</h2><p>输入信息的过程总是无趣的。当用户还没开始做什么有价值的事情之前，就要求用户做大量的输入，用户可能放弃使用你的产品。</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79gw1f5pqwgld5lj30hs0fswfn" alt=""></p>
+<p>需要输入时，尽量提供选项。这会让数据输入的效率高，因为从预设好的选项中做选择这件事，总是比自己回答要容易。举个栗子，尝试使用选择器或列表来替代输入框。</p>
+<p>可以的话，尽量从系统中获取信息。能自动获取的信息或者用户授权后可以获取的信息，就不要让用户提供了，比如通讯录、日历信息。</p>
+<p>提供合理的默认选项。把用户可能选择的选项预先填写好，以降低思考成本，提高用户的决策速度。</p>
+<p>只有当必填信息都收集到后，再提供进一步的操作或内容。比如用户填完信息前，「下一步」选项是不可点的。这类按钮从不可点变为可点，就是提示用户该继续进程的一种视觉信号。</p>
+<p>实时地检查用户所填信息。如果你填完一个冗长的表格后，还不得不回去改正错误，会让用户产生很强的挫败感。可以的话，在用户输入完成后马上检查，好让用户可以马上改正。</p>
+<p>只有这个信息是真的有必要收集时，再将之设为「必填选项」。</p>
+<p>给选项列表提供方便的导航工具。特别是在表格或者选择器中，尝试把选项按字母顺序或者其他的逻辑关系分类，这会提高浏览和选择的效率。</p>
+<p>在文本框中展示提示信息。当输入框中没有其他文本时，可以显示一些诸如「邮箱」、「密码」这样描述输入内容的信息。这样就不需要在其他地方再使用额外的标签提示了。</p>
+<h2 id="反馈"><a href="#反馈" class="headerlink" title="反馈"></a>反馈</h2><p>「反馈」可以让用户知道目前APP在做什么、后续可以做什么、每一步操作后的结果。</p>
+<p>尽量以自然而不招摇的方式把状态和其他类型的反馈融入界面中。理想情况下，用户不操作或者不被打断就能获取重要信息。比如说邮箱，巧妙地把邮件概览信息放到底部工具栏，这样的设计既不会跟屏幕上的主要内容冲突，而且随时扫一眼就能获得信息。</p>
+<p><img src="http://ww2.sinaimg.cn/large/006tNc79gw1f5pqx3losjj30hs0b5q3b" alt=""></p>
+<p>尽量避免不必要的提醒框（alert，在屏幕正中间出现）。提醒框是一种强大的反馈机制，不过只应该用于传达特别重要——理想情况下，还要有可操作项——的信息。如果用户看到了太多无谓的提醒框，就会很快忽略掉未来的提醒框。更多的规范，详见后文展开。</p>
+<h2 id="文档操作"><a href="#文档操作" class="headerlink" title="文档操作"></a>文档操作</h2><p>用户在创建、查看、管理文档时，不需要思考文档系统。如果你的APP有很多文档操作，尽可能地淡化。</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79gw1f5pqxbm39ij30hs0b5aaj" alt=""></p>
+<p>逐渐让用户意识到：用户的工作进度是安全的，除非文档被删掉。一般地，不要让用户主动保存文档，应该按一定频率自动保存，而且当用户打开或关闭文档、切换APP时，也要自动保存。不过某些情况下，比如当用户编辑了一个已存在的文档时，会涉及到原文件会被覆盖的问题，这时候询问用户「保存」或「不保存」还是有意义的。</p>
+<p>不要提供「创建一个只保存在当前设备中的文档」的选项。用户一般希望他的所有设备都能使用他们的文档。只要条件允许，你的APP都应该支持云端存储。</p>
+<p>文档浏览界面应该直观简洁、图形化。理想情况下，浏览界面应该跟系统中的文档选择器相似。如果你设计了一个自定义的浏览界面，要确保它是直观简洁且高效的。好的文件浏览界面应该是高度图形化的，每个文档都有图形化的代表。为了提高导航效率，要减少手势的运用，尝试提供全局性的「新建文档」按钮，这样用户可以随时新建文档。</p>
+<p>让用户不离开APP就能预览文件。你可以使用「预览」（Quick Look）功能让用户查看Keynote、Numbers、Pages文档，也包括PDF、图片和其他类型的文档。即使你的APP不支持这些文件格式，「预览」功能让你的用户也能打开预览。更详细的关于Quick Look的介绍，在后文展开。</p>
+<p>在恰当的时候，让用户把文档分享到其他APP中。通过iOS系统中自带的「文件提供扩展程序」（Document Providers），用户可以分享文档到其他APP。另外，你的APP也可以让用户从其他APP中浏览/打开文档。关于「文档提供扩展程序」更多的信息，在后文展开。</p>
+<h2 id="APP启动过程体验"><a href="#APP启动过程体验" class="headerlink" title="APP启动过程体验"></a>APP启动过程体验</h2><p>APP的启动过程，是你留住新用户和维系老用户的机会，启动过程的体验应该是快速、有趣、有教育作用的。</p>
+<p>提供一个启动页。启动页就是你APP启动时展示的界面，目的是让信息初始化的过程显得快而灵敏。由于这个页面会很快被APP的首页替换掉，所以页面上应该都跟首页是非常相似的、存于本地的文字和交互元素。更多信息，会在后文「启动页」模块展开。</p>
+<p>以恰当的屏幕方向启动。如果你的APP同时支持竖屏和横屏模式，它应该以设备当前的方向启动；如果你的APP只支持一种方向模式，那就永远以这种方向启动。除特殊情况外，无论Home键在左边还是右边，横屏模式下的APP都应该正确地自适应。更多信息，在后文「布局」模块展开。</p>
+<p>让用户尽快进入APP中进行操作。不要因为展示开屏画面、菜单或者操作说明，反而延长了用户开始使用APP的时间，应该直接让用户进入。如果APP确实需要教育引导或者功能介绍，就要提供「跳过」选项。同时，不要再对老用户展现这些内容。</p>
+<p>预见用户可能遇到的问题并给予帮助。应该主动地寻找用户可能受阻的时刻。比如一个游戏，应该在用户暂停游戏时，或者游戏角色没有进展时，给一些有用的小建议。有些用户第一次看到这些小建议时，会忽略掉，要让用户可以重复查看。</p>
+<p>降低引导模块的必要性。为初次使用者提供使用操作指引是好事，但设计优秀的APP应该是简洁的、凭直觉就会使用的。如果你的APP需要大量的操作指引，你就地重新思考APP的设计了。</p>
+<p>让学习过程充满发现的乐趣。相比于阅读一堆说明书，边学边做要有趣多了。用动画和互动的形式，结合上下文或者场景，逐渐教育用户。不要使用看起来可以操作的屏幕截图。</p>
+<p>避免直接让用户做设置。用户期望你的APP直接可以运行。所以要为大多数用户设计，让少数想要不同框架的人更改设置以满足他们的小众化需求。在可能的范围内，从设备的设置和默认项中，或者从同步服务（如iCloud）中获取APP的设置信息。如果你必须要用户做设置，先在APP中提示用户，让他们到APP里的设置项中更改。</p>
+<p>避免在APP中展示协议和免责条款。在你的APP被下载前，就让AppStore展示协议和免责条款。如果你必须要把这些内容放到你的APP中，用一种平衡的方式将其融合，不要打断用户体验。</p>
+<p>当你的APP重新启动时，恢复之前的状态。不要让用户每次打开APP时，都要原路进入之前的位置。保护并且恢复之前的状态，以便于用户接着他们上次离开时的状态继续使用。</p>
+<p>不要太快或者太频繁地让用户评价你的APP。这样会打扰用户，也会降低有效的用户反馈的数量。为了鼓励深度的用户反馈，在你要求用户评价之前，要给他们足够的时间建立观点。永远要给用户提供不评价的选项，永远不要强迫用户评价。</p>
+<p>不要引导用户重启系统。重启会花费时间，而且让你的APP看起来不可靠又难用。如果你的APP有内存或者其他问题，不重启系统就很难运行，你需要处理这些问题。</p>
+<p>来源：</p>
+<p><img src="http://ww1.sinaimg.cn/large/006tNc79gw1f5pqkecxeuj30hs07iwfd" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/006tNc79gw1f5pqvymva1j30hs0fswfn&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;信息输入&quot;&gt;&lt;a href=&quot;#信息输入&quot; class=&quot;headerlink&quot; titl
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.naaln.com/categories/technology/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iOS 10设计规范（二）：交互 Part 1</title>
+    <link href="https://blog.naaln.com/2016/07/ios-10-design-2/"/>
+    <id>https://blog.naaln.com/2016/07/ios-10-design-2/</id>
+    <published>2016-07-11T01:49:48.000Z</published>
+    <updated>2016-10-20T19:59:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="3D-Touch"><a href="#3D-Touch" class="headerlink" title="3D Touch"></a>3D Touch</h2><p>3D Touch提供了一种新的基于按压的交互方式。在支持的3D Touch的设备上，用户可以通过用力按压来获得新的功能。这时候，App会给出一个展现更多内容的菜单，或者播放一段动画。</p>
+<h3 id="桌面上的交互"><a href="#桌面上的交互" class="headerlink" title="桌面上的交互"></a>桌面上的交互</h3><p>在桌面上，对着APP的图标重按时会出现一个操作列表，让用户可以快速进入APP中的常用功能或者浏览有用的信息。比如说，在日历图标上重按后，可以快捷地新建日程，也可以显示日程中的下一个事项。</p>
+<h3 id="轻压和重压（Peek-and-Pop）"><a href="#轻压和重压（Peek-and-Pop）" class="headerlink" title="轻压和重压（Peek and Pop）"></a>轻压和重压（Peek and Pop）</h3><p>Peek（轻压）能让用户通过当前环境之上的临时窗口来预览一个对象，比如预览页面、链接、文件。用手指稍微重按某个对象，就可以实现Peek功能（在该对象支持Peek功能的前提下）。抬起手指，则退出Peek界面。</p>
+<p>如果想要打开这个对象浏览更多细节，稍微加重按压该对象的力度，就会弹出全屏窗口，这个动作称为Pop（重压）。</p>
+<p><img src="http://ww3.sinaimg.cn/large/006tNc79gw1f5prnrb6bmj308o0ff0td" alt=""></p>
+<p>在某些Peek窗口中，用户上滑后可以看到更多的相关操作。比如，当用户在Peek某个Safari中的链接时做了上滑动作，则可以看到「在新标签页中打开」、「加入阅读列表」、「拷贝」三个选项。</p>
+<ul>
+<li>使用Peek功能提供实时、丰富的预览。理论上，Peek可以提供足够的信息辅助完成当前目标，或者帮助用户决定是否要完整地浏览这个对象。比如，在邮件中先预览某个链接，再决定是否要在浏览器中打开，或者要不要分享给朋友。Peek常被用于表格中，这可以提供一个行项的详细内容。</li>
+<li>预览窗口要设计得足够大。这样手指才不会挡住内容，且内容应当有丰富的细节，这样用户才能决定是不是要更用力按，打开全屏浏览（Pop）</li>
+<li>APP应该始终提供Peek和Pop功能。如果你在某些地方支持，某些地方不支持，用户可能认为你的APP或者他们的手机出了毛病。</li>
+<li>让每一个Peek操作后都可以Pop。虽然Peek可以提供用户需要的大部分信息，但一旦他们决定专注浏览这个对象时，你应该让用户执行Pop操作。Pop操作后打开的页面，应该要跟普通点击打开的页面一致。</li>
+<li>在Peek操作中，尽量避免使用类似按钮的的界面元素。如果用户抬起手指去点击这个像按钮的元素，Peek界面就会消失。</li>
+<li>不要为同一个对象同时提供「Peek」和「长按进入编辑状态」两个功能。因为这会让用户混乱，系统也很难判断用户的意图。</li>
+<li>在合适的时候，为Peek提供「上滑后展现更多操作项」功能。并非所有Peek都适用，但这是个缩短操作路径的好办法。如果你的APP已经有了长按某个对象后弹出操作项的功能，不妨试试在Peek的时候提供同样的操作项。</li>
+<li>不要在上滑后的操作项中提供「打开」功能。用户更用力按压就可以进入了，不需要多此一举。</li>
+<li>不要把Peek作为操作项的唯一触发方式。因为并非所有硬件都支持Peek and Pop，一些用户也可能关闭3D Touch功能，所以应该在长按后也提供相同的操作项。</li>
+</ul>
+<h2 id="辅助功能"><a href="#辅助功能" class="headerlink" title="辅助功能"></a>辅助功能</h2><p>iOS为视觉、听觉和其他方面的残障人士提供了大范围的无障碍辅助功能。大多数基于官方组件库的APP可以低成本实现辅助功能，让更多人在使用你APP时获得无差别的体验。</p>
+<p>为照片、图标和其他交互元素提供可替代的文本标签。这些替代标签在屏幕上是不可见的，但是他们可以通过VoiceOver（设置 - 通用 - 辅助功能）描述出屏幕上的内容，让视觉障碍人士使用。</p>
+<p>应该响应系统的辅助功能设置项。如果你APP界面是使用官方组件库制作的，文本和UI元素会自动响应系统设置（如加粗、大字号等）。APP还应该在特定的时候检查并响应系统设置，比如“减弱动态效果”。APP中的自定义字体也应该遵从辅助功能的设置项。</p>
+<p>测试时要试试辅助功能。除了文本和动效的变化，辅助功能还可以设置对比度、反转颜色、降低透明度等。尝试打开这些设置项看看你的APP用起来如何。</p>
+<p>视频中别忘了字幕和语音描述。字幕可以让失聪和听力障碍人士了解视频里的对话和其他音频信息。语音描述让视障人士也能了解关键的视频内容。</p>
+<h2 id="声音"><a href="#声音" class="headerlink" title="声音"></a>声音</h2><p>无论声音在你APP中是重要部分还是锦上添花的部分，你都需要知道用户对声音的预期是什么。</p>
+<p>用户常常通过音量按钮、静音开关、耳机控制器和屏幕上的音量滑块来控制声音。很多第三方配件也有了声音控制功能。声音会通过内置听筒、扬声器、耳机和AirPlay/蓝牙设备输出。</p>
+<ul>
+<li>静音状态。为了避免被铃声、新消息提示音等打扰，用户会把设备置为静音，被静音的也包括按键音、音效、游戏内声音等辅助音。当设备被置为静音的时候，只有几种明确要播放的场景可以发出声音，比如音视频播放器、闹钟、语音/视频消息。</li>
+<li>音量。无论用户是用设备上的物理按键还是屏幕上的滑块来调整音量，他们预期的是整个声音系统统一变化，包括音乐、APP内音效等。唯一例外的是铃声音量，它是单独调节的。</li>
+<li>耳机。使用耳机，用户可以比较隐私地听声音，也可以解放双手。当用户把耳机插好，就预期着声音自动地无缝切换到耳机中。当拔掉插头，用户预期音频和视频立即暂停。</li>
+</ul>
+<p>你的APP可以独立调整跟自己相关的音量，但最终的输出音量永远还是受系统控制。</p>
+<p>用户经常想使用不同的设备（比如客厅里的立体声设备、汽车音响，或者Apple TV）来输出声音。除非有特别原因，应该支持这种切换能力。</p>
+<p>最好使用系统提供的音量控制组件让用户调整音量，这个组件支持自定义，可使用音量控制滑块、声道选择等。</p>
+<p>短音和振动等功能，建议使用系统自带的声音服务。</p>
+<p>如果声音是APP中的必要元素，给声音分到某个特定类别中。不同种类的声音中：有的可以被静音键静音，有的可以跟其他声音混在一起，有的可以在后台继续播放。比如说，一般情况下不要让其他APP打断用户正在听的音乐。另外，除非APP要先录音、再回放，否则最好避免在APP运行中改变声音的类别。</p>
+<p><img src="http://ww2.sinaimg.cn/large/006tNc79gw1f5pqtiik50j30hs0abdhw" alt=""></p>
+<p>恰当的情况下，当声音在播放中被打断后应自动恢复。有时候，正在播放的声音被其他APP打断了。一些临时的打断（比如来电），用户期望打断结束后会恢复到打断前的音频状态；一些永久的打断（比如siri开始播放音乐），用户就不期望要恢复。需要强调的是，只有在打断发生时，正在播放的音频才会被恢复。比如用户正在玩的游戏和正在听的音乐，在打断结束后应该恢复，而当时没有使用的APP不会变化。</p>
+<p>如果你的APP有可能临时打断其他APP，当打断结束后，要让其他APP知道，以便于恢复。</p>
+<p>只有在有意义的情况下响应声音控制命令。用户可以在你APP界面之外的地方对声音发起控制，比如用耳机、控制中心。无论你的APP是在前台还是后台，只要它正在播放声音（也包括用AirPlay连接其他设备在播放），都应该响应。此外，若用户操作其他APP播放声音，你的APP不能阻止。</p>
+<p>不用赋予声音控制功能新的用途。用户预期是通过声音控制模块在所有APP中控制声音。永远不要给用户的声音控制行为做出其他定义。如果你的APP不需要在声音层面响应用户的控制操作，那就不要响应。</p>
+<h2 id="账号验证"><a href="#账号验证" class="headerlink" title="账号验证"></a>账号验证</h2><p>只有在你能提供价值的情况下，才要求用户做账号验证操作，比如个性化体验、使用高级功能、购买内容、同步数据。如果你的APP需要用户验证账号，要保证登录过程简单快捷，这样才不会破坏用户体验。</p>
+<p>尽可能把登录模块置后。当用户还没开始做有用的事情前就被强迫要求登录，用户往往会放弃。先要给用户爱上你APP的机会，再让他对你付出承诺。在电商APP类中，让用户先浏览你的商品，只有在他们要支付的时候再要求登录。在信息消费类APP中，先让用户浏览内容，让他们知道登录后你能提供什么东西。</p>
+<p>解释清楚账号验证这步操作的好处，在也告诉用户怎么才能注册。如果你的APP需要做账号验证，在登录界面用一段简短而友好的内容告诉用户照做的好处。另外，要记住并不是每个用户一开始就有你的账号，要记得解释清楚怎么获取新账号，或者在APP内给一个简单的方法登录。</p>
+<p>要给出合适的键盘，降低输入成本。比如说，当你要求用户填写邮箱时，应该选择包含了快捷输入键的邮箱键盘。</p>
+<p>来源：</p>
+<p><img src="http://ww1.sinaimg.cn/large/006tNc79gw1f5pqkecxeuj30hs07iwfd" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;3D-Touch&quot;&gt;&lt;a href=&quot;#3D-Touch&quot; class=&quot;headerlink&quot; title=&quot;3D Touch&quot;&gt;&lt;/a&gt;3D Touch&lt;/h2&gt;&lt;p&gt;3D Touch提供了一种新的基于按压的交互方式。在支持的3D Touch的设备上，用户可以
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.naaln.com/categories/technology/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iOS 10设计规范（一）：概述</title>
+    <link href="https://blog.naaln.com/2016/07/ios-10-design-1/"/>
+    <id>https://blog.naaln.com/2016/07/ios-10-design-1/</id>
+    <published>2016-07-11T01:48:48.000Z</published>
+    <updated>2016-10-20T19:59:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://ww4.sinaimg.cn/large/006tNc79gw1f5pqdnn2boj30hs0d10up" alt=""></p>
+<h2 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h2><p>iOS区别于其他平台的三个主要特征：</p>
+<ul>
+<li>清晰呈现</li>
+</ul>
+<p>各种大小的文字清楚，图标明确易懂，不多余的修饰，由功能驱动设计，利用留白、颜色、字体、图形等元素巧妙地突出重要内容，引导用户行为。</p>
+<ul>
+<li>遵从内容</li>
+</ul>
+<p>动效和界面设计的目的都是为了让用户更好地理解内容，而非喧宾夺主。充分利用整个屏幕，尝试使用毛玻璃效果（透明+模糊）可以让用户看到更多内容。尽量少用浮雕、渐变和阴影，让界面更轻，保证内容的核心地位。</p>
+<ul>
+<li>纵深层次</li>
+</ul>
+<p>用清晰的视觉层级与动效传达出各元素之间的层级关系，有助于用户理解内容。通过点击发现内容，带来愉悦感，且不损失上下文环境。一些过场设计也可以传达出层次感。</p>
+<p>为了达到最理想的效果，要时刻记住以下原则：</p>
+<ul>
+<li>审美层面上的完整性</li>
+</ul>
+<p>这决定了一个APP是否将其功能与其界面、交互融合为一体。比如说，一个帮助人们完成正式任务的APP，设计上应该使用淡雅而不抢眼的图形、通用的标准化操作，并时刻给予明确的预期，让用户能专注于任务本身。相反的例子，比如一个游戏APP的界面，就应该是足够抢眼和吸引人的，因为这能够增强趣味性、激发兴奋感，让用户产生进一步探索的欲望。</p>
+<ul>
+<li>视觉统一性</li>
+</ul>
+<p>一个APP内应该使用同一套规范标准，比如使用系统提供的组件、通用的图标、标准的字号和相同的术语。</p>
+<ul>
+<li>对屏幕内容直接操作</li>
+</ul>
+<p>这有助于用户理解。当用户旋转设备或者对着屏幕上的内容使用手势的时候，用户可以立即看到他们的动作产生了什么效果。</p>
+<ul>
+<li>反馈</li>
+</ul>
+<p>用户的每一个动作都应该有其对应的可感知的反馈。比如当用户点击某个元素时，需要短暂地高亮一下以示反馈；比如用流程指示器来表达冗长流程的不同状态；比如用动画或声音传达特定动作的效果。</p>
+<ul>
+<li>象征</li>
+</ul>
+<p>当APP的视觉和交互元素跟日常经验相似时，用户会上手得更快——无论经验来源于线上还是线下。在iOS上用户是直接跟屏幕交互的，所以这种做法效果很明显。比如你把当前的页面移开，就漏出了下面掩盖的页面；比如你会拖着内容移动；比如切换开关、移动滑块、使用滚动条翻页，用户甚至可以像翻书一样在iOS中浏览书和杂志的内容。</p>
+<ul>
+<li>用户掌握控制权</li>
+</ul>
+<p>APP可以给出后续操作的建议或者对可能的风险发出提醒，而不应该直接替用户作出选择。优秀的APP既能给用户选择权，又能避免预期外的结果。对用户而言，APP中的交互元素应该是熟悉且预期明确的，当用户作出具有破坏性的操作前是经过确认的，用户也可以轻易取消之前的行动（即使行动正在生效中）</p>
+<h2 id="iOS-10的新特性"><a href="#iOS-10的新特性" class="headerlink" title="iOS 10的新特性"></a>iOS 10的新特性</h2><p>在iOS 10中，你可以建立比之前功能更强的APP。当你在研究这些变化对你的APP有什么好处时，要特别注意设计规范。</p>
+<p><img src="http://ww3.sinaimg.cn/large/006tNc79gw1f5pqfv0mtaj30hs0fswfo" alt=""></p>
+<p>搜索屏和首屏上的Widget。不需要打开APP，就可以得到实时的信息，或者使用特定功能。过去，用户只能在通知中心中添加Widget以便于快速进入APP。现在，用户在搜索屏上也可以添加Widget，只要在首屏或锁屏向右滑就可以看到了。开发者也可以在快捷菜单（使用3D Touch点击APP图标时出现）上显示Widget。</p>
+<p><img src="http://ww2.sinaimg.cn/large/006tNc79gw1f5pqgb7uufj30hs0fsab6" alt=""></p>
+<p>与「信息」应用整合。通过「信息」中对话页下方的扩展项整合其他APP，允许用户跟好友分享APP内的具体内容。可分享的内容包括文本、照片、视频、贴纸，甚至可以交互的内容（比如小游戏）</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79gw1f5pqglky99j30hs0fs3zl" alt=""></p>
+<p>与Siri整合。整合后，可以让用户通过语音完成特定类型的特定操作，比如打电话、发信息、开始任务。</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79gw1f5pqgtw6mkj30hs0fsq3r" alt=""></p>
+<p>提升通知系统的能力。当用户使用3D Touch点击通知，或者在未锁屏时向下通知信息，让用户获得更详细的信息，并可以在不离开当前环境下做出操作。</p>
+<h2 id="基础交互元素"><a href="#基础交互元素" class="headerlink" title="基础交互元素"></a>基础交互元素</h2><p>大多数iOS上的APP只要使用通用组件库（一套定义了各种常用交互元素的程序框架）就够了。这个框架在提供巨大的自定义空间的同时，还保证了APP跨系统的体验一致性。组件库中的元素既灵活又通用，适应性极强，能让开发者在任何iOS设备上设计高质量的APP，而且当系统更新时，APP内的组件也自动更新。</p>
+<p>组件库分三类：</p>
+<ul>
+<li>Bars（条形栏）</li>
+</ul>
+<p>告诉用户他们在APP的什么位置，提供导航栏，还可以承载按钮或其他能够操作、传达信息的元素。</p>
+<ul>
+<li>Views（内容区）</li>
+</ul>
+<p>包括了用户在APP中看到的主要内容，比如文本、图形、动效和其他交互元素。views可以支持滚屏、插入、删除、整理等行为。</p>
+<ul>
+<li>Controls（操作项）</li>
+</ul>
+<p>操作行为、传达信息。比如按钮、开关、文本框、步骤指示条等。</p>
+<p>组件库除了可以定义iOS的界面之外，还定义了APP可以调用的系统级功能。比如你的APP可以响应触摸屏上的手势，可以支持绘画、跳转、打印等功能。</p>
+<p>iOS也跟其他技术框架做了紧密融合，比如Apple支付、健康组件（HealthKit）、研究组件（ResearchKit），让你设计出功能强大无比的Apps。</p>
+<p>来源：</p>
+<p><img src="http://ww1.sinaimg.cn/large/006tNc79gw1f5pqkecxeuj30hs07iwfd" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/large/006tNc79gw1f5pqdnn2boj30hs0d10up&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;设计原则&quot;&gt;&lt;a href=&quot;#设计原则&quot; class=&quot;headerlink&quot; titl
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.naaln.com/categories/technology/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo集成Algolia搜索插件</title>
+    <link href="https://blog.naaln.com/2016/07/hexo-with-algolia/"/>
+    <id>https://blog.naaln.com/2016/07/hexo-with-algolia/</id>
+    <published>2016-07-04T17:25:43.000Z</published>
+    <updated>2016-10-20T19:59:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Swiftype搜索最近停了，开始收费，不想收费又想有这个站内搜索功能怎么办？<br>可以用Algolia免费版！不仅免费，感觉上要比Swiftype要快，下面简单说下集成步骤。</p>
+<h3 id="第一步：到官网注册帐号-可以用github登录"><a href="#第一步：到官网注册帐号-可以用github登录" class="headerlink" title="第一步：到官网注册帐号(可以用github登录)"></a>第一步：到官网注册帐号(可以用github登录)</h3><p><a href="https://www.algolia.com/referrals/c57f7b70/join" target="_blank" rel="external">官网地址</a>注册帐号</p>
+<p>新建一个INDEX如图</p>
+<p><img src="http://www.kuwoku.com/images/algolia-index.png" alt=""></p>
+<p>来到<code>API-KEYS</code>页面，上面有后面需要的信息（记得还有上面的INDEX名）。</p>
+<p><img src="http://www.kuwoku.com/images/algolia-result.png" alt=""></p>
+<h3 id="第二步：上传数据到Algolia"><a href="#第二步：上传数据到Algolia" class="headerlink" title="第二步：上传数据到Algolia"></a>第二步：上传数据到<code>Algolia</code></h3><p>在Hexo工程目录的根目录下执行</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-algolia --save</div></pre></td></tr></table></figure>
+<p>在根目录的_config.yml中加入如下配置，注意改成前面第一步注册成果数据</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">algolia</span>:</div><div class="line">  <span class="attribute">applicationID</span>: <span class="string">'your applicationID'</span></div><div class="line">  <span class="attribute">apiKey</span>: <span class="string">'your apiKey'</span></div><div class="line">  <span class="attribute">adminApiKey</span>: <span class="string">'your adminApiKey'</span></div><div class="line">  <span class="attribute">indexName</span>: <span class="string">'your indexName'</span></div><div class="line">  <span class="attribute">chunkSize</span>: <span class="number">5000</span></div></pre></td></tr></table></figure>
+<p>接着执行，确保得到提交成功提示</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo algolia</span></div></pre></td></tr></table></figure>
+<p>第三步：修改Hexo主题集成Algolia</p>
+<p>确保在head.swig文件中加入如下配置，注意改成自己的</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">id</span>=<span class="string">"hexo.configuration"</span>&gt;</span><span class="undefined"></span></div><div class="line">  var CONFIG = &#123;</div><div class="line">    root: '/',</div><div class="line">    algolia: &#123;</div><div class="line">          applicationID: 'your applicationID',</div><div class="line">          apiKey: 'your apiKey',</div><div class="line">          indexName: ''your indexName',</div><div class="line">          hits: &#123;"per_page":10&#125;,</div><div class="line">          labels: &#123;"input_placeholder":"搜索...","hits_empty":"未发现与 「$&#123;query&#125;」相关的内容","hits_stats":"$&#123;hits&#125; 条相关条目，使用了 $&#123;time&#125; 毫秒"&#125;</div><div class="line">        &#125;</div><div class="line">  &#125;;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>在要搜索的页面加入如下div</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"site-search"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"algolia-popup popup"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"algolia-search"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"algolia-search-input-icon"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-search"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"algolia-search-input"</span> <span class="attr">id</span>=<span class="string">"algolia-search-input"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"algolia-results"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"algolia-stats"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"algolia-hits"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"algolia-pagination"</span> <span class="attr">class</span>=<span class="string">"algolia-pagination"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"popup-btn-close"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-times-circle"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>在要触发搜索的HTML节点加入一个CLASS名为popup-trigger，如图</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"menu-item menu-item-search"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"popup-trigger"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"menu-item0icon fa fa-search fa-fw"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">br</span> /&gt;</span></div><div class="line">        Search</div><div class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>确保要搜索页包含如下JS代码（可以单独建立一个.swig文件，然后在整体layout的swig文件中加入）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"http://cdn.bootcss.com/instantsearch.js/1.5.1/instantsearch.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> algoliaSettings = CONFIG.algolia;</div><div class="line">  <span class="keyword">var</span> isAlgoliaSettingsValid = algoliaSettings.applicationID &amp;&amp;</div><div class="line">    algoliaSettings.apiKey &amp;&amp;</div><div class="line">    algoliaSettings.indexName;</div><div class="line"></div><div class="line">  <span class="keyword">if</span> (!isAlgoliaSettingsValid) &#123;</div><div class="line">    <span class="built_in">window</span>.console.error(<span class="string">'Algolia Settings are invalid.'</span>);</div><div class="line">    <span class="keyword">return</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> search = instantsearch(&#123;</div><div class="line">    <span class="attr">appId</span>: algoliaSettings.applicationID,</div><div class="line">    <span class="attr">apiKey</span>: algoliaSettings.apiKey,</div><div class="line">    <span class="attr">indexName</span>: algoliaSettings.indexName,</div><div class="line">    <span class="attr">searchFunction</span>: <span class="function"><span class="keyword">function</span> (<span class="params">helper</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> searchInput = $(<span class="string">'#algolia-search-input'</span>).find(<span class="string">'input'</span>);</div><div class="line"></div><div class="line">      <span class="keyword">if</span> (searchInput.val()) &#123;</div><div class="line">        helper.search();</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  <span class="comment">// Registering Widgets</span></div><div class="line">  [</div><div class="line">    instantsearch.widgets.searchBox(&#123;</div><div class="line">      <span class="attr">container</span>: <span class="string">'#algolia-search-input'</span>,</div><div class="line">      <span class="attr">placeholder</span>: algoliaSettings.labels.input_placeholder</div><div class="line">    &#125;),</div><div class="line"></div><div class="line">    instantsearch.widgets.hits(&#123;</div><div class="line">      <span class="attr">container</span>: <span class="string">'#algolia-hits'</span>,</div><div class="line">      <span class="attr">hitsPerPage</span>: algoliaSettings.hits.per_page || <span class="number">10</span>,</div><div class="line">      <span class="attr">templates</span>: &#123;</div><div class="line">        <span class="attr">item</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">          <span class="keyword">return</span> (</div><div class="line">            <span class="string">'&lt;a href="'</span> + CONFIG.root + data.path + <span class="string">'" class="algolia-hit-item-link"&gt;'</span> +</div><div class="line">            data._highlightResult.title.value +</div><div class="line">            <span class="string">'&lt;/a&gt;'</span></div><div class="line">          );</div><div class="line">        &#125;,</div><div class="line">        <span class="attr">empty</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">          <span class="keyword">return</span> (</div><div class="line">            <span class="string">'&lt;div id="algolia-hits-empty"&gt;'</span> +</div><div class="line">            algoliaSettings.labels.hits_empty.replace(<span class="regexp">/\$\&#123;query&#125;/</span>, data.query) +</div><div class="line">            <span class="string">'&lt;/div&gt;'</span></div><div class="line">          );</div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      <span class="attr">cssClasses</span>: &#123;</div><div class="line">        <span class="attr">item</span>: <span class="string">'algolia-hit-item'</span></div><div class="line">      &#125;</div><div class="line">    &#125;),</div><div class="line"></div><div class="line">    instantsearch.widgets.stats(&#123;</div><div class="line">      <span class="attr">container</span>: <span class="string">'#algolia-stats'</span>,</div><div class="line">      <span class="attr">templates</span>: &#123;</div><div class="line">        <span class="attr">body</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">          <span class="keyword">var</span> stats = algoliaSettings.labels.hits_stats</div><div class="line">            .replace(<span class="regexp">/\$\&#123;hits&#125;/</span>, data.nbHits)</div><div class="line">            .replace(<span class="regexp">/\$\&#123;time&#125;/</span>, data.processingTimeMS);</div><div class="line">          <span class="keyword">return</span> (</div><div class="line">            stats +</div><div class="line">            <span class="string">'&lt;span class="algolia-powered"&gt;'</span> +</div><div class="line">            <span class="string">'  &lt;img src="'</span> + CONFIG.root + <span class="string">'images/algolia_logo.svg" alt="Algolia" /&gt;'</span> +</div><div class="line">            <span class="string">'&lt;/span&gt;'</span> +</div><div class="line">            <span class="string">'&lt;hr /&gt;'</span></div><div class="line">          );</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;),</div><div class="line"></div><div class="line">    instantsearch.widgets.pagination(&#123;</div><div class="line">      <span class="attr">container</span>: <span class="string">'#algolia-pagination'</span>,</div><div class="line">      <span class="attr">scrollTo</span>: <span class="literal">false</span>,</div><div class="line">      <span class="attr">showFirstLast</span>: <span class="literal">false</span>,</div><div class="line">      <span class="attr">labels</span>: &#123;</div><div class="line">        <span class="attr">first</span>: <span class="string">'&lt;i class="fa fa-angle-double-left"&gt;&lt;/i&gt;'</span>,</div><div class="line">        <span class="attr">last</span>: <span class="string">'&lt;i class="fa fa-angle-double-right"&gt;&lt;/i&gt;'</span>,</div><div class="line">        <span class="attr">previous</span>: <span class="string">'&lt;i class="fa fa-angle-left"&gt;&lt;/i&gt;'</span>,</div><div class="line">        <span class="attr">next</span>: <span class="string">'&lt;i class="fa fa-angle-right"&gt;&lt;/i&gt;'</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">cssClasses</span>: &#123;</div><div class="line">        <span class="attr">root</span>: <span class="string">'pagination'</span>,</div><div class="line">        <span class="attr">item</span>: <span class="string">'pagination-item'</span>,</div><div class="line">        <span class="attr">link</span>: <span class="string">'page-number'</span>,</div><div class="line">        <span class="attr">active</span>: <span class="string">'current'</span>,</div><div class="line">        <span class="attr">disabled</span>: <span class="string">'disabled-item'</span></div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  ].forEach(search.addWidget, search);</div><div class="line"></div><div class="line">  search.start();</div><div class="line"></div><div class="line">  $(<span class="string">'.popup-trigger'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    e.stopPropagation();</div><div class="line">    $(<span class="string">'body'</span>).append(<span class="string">'&lt;div class="popoverlay"&gt;'</span>).css(<span class="string">'overflow'</span>, <span class="string">'hidden'</span>);</div><div class="line">    $(<span class="string">'.popup'</span>).toggle();</div><div class="line">    $(<span class="string">'#algolia-search-input'</span>).find(<span class="string">'input'</span>).focus();</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  $(<span class="string">'.popup-btn-close'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">'.popup'</span>).hide();</div><div class="line">    $(<span class="string">'.popoverlay'</span>).remove();</div><div class="line">    $(<span class="string">'body'</span>).css(<span class="string">'overflow'</span>, <span class="string">''</span>);</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">&#125;);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">  $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> ( $(<span class="string">'#local-search-input'</span>).size() === <span class="number">0</span>) &#123;</div><div class="line">      <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// Popup Window;</span></div><div class="line">    <span class="keyword">var</span> isfetched = <span class="literal">false</span>;</div><div class="line">    <span class="comment">// Search DB path;</span></div><div class="line">    <span class="keyword">var</span> search_path = <span class="string">"search.xml"</span>;</div><div class="line">    <span class="keyword">if</span> (search_path.length == <span class="number">0</span>) &#123;</div><div class="line">      search_path = <span class="string">"search.xml"</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> path = <span class="string">"/"</span> + search_path;</div><div class="line">    <span class="comment">// monitor main search box;</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">proceedsearch</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      $(<span class="string">"body"</span>).append(<span class="string">'&lt;div class="popoverlay"&gt;'</span>).css(<span class="string">'overflow'</span>, <span class="string">'hidden'</span>);</div><div class="line">      $(<span class="string">'.popup'</span>).toggle();</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="comment">// search function;</span></div><div class="line">    <span class="keyword">var</span> searchFunc = <span class="function"><span class="keyword">function</span>(<span class="params">path, search_id, content_id</span>) </span>&#123;</div><div class="line"><span class="meta">      'use strict'</span>;</div><div class="line">      $.ajax(&#123;</div><div class="line">        <span class="attr">url</span>: path,</div><div class="line">        <span class="attr">dataType</span>: <span class="string">"xml"</span>,</div><div class="line">        <span class="attr">async</span>: <span class="literal">true</span>,</div><div class="line">        <span class="attr">success</span>: <span class="function"><span class="keyword">function</span>(<span class="params"> xmlResponse </span>) </span>&#123;</div><div class="line">          <span class="comment">// get the contents from search data</span></div><div class="line">          isfetched = <span class="literal">true</span>;</div><div class="line">          $(<span class="string">'.popup'</span>).detach().appendTo(<span class="string">'.header-inner'</span>);</div><div class="line">          <span class="keyword">var</span> datas = $( <span class="string">"entry"</span>, xmlResponse ).map(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> &#123;</div><div class="line">              <span class="attr">title</span>: $( <span class="string">"title"</span>, <span class="keyword">this</span> ).text(),</div><div class="line">              <span class="attr">content</span>: $(<span class="string">"content"</span>,<span class="keyword">this</span>).text(),</div><div class="line">              <span class="attr">url</span>: $( <span class="string">"url"</span> , <span class="keyword">this</span>).text()</div><div class="line">            &#125;;</div><div class="line">          &#125;).get();</div><div class="line">          <span class="keyword">var</span> $input = <span class="built_in">document</span>.getElementById(search_id);</div><div class="line">          <span class="keyword">var</span> $resultContent = <span class="built_in">document</span>.getElementById(content_id);</div><div class="line">          $input.addEventListener(<span class="string">'input'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">var</span> matchcounts = <span class="number">0</span>;</div><div class="line">            <span class="keyword">var</span> str=<span class="string">'&lt;ul class=\"search-result-list\"&gt;'</span>;</div><div class="line">            <span class="keyword">var</span> keywords = <span class="keyword">this</span>.value.trim().toLowerCase().split(<span class="regexp">/[\s\-]+/</span>);</div><div class="line">            $resultContent.innerHTML = <span class="string">""</span>;</div><div class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.value.trim().length &gt; <span class="number">1</span>) &#123;</div><div class="line">              <span class="comment">// perform local searching</span></div><div class="line">              datas.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">                <span class="keyword">var</span> isMatch = <span class="literal">true</span>;</div><div class="line">                <span class="keyword">var</span> content_index = [];</div><div class="line">                <span class="keyword">var</span> data_title = data.title.trim().toLowerCase();</div><div class="line">                <span class="keyword">var</span> data_content = data.content.trim().replace(<span class="regexp">/&lt;[^&gt;]+&gt;/g</span>,<span class="string">""</span>).toLowerCase();</div><div class="line">                <span class="keyword">var</span> data_url = data.url;</div><div class="line">                <span class="keyword">var</span> index_title = <span class="number">-1</span>;</div><div class="line">                <span class="keyword">var</span> index_content = <span class="number">-1</span>;</div><div class="line">                <span class="keyword">var</span> first_occur = <span class="number">-1</span>;</div><div class="line">                <span class="comment">// only match artiles with not empty titles and contents</span></div><div class="line">                <span class="keyword">if</span>(data_title != <span class="string">''</span> &amp;&amp; data_content != <span class="string">''</span>) &#123;</div><div class="line">                  keywords.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">keyword, i</span>) </span>&#123;</div><div class="line">                    index_title = data_title.indexOf(keyword);</div><div class="line">                    index_content = data_content.indexOf(keyword);</div><div class="line">                    <span class="keyword">if</span>( index_title &lt; <span class="number">0</span> &amp;&amp; index_content &lt; <span class="number">0</span> )&#123;</div><div class="line">                      isMatch = <span class="literal">false</span>;</div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                      <span class="keyword">if</span> (index_content &lt; <span class="number">0</span>) &#123;</div><div class="line">                        index_content = <span class="number">0</span>;</div><div class="line">                      &#125;</div><div class="line">                      <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</div><div class="line">                        first_occur = index_content;</div><div class="line">                      &#125;</div><div class="line">                    &#125;</div><div class="line">                  &#125;);</div><div class="line">                &#125;</div><div class="line">                <span class="comment">// show search results</span></div><div class="line">                <span class="keyword">if</span> (isMatch) &#123;</div><div class="line">                  matchcounts += <span class="number">1</span>;</div><div class="line">                  str += <span class="string">"&lt;li&gt;&lt;a href='"</span>+ data_url +<span class="string">"' class='search-result-title'&gt;"</span>+ data_title +<span class="string">"&lt;/a&gt;"</span>;</div><div class="line">                  <span class="keyword">var</span> content = data.content.trim().replace(<span class="regexp">/&lt;[^&gt;]+&gt;/g</span>,<span class="string">""</span>);</div><div class="line">                  <span class="keyword">if</span> (first_occur &gt;= <span class="number">0</span>) &#123;</div><div class="line">                    <span class="comment">// cut out 100 characters</span></div><div class="line">                    <span class="keyword">var</span> start = first_occur - <span class="number">20</span>;</div><div class="line">                    <span class="keyword">var</span> end = first_occur + <span class="number">80</span>;</div><div class="line">                    <span class="keyword">if</span>(start &lt; <span class="number">0</span>)&#123;</div><div class="line">                      start = <span class="number">0</span>;</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">if</span>(start == <span class="number">0</span>)&#123;</div><div class="line">                      end = <span class="number">50</span>;</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">if</span>(end &gt; content.length)&#123;</div><div class="line">                      end = content.length;</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">var</span> match_content = content.substring(start, end);</div><div class="line">                    <span class="comment">// highlight all keywords</span></div><div class="line">                    keywords.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">keyword</span>)</span>&#123;</div><div class="line">                      <span class="keyword">var</span> regS = <span class="keyword">new</span> <span class="built_in">RegExp</span>(keyword, <span class="string">"gi"</span>);</div><div class="line">                      match_content = match_content.replace(regS, <span class="string">"&lt;b class=\"search-keyword\"&gt;"</span>+keyword+<span class="string">"&lt;/b&gt;"</span>);</div><div class="line">                    &#125;);</div><div class="line"></div><div class="line">                    str += <span class="string">"&lt;p class=\"search-result\"&gt;"</span> + match_content +<span class="string">"...&lt;/p&gt;"</span></div><div class="line">                  &#125;</div><div class="line">                  str += <span class="string">"&lt;/li&gt;"</span>;</div><div class="line">                &#125;</div><div class="line">              &#125;)&#125;;</div><div class="line">            str += <span class="string">"&lt;/ul&gt;"</span>;</div><div class="line">            <span class="keyword">if</span> (matchcounts == <span class="number">0</span>) &#123; str = <span class="string">'&lt;div id="no-result"&gt;&lt;i class="fa fa-frown-o fa-5x" /&gt;&lt;/div&gt;'</span> &#125;</div><div class="line">            <span class="keyword">if</span> (keywords == <span class="string">""</span>) &#123; str = <span class="string">'&lt;div id="no-result"&gt;&lt;i class="fa fa-search fa-5x" /&gt;&lt;/div&gt;'</span> &#125;</div><div class="line">            $resultContent.innerHTML = str;</div><div class="line">          &#125;);</div><div class="line">          proceedsearch();</div><div class="line">        &#125;</div><div class="line">      &#125;);&#125;</div><div class="line"></div><div class="line">    <span class="comment">// handle and trigger popup window;</span></div><div class="line">    $(<span class="string">'.popup-trigger'</span>).mousedown(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">      e.stopPropagation();</div><div class="line">      <span class="keyword">if</span> (isfetched == <span class="literal">false</span>) &#123;</div><div class="line">        searchFunc(path, <span class="string">'local-search-input'</span>, <span class="string">'local-search-result'</span>);</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        proceedsearch();</div><div class="line">      &#125;;</div><div class="line"></div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    $(<span class="string">'.popup-btn-close'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">      $(<span class="string">'.popup'</span>).hide();</div><div class="line">      $(<span class="string">".popoverlay"</span>).remove();</div><div class="line">      $(<span class="string">'body'</span>).css(<span class="string">'overflow'</span>, <span class="string">''</span>);</div><div class="line">    &#125;);</div><div class="line">    $(<span class="string">'.popup'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">      e.stopPropagation();</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p>确保要搜索页包含如下CSS代码（可以单独建立一个<code>.styl</code>文件，然后在整体css的styl文件中加入，注意确保生成正确，必要时可以执行<code>hexo clean</code>）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ul</span><span class="selector-class">.search-result-list</span> &#123;</div><div class="line">  <span class="attribute">padding-left</span>: <span class="number">0px</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0px</span> <span class="number">5px</span> <span class="number">0px</span> <span class="number">8px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">p</span><span class="selector-class">.search-result</span> &#123;</div><div class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> dashed <span class="number">#ccc</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">5px</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-class">.search-result-title</span> &#123;</div><div class="line">  <span class="attribute">font-weight</span>: bold;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-class">.search-result</span> &#123;</div><div class="line">  <span class="attribute">border-bottom</span>: transparent;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">  <span class="attribute">white-space</span>: nowrap;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">  <span class="attribute">text-overflow</span>: ellipsis;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.search-keyword</span> &#123;</div><div class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> dashed <span class="number">#4088b8</span>;</div><div class="line">  <span class="attribute">font-weight</span>: bold;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#local-search-result</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">90%</span>;</div><div class="line">  <span class="attribute">overflow</span>: auto;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.popup</span> &#123;</div><div class="line">  <span class="attribute">display</span>: none;</div><div class="line">  <span class="attribute">position</span>: fixed;</div><div class="line">  <span class="attribute">top</span>: <span class="number">10%</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">700px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">80%</span>;</div><div class="line">  <span class="attribute">margin-left</span>: -<span class="number">350px</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">3px</span> <span class="number">0</span> <span class="number">0</span> <span class="number">10px</span>;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#fff</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</div><div class="line">  <span class="attribute">z-index</span>: <span class="number">9999</span>;</div><div class="line">  <span class="attribute">border-radius</span>: <span class="number">5px</span>;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> (max-width: <span class="number">767px</span>) &#123;</div><div class="line">  <span class="selector-class">.popup</span> &#123;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">3px</span>;</div><div class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">0px</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.popoverlay</span> &#123;</div><div class="line">  <span class="attribute">position</span>: fixed;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0px</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0px</span>;</div><div class="line">  <span class="attribute">z-index</span>: <span class="number">2080</span>;</div><div class="line">  <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(0,0,0,0.3);</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#local-search-input</span> &#123;</div><div class="line">  <span class="attribute">margin-bottom</span>: <span class="number">10px</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">50%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.popup-btn-close</span> &#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">top</span>: <span class="number">6px</span>;</div><div class="line">  <span class="attribute">right</span>: <span class="number">14px</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#4ebd79</span>;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</div><div class="line">  <span class="attribute">font-weight</span>: bold;</div><div class="line">  <span class="attribute">text-transform</span>: uppercase;</div><div class="line">  <span class="attribute">cursor</span>: pointer;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#no-result</span> &#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">left</span>: <span class="number">44%</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">42%</span>;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#ccc</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.busuanzi-count</span><span class="selector-pseudo">:before</span> &#123;</div><div class="line">  <span class="attribute">content</span>: <span class="string">" "</span>;</div><div class="line">  <span class="attribute">float</span>: left;</div><div class="line">  <span class="attribute">width</span>: <span class="number">260px</span>;</div><div class="line">  <span class="attribute">min-height</span>: <span class="number">25px</span>;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> (min-width: <span class="number">768px</span>) and (max-width: <span class="number">991px</span>) &#123;</div><div class="line">  <span class="selector-class">.busuanzi-count</span> &#123;</div><div class="line">    <span class="attribute">width</span>: auto;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.busuanzi-count</span><span class="selector-pseudo">:before</span> &#123;</div><div class="line">    <span class="attribute">display</span>: none;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> (max-width: <span class="number">767px</span>) &#123;</div><div class="line">  <span class="selector-class">.busuanzi-count</span> &#123;</div><div class="line">    <span class="attribute">width</span>: auto;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-class">.busuanzi-count</span><span class="selector-pseudo">:before</span> &#123;</div><div class="line">    <span class="attribute">display</span>: none;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.site-uv</span>,</div><div class="line"><span class="selector-class">.site-pv</span>,</div><div class="line"><span class="selector-class">.page-pv</span> &#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.site-uv</span> <span class="selector-class">.busuanzi-value</span>,</div><div class="line"><span class="selector-class">.site-pv</span> <span class="selector-class">.busuanzi-value</span>,</div><div class="line"><span class="selector-class">.page-pv</span> <span class="selector-class">.busuanzi-value</span> &#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">5px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.site-uv</span> &#123;</div><div class="line">  <span class="attribute">margin-right</span>: <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.site-uv</span><span class="selector-pseudo">::after</span> &#123;</div><div class="line">  <span class="attribute">content</span>: <span class="string">"|"</span>;</div><div class="line">  <span class="attribute">padding-left</span>: <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-popup</span> &#123;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-popup</span> <span class="selector-class">.popup-btn-close</span> &#123;</div><div class="line">  <span class="attribute">padding-left</span>: <span class="number">15px</span>;</div><div class="line">  <span class="attribute">border-left</span>: <span class="number">1px</span> solid <span class="number">#eee</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-popup</span> <span class="selector-class">.popup-btn-close</span> <span class="selector-class">.fa</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#999</span>;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">18px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-popup</span> <span class="selector-class">.popup-btn-close</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.fa</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#222</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-search</span> &#123;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">15px</span> <span class="number">5px</span>;</div><div class="line">  <span class="attribute">max-height</span>: <span class="number">50px</span>;</div><div class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#f5f5f5</span>;</div><div class="line">  <span class="attribute">border-top-left-radius</span>: <span class="number">5px</span>;</div><div class="line">  <span class="attribute">border-top-right-radius</span>: <span class="number">5px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-search-input-icon</span> &#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">  <span class="attribute">width</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-search-input-icon</span> <span class="selector-class">.fa</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">18px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-search-input</span> &#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">  <span class="attribute">width</span>: <span class="built_in">calc</span>(90% - 20px);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-search-input</span> <span class="selector-tag">input</span> &#123;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">5px</span> <span class="number">0</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">outline</span>: none;</div><div class="line">  <span class="attribute">border</span>: none;</div><div class="line">  <span class="attribute">background</span>: transparent;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-powered</span> &#123;</div><div class="line">  <span class="attribute">float</span>: right;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-powered</span> <span class="selector-tag">img</span> &#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">  <span class="attribute">height</span>: <span class="number">18px</span>;</div><div class="line">  <span class="attribute">vertical-align</span>: middle;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-results</span> &#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">  <span class="attribute">overflow</span>: auto;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">30px</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="built_in">calc</span>(100% - 50px);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-results</span> <span class="selector-tag">hr</span> &#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-results</span> <span class="selector-class">.highlight</span> &#123;</div><div class="line">  <span class="attribute">font-style</span>: normal;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">2px</span>;</div><div class="line">  <span class="attribute">font-size</span>: inherit;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#f00</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-hits</span> &#123;</div><div class="line">  <span class="attribute">margin-top</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-hit-item</span> &#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">15px</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-hit-item-link</span> &#123;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> dashed <span class="number">#ccc</span>;</div><div class="line">  <span class="attribute">transition-duration</span>: <span class="number">0.2s</span>;</div><div class="line">  <span class="attribute">transition-timing-function</span>: ease-in-out;</div><div class="line">  <span class="attribute">transition-delay</span>: <span class="number">0s</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-pagination</span> <span class="selector-class">.pagination</span> &#123;</div><div class="line">  <span class="attribute">margin-top</span>: <span class="number">40px</span>;</div><div class="line">  <span class="attribute">border-top</span>: none;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-pagination</span> <span class="selector-class">.pagination-item</span> &#123;</div><div class="line">  <span class="attribute">display</span>: inline-block;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-pagination</span> <span class="selector-class">.page-number</span> &#123;</div><div class="line">  <span class="attribute">border-top</span>: none;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-pagination</span> <span class="selector-class">.page-number</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#222</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.algolia-pagination</span> <span class="selector-class">.disabled-item</span> &#123;</div><div class="line">  <span class="attribute">visibility</span>: hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>将下面这张图片拷贝到你的source目录的images目录下</p>
+<p><img src="http://www.kuwoku.com/images/algolia_logo.svg" alt=""></p>
+<p>OK，终于完成了，样子可以参照本站的搜索功能！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Swiftype搜索最近停了，开始收费，不想收费又想有这个站内搜索功能怎么办？&lt;br&gt;可以用Algolia免费版！不仅免费，感觉上要比Swiftype要快，下面简单说下集成步骤。&lt;/p&gt;
+&lt;h3 id=&quot;第一步：到官网注册帐号-可以用github登录&quot;&gt;&lt;a href=&quot;#
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.naaln.com/categories/technology/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>供应 管理 销售</title>
+    <link href="https://blog.naaln.com/2016/07/gong-guan-xiao/"/>
+    <id>https://blog.naaln.com/2016/07/gong-guan-xiao/</id>
+    <published>2016-07-02T19:12:56.000Z</published>
+    <updated>2016-10-20T19:59:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>供管销</code> 是在美国工作的时候我上司和我说的，他就希望将这家的产品打造成 一个 <code>供管销</code> 的完全体。</p>
+<p>最近因为手头太紧，想了一堆莫名其妙的想法。</p>
+<p>其中一个就是  <code>供应 管理 销售</code> 的平台。</p>
+<p>其实这也不算是什么太新的想法，我知道很多企业都有自己的系统，但是由于永康处于文化相对落后阶段，再加上属于加工密集城市，并不适应于大型工厂的 <code>CRM</code> 或者 <code>ERM</code>。</p>
+<p>金华地区有 <code>372181</code> 家企业，其中永康有 <code>43772</code> 家。</p>
+<ul>
+<li>0 -   5 人占  0.96%</li>
+<li>5 -  10 人占 10.64%</li>
+<li>11 -  50 人占 26.77%</li>
+<li>51 - 100 人占 25.46%</li>
+<li>101 - 200 人占 24.59%</li>
+<li>201 - 300 人占  5.49%</li>
+<li>301 - 500 人占  2.09%</li>
+<li>501 - 1000 人占 1.22%</li>
+<li>1000人以上 人占  0.78%</li>
+</ul>
+<p>先忽略数据的误差，大体上我们可以金华地区发现11-200人的企业已经占到了所有企业的 75% 。</p>
+<ul>
+<li>0 -   5 人占  1.94%</li>
+<li>5 -  10 人占 10.36%</li>
+<li>11 -  50 人占 33.01%</li>
+<li>51 - 100 人占 30.67%</li>
+<li>101 - 200 人占 12.94%</li>
+<li>201 - 300 人占  5.50%</li>
+<li>301 - 500 人占  2.27%</li>
+<li>501 - 1000 人占 1.94%</li>
+<li>1000人以上 人占  1.29%</li>
+</ul>
+<p>同样，永康地区 11-200人的企业已经占到了所有企业的 75%。但是，11-100人的企业人数占到了相对60%，同整个金华地区比较提升了 20%，0-5人的作坊是同金华市整体的两倍。</p>
+<p>2012年末，永康市常住人口达72.5万，其中外来常住人口为26.5万，截至2012年10月20日，永康登记在册的流动人口达到了52.8万人，接近永康户籍人口57.7万人。</p>
+<p>永康以五金工业为第二支柱产业，（第一产业为农林牧渔业）。</p>
+<p>永康五金产业给人的感觉是 乱，全，杂。五金相关的什么产业都有，小到螺丝钉，大到防盗门，汽车都有。但是没有一个完整的供应体系。</p>
+<p>各个产业链之间的资金相互牵制，产品件恶性竞争，没有合理的议价体系。</p>
+<p>所以我希望有一套完整的 <code>供应 管理 销售</code> 解决方案。</p>
+<h3 id="供应"><a href="#供应" class="headerlink" title="供应"></a>供应</h3><ol>
+<li>下游厂家的供应</li>
+<li>原材料的供应</li>
+</ol>
+<h3 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h3><ol>
+<li>客户管理</li>
+<li>质量管理</li>
+<li>仓库管理</li>
+<li>人员管理</li>
+</ol>
+<h4 id="销售"><a href="#销售" class="headerlink" title="销售"></a>销售</h4><ol>
+<li>上游厂家对接</li>
+</ol>
+<p>另外，继承的两个想法是</p>
+<ol>
+<li>重复产业的中心化，解决厂家之间的配送问题，解决成本</li>
+<li>建立厂家之间的诚信体系</li>
+</ol>
+<p>当然这是后话。</p>
+<p>企业信息来之中国城市信用指数</p>
+<p>永康的不良企业数量 2.49%</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;供管销&lt;/code&gt; 是在美国工作的时候我上司和我说的，他就希望将这家的产品打造成 一个 &lt;code&gt;供管销&lt;/code&gt; 的完全体。&lt;/p&gt;
+&lt;p&gt;最近因为手头太紧，想了一堆莫名其妙的想法。&lt;/p&gt;
+&lt;p&gt;其中一个就是  &lt;code&gt;供应 管理 销售&lt;/cod
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://blog.naaln.com/categories/jottings/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>试用 Celery</title>
+    <link href="https://blog.naaln.com/2016/06/try-celery/"/>
+    <id>https://blog.naaln.com/2016/06/try-celery/</id>
+    <published>2016-06-28T16:25:53.000Z</published>
+    <updated>2016-10-20T19:59:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p><code>Celery</code> 是一个“自带电池”的任务队列。它易于使用，所以你可以无视其所解决问题的复杂程度而轻松入门。它遵照最佳实践设计，所以你的产品可以扩展，或与其他语言集成，并且它自带了在生产环境中运行这样一个系统所需的工具和支持。</p>
+</blockquote>
+<h3 id="选择中间人"><a href="#选择中间人" class="headerlink" title="选择中间人"></a>选择中间人</h3><blockquote>
+<p><code>Celery</code> 需要一个发送和接收消息的解决方案，其通常以独立服务形式出现， 称为 消息中间人 。</p>
+</blockquote>
+<ol>
+<li><a href="http://docs.jinkan.org/docs/celery/getting-started/first-steps-with-celery.html#rabbitmq" target="_blank" rel="external">RabbitMQ</a> 功能完备、稳定、耐用，并且安装简便，是生产环境的绝佳选择。 </li>
+<li><a href="http://docs.jinkan.org/docs/celery/getting-started/first-steps-with-celery.html#redis" target="_blank" rel="external">Redis</a> 也是功能完备的，但更易受突然中断或断电带来数据丢失的影响。</li>
+<li>不推荐把 <a href="http://docs.jinkan.org/docs/celery/getting-started/first-steps-with-celery.html#id4" target="_blank" rel="external">数据库</a> 用于消息队列，但对于很小的项目可能是合适的。你的选择包括：<code>SQLAlchemy</code> 和 <code>Django Database</code>。</li>
+<li><a href="http://docs.jinkan.org/docs/celery/getting-started/first-steps-with-celery.html#id5" target="_blank" rel="external">其他</a> 除了上面列出的之外，还有其他的实验性传输实现可供选择，包括 Amazon SQS 、 Using MongoDB 和 IronMQ 。</li>
+<li>中间人概览</li>
+</ol>
+<p><img src="http://ww4.sinaimg.cn/large/48910e01gw1f5bdvdrknzj20eu09sq4f.jpg" alt=""></p>
+<h3 id="安装-Celery"><a href="#安装-Celery" class="headerlink" title="安装 Celery"></a>安装 Celery</h3><figure class="highlight zsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip install celery</div></pre></td></tr></table></figure>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>我有一个网址，用户需要提交信息，我会给用户创建一个报告，并发送到用户的邮箱。但是，报告的创建时间需要话费10秒，有一些数据需要实时生成，有一些需要花费大量的计算时间。</p>
+<p>所以我的解决方案是异步处理，用户先提交信息，我在报告创建完成后进行发送。</p>
+<p><img src="http://ww1.sinaimg.cn/large/48910e01gw1f5be0x95sij20l20dswg9.jpg" alt=""></p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p><code>tasks.py</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> celery <span class="keyword">import</span> Celery</div><div class="line"><span class="keyword">from</span> createreport <span class="keyword">import</span> CreateReport</div><div class="line"></div><div class="line">app = Celery(<span class="string">'tasks'</span>, broker=<span class="string">'redis://localhost'</span>)</div><div class="line"><span class="comment"># 我选择redis做为中间件</span></div><div class="line"></div><div class="line"><span class="meta">@app.task</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">starcase</span><span class="params">(info)</span>:</span></div><div class="line">    result = CreateReport(info)</div><div class="line">    <span class="keyword">return</span> result</div></pre></td></tr></table></figure></p>
+<p>代码解释：我们需要一个 celery 实例来启动程序，因此创建了一个名为 app 的 celery 实例。</p>
+<p>在3个终端中启动：</p>
+<p>第一个终端，运行 <code>redis-server</code></p>
+<p>第二个终端，运行<code>celery worker -A tasks -l info -c 5</code> ，通过输出可以看到 <code>celery</code> 成功运行。</p>
+<p>第三个终端，运行脚本 <code>python tasks.py</code></p>
+<p><img src="http://ww4.sinaimg.cn/large/48910e01gw1f5bee8zhajj20is0butbc.jpg" alt=""></p>
+<p>可以看到 接受到了一个<code>4A9D2A83-E273-40CB-***</code> 的任务，并在8.2秒后执行完成，返回的结果是 10040。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Celery&lt;/code&gt; 是一个“自带电池”的任务队列。它易于使用，所以你可以无视其所解决问题的复杂程度而轻松入门。它遵照最佳实践设计，所以你的产品可以扩展，或与其他语言集成，并且它自带了在生产环境中运行这样一个系统所需的工具和支持。
+    
+    </summary>
+    
+      <category term="技术" scheme="https://blog.naaln.com/categories/technology/"/>
+    
+    
+  </entry>
+  
+</feed>

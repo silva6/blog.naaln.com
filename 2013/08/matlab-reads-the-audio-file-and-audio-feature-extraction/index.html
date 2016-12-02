@@ -1,0 +1,993 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next muse" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="ByVfaP_E3b9ZYRUGhNAUFSQKL8mJQwUehpQwoxJ5n-c" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="matlab," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Why·Liam·Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="1、用audioread(‘’);函数读取电脑中的音频文件，参数是音频文件的路径：
+   [sampledata,FS] = audioread(‘F:\1.mp3’);
+sampledata保存音频信号数据，FS是音频采样率，MP3格式的采样率一般为44100；
+2、判断音频数据是否是双声道，如果是双声道则保留一个声道的数据，用calsample.m文件的函数完成此功能，文件内容如下：
+   f">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MATLAB读取音频文件并进行音频特征提取">
+<meta property="og:url" content="https://blog.naaln.com/2013/08/matlab-reads-the-audio-file-and-audio-feature-extraction/index.html">
+<meta property="og:site_name" content="Why·Liam·Blog">
+<meta property="og:description" content="1、用audioread(‘’);函数读取电脑中的音频文件，参数是音频文件的路径：
+   [sampledata,FS] = audioread(‘F:\1.mp3’);
+sampledata保存音频信号数据，FS是音频采样率，MP3格式的采样率一般为44100；
+2、判断音频数据是否是双声道，如果是双声道则保留一个声道的数据，用calsample.m文件的函数完成此功能，文件内容如下：
+   f">
+<meta property="og:updated_time" content="2016-10-20T19:59:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MATLAB读取音频文件并进行音频特征提取">
+<meta name="twitter:description" content="1、用audioread(‘’);函数读取电脑中的音频文件，参数是音频文件的路径：
+   [sampledata,FS] = audioread(‘F:\1.mp3’);
+sampledata保存音频信号数据，FS是音频采样率，MP3格式的采样率一般为44100；
+2、判断音频数据是否是双声道，如果是双声道则保留一个声道的数据，用calsample.m文件的函数完成此功能，文件内容如下：
+   f">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'XILKIWTAM9',
+      apiKey: '99d43a85f328d00214c5de8007ce7920',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.naaln.com/2013/08/matlab-reads-the-audio-file-and-audio-feature-extraction/"/>
+
+
+
+
+
+  <title> MATLAB读取音频文件并进行音频特征提取 | Why·Liam·Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47966442-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Why·Liam·Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生若如初見</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-technology">
+          <a href="/categories/technology/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-code"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-jottings">
+          <a href="/categories/jottings/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-language"></i> <br />
+            
+            随笔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tour">
+          <a href="/categories/tour/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            旅游
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://blog.naaln.com/2013/08/matlab-reads-the-audio-file-and-audio-feature-extraction/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Liam">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/3387850?v=3&s=460">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Why·Liam·Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Why·Liam·Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                MATLAB读取音频文件并进行音频特征提取
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-08-02T00:08:00-04:00">
+                2013-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/technology/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2013/08/matlab-reads-the-audio-file-and-audio-feature-extraction/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2013/08/matlab-reads-the-audio-file-and-audio-feature-extraction/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>1、用audioread(‘’);函数读取电脑中的音频文件，参数是音频文件的路径：</p>
+<p>   [sampledata,FS] = audioread(‘F:\1.mp3’);</p>
+<p>sampledata保存音频信号数据，FS是音频采样率，MP3格式的采样率一般为44100；</p>
+<p>2、判断音频数据是否是双声道，如果是双声道则保留一个声道的数据，用calsample.m文件的函数完成此功能，文件内容如下：</p>
+<p>   function sample = calsample(sampledata,FS)</p>
+<p>   temp_sample = resample(sampledata,1,FS/11025);</p>
+<p>   [m,n] = size(temp_sample);</p>
+<p>   if (n == 2)</p>
+<pre><code>sample = temp_sample(:,1);
+</code></pre><p>   else</p>
+<pre><code>sample = temp_sample;
+</code></pre><p>   end</p>
+<p>   end</p>
+<p>3、对音频数据进行快速傅里叶变换得到频谱图，并选取scope区域内的能量最大并且能量增幅最大的点作为峰值点，进行特征提取，keypoint.m文件内容如下：</p>
+<p>   function point = keypoint(sample,scope)</p>
+<p>   %对音频数据进行快速傅里叶变换，得到变换后的数据为b，频率为f，时间为t</p>
+<p>   [b,f,t] = specgram(sample,1024,11025,hanning(1024),256);</p>
+<p>   specgram(sample,1024,11025,hanning(1024),256);%绘制频谱图</p>
+<p>   hold on;</p>
+<p>   energy = abs(b);%根据快速傅里叶变换后的数据进行能量计算</p>
+<p>   %energy = sample;</p>
+<p>   diffenergy = caldiffenergy(energy);%计算能量差分</p>
+<p>   [m,n] = size(energy);%获取能量矩阵的大小</p>
+<p>   %f = (0:4);</p>
+<p>   %t = (0:4);</p>
+<p>   f_unit = max(f)/(length(f)-1);%根据频率点个数计算频率单位长度</p>
+<p>   t_unit = max(t)/(length(t)-1);%根据时间点个数计算时间单位长度</p>
+<p>   k = 1;</p>
+<p>   l = 1;</p>
+<p>   p = 1;</p>
+<p>   num = 1;</p>
+<p>   point.t = 0;</p>
+<p>   point.f = 0;%point结构体数组用来保存峰值点</p>
+<p>   temp.t = 0;</p>
+<p>   temp.f = 0;%temp结构体数组用来保存计算中的临时点</p>
+<p>   count = 0;%count为零表示在当前scope中未找到峰值点</p>
+<p>   x_f=0;</p>
+<p>   y_t=0;</p>
+<p>   plot(x_f,y_t);</p>
+<p>   hold on;</p>
+<p>   for i = 1:m-scope+1</p>
+<pre><code>for j = 1:n-scope+1
+
+    %找出大小为scope的子矩阵中的最大元素的位置并保存
+
+    [x_f,y_t] = find(energy(i:i+scope-1,j:j+scope-1)==max(max(energy(i:i+scope-1,j:j+scope-1))));
+
+    x_f = x_f + i - 1;
+
+    y_t = y_t + j - 1;
+
+    %找出大小为scope的子矩阵中的差分最大元素的位置并保存
+
+    [diffx,diffy] = find(diffenergy(i:i+scope-1,j:j+scope-1)==max(max(diffenergy(i:i+scope-1,j:j+scope-1))));
+
+    diffx = diffx + i - 1;
+
+    diffy = diffy + j - 1;
+
+    count = 0;
+
+    %如果最大元素和差分最大元素都为同一个位置则该点为峰值点，保存在temp中
+
+    for k = 1:length(x_f)
+
+        for l = 1:length(diffx)
+
+            if (x_f(k) == diffx(l)) &amp;&amp; (y_t(k) == diffy(l))
+
+                temp(num).f = x_f(k) * f_unit;
+
+                temp(num).t = y_t(k) * t_unit;
+
+                %plot(temp(num).t,temp(num).f,&apos;.&apos;);
+
+                num = num + 1;
+
+                count = 1;%在scope中找到一个峰值点则不再记录其它相同的点
+
+                break;
+
+            end
+
+        end
+
+        if count == 1%scope中多个峰值点只保留第一个
+
+            break;
+
+        end
+
+    end
+
+end
+</code></pre><p>   end</p>
+<p>   %将temp中保存的峰值点画在图上，多个scope中找到的相同峰值点只画一次</p>
+<p>   len = 1;</p>
+<p>   point(1).f = temp(1).f;</p>
+<p>   point(1).t = temp(1).t;</p>
+<p>   plot(point(1).t,point(1).f,’.’);</p>
+<p>   for i = 2:num - 1</p>
+<pre><code>for j = 1:len
+
+    if (temp(i).f == point(j).f) &amp;&amp; (temp(i).t == point(j).t)
+
+        break;
+
+    end
+
+end
+
+if j == len &amp;&amp; (temp(i).f ~= point(j).f) &amp;&amp; (temp(i).t ~= point(j).t)
+
+    len = len + 1;
+
+    point(len).f = temp(i).f;
+
+    point(len).t = temp(i).t;
+
+    plot(point(len).t,point(len).f,&apos;.&apos;);
+
+end
+</code></pre><p>   end</p>
+<p>   hold off</p>
+<p>   end</p>
+<p>4、keypoint(sample,scope);函数中用到的caldiffenergy(energy);函数内容在caldiffenergy.m文件中，内容如下：</p>
+<p>   function diffenergy = caldiffenergy(energy)</p>
+<p>   v = diff(energy’);</p>
+<p>   [x,y] = size(v);</p>
+<p>   for i = 1:y</p>
+<pre><code>zero(i) = 0;
+</code></pre><p>   end</p>
+<p>   diffenergy = abs(([zero;v])’);</p>
+<p>   end</p>
+<p>via:<a href="http://blog.sina.com.cn/s/blog_7985987f01018pkb.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_7985987f01018pkb.html</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://ww1.sinaimg.cn/mw690/48910e01gw1evkbf70jcgj20cg0cidh5.jpg" alt="Liam WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://ww3.sinaimg.cn/mw690/48910e01gw1evkbfendrjj20ci0ci0uf.jpg" alt="Liam Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/matlab/" rel="tag"># matlab</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/07/64-high-iq-movie/" rel="next" title="64部高智商电影">
+                <i class="fa fa-chevron-left"></i> 64部高智商电影
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/08/how-to-free-your-brain-of-the-working-methods-in-the-google-age-reading-notes/" rel="prev" title="如何解放你的大脑？《Google时代的工作方法》读书笔记">
+                如何解放你的大脑？《Google时代的工作方法》读书笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2013/08/matlab-reads-the-audio-file-and-audio-feature-extraction/"
+     data-title="MATLAB读取音频文件并进行音频特征提取"
+     data-content=""
+     data-url="https://blog.naaln.com/2013/08/matlab-reads-the-audio-file-and-audio-feature-extraction/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2013/08/matlab-reads-the-audio-file-and-audio-feature-extraction/"
+           data-title="MATLAB读取音频文件并进行音频特征提取" data-url="https://blog.naaln.com/2013/08/matlab-reads-the-audio-file-and-audio-feature-extraction/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/3387850?v=3&s=460"
+               alt="Liam" />
+          <p class="site-author-name" itemprop="name">Liam</p>
+          <p class="site-description motion-element" itemprop="description">人生若如初見</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">672</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/liszd" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/whyliam" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.naaln.com/" title="纳兰主页" target="_blank">纳兰主页</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://photo.naaln.com/" title="纳兰相册" target="_blank">纳兰相册</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2003 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liam</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"naalnblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+</body>
+</html>

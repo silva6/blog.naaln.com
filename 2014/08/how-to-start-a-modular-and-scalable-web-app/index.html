@@ -1,0 +1,1369 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next muse" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="ByVfaP_E3b9ZYRUGhNAUFSQKL8mJQwUehpQwoxJ5n-c" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="web," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Why·Liam·Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="虽然从没有认为自己是一个前端开发者，但不知不觉中也积累下了一些前端开发的经验。正巧之前碰到一道面试题，于是就顺便梳理了一下自己关于Web App的一些思路并整理为本文。
+对于很多简单的网站或Web应用来说，引入jQuery以及一些插件，在当前页面内写入简单逻辑已经可以满足大部分需要。但是如果一旦多人开发，应用的复杂程度上升，就会有很多问题开始暴露出来：
+
+数据源一般都与页面分离，那么App启动一般">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何开始一个模块化可扩展的Web App">
+<meta property="og:url" content="https://blog.naaln.com/2014/08/how-to-start-a-modular-and-scalable-web-app/index.html">
+<meta property="og:site_name" content="Why·Liam·Blog">
+<meta property="og:description" content="虽然从没有认为自己是一个前端开发者，但不知不觉中也积累下了一些前端开发的经验。正巧之前碰到一道面试题，于是就顺便梳理了一下自己关于Web App的一些思路并整理为本文。
+对于很多简单的网站或Web应用来说，引入jQuery以及一些插件，在当前页面内写入简单逻辑已经可以满足大部分需要。但是如果一旦多人开发，应用的复杂程度上升，就会有很多问题开始暴露出来：
+
+数据源一般都与页面分离，那么App启动一般">
+<meta property="og:updated_time" content="2016-10-20T19:59:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何开始一个模块化可扩展的Web App">
+<meta name="twitter:description" content="虽然从没有认为自己是一个前端开发者，但不知不觉中也积累下了一些前端开发的经验。正巧之前碰到一道面试题，于是就顺便梳理了一下自己关于Web App的一些思路并整理为本文。
+对于很多简单的网站或Web应用来说，引入jQuery以及一些插件，在当前页面内写入简单逻辑已经可以满足大部分需要。但是如果一旦多人开发，应用的复杂程度上升，就会有很多问题开始暴露出来：
+
+数据源一般都与页面分离，那么App启动一般">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'XILKIWTAM9',
+      apiKey: '99d43a85f328d00214c5de8007ce7920',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.naaln.com/2014/08/how-to-start-a-modular-and-scalable-web-app/"/>
+
+
+
+
+
+  <title> 如何开始一个模块化可扩展的Web App | Why·Liam·Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47966442-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Why·Liam·Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生若如初見</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-technology">
+          <a href="/categories/technology/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-code"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-jottings">
+          <a href="/categories/jottings/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-language"></i> <br />
+            
+            随笔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tour">
+          <a href="/categories/tour/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            旅游
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://blog.naaln.com/2014/08/how-to-start-a-modular-and-scalable-web-app/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Liam">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/3387850?v=3&s=460">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Why·Liam·Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Why·Liam·Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                如何开始一个模块化可扩展的Web App
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-08-11T11:33:00-04:00">
+                2014-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/technology/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2014/08/how-to-start-a-modular-and-scalable-web-app/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/08/how-to-start-a-modular-and-scalable-web-app/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>虽然从没有认为自己是一个前端开发者，但不知不觉中也积累下了一些前端开发的经验。正巧之前碰到一道面试题，于是就顺便梳理了一下自己关于Web App的一些思路并整理为本文。</p>
+<p>对于很多简单的网站或Web应用来说，引入jQuery以及一些插件，在当前页面内写入简单逻辑已经可以满足大部分需要。但是如果一旦多人开发，应用的复杂程度上升，就会有很多问题开始暴露出来：</p>
+<ol>
+<li><p>数据源一般都与页面分离，那么App启动一般都需要等待数据源读入。</p>
+</li>
+<li><p>UI交互复杂时，需要将逻辑通过面向对象抽象后才能更好的复用。</p>
+</li>
+<li><p>功能间一般都存在依赖关系，需要引入支持依赖关系的模块加载器。 那么如何解决这些问题，就以一个简单的订餐App为例，从零开始一个<a href="http://avnpc.com/pages/start-a-modular-extensible-webapp" target="_blank" rel="external">模块化可扩展Web App</a>。</p>
+</li>
+</ol>
+<p>这个简单的App基于HTML5 Boilerplate、requireJS、jQuery Mobile、Underscore.js，后端逻辑用jStorage模拟实现。完成后的成品<a href="http://allovince.github.com/webapp-startup/" target="_blank" rel="external">在此</a>。所有代码可以在github查看。下文将逐一介绍实现的思路与方法。</p>
+<h3 id="从选择一个好模板开始"><a href="#从选择一个好模板开始" class="headerlink" title="从选择一个好模板开始"></a>从选择一个好模板开始</h3><p>开始一个Web项目，HTML的书写总是重中之重，一个好的HTML能从根源上规避大量潜在问题，所以Web App应该全部应用一个标准化的高质量HTML模板，而不是将所有页面交由开发人员自由发挥。</p>
+<p>这里推荐使用<a href="http://html5boilerplate.com/" target="_blank" rel="external">HTML5 Boilerplate</a>项目作为App的默认模板以及文件路径规范，无论是网站或者富UI的App，都可以采用这个模板作为起步。</p>
+<p>可以使用</p>
+<p>   git clone git://github.com/h5bp/html5-boilerplate.git</p>
+<p>或者直接下载<a href="https://github.com/h5bp/html5-boilerplate" target="_blank" rel="external">HTML5 Boilerplate</a>项目代码。HTML5 Boilerplate的文件结构如下，</p>
+<p>   .</p>
+<p>   ├── css</p>
+<p>   │   ├── main.css</p>
+<p>   │   └── normalize.css</p>
+<p>   ├── doc</p>
+<p>   ├── img</p>
+<p>   ├── js</p>
+<p>   │   ├── main.js</p>
+<p>   │   ├── plugins.js</p>
+<p>   │   └── vendor</p>
+<p>   │       ├── jquery.min.js</p>
+<p>   │       └── modernizr.min.js</p>
+<p>   ├── .htaccess</p>
+<p>   ├── 404.html</p>
+<p>   ├── index.html</p>
+<p>   ├── humans.txt</p>
+<p>   ├── robots.txt</p>
+<p>   ├── crossdomain.xml</p>
+<p>   ├── favicon.ico</p>
+<p>   └── [apple-touch-icons]</p>
+<p>从上向下看</p>
+<ul>
+<li><p><code>css</code> 用于存放css文件，并内置了Normalize.css作为默认CSS重置手段（其实Normalize.css不能算是CSS reset）。</p>
+</li>
+<li><p><code>doc</code> 存放项目文档</p>
+</li>
+<li><p><code>img</code> 存放项目图片</p>
+</li>
+<li><p><code>js</code> 存放javascript文件，其中第三方类库推荐放在vendor下</p>
+</li>
+<li><p><code>.htaccess</code> 内置了很多对于静态文件在Apache下的优化策略，如果Web服务器不是Apache则可以参考其他Web服务器配置优化。</p>
+</li>
+<li><p><code>404.html</code> 默认的404页面，</p>
+</li>
+<li><p><code>index.html</code> 项目模板</p>
+</li>
+<li><p><code>humans.txt</code> 相对于面向机器人的robots.txt，humans.txt更像是小幽默，这在里可以写关于项目/团队的介绍，或者放置一些彩蛋给那些喜欢对你的应用刨根问底的用户们。</p>
+</li>
+<li><p><code>robots.txt</code> 用于告诉搜索引擎蜘蛛爬行规则</p>
+</li>
+<li><p><code>crossdomain.xml</code> 用于配置Flash的跨域策略</p>
+</li>
+<li><p><code>favicon.ico</code> <code>apple-touch-icon.png</code>等小图标。 如果是一个主要面向移动设备，还有更具针对性的<a href="http://html5boilerplate.com/mobile/" target="_blank" rel="external">Mobile Boilerplate</a>可供参考。</p>
+</li>
+</ul>
+<h3 id="制定统一的编码规范"><a href="#制定统一的编码规范" class="headerlink" title="制定统一的编码规范"></a>制定统一的编码规范</h3><p>在正式开始编码之前，无论是多大规模的应用，多少人的团队，一定要有一个统一的规范，才能保证后续的开发不会乱套。</p>
+<p>前端规范其实又要分为三部分：HTML、CSS、Javascript应该分别有自己的规范。HTML/CSS主要约定id/class的命名规则、属性的书写顺序。JavaScript可能需要细化到缩进、编码风格、面向对象写法等等。</p>
+<p>最省事的方法当然还是参考已有的规范，比如<a href="http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml" target="_blank" rel="external">Google的HTML/CSS风格指南</a>、<a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank" rel="external">Google的Javascript编码指南</a>等等。</p>
+<h4 id="HTML篇"><a href="#HTML篇" class="headerlink" title="HTML篇"></a>HTML篇</h4><p>HTML5 Boilerplate的模板核心部分不过30行，但是每一行都可谓千锤百炼，可以用最小的消耗解决一些前端的顽固问题：</p>
+<p><strong>使用条件注释区分IE浏览器</strong></p>
+<p>   &lt; !DOCTYPE html&gt;</p>
+   <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> < ![endif]-->
+   <!--[if IE 7]>         </html><html class="no-js lt-ie9 lt-ie8"> < ![endif]-->
+   <!--[if IE 8]>         </html><html class="no-js lt-ie9"> < ![endif]-->
+   <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<p>之所以要这样写</p>
+<ol>
+<li><p>可以使用class作为全局条件区分低版本的IE浏览器并进行调整，这显然要优于使用CSS Hack。</p>
+</li>
+<li><p>可以避免<a href="http://webforscher.wordpress.com/2010/05/20/ie-6-slowing-down-ie-8/" target="_blank" rel="external">IE6条件注释引起的高版本IE文件阻塞问题</a>，原文的解决方法是在前面加一个空白的条件注释，但是这里显然将原本无用空白的条件注释变得有意义了。</p>
+</li>
+<li><p>仍然可以通过HTML验证。</p>
+</li>
+<li><p>与Modernizr等特征检测类库使用相同的class，更具备通用性。</p>
+</li>
+</ol>
+<p><code>no-js</code>标签是需要与Modernizr等类库配合使用的，如果你不想在项目中引入Modernizr，需要在Head部分加入一行使<code>no-js</code>标签变为<code>js</code>，代码来自<a href="http://paulirish.com/2009/avoiding-the-fouc-v3/" target="_blank" rel="external">Avoiding the FOUC</a>：</p>
+   <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+
+
+
+<p>通过上面的条件注释，就可以在CSS中针对不同情况分别处理</p>
+<p>   .lt-ie7 {} /<em> IE6等版本时 </em>/</p>
+<p>   .no-js {} /<em> JavaScript没有启用时 </em>/</p>
+<h4 id="meta标签的书写顺序"><a href="#meta标签的书写顺序" class="headerlink" title="meta标签的书写顺序"></a>meta标签的书写顺序</h4><p>为了让浏览器识别正确的编码，meta charset标签应该先于title标签出现。</p>
+<p>meta X-UA-Compatible标签可以指定IE8以上版本浏览器以最高级模式渲染文档，同时如果已经安装<a href="http://www.google.com/chromeframe?quickenable=true" target="_blank" rel="external">Google Chrome Frame</a>则直接使用Chrome Frame渲染。而指定渲染模式的<a href="http://msdn.microsoft.com/en-us/library/cc288325%28VS.85%29.aspx" target="_blank" rel="external">meta X-UA-Compatible</a>标签同样需要优先出现</p>
+   <meta charset="utf-8">
+
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+   <title></title>
+
+
+
+<h4 id="设置移动设备显示窗口宽度"><a href="#设置移动设备显示窗口宽度" class="headerlink" title="设置移动设备显示窗口宽度"></a>设置移动设备显示窗口宽度</h4>   <meta name="viewport" content="width=device-width">
+
+
+
+<p>这是移动设备专属的标签，具体设置需要根据项目实际情况调整。</p>
+<h4 id="使用Modernizr做浏览器差异检测"><a href="#使用Modernizr做浏览器差异检测" class="headerlink" title="使用Modernizr做浏览器差异检测"></a>使用Modernizr做浏览器差异检测</h4><p><a href="http://modernizr.com/" target="_blank" rel="external">Modernizr</a>常做前端的应该都不陌生。引入Modernizr后，html标签的no-js将会被自动替换为js，同时Modernizr会向html标签添加代表版本检测结果的class。</p>
+<p>对于低版本浏览器的向上兼容需要根据项目实际需求处理，Modernizr也非常周到的给出的<a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills" target="_blank" rel="external">绝大多数HTML5功能的兼容方法</a>。</p>
+<h3 id="CSS篇"><a href="#CSS篇" class="headerlink" title="CSS篇"></a>CSS篇</h3><h4 id="CSS重置及增强功能"><a href="#CSS重置及增强功能" class="headerlink" title="CSS重置及增强功能"></a>CSS重置及增强功能</h4><p>HTML5 Boilerplate选择<a href="https://github.com/necolas/normalize.css" target="_blank" rel="external">Normalize.css</a>重置CSS。如果项目计划引入Twitter Bootstrap、YUI 3这些前端框架的话则可以移除，因为这些框架已经内置了Normalize.css。</p>
+<p>同时HTML5 Boilerplate又引入了一个main.css，内置了一些基本的排版样式以及打印样式。</p>
+<h4 id="使用LESS或Sass生成CSS"><a href="#使用LESS或Sass生成CSS" class="headerlink" title="使用LESS或Sass生成CSS"></a>使用LESS或Sass生成CSS</h4><p>在复杂应用中，如果还手写CSS的话将是一件痛苦的事情，大量的class前缀，复用样式需要来回copy等等。为了更好的扩展性，这里建议在项目中引入<a href="http://lesscss.org/" target="_blank" rel="external">LESS</a>或<a href="http://sass-lang.com/" target="_blank" rel="external">Sass</a>。这代表着：</p>
+<ul>
+<li><p>支持变量与简单运算</p>
+</li>
+<li><p>支持CSS片段复用</p>
+</li>
+<li><p>class/id样式嵌套</p>
+</li>
+</ul>
+<p>等一些更像是编程语言的特性。这对于提高开发效率是效果非常明显的。</p>
+<p>以LESS为例，简单介绍一下LESS在Windows下如何应用到这个项目中：</p>
+<ol>
+<li><p>下载<a href="http://nodejs.org/" target="_blank" rel="external">Nodejs</a>并安装，nodejs会自动将自己加入系统路径。</p>
+</li>
+<li><p>在cmd运行</p>
+<p>npm install -g less</p>
+</li>
+</ol>
+<ol>
+<li><p>然后就可以通过lessc指令将less源文件编译为css</p>
+<p>lessc avnpc.less avnpc.css</p>
+</li>
+</ol>
+<p>如果不使用nodeJs作为后端，最好在写LESS时采用watch模式，每次保存自动编译为css。这里需要安装一个辅助模块recess：</p>
+<p>   npm install -g recess</p>
+<p>然后运行watch</p>
+<p>   recess avnpc.less:avnpc.css –watch</p>
+<h3 id="avascript篇"><a href="#avascript篇" class="headerlink" title="avascript篇"></a>avascript篇</h3><h4 id="使用requireJS按需加载"><a href="#使用requireJS按需加载" class="headerlink" title="使用requireJS按需加载"></a>使用requireJS按需加载</h4><p>模块加载器的概念可能稍微接触过前端开发的童鞋都不会陌生，通过模块加载器可以有效的解决这些问题：</p>
+<ol>
+<li><p>JS文件的依赖关系。</p>
+</li>
+<li><p>通过异步加载优化script标签引起的阻塞问题</p>
+</li>
+<li><p>可以简单的以文件为单位将功能模块化并实现复用</p>
+</li>
+</ol>
+<p>主流的JS模块加载器有<a href="http://requirejs.org/" target="_blank" rel="external">requireJS</a>，<a href="http://seajs.org/docs/" target="_blank" rel="external">SeaJ</a>S等，加载器之间可能会因为遵循的规范不同有微妙的差别，从纯用户的角度出发，之所以选requireJS而不是SeaJS主要是因为：</p>
+<ul>
+<li><p>功能实现上两者相差无几，没有明显的性能差异或重大问题。</p>
+</li>
+<li><p>文档丰富程度上，requireJS远远好于SeaJS，就拿最简单的加载jQuery和jQuery插件这回事，虽然两者的实现方法相差无几，但requireJS就有可以直接拿来用的Demo，SeaJS还要读文档自己慢慢折腾。一些问题的解决上，requireJS为关键词也更容易找到答案。</p>
+</li>
+</ul>
+<h4 id="requireJS-加载jQuery-jQuery插件"><a href="#requireJS-加载jQuery-jQuery插件" class="headerlink" title="requireJS 加载jQuery + jQuery插件"></a>requireJS 加载jQuery + jQuery插件</h4><p>可能对于一般Web App来说，引入jQuery及相关插件的概率是最大的，requireJS也亲切的给出了相应的解决方案及动态加载jQuery及插件的文档及实例代码。</p>
+<p>在最新的jQuery1.9.X中，jQuery已经在最后直接将自己注册为一个AMD模块，即是说可以直接被requireJS作为模块加载。如果是加载旧版的jQuery有两种方法：</p>
+<ol>
+<li><p>让jQuery先于requireJS加载</p>
+</li>
+<li><p>对jQuery代码稍做一点处理，在jQuery代码包裹一句：</p>
+<p>define([“jquery”], function($) {</p>
+<p>   // $ is guaranteed to be jQuery now */</p>
+<p>});</p>
+</li>
+</ol>
+<p>requireJS的示例中，直接将requireJS与jQuery合并为一个文件，如果是采用jQuery作为核心库的话推荐这种做法。</p>
+<p>同样对于jQuery插件来说也有两种方法</p>
+<p>1  </p>
+<p>AlloVince 信我者，得AV</p>
+<p>Weibo 48 如何开始一个模块化可扩展的Web App 发表于 AVNPC 2013-04-23 22:00 字数: 1848 阅读量: 2186</p>
+<p>虽然从没有认为自己是一个前端开发者，但不知不觉中也积累下了一些前端开发的经验。正巧之前碰到一道面试题，于是就顺便梳理了一下自己关于Web App的一些思路并整理为本文。</p>
+<p>对于很多简单的网站或Web应用来说，引入jQuery以及一些插件，在当前页面内写入简单逻辑已经可以满足大部分需要。但是如果一旦多人开发，应用的复杂程度上升，就会有很多问题开始暴露出来：</p>
+<p>数据源一般都与页面分离，那么App启动一般都需要等待数据源读入。 UI交互复杂时，需要将逻辑通过面向对象抽象后才能更好的复用。 功能间一般都存在依赖关系，需要引入支持依赖关系的模块加载器。 那么如何解决这些问题，就以一个简单的订餐App为例，从零开始一个模块化可扩展Web App。</p>
+<p>这个简单的App基于HTML5 Boilerplate、requireJS、jQuery Mobile、Underscore.js，后端逻辑用jStorage模拟实现。完成后的成品在此。所有代码可以在github查看。下文将逐一介绍实现的思路与方法。</p>
+<p>从选择一个好模板开始 开始一个Web项目，HTML的书写总是重中之重，一个好的HTML能从根源上规避大量潜在问题，所以Web App应该全部应用一个标准化的高质量HTML模板，而不是将所有页面交由开发人员自由发挥。</p>
+<p>这里推荐使用HTML5 Boilerplate项目作为App的默认模板以及文件路径规范，无论是网站或者富UI的App，都可以采用这个模板作为起步。</p>
+<p>可以使用</p>
+<p>git clone git://github.com/h5bp/html5-boilerplate.git 或者直接下载HTML5 Boilerplate项目代码。HTML5 Boilerplate的文件结构如下，</p>
+<p>. ├── css │ ├── main.css │ └── normalize.css ├── doc ├── img ├── js │ ├── main.js │ ├── plugins.js │ └── vendor │ ├── jquery.min.js │ └── modernizr.min.js ├── .htaccess ├── 404.html ├── index.html ├── humans.txt ├── robots.txt ├── crossdomain.xml ├── favicon.ico └── [apple-touch-icons] 从上向下看</p>
+<p>css 用于存放css文件，并内置了Normalize.css作为默认CSS重置手段（其实Normalize.css不能算是CSS reset）。 doc 存放项目文档 img 存放项目图片 js 存放javascript文件，其中第三方类库推荐放在vendor下 .htaccess 内置了很多对于静态文件在Apache下的优化策略，如果Web服务器不是Apache则可以参考其他Web服务器配置优化。 404.html 默认的404页面， index.html 项目模板 humans.txt 相对于面向机器人的robots.txt，humans.txt更像是小幽默，这在里可以写关于项目/团队的介绍，或者放置一些彩蛋给那些喜欢对你的应用刨根问底的用户们。 robots.txt 用于告诉搜索引擎蜘蛛爬行规则 crossdomain.xml 用于配置Flash的跨域策略 favicon.ico apple-touch-icon.png等小图标。 如果是一个主要面向移动设备，还有更具针对性的Mobile Boilerplate可供参考。</p>
+<p>制定统一的编码规范 在正式开始编码之前，无论是多大规模的应用，多少人的团队，一定要有一个统一的规范，才能保证后续的开发不会乱套。</p>
+<p>前端规范其实又要分为三部分：HTML、CSS、Javascript应该分别有自己的规范。HTML/CSS主要约定id/class的命名规则、属性的书写顺序。JavaScript可能需要细化到缩进、编码风格、面向对象写法等等。</p>
+<p>最省事的方法当然还是参考已有的规范，比如Google的HTML/CSS风格指南、Google的Javascript编码指南等等。</p>
+<p>HTML篇 HTML5 Boilerplate的模板核心部分不过30行，但是每一行都可谓千锤百炼，可以用最小的消耗解决一些前端的顽固问题：</p>
+<p>使用条件注释区分IE浏览器 &lt; !DOCTYPE html&gt; <!--[if lt IE 7]>      </html><html class="no-js lt-ie9 lt-ie8 lt-ie7"> < ![endif]--></p>
+<!--[if IE 7]>         </html><html class="no-js lt-ie9 lt-ie8"> < ![endif]-->
+<!--[if IE 8]>         </html><html class="no-js lt-ie9"> < ![endif]-->
+<p><!--[if gt IE 8]><!--></p></html><p></p>
+<p><!--<![endif]--> 之所以要这样写</p> <p></p>
+<p>可以使用class作为全局条件区分低版本的IE浏览器并进行调整，这显然要优于使用CSS Hack。 可以避免IE6条件注释引起的高版本IE文件阻塞问题，原文的解决方法是在前面加一个空白的条件注释，但是这里显然将原本无用空白的条件注释变得有意义了。 仍然可以通过HTML验证。 与Modernizr等特征检测类库使用相同的class，更具备通用性。 no-js标签是需要与Modernizr等类库配合使用的，如果你不想在项目中引入Modernizr，需要在Head部分加入一行使no-js标签变为js，代码来自Avoiding the FOUC：</p>
+<p>通过上面的条件注释，就可以在CSS中针对不同情况分别处理</p>
+<p>.lt-ie7 {} /<em> IE6等版本时 </em>/ .no-js {} /<em> JavaScript没有启用时 </em>/ meta标签的书写顺序 为了让浏览器识别正确的编码，meta charset标签应该先于title标签出现。</p>
+<p>meta X-UA-Compatible标签可以指定IE8以上版本浏览器以最高级模式渲染文档，同时如果已经安装Google Chrome Frame则直接使用Chrome Frame渲染。而指定渲染模式的meta X-UA-Compatible标签同样需要优先出现</p>
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>
+
+<p></p></title> 设置移动设备显示窗口宽度 <p></p>
+<meta name="viewport" content="width=device-width">
+
+<p>这是移动设备专属的标签，具体设置需要根据项目实际情况调整。</p>
+<p>使用Modernizr做浏览器差异检测 Modernizr常做前端的应该都不陌生。引入Modernizr后，html标签的no-js将会被自动替换为js，同时Modernizr会向html标签添加代表版本检测结果的class。</p>
+<p>对于低版本浏览器的向上兼容需要根据项目实际需求处理，Modernizr也非常周到的给出的绝大多数HTML5功能的兼容方法。</p>
+<p>CSS篇 CSS重置及增强功能 HTML5 Boilerplate选择Normalize.css重置CSS。如果项目计划引入Twitter Bootstrap、YUI 3这些前端框架的话则可以移除，因为这些框架已经内置了Normalize.css。</p>
+<p>同时HTML5 Boilerplate又引入了一个main.css，内置了一些基本的排版样式以及打印样式。</p>
+<p>使用LESS或Sass生成CSS 在复杂应用中，如果还手写CSS的话将是一件痛苦的事情，大量的class前缀，复用样式需要来回copy等等。为了更好的扩展性，这里建议在项目中引入LESS或Sass。这代表着：</p>
+<p>支持变量与简单运算 支持CSS片段复用 class/id样式嵌套 等一些更像是编程语言的特性。这对于提高开发效率是效果非常明显的。</p>
+<p>以LESS为例，简单介绍一下LESS在Windows下如何应用到这个项目中：</p>
+<p>下载Nodejs并安装，nodejs会自动将自己加入系统路径。 在cmd运行 npm install -g less 然后就可以通过lessc指令将less源文件编译为css lessc avnpc.less avnpc.css 如果不使用nodeJs作为后端，最好在写LESS时采用watch模式，每次保存自动编译为css。这里需要安装一个辅助模块recess： npm install -g recess 然后运行watch recess avnpc.less:avnpc.css –watch Javascript篇 使用requireJS按需加载 模块加载器的概念可能稍微接触过前端开发的童鞋都不会陌生，通过模块加载器可以有效的解决这些问题：</p>
+<p>JS文件的依赖关系。 通过异步加载优化script标签引起的阻塞问题 可以简单的以文件为单位将功能模块化并实现复用 主流的JS模块加载器有requireJS，SeaJS等，加载器之间可能会因为遵循的规范不同有微妙的差别，从纯用户的角度出发，之所以选requireJS而不是SeaJS主要是因为：</p>
+<p>功能实现上两者相差无几，没有明显的性能差异或重大问题。 文档丰富程度上，requireJS远远好于SeaJS，就拿最简单的加载jQuery和jQuery插件这回事，虽然两者的实现方法相差无几，但requireJS就有可以直接拿来用的Demo，SeaJS还要读文档自己慢慢折腾。一些问题的解决上，requireJS为关键词也更容易找到答案。 requireJS 加载jQuery + jQuery插件 可能对于一般Web App来说，引入jQuery及相关插件的概率是最大的，requireJS也亲切的给出了相应的解决方案及动态加载jQuery及插件的文档及实例代码。</p>
+<p>在最新的jQuery1.9.X中，jQuery已经在最后直接将自己注册为一个AMD模块，即是说可以直接被requireJS作为模块加载。如果是加载旧版的jQuery有两种方法：</p>
+<ol>
+<li><p>让jQuery先于requireJS加载</p>
+</li>
+<li><p>对jQuery代码稍做一点处理，在jQuery代码包裹一句：</p>
+</li>
+</ol>
+<p>define([“jquery”], function($) { // $ is guaranteed to be jQuery now */ }); requireJS的示例中，直接将requireJS与jQuery合并为一个文件，如果是采用jQuery作为核心库的话推荐这种做法。</p>
+<p>同样对于jQuery插件来说也有两种方法</p>
+<ol>
+<li><p>在插件外包裹代码</p>
+<p>define([“jquery”], function($){</p>
+<pre><code>// Put here the plugin code. 
+</code></pre><p>});</p>
+</li>
+</ol>
+<ol>
+<li><p>在使用reuqireJS代码加载前注册插件（比如在main.js）中</p>
+<p>requirejs.config({</p>
+<p>   “shim”: {</p>
+<pre><code>&quot;jquery-cookie&quot;  : [&quot;jquery&quot;]
+</code></pre><p>   }</p>
+<p>});</p>
+</li>
+</ol>
+<h4 id="requireJS加载第三方类库"><a href="#requireJS加载第三方类库" class="headerlink" title="requireJS加载第三方类库"></a>requireJS加载第三方类库</h4><p>在实例的App中还用到了jQuery以外的第三方类库，如果类库不是一个标准的AMD模块而又不想更改这些类库的代码，同样需要提前进行定义：</p>
+<p>   require.config({</p>
+<pre><code>paths: {
+
+      &apos;underscore&apos;: &apos;vendor/underscore&apos;
+
+},
+
+shim: {
+
+    underscore: {
+
+        exports: &apos;_&apos;
+
+    }
+
+}
+</code></pre><p>   });</p>
+<h4 id="CSS文件的模块化处理"><a href="#CSS文件的模块化处理" class="headerlink" title="CSS文件的模块化处理"></a>CSS文件的模块化处理</h4><p>在requireJS中，模块的概念仅限于JS文件，如果需要加载图片、JSON等非JS文件，requireJS实现了一系列<a href="http://requirejs.org/docs/plugins.html" target="_blank" rel="external">加载插件</a>。</p>
+<p>但是遗憾的是requireJS官方没有对CSS进行模块化处理，而我们在实际项目中却往往能遇到一些场景，比如一个轮播的图片展示栏，比如高级编辑器等等。几乎所有的富UI组件都会由JS与CSS两部分构成，而CSS之间也存在着模块的概念以及依赖关系。</p>
+<p>为了更好的与requireJS整合，这里采用require-css来解决CSS的模块化与依赖问题。</p>
+<p>require-css是一个requireJS插件，下载后将css.js与normalize.js放于main.js同级即可默认被加载，比如在我们的项目中需要加载jQuery Mobile的css文件，那么可以直接这样调用：</p>
+<p>   require([‘jquery’, ‘css!../css/jquery.mobile-1.3.0.min.css’], function($) {</p>
+<p>   });</p>
+<p>不过由于这个CSS本质上是属于jQuery Mobile模块的一部分，更好的做法是将这个CSS文件的定义放在jQuery Mobile的依赖关系中，最终我们的requireJS定义部分为：</p>
+<p>   require.config({</p>
+<pre><code>paths: {
+
+      &apos;jquerymobile&apos;: &apos;vendor/jquery.mobile-1.3.0&apos;,
+
+      &apos;jstorage&apos; : &apos;vendor/jstorage&apos;,
+
+      &apos;underscore&apos;: &apos;vendor/underscore&apos;
+
+},
+
+shim: {
+
+    jquerymobile : {
+
+      deps: [
+
+          &apos;css!../css/jquery.mobile-1.3.0.min.css&apos;
+
+      ]
+
+    },
+
+    underscore: {
+
+        exports: &apos;_&apos;
+
+    }
+
+}
+</code></pre><p>   });</p>
+<p>在使用模块时，只需要：</p>
+<p>   require([‘jquery’, ‘underscore’, ‘jquerymobile’, ‘jstorage’], function($, _) {</p>
+<p>   });</p>
+<p>jQuery Mobile的CSS文件就会被自动加载，这样CSS与JS就被整合为一个模块了。同理其他有复杂依赖关系的模块也可以做类似处理，requireJS会解决依赖关系的逻辑。</p>
+<h4 id="数据源的加载与等待"><a href="#数据源的加载与等待" class="headerlink" title="数据源的加载与等待"></a>数据源的加载与等待</h4><p>Web App一般都会动态加载后端的数据，数据格式一般可以是JSON、JSONP也可以直接是一个JS变量。这里以JS变量为例</p>
+<p>   var restaurants = [</p>
+<pre><code>{
+
+    &quot;name&quot;: &quot;KFC&quot;
+
+},
+
+{
+
+    &quot;name&quot;: &quot;7-11&quot;
+
+},
+
+{
+
+    &quot;name&quot;: &quot;成都小吃&quot;
+
+}
+</code></pre><p>   ]</p>
+<p>载入这段数据:</p>
+<p>   $.getScript(‘data/restaurants.json’, function(e){</p>
+<pre><code>var data = window.restaurants;
+
+alert(data[0].name); //KFC
+</code></pre><p>   });</p>
+<p>单一的数据源确实很简单，但是往往一个应用中会有多个数据源，比如在这个实例App中UI就需要载入用户信息、餐厅信息、订餐信息三种数据后才能工作。如果仅仅靠多层嵌套回调函数的话，可能代码的耦合就非常重了。</p>
+<p>为了解决多个数据加载的问题，我习惯的解决方法是构造一个dataReady事件响应机制。</p>
+<p>   var foodOrder = {</p>
+<pre><code>//数据载入后要执行的函数暂存在这里
+
+dataReadyFunc : []
+
+
+
+//数据源URL及载入状态
+
+, dataSource : [
+
+    { url : &apos;data/restaurants.json&apos;, ready : false, data : null },
+
+    { url : &apos;data/users.json&apos;, ready : false, data : null },
+
+    { url : &apos;data/foods.json&apos;, ready : false, data : null }
+
+]
+
+
+
+//检查数据源是否全部载入完毕
+
+, isReady : function(){
+
+    var isReady = true;
+
+    for(var key in this.dataSource){
+
+        if(this.dataSource[key].ready !== true){
+
+            isReady = false;
+
+        }
+
+    }
+
+    return isReady;
+
+}
+
+
+
+//数据源全部加载完毕，则逐一运行dataReadyFunc中存放的函数
+
+, callReady : function(){
+
+    if(true === this.isReady()){
+
+        for(var key in this.dataReadyFunc){
+
+            this.dataReadyFunc[key]();
+
+        }
+
+    }
+
+}
+
+
+
+//供外部调用，会将外部输入的函数暂存在dataReadyFunc中
+
+, dataReady : function(func){
+
+    if (typeof func !== &apos;function&apos;) {
+
+        return false;
+
+    } 
+
+    this.dataReadyFunc.push(func);
+
+}
+
+
+
+, init : function(){
+
+    var self = this;
+
+    var _initElement = function(key, url){
+
+        $.getScript(url, function(e){
+
+            //每次载入数据后，将数据存放于dataSource中，将ready状态置为true，并调用callReady
+
+            self.dataSource[key].data = window[key];
+
+            self.dataSource[key].ready = true;
+
+            self.callReady();
+
+        });
+
+    }
+
+    for(var key in this.dataSource){
+
+        _initElement(key, this.dataSource[key].url);
+
+    }
+
+}
+</code></pre><p>   }</p>
+<p>用法为</p>
+<p>   foodOrder.dataReady(function(){</p>
+<pre><code>alert(1);     
+</code></pre><p>   });</p>
+<p>   foodOrder.init();</p>
+<p>dataReady内的alert将会在所有数据载入完毕后开始执行。</p>
+<p>这段处理的逻辑并不复杂，将所有要执行的方法通过dataReady暂存起来，等待数据全部加载完毕后再执行，更加复杂的场景此方法仍然通用。</p>
+<h4 id="使用JS模板引擎"><a href="#使用JS模板引擎" class="headerlink" title="使用JS模板引擎"></a>使用JS模板引擎</h4><p>数据载入后，最终都会以某种形式显示在页面上。简单情况，我们可能会这样做：</p>
+<p>   $(‘body’).append(‘<div>‘ + data.name + ‘</div>‘);</p>
+<p>如果页面逻辑一旦复杂，比如需要有if判断或者多层循环时，这种连接字符串的方式就相形见绌了，而这也就催生出了JS模板引擎。</p>
+<p>主流的JS模板引擎有<a href="http://documentcloud.github.com/underscore/" target="_blank" rel="external">underscore.js</a>，<a href="http://jade-lang.com/" target="_blank" rel="external">Jade</a>，<a href="http://embeddedjs.com/" target="_blank" rel="external">EJS</a>等等，可以<a href="http://engineering.linkedin.com/frontend/client-side-templating-throwdown-mustache-handlebars-dustjs-and-more" target="_blank" rel="external">横向对比一下这些JS模板引擎的优缺点</a>。</p>
+<p>对于相对简单的页面逻辑（只需要支持if和for/each）来说，我更倾向选用轻巧的<code>underscore.js</code>或者<a href="https://github.com/blueimp/JavaScript-Templates" target="_blank" rel="external">JavaScript Templates</a>。</p>
+<p>在当前例子中，使用underscore.js生成列表就非常简单了，页面模板为：</p>
+<p>在当前例子中，使用underscore.js生成列表就非常简单了，页面模板为：</p>
+   <ul data-role="listview" data-inset="true"><br><br>   <script id="tmpl-restaurants" type="text/template"><br><br>       &lt; % _.each(data, function(restaurant) { %&gt;<br><br>           <li><br><br>               <a href="#" data-rel="back" data-value="<%- restaurant.name%>">&lt; %- restaurant.name%&gt;</a><br><br>           </li><br><br>       &lt; % }); %&gt;<br><br>   </script><br><br>   </ul>
+
+
+
+<p>调用引擎</p>
+<p>   $(“#tmpl-restaurants”).replaceWith(</p>
+<pre><code>_.template($(&quot;#tmpl-restaurants&quot;).html(), {
+
+    data : restaurants
+
+})
+</code></pre><p>   );</p>
+<h4 id="面向对象与模块化"><a href="#面向对象与模块化" class="headerlink" title="面向对象与模块化"></a>面向对象与模块化</h4><p>通过上面这些工具的组合，我们有了模块的概念，有了模板引擎，有数据的加载。最终还是要通过javascript将这一切组织在一起并加入应用所需要的逻辑。为了能最大限度的复用代码，用面向对象的方式去组织内容是比较好的选择。</p>
+<p>JavaScript虽然原生并不支持面向对象，但是依然可以通过很多方式模拟出面向对象的特性。例子中采用了我个人比较喜欢的一种方式是：</p>
+<p>   var foodOrder = function(ui, options){</p>
+<pre><code>//构造函数
+
+this.init(ui, options);
+</code></pre><p>   }</p>
+<p>   foodOrder.prototype = {</p>
+<pre><code>defaultUI :  {
+
+    form : &apos;#form-order&apos;
+
+}
+
+, defaultOptions : {
+
+    debug : false
+
+}
+
+, init : function(ui, options){
+
+    this.ui = $.extend({}, this.defaultUI, ui);
+
+    this.options = $.extend({}, this.defaultOptions, options);
+
+}
+</code></pre><p>   }</p>
+<p>   var order = new foodOrder({</p>
+<pre><code>form : &apos;#real-form&apos;
+</code></pre><p>   }, {</p>
+<pre><code>debug : true
+</code></pre><p>   });</p>
+<p>将页面的UI元素以及配置项目抽象出来，在实际构造对象时则可以通过入口参数复写，可以分离整个项目的逻辑与UI，使处理的方式更加灵活。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://ww1.sinaimg.cn/mw690/48910e01gw1evkbf70jcgj20cg0cidh5.jpg" alt="Liam WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://ww3.sinaimg.cn/mw690/48910e01gw1evkbfendrjj20ci0ci0uf.jpg" alt="Liam Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web/" rel="tag"># web</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/08/how-improve-performance-css-selectors/" rel="next" title="如何提升 CSS 选择器性能">
+                <i class="fa fa-chevron-left"></i> 如何提升 CSS 选择器性能
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/08/personal-knowledge-management-approach/" rel="prev" title="个人知识管理的方法">
+                个人知识管理的方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2014/08/how-to-start-a-modular-and-scalable-web-app/"
+     data-title="如何开始一个模块化可扩展的Web App"
+     data-content=""
+     data-url="https://blog.naaln.com/2014/08/how-to-start-a-modular-and-scalable-web-app/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2014/08/how-to-start-a-modular-and-scalable-web-app/"
+           data-title="如何开始一个模块化可扩展的Web App" data-url="https://blog.naaln.com/2014/08/how-to-start-a-modular-and-scalable-web-app/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/3387850?v=3&s=460"
+               alt="Liam" />
+          <p class="site-author-name" itemprop="name">Liam</p>
+          <p class="site-description motion-element" itemprop="description">人生若如初見</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">672</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/liszd" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/whyliam" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.naaln.com/" title="纳兰主页" target="_blank">纳兰主页</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://photo.naaln.com/" title="纳兰相册" target="_blank">纳兰相册</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#从选择一个好模板开始"><span class="nav-number">1.</span> <span class="nav-text">从选择一个好模板开始</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#制定统一的编码规范"><span class="nav-number">2.</span> <span class="nav-text">制定统一的编码规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML篇"><span class="nav-number">2.1.</span> <span class="nav-text">HTML篇</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#meta标签的书写顺序"><span class="nav-number">2.2.</span> <span class="nav-text">meta标签的书写顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置移动设备显示窗口宽度"><span class="nav-number">2.3.</span> <span class="nav-text">设置移动设备显示窗口宽度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用Modernizr做浏览器差异检测"><span class="nav-number">2.4.</span> <span class="nav-text">使用Modernizr做浏览器差异检测</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS篇"><span class="nav-number">3.</span> <span class="nav-text">CSS篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS重置及增强功能"><span class="nav-number">3.1.</span> <span class="nav-text">CSS重置及增强功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用LESS或Sass生成CSS"><span class="nav-number">3.2.</span> <span class="nav-text">使用LESS或Sass生成CSS</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#avascript篇"><span class="nav-number">4.</span> <span class="nav-text">avascript篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用requireJS按需加载"><span class="nav-number">4.1.</span> <span class="nav-text">使用requireJS按需加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#requireJS-加载jQuery-jQuery插件"><span class="nav-number">4.2.</span> <span class="nav-text">requireJS 加载jQuery + jQuery插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#requireJS加载第三方类库"><span class="nav-number">4.3.</span> <span class="nav-text">requireJS加载第三方类库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS文件的模块化处理"><span class="nav-number">4.4.</span> <span class="nav-text">CSS文件的模块化处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据源的加载与等待"><span class="nav-number">4.5.</span> <span class="nav-text">数据源的加载与等待</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用JS模板引擎"><span class="nav-number">4.6.</span> <span class="nav-text">使用JS模板引擎</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面向对象与模块化"><span class="nav-number">4.7.</span> <span class="nav-text">面向对象与模块化</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2003 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liam</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"naalnblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+</body>
+</html>

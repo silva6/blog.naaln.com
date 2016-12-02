@@ -1,0 +1,938 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next muse" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="ByVfaP_E3b9ZYRUGhNAUFSQKL8mJQwUehpQwoxJ5n-c" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="google," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Why·Liam·Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="gae不用多说了，wall也行，反正全天开着
+https://www.google.com/ncr 
+这个不用多说了，去掉根据ip跳转，不过清除cooike后需要再进来一次撒，貌似以后不能再进去任何hk的域名，首页可以设置这个撒 非SSL版的google触发敏感词后会有90秒的时间无法访问google任何服务 Quote:
+
+虽然没有研究过，但是从目前的症状来看，GFW 在屏蔽关键字的时候使用了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谷歌浏览器配置">
+<meta property="og:url" content="https://blog.naaln.com/2013/09/google-browser-configuration/index.html">
+<meta property="og:site_name" content="Why·Liam·Blog">
+<meta property="og:description" content="gae不用多说了，wall也行，反正全天开着
+https://www.google.com/ncr 
+这个不用多说了，去掉根据ip跳转，不过清除cooike后需要再进来一次撒，貌似以后不能再进去任何hk的域名，首页可以设置这个撒 非SSL版的google触发敏感词后会有90秒的时间无法访问google任何服务 Quote:
+
+虽然没有研究过，但是从目前的症状来看，GFW 在屏蔽关键字的时候使用了">
+<meta property="og:updated_time" content="2016-10-20T19:59:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="谷歌浏览器配置">
+<meta name="twitter:description" content="gae不用多说了，wall也行，反正全天开着
+https://www.google.com/ncr 
+这个不用多说了，去掉根据ip跳转，不过清除cooike后需要再进来一次撒，貌似以后不能再进去任何hk的域名，首页可以设置这个撒 非SSL版的google触发敏感词后会有90秒的时间无法访问google任何服务 Quote:
+
+虽然没有研究过，但是从目前的症状来看，GFW 在屏蔽关键字的时候使用了">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'XILKIWTAM9',
+      apiKey: '99d43a85f328d00214c5de8007ce7920',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.naaln.com/2013/09/google-browser-configuration/"/>
+
+
+
+
+
+  <title> 谷歌浏览器配置 | Why·Liam·Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47966442-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Why·Liam·Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生若如初見</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-technology">
+          <a href="/categories/technology/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-code"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-jottings">
+          <a href="/categories/jottings/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-language"></i> <br />
+            
+            随笔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tour">
+          <a href="/categories/tour/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            旅游
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://blog.naaln.com/2013/09/google-browser-configuration/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Liam">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/3387850?v=3&s=460">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Why·Liam·Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Why·Liam·Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                谷歌浏览器配置
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-09-12T21:49:00-04:00">
+                2013-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/technology/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2013/09/google-browser-configuration/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2013/09/google-browser-configuration/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>gae不用多说了，wall也行，反正全天开着</p>
+<pre><code>https://www.google.com/ncr 
+</code></pre><p>这个不用多说了，去掉根据ip跳转，不过清除cooike后需要再进来一次撒，貌似以后不能再进去任何hk的域名，首页可以设置这个撒 非SSL版的google触发敏感词后会有90秒的时间无法访问google任何服务 Quote:</p>
+<blockquote>
+<p>虽然没有研究过，但是从目前的症状来看，GFW 在屏蔽关键字的时候使用了 DNS 挟持。 也就是说，只要手动修改 HOSTS 文件即可达到不被屏蔽的效果。</p>
+</blockquote>
+<p>更改hosts。推荐云hosts( <a href="https://code.google.com/p/smarthosts" target="_blank" rel="external">https://code.google.com/p/smarthosts</a>) 注意改好后刷新DNS缓存——运行：ipconfig /flushdns 偶的hosts自己ping的美国的ip，总感觉在北京的服务器也不踏实 </p>
+<p><a href="http://ww3.sinaimg.cn/large/006tNc79gw1f511rguqdmj30j609xac1" target="_blank" rel="external"></a></p>
+<p>记得当初寻找，记录，筛选这些ip费了一天的事</p>
+<p>dns 8.8.8.8  </p>
+<p>8.8.4.4</p>
+<p>关闭 google 安全搜索 ncr进去后点击右上角齿轮选择语言为简体中文，之后关掉，或者hk进去点击google in english再弄 </p>
+<p><a href="http://ww3.sinaimg.cn/large/006tNc79gw1f511ro3zvaj30j604ft8t" target="_blank" rel="external"></a> </p>
+<p>偶的语言配置 </p>
+<p><a href="http://ww3.sinaimg.cn/large/006tNc79gw1f511ru3k67j30j60ao74y" target="_blank" rel="external"></a></p>
+<p>修改默认的搜索引擎，都是ssl的，登陆谷歌账户的话默认都是ssl </p>
+<p>台湾的     <a href="https://www.google.com.tw/search?hl=zh-" target="_blank" rel="external">https://www.google.com.tw/search?hl=zh-</a> CN&amp;q=%s </p>
+<p>国产       <a href="https://www.google.com/search?hl=zh-CN&amp;q=%s" target="_blank" rel="external">https://www.google.com/search?hl=zh-CN&amp;q=%s</a> </p>
+<p>hk        https: //www.google.com.hk/search?hl=zh-CN&amp;q=%s</p>
+<p><a href="http://www.googlestable.com/" target="_blank" rel="external">http://www.googlestable.com/</a> <a href="https://encrypted.google.com/search?q=%s" target="_blank" rel="external">https://encrypted.google.com/search?q=%s</a> 这两个搜索串哪个好呢，太多了，对比不出来了 Quote:</p>
+<blockquote>
+<p>googlestable很聪明，针对google在国内经常出现的搜索不稳定的现状，找出了根源（重定向等问题），然后减少了一些环节，加快了搜索速度和稳定性，其实在googlestable上搜的就是google的，这一点得到了广大用户的支持和拥护</p>
+</blockquote>
+<p>奶奶的名字不错，谷歌病了,还谷歌sb呢 <a href="https://www.google.com.sb/" target="_blank" rel="external">https://www.google.com.sb/</a> Quote:</p>
+<blockquote>
+<p>谷歌加密搜索（Google SSL） <a href="https://www.google.com" target="_blank" rel="external">https://www.google.com</a> 即将切换到新的域名 <a href="https://encrypted.google.com/，" target="_blank" rel="external">https://encrypted.google.com/，</a> 使用SSL搜索前还是老规矩，需要先打开 <a href="http://www.google.com/ncr" target="_blank" rel="external">http://www.google.com/ncr</a> 禁用本地跳转后再尝试访问。 这次更改SSL搜索域名主要原因是由于一些学校机构反应自身的过滤引擎不能过滤一些关键字，而作出的调整。话说回来，墙其实还是无处不在的。</p>
+</blockquote>
+<p>这个搜索串貌似需要对应的hosts gfw又不敢封了 <a href="https://www.google.com/，这样还会连累不带ssl的谷歌的部分业务，天朝这么光明，不会这么干的" target="_blank" rel="external">https://www.google.com/，这样还会连累不带ssl的谷歌的部分业务，天朝这么光明，不会这么干的</a>…….. Quote:</p>
+<blockquote>
+<p>昨天，伟大的GFW和谐掉了encrypted.google.com，于是乎，众多同学发现 <a href="https://www.google.com可以打开，但是搜索任何内容都挂掉。。。" target="_blank" rel="external">https://www.google.com可以打开，但是搜索任何内容都挂掉。。。</a> encrypted.google.com被和谐并非偶然，party早就想办掉https的google了，它知道的太多了，但是一直没办法，因为和谐 <a href="https://www.google.com的话，" target="_blank" rel="external">https://www.google.com的话，</a> <a href="http://www.google.com也会被和谐掉，因为它们的域名相同，只有协议不太一样，一向重视形象，一向表面很光辉伟大、内心阴冷狭隘的party自然不可能和谐" target="_blank" rel="external">http://www.google.com也会被和谐掉，因为它们的域名相同，只有协议不太一样，一向重视形象，一向表面很光辉伟大、内心阴冷狭隘的party自然不可能和谐</a> www.google.com 后来，过去了很长一段时间， <a href="https://www.google.com相安无事，google很傻很天真的以为会一直没事下去，于是把加密搜索转向了一个独立的子域名encrypted.google.com，但是在这个天真被狗欺的社会，它真的被狗欺了。。。于是乎就有了昨天下午能打开" target="_blank" rel="external">https://www.google.com相安无事，google很傻很天真的以为会一直没事下去，于是把加密搜索转向了一个独立的子域名encrypted.google.com，但是在这个天真被狗欺的社会，它真的被狗欺了。。。于是乎就有了昨天下午能打开</a> <a href="https://www.google.com但是不能搜索的一幕。。。" target="_blank" rel="external">https://www.google.com但是不能搜索的一幕。。。</a></p>
+</blockquote>
+<p>到底选择啥搜索串呢 </p>
+<p><a href="http://ww4.sinaimg.cn/large/006tNc79gw1f511s123gbj30j60bu3zh" target="_blank" rel="external"></a> </p>
+<p>到底默认哪个好呢，据说谷歌日本或者ca 也不错，送上谷歌全球域名吧</p>
+<p><a href="https://www.google.com/supported_domains" target="_blank" rel="external">https://www.google.com/supported_domains</a></p>
+<h2 id="扩展篇"><a href="#扩展篇" class="headerlink" title="扩展篇"></a>扩展篇</h2><p>Google SSL Webcache - 谷歌加密快照 </p>
+<p><a href="https://chrome.google.com/webstore/detail/google-ssl-webcache-%E8%B0%B7%E6%AD%8C%E5%8A%A0%E5%AF%86%E5%BF%AB/cdkieonfoiccnhdccdcjamidlmhkgimh" target="_blank" rel="external">https://chrome.google.com/webstore/detail/google-ssl-webcache-%E8%B0%B7%E6%AD%8C%E5%8A%A0%E5%AF%86%E5%BF%AB/cdkieonfoiccnhdccdcjamidlmhkgimh</a></p>
+<p>Proxy SwitchySharp <a href="https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm" target="_blank" rel="external">https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm</a></p>
+<p>Remove Google Redirects</p>
+<p>去掉重定向的 </p>
+<p><a href="https://chrome.google.com/webstore/detail/remove-google-redirects/ccenmflbeofaceccfhhggbagkblihpoh" target="_blank" rel="external">https://chrome.google.com/webstore/detail/remove-google-redirects/ccenmflbeofaceccfhhggbagkblihpoh</a></p>
+<p>Search by Image (by Google)</p>
+<p>site命令 <a href="https://chrome.google.com/webstore/detail/search-by-image-by-google/dajedkncpodkggklbegccjpmnglmnflm" target="_blank" rel="external">https://chrome.google.com/webstore/detail/search-by-image-by-google/dajedkncpodkggklbegccjpmnglmnflm</a></p>
+<p>Search by Image (by Google)  </p>
+<p>搜图片必备 </p>
+<p><a href="https://chrome.google.com/webstore/detail/search-by-image-by-google/dajedkncpodkggklbegccjpmnglmnflm" target="_blank" rel="external">https://chrome.google.com/webstore/detail/search-by-image-by-google/dajedkncpodkggklbegccjpmnglmnflm</a></p>
+<p>别的扩展，脚本不上了，都是自己用的 玩转这些，当半个大神貌似没问题了撒</p>
+<p>前几天还看到有大大说退出账户再搜索，貌似也不错</p>
+<p>各位大神,还有啥好玩意或者好配置啥的，敬请指教啊，总感觉东西不够的感觉，有时候不给力啊 其实啦，貌似我纠结了………还是肉身爬墙好啊，求神级无敌配置，有木有 还有啥我这不知道的好东西都给我研究下啊 我可是把家底都掏出来分享了！！！！!</p>
+<p>对了，上个小地址，谷歌网页快照，进不去的404的网站你懂的 </p>
+<p>带图片的版本  </p>
+<p><a href="https://webcache.googleusercontent.com/search?strip=0&amp;q=cache:%s" target="_blank" rel="external">https://webcache.googleusercontent.com/search?strip=0&amp;q=cache:%s</a> </p>
+<p>纯文字版     </p>
+<p><a href="https://webcache.googleusercontent.com/search?strip=1&amp;q=cache:%s" target="_blank" rel="external">https://webcache.googleusercontent.com/search?strip=1&amp;q=cache:%s</a></p>
+<p>把%s 替换成网址就行了</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://ww1.sinaimg.cn/mw690/48910e01gw1evkbf70jcgj20cg0cidh5.jpg" alt="Liam WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://ww3.sinaimg.cn/mw690/48910e01gw1evkbfendrjj20ci0ci0uf.jpg" alt="Liam Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/google/" rel="tag"># google</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/09/mechanize-to-web-operations/" rel="next" title="Mechanize对WEB的操作">
+                <i class="fa fa-chevron-left"></i> Mechanize对WEB的操作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/09/design-pattern-observer-ruby-tk-small-clock/" rel="prev" title="设计模式 观察者模式 -- Ruby/tk小时钟">
+                设计模式 观察者模式 -- Ruby/tk小时钟 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2013/09/google-browser-configuration/"
+     data-title="谷歌浏览器配置"
+     data-content=""
+     data-url="https://blog.naaln.com/2013/09/google-browser-configuration/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2013/09/google-browser-configuration/"
+           data-title="谷歌浏览器配置" data-url="https://blog.naaln.com/2013/09/google-browser-configuration/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/3387850?v=3&s=460"
+               alt="Liam" />
+          <p class="site-author-name" itemprop="name">Liam</p>
+          <p class="site-description motion-element" itemprop="description">人生若如初見</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">672</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/liszd" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/whyliam" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.naaln.com/" title="纳兰主页" target="_blank">纳兰主页</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://photo.naaln.com/" title="纳兰相册" target="_blank">纳兰相册</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展篇"><span class="nav-number">1.</span> <span class="nav-text">扩展篇</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2003 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liam</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"naalnblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+</body>
+</html>

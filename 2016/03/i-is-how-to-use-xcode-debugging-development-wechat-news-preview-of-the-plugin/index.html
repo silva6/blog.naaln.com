@@ -1,0 +1,928 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next muse" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="ByVfaP_E3b9ZYRUGhNAUFSQKL8mJQwUehpQwoxJ5n-c" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Why, Liam, 李承璋" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Why·Liam·Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="平时在微信使用时，经常出现这样的场景：阅读公众号文章时，突然一条好友消息来了。这时一直很纠结，我该停止阅读还是继续阅读。假如我可以预览消息的话，甚至回复消息后快速回来继续阅读。那太好不过了。
+学习过iOS逆向开发的话，利用theos在越狱机器上实现还是可以的。但由于日常使用的是非越狱机器，鱼和熊掌都想要，只好在万能的google上寻找资料，终于找到了insert_dylib工具和念茜的博客上动态库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我是如何利用Xcode调试开发微信消息预览插件的">
+<meta property="og:url" content="https://blog.naaln.com/2016/03/i-is-how-to-use-xcode-debugging-development-wechat-news-preview-of-the-plugin/index.html">
+<meta property="og:site_name" content="Why·Liam·Blog">
+<meta property="og:description" content="平时在微信使用时，经常出现这样的场景：阅读公众号文章时，突然一条好友消息来了。这时一直很纠结，我该停止阅读还是继续阅读。假如我可以预览消息的话，甚至回复消息后快速回来继续阅读。那太好不过了。
+学习过iOS逆向开发的话，利用theos在越狱机器上实现还是可以的。但由于日常使用的是非越狱机器，鱼和熊掌都想要，只好在万能的google上寻找资料，终于找到了insert_dylib工具和念茜的博客上动态库">
+<meta property="og:image" content="http://alayshchen.github.io/images/blogImages/20160226/0.gif">
+<meta property="og:image" content="http://alayshchen.github.io/images/blogImages/20160226/1.png">
+<meta property="og:image" content="http://alayshchen.github.io/images/blogImages/20160226/2.png">
+<meta property="og:image" content="http://alayshchen.github.io/images/blogImages/20160226/3.png">
+<meta property="og:image" content="http://alayshchen.github.io/images/blogImages/20160226/4.png">
+<meta property="og:updated_time" content="2016-10-20T19:59:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我是如何利用Xcode调试开发微信消息预览插件的">
+<meta name="twitter:description" content="平时在微信使用时，经常出现这样的场景：阅读公众号文章时，突然一条好友消息来了。这时一直很纠结，我该停止阅读还是继续阅读。假如我可以预览消息的话，甚至回复消息后快速回来继续阅读。那太好不过了。
+学习过iOS逆向开发的话，利用theos在越狱机器上实现还是可以的。但由于日常使用的是非越狱机器，鱼和熊掌都想要，只好在万能的google上寻找资料，终于找到了insert_dylib工具和念茜的博客上动态库">
+<meta name="twitter:image" content="http://alayshchen.github.io/images/blogImages/20160226/0.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'XILKIWTAM9',
+      apiKey: '99d43a85f328d00214c5de8007ce7920',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.naaln.com/2016/03/i-is-how-to-use-xcode-debugging-development-wechat-news-preview-of-the-plugin/"/>
+
+
+
+
+
+  <title> 我是如何利用Xcode调试开发微信消息预览插件的 | Why·Liam·Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47966442-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Why·Liam·Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生若如初見</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-technology">
+          <a href="/categories/technology/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-code"></i> <br />
+            
+            技术
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-jottings">
+          <a href="/categories/jottings/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-language"></i> <br />
+            
+            随笔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tour">
+          <a href="/categories/tour/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-globe"></i> <br />
+            
+            旅游
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://blog.naaln.com/2016/03/i-is-how-to-use-xcode-debugging-development-wechat-news-preview-of-the-plugin/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Liam">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/3387850?v=3&s=460">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Why·Liam·Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Why·Liam·Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                我是如何利用Xcode调试开发微信消息预览插件的
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-03-08T22:48:00-05:00">
+                2016-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/technology/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/03/i-is-how-to-use-xcode-debugging-development-wechat-news-preview-of-the-plugin/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/i-is-how-to-use-xcode-debugging-development-wechat-news-preview-of-the-plugin/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>平时在微信使用时，经常出现这样的场景：阅读公众号文章时，突然一条好友消息来了。这时一直很纠结，我该停止阅读还是继续阅读。假如我可以预览消息的话，甚至回复消息后快速回来继续阅读。那太好不过了。</p>
+<p>学习过iOS逆向开发的话，利用theos在越狱机器上实现还是可以的。但由于日常使用的是非越狱机器，鱼和熊掌都想要，只好在万能的google上寻找资料，终于找到了insert_dylib工具和念茜的博客上动态库注入相关知识。OK，开工！</p>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="http://alayshchen.github.io/images/blogImages/20160226/0.gif" alt=""></p>
+<h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><ol>
+<li><p>公众号文章界面（网页）：收到消息后，显示消息内容</p>
+</li>
+<li><p>公众号文章界面（网页）：点击消息内容进入对应聊天界面</p>
+</li>
+<li><p>聊天界面：点击网页标志，跳回公众号文章界面（网页）</p>
+</li>
+</ol>
+<h3 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h3><p>结合需求，需要hook的主要是微信消息通知<code>Method</code>，聊天界面<code>ViewController</code>，网页<code>ViewController</code>。利用工具<code>class-dump</code>, <code>Hopper Disassembler</code>很快定位出需要hook的微信代码，<code>-[CMessageMgr AsyncOnAddMsg:MsgWrap:]</code> <code>-[BaseMsgContentViewController viewDidLoad]</code> <code>-[MMWebViewController viewDidLoad]</code></p>
+<h3 id="磨刀霍霍"><a href="#磨刀霍霍" class="headerlink" title="磨刀霍霍"></a>磨刀霍霍</h3><ol>
+<li>定位出hook代码段，接下来要做的就是写代码了。</li>
+</ol>
+<p>Xcode现在支持建立动态库工程，但生成的是framework，可以通过修改工程文件下的<code>project.pbxproj productType = &quot;com.apple.product-type.framework&quot;; =&gt; productType = &quot;com.apple.product-type.library.dynamic&quot;</code></p>
+<p><img src="http://alayshchen.github.io/images/blogImages/20160226/1.png" alt=""></p>
+<ol>
+<li>利用iOSOpenDev也可以快速生成动态库工程。</li>
+</ol>
+<p><img src="http://alayshchen.github.io/images/blogImages/20160226/2.png" alt=""></p>
+<p>这里注意要设置好签名证书，后续可能因为证书问题导致失败。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- (<span class="keyword">void</span>)cb_AsyncOnAddMsg:(<span class="built_in">NSString</span> *)msg MsgWrap:(<span class="built_in">CMessageWrap</span> *)wrap &#123;</div><div class="line"></div><div class="line">   [<span class="keyword">self</span> cb_AsyncOnAddMsg:msg MsgWrap:wrap];</div><div class="line"></div><div class="line">   </div><div class="line"></div><div class="line">   [CBNewestMsgManager sharedInstance].username = msg;</div><div class="line"></div><div class="line">   [CBNewestMsgManager sharedInstance].content = wrap.m_nsContent;</div><div class="line"></div><div class="line">   </div><div class="line"></div><div class="line">   [[<span class="built_in">NSNotificationCenter</span> defaultCenter] postNotificationName:CBWeChatNewMessageNotification object:<span class="literal">nil</span>];</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)cb_msgContentViewControllerViewDidLoad &#123;</div><div class="line"></div><div class="line">   [<span class="keyword">self</span> cb_msgContentViewControllerViewDidLoad];</div><div class="line"></div><div class="line">   </div><div class="line"></div><div class="line">   <span class="built_in">UIButton</span> *button = [[<span class="built_in">UIButton</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="keyword">self</span>.view.frame.size.width - <span class="number">40</span>, <span class="number">74</span>, <span class="number">40</span>, <span class="number">40</span>)];</div><div class="line"></div><div class="line">   <span class="built_in">UIImage</span> *image = [<span class="built_in">UIImage</span> imageWithContentsOfFile:[[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@"WeChatMsgPreview_safari@2x"</span> ofType:<span class="string">@"png"</span>]];</div><div class="line"></div><div class="line">   [button setImage:image forState:<span class="built_in">UIControlStateNormal</span>];</div><div class="line"></div><div class="line">   [button addTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(backToWebViewController) forControlEvents:<span class="built_in">UIControlEventTouchUpInside</span>];</div><div class="line"></div><div class="line">   [<span class="keyword">self</span>.view addSubview:button];</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)cb_webViewControllerViewDidLoad &#123;</div><div class="line"></div><div class="line">   [<span class="keyword">self</span> cb_webViewControllerViewDidLoad];</div><div class="line"></div><div class="line">   </div><div class="line"></div><div class="line">   [[<span class="built_in">NSNotificationCenter</span> defaultCenter] addObserver:<span class="keyword">self</span> selector:<span class="keyword">@selector</span>(cb_didReceiveNewMessage) name:CBWeChatNewMessageNotification object:<span class="literal">nil</span>];</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)cb_didReceiveNewMessage &#123;</div><div class="line"></div><div class="line">   <span class="built_in">NSString</span> *username = [CBNewestMsgManager sharedInstance].username;</div><div class="line"></div><div class="line">   <span class="built_in">NSString</span> *content = [CBNewestMsgManager sharedInstance].content;</div><div class="line"></div><div class="line">   CContactMgr *contactMgr = [[objc_getClass(<span class="string">"MMServiceCenter"</span>) defaultCenter] getService:[objc_getClass(<span class="string">"CContactMgr"</span>) <span class="keyword">class</span>]];</div><div class="line"></div><div class="line">   CContact *contact = [contactMgr getContactByName:username];</div><div class="line"></div><div class="line">   </div><div class="line"></div><div class="line">   <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</div><div class="line"></div><div class="line">       <span class="built_in">NSString</span> *text = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"  %@: %@  "</span>, contact.m_nsNickName, content];</div><div class="line"></div><div class="line">       [CBMessageHud showHUDInView:<span class="keyword">self</span>.view text:text target:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(backToMsgContentViewController)];</div><div class="line"></div><div class="line">   &#125;);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)backToWebViewController &#123;</div><div class="line"></div><div class="line">   <span class="built_in">NSArray</span> *webViewViewControllers = [CBNewestMsgManager sharedInstance].webViewViewControllers;</div><div class="line"></div><div class="line">   <span class="keyword">if</span> (webViewViewControllers) &#123;</div><div class="line"></div><div class="line">       [[objc_getClass(<span class="string">"CAppViewControllerManager"</span>) getCurrentNavigationController] setViewControllers:webViewViewControllers animated:<span class="literal">YES</span>];</div><div class="line"></div><div class="line">   &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)backToMsgContentViewController &#123;</div><div class="line"></div><div class="line">   <span class="comment">// 返回聊天界面ViewController前记录当前navigationController的VC堆栈，以便快速返回</span></div><div class="line"></div><div class="line">   <span class="built_in">NSArray</span> *webViewViewControllers = [objc_getClass(<span class="string">"CAppViewControllerManager"</span>) getCurrentNavigationController].viewControllers;</div><div class="line"></div><div class="line">   [CBNewestMsgManager sharedInstance].webViewViewControllers = webViewViewControllers;</div><div class="line"></div><div class="line">   </div><div class="line"></div><div class="line">   <span class="comment">// 返回rootViewController</span></div><div class="line"></div><div class="line">   <span class="built_in">UINavigationController</span> *navVC = [objc_getClass(<span class="string">"CAppViewControllerManager"</span>) getCurrentNavigationController];</div><div class="line"></div><div class="line">   [navVC popToRootViewControllerAnimated:<span class="literal">NO</span>];</div><div class="line"></div><div class="line">   </div><div class="line"></div><div class="line">   <span class="comment">// 进入聊天界面ViewController</span></div><div class="line"></div><div class="line">   <span class="built_in">NSString</span> *username = [CBNewestMsgManager sharedInstance].username;</div><div class="line"></div><div class="line">   CContactMgr *contactMgr = [[objc_getClass(<span class="string">"MMServiceCenter"</span>) defaultCenter] getService:[objc_getClass(<span class="string">"CContactMgr"</span>) <span class="keyword">class</span>]];</div><div class="line"></div><div class="line">   CContact *contact = [contactMgr getContactByName:username];</div><div class="line"></div><div class="line">   MMMsgLogicManager *logicMgr = [[objc_getClass(<span class="string">"MMServiceCenter"</span>) defaultCenter] getService:[objc_getClass(<span class="string">"MMMsgLogicManager"</span>) <span class="keyword">class</span>]];</div><div class="line"></div><div class="line">   [logicMgr PushOtherBaseMsgControllerByContact:contact navigationController:navVC animated:<span class="literal">YES</span>];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>最后关键的一步~</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#define CBHookInstanceMethod(classname, ori_sel, new_sel)</div><div class="line"></div><div class="line">&#123;</div><div class="line"></div><div class="line">Class <span class="class"><span class="keyword">class</span> = <span class="title">objc_getClass</span></span>(#classname);</div><div class="line"></div><div class="line">Method ori_method = class_getInstanceMethod(<span class="class"><span class="keyword">class</span>, <span class="type">ori_sel);</span></span></div><div class="line"></div><div class="line">Method new_method = class_getInstanceMethod(<span class="class"><span class="keyword">class</span>, <span class="type">new_sel);</span></span></div><div class="line"></div><div class="line">method_exchangeImplementations(ori_method, new_method);</div><div class="line"></div><div class="line">&#125; </div><div class="line"></div><div class="line">static void __attribute__((<span class="keyword">constructor</span>)) initialize(void) &#123;</div><div class="line"></div><div class="line">   CBHookInstanceMethod(CMessageMgr, <span class="meta">@selector(AsyncOnAddMsg:MsgWrap:)</span>, <span class="meta">@selector(cb_AsyncOnAddMsg:MsgWrap:)</span>);</div><div class="line"></div><div class="line">   CBHookInstanceMethod(BaseMsgContentViewController, <span class="meta">@selector(viewDidLoad)</span>, <span class="meta">@selector(cb_msgContentViewControllerViewDidLoad)</span>);</div><div class="line"></div><div class="line">   CBHookInstanceMethod(MMWebViewController, <span class="meta">@selector(viewDidLoad)</span>, <span class="meta">@selector(cb_webViewControllerViewDidLoad)</span>);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>好了，command＋B 成功生成动态库文件，下一步，利用insert_dylib修改微信可执行文件，重签名，生成新的微信app，安装到手机。嗯嗯，这样文章到这里就结束了～～</p>
+<p>慢着，真正开发时哪会这么简单，代码一次成功。一旦代码出现问题，我们需要一直手动重复这样的工作：修改代码，生成dylib，修改微信可执行文件，重签名，生成新的app，安装到手机。</p>
+<p>注意注意，博文的标题里有“调试”，调试！！！怎么做呢？</p>
+<h3 id="偷天换日"><a href="#偷天换日" class="headerlink" title="偷天换日"></a>偷天换日</h3><p>细心观察可以发现 </p>
+<ol>
+<li><p>任意一个app工程，run后在Derived Data文件夹都有对应的.app文件</p>
+</li>
+<li><p>在Build Phases中增加Run Script，可以在编译工程后执行自定义脚本。</p>
+</li>
+</ol>
+<p>于是，一招偷天换日招数就想出来了（通过脚本，在编译工程后，利用新生成的动态库生成WeChat.app, 替换原有目录下的app文件）</p>
+<ol>
+<li><p>在原有工程中增加Application Target</p>
+</li>
+<li><p>在Build Phases中设置Target Dependencies，增加dylib，确保每次run app都会编译最新的dylib</p>
+</li>
+</ol>
+<p><img src="http://alayshchen.github.io/images/blogImages/20160226/3.png" alt=""></p>
+<ol>
+<li>然后增加Run Script（修改微信可执行文件，重签名，生成新的app）接下来的事情（安装app，打开手机app，lldb调试）就交给Xcode做了。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">BUNDLEIDENTIFIER=com.tencent.xin</div><div class="line"></div><div class="line">APPLICATIONIDENTIFIER=***.$&#123;BUNDLEIDENTIFIER&#125;</div><div class="line"></div><div class="line">WECHATFILEPATH=***/apps/WeChat</div><div class="line"></div><div class="line">LIBNAME=$(find *.dylib)</div><div class="line"></div><div class="line">TEMPDIR=$(mktemp -d)</div><div class="line"></div><div class="line">ORIGINDIR=$(pwd)</div><div class="line"></div><div class="line"># 0.get argv</div><div class="line"></div><div class="line">if [ x$1 != x ]</div><div class="line"></div><div class="line">then</div><div class="line"></div><div class="line">	BUNDLEIDENTIFIER=$1</div><div class="line"></div><div class="line">fi</div><div class="line"></div><div class="line"># 1.unzip ipa</div><div class="line"></div><div class="line">if [ $arch == &quot;arm64&quot; ]</div><div class="line"></div><div class="line">then</div><div class="line"></div><div class="line">unzip -qo $&#123;WECHATFILEPATH&#125;/WeChat-dump-arm64.ipa -d $TEMPDIR</div><div class="line"></div><div class="line">else</div><div class="line"></div><div class="line">unzip -qo $&#123;WECHATFILEPATH&#125;/WeChat-dump-armv7.ipa -d $TEMPDIR</div><div class="line"></div><div class="line">fi</div><div class="line"></div><div class="line"># 2.copy files</div><div class="line"></div><div class="line">cp $&#123;WECHATFILEPATH&#125;/embedded.mobileprovision $TEMPDIR/</div><div class="line"></div><div class="line">cp $&#123;WECHATFILEPATH&#125;/entitlements.plist $TEMPDIR/</div><div class="line"></div><div class="line">cp $&#123;LIBNAME&#125; $TEMPDIR/</div><div class="line"></div><div class="line"># 3.resign</div><div class="line"></div><div class="line">cd $TEMPDIR</div><div class="line"></div><div class="line">plutil -replace application-identifier -string $&#123;APPLICATIONIDENTIFIER&#125; entitlements.plist</div><div class="line"></div><div class="line">plutil -replace CFBundleIdentifier -string $&#123;BUNDLEIDENTIFIER&#125; Payload/WeChat.app/Info.plist</div><div class="line"></div><div class="line">mv $&#123;LIBNAME&#125; Payload/WeChat.app/</div><div class="line"></div><div class="line">insert_dylib --all-yes @executable_path/$&#123;LIBNAME&#125; Payload/WeChat.app/WeChat</div><div class="line"></div><div class="line">mv Payload/WeChat.app/WeChat_patched Payload/WeChat.app/WeChat</div><div class="line"></div><div class="line">chmod +x Payload/WeChat.app/WeChat</div><div class="line"></div><div class="line">rm -rf Payload/WeChat.app/_CodeSignature</div><div class="line"></div><div class="line">rm -rf Payload/WeChat.app/PlugIns</div><div class="line"></div><div class="line">rm -rf Payload/WeChat.app/Watch</div><div class="line"></div><div class="line">cp embedded.mobileprovision Payload/WeChat.app/</div><div class="line"></div><div class="line">codesign -fs &quot;iPhone Developer: *** (***)&quot; --no-strict --entitlements=entitlements.plist Payload/WeChat.app/$&#123;LIBNAME&#125;</div><div class="line"></div><div class="line">codesign -fs &quot;iPhone Developer: *** (***)&quot; --no-strict --entitlements=entitlements.plist Payload/WeChat.app</div><div class="line"></div><div class="line"># 4.end</div><div class="line"></div><div class="line">mv Payload/WeChat.app $&#123;ORIGINDIR&#125;</div><div class="line"></div><div class="line">rm -rf $&#123;TEMPDIR&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://alayshchen.github.io/images/blogImages/20160226/4.png" alt=""></p>
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="attribute">dyld</span>: Library not loaded: @executable_path/libWeChatMsgPreview.dylib</div><div class="line"></div><div class="line"><span class="maxima"> Referenced from: /<span class="built_in">var</span>/mobile/Containers/Bundle/Application/55148CD1-<span class="number">0D6E</span>-4F6B-B55C-<span class="number">08261695B408</span>/WeChat.app/WeChat</span></div><div class="line"></div><div class="line"> Reason: <span class="built_in">image</span> <span class="keyword">not</span> found</div></pre></td></tr></table></figure>
+<p>原因：没拷贝libWeChatMsgPreview.dylib到WeChat.app目录下</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="symbol"></span></div><div class="line">dyld: Library not <span class="string">loaded:</span> <span class="meta">@executable</span>_path/libWeChatMsgPreview.dylib</div><div class="line"></div><div class="line"> Referenced <span class="string">from:</span> <span class="regexp">/var/</span>mobile<span class="regexp">/Containers/</span>Bundle<span class="regexp">/Application/</span>F62EF4DE<span class="number">-7</span>A8E<span class="number">-4564</span><span class="number">-8839</span><span class="number">-7</span>FED32FB0927<span class="regexp">/WeChat.app/</span>WeChat</div><div class="line"><span class="symbol"></span></div><div class="line"> Reason: no suitable image found.  Did <span class="string">find:</span></div><div class="line"></div><div class="line">	<span class="regexp">/var/</span>mobile<span class="regexp">/Containers/</span>Bundle<span class="regexp">/Application/</span>F62EF4DE<span class="number">-7</span>A8E<span class="number">-4564</span><span class="number">-8839</span><span class="number">-7</span>FED32FB0927<span class="regexp">/WeChat.app/</span>libWeChatMsgPreview.<span class="string">dylib:</span> mmap() errno=<span class="number">1</span> validating first page of <span class="string">'/var/mobile/Containers/Bundle/Application/F62EF4DE-7A8E-4564-8839-7FED32FB0927/WeChat.app/libWeChatMsgPreview.dylib'</span></div><div class="line"></div><div class="line">	<span class="regexp">/private/</span>var<span class="regexp">/mobile/</span>Containers<span class="regexp">/Bundle/</span>Application<span class="regexp">/F62EF4DE-7A8E-4564-8839-7FED32FB0927/</span>WeChat.app<span class="regexp">/libWeChatMsgPreview.dylib: mmap() errno=1 validating first page of '/</span><span class="keyword">private</span><span class="regexp">/var/</span>mobile<span class="regexp">/Containers/</span>Bundle<span class="regexp">/Application/</span>F62EF4DE<span class="number">-7</span>A8E<span class="number">-4564</span><span class="number">-8839</span><span class="number">-7</span>FED32FB0927<span class="regexp">/WeChat.app/</span>libWeChatMsgPreview.dylib<span class="string">'</span></div></pre></td></tr></table></figure>
+<p>原因：签名不对，需保持重签名时<code>codesign -fs &quot;iPhone Developer: *** (***)&quot; --no-strict --entitlements=entitlements.plist Payload/WeChat.app/${LIBNAME} codesign -fs &quot;iPhone Developer: *** (***)&quot; --no-strict --entitlements=entitlements.plist Payload/WeChat.app</code> 证书一致</p>
+<p>脚本中涉及到的WeChat-dump-arm64.ipa需要从越狱机器中提取。<a href="http://alayshchen.github.io/2015/11/05/Resign-AppStore-App/" target="_blank" rel="external">对App Store App进行重签名–解密</a></p>
+<p>来源：<a href="http://alayshchen.github.io/2016/02/26/20160226/" target="_blank" rel="external">我是如何利用Xcode调试开发微信消息预览插件的</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://ww1.sinaimg.cn/mw690/48910e01gw1evkbf70jcgj20cg0cidh5.jpg" alt="Liam WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://ww3.sinaimg.cn/mw690/48910e01gw1evkbfendrjj20ci0ci0uf.jpg" alt="Liam Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/to-apply-for-a-job-is-like-a-blind-date/" rel="next" title="求职好比相亲">
+                <i class="fa fa-chevron-left"></i> 求职好比相亲
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/wechat-protocol-analysis/" rel="prev" title="微信协议分析">
+                微信协议分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/03/i-is-how-to-use-xcode-debugging-development-wechat-news-preview-of-the-plugin/"
+     data-title="我是如何利用Xcode调试开发微信消息预览插件的"
+     data-content=""
+     data-url="https://blog.naaln.com/2016/03/i-is-how-to-use-xcode-debugging-development-wechat-news-preview-of-the-plugin/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/i-is-how-to-use-xcode-debugging-development-wechat-news-preview-of-the-plugin/"
+           data-title="我是如何利用Xcode调试开发微信消息预览插件的" data-url="https://blog.naaln.com/2016/03/i-is-how-to-use-xcode-debugging-development-wechat-news-preview-of-the-plugin/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars1.githubusercontent.com/u/3387850?v=3&s=460"
+               alt="Liam" />
+          <p class="site-author-name" itemprop="name">Liam</p>
+          <p class="site-description motion-element" itemprop="description">人生若如初見</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">672</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/liszd" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/whyliam" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.naaln.com/" title="纳兰主页" target="_blank">纳兰主页</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://photo.naaln.com/" title="纳兰相册" target="_blank">纳兰相册</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#效果图"><span class="nav-number">1.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需求分析"><span class="nav-number">2.</span> <span class="nav-text">需求分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码分析"><span class="nav-number">3.</span> <span class="nav-text">代码分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#磨刀霍霍"><span class="nav-number">4.</span> <span class="nav-text">磨刀霍霍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#偷天换日"><span class="nav-number">5.</span> <span class="nav-text">偷天换日</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见问题"><span class="nav-number">6.</span> <span class="nav-text">常见问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2003 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liam</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"naalnblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+</body>
+</html>
