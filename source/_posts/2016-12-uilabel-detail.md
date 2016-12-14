@@ -1,5 +1,5 @@
 ---
-title: UILable属性详解,设置居上对齐，居中对齐，居下对齐，获取斜体字，字体、大小、单位、颜色
+title: UILable属性详解
 date: 2016-12-02 15:49:48
 categories: 
 - 技术
