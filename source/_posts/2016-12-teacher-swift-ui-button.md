@@ -259,3 +259,4 @@ class ILGreedButton: UIButton {
 
 在使用**ILGreedButton**时，就会出现点击父视图，UIButton响应事件的效果
 
+来源 ：[](http://00red.com/blog/2015/07/28/teacher-swift-ui-button/)
