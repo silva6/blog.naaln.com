@@ -40,7 +40,7 @@ override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPat
 
 在模拟器中运行，点按Cell，检查output区中print的内容是否正常，然后就可以进入下一步。
 
-###二、MFMailComposeViewController
+### 二、MFMailComposeViewController
 
 处理完`UITableViewController`以后，就可以开始调用邮件视图了。不过先不急着写代码，首先需要导入框架`MessageUI.framework`。在项目设置`Build Phases`的`Link Binary With Libraries`中添加`MessageUI.framework`。
 

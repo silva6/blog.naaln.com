@@ -63,8 +63,8 @@ label.enable = NO;
 
 ```swift
 label.highlighted = YES;
-label.highlightedTextColor = [UIColor orangeColor]; //高亮
-显示时的文本颜色
+label.highlightedTextColor = [UIColor orangeColor]; 
+//高亮 显示时的文本颜色
 ```
 
 9\. ShadowColor //设置阴影颜色 
@@ -82,21 +82,19 @@ label.highlightedTextColor = [UIColor orangeColor]; //高亮
 11\. baselineAdjustment //如果adjustsFontSizeToFitWidth属性设
 
 ```swift
-置为YES，这个属性就来控制文本基线的行为。
+//置为YES，这个属性就来控制文本基线的行为。
 label.baselineAdjustment = UIBaselineAdjustmentNone;
-UIBaselineAdjustmentAlignBaselines = 0,默认，文本最上端与中线对齐。
-UIBaselineAdjustmentAlignCenters,  文本中线与label中线对齐。
-UIBaselineAdjustmentNone, 文本最低端与label中线对齐。
+UIBaselineAdjustmentAlignBaselines = 0, //默认，文本最上端与中线对齐。
+UIBaselineAdjustmentAlignCenters,  //文本中线与label中线对齐。
+UIBaselineAdjustmentNone, //文本最低端与label中线对齐。
 ```
 
 12\. Autoshrink //是否自动收缩
 
 ```swift
-Fixed Font Size 默认,如果Label宽度小于文字长度时时,文字大小不自动缩放
-minimumScaleFactor 设置最小收缩比例，如果Label宽度小于文字长度时，文字
-进行收缩，收缩超过比例后，停止收缩。
-minimumFontSize 设置最小收缩字号，如果Label宽度小于文字长度时，文字字号
-减小，低于设定字号后，不再减小。//6.0以后不再使用了。
+Fixed Font Size //默认,如果Label宽度小于文字长度时时,文字大小不自动缩放
+minimumScaleFactor //设置最小收缩比例，如果Label宽度小于文字长度时，文字进行收缩，收缩超过比例后，停止收缩。
+minimumFontSize //设置最小收缩字号，如果Label宽度小于文字长度时，文字字号减小，低于设定字号后，不再减小。//6.0以后不再使用了。
 label.minimumScaleFactor = 0.5;
 ```
 
@@ -109,18 +107,12 @@ myLabel.adjustsLetterSpacingToFitWidth = NO;
 14\.  lineBreakMode //设置文字过长时的显示格式             
 
 ```swift
-label.lineBreakMode = NSLineBreakByCharWrapping;以字符为显示单位显
-示，后面部分省略不显示。
-label.lineBreakMode = NSLineBreakByClipping;剪切与文本宽度相同的内
-容长度，后半部分被删除。
-label.lineBreakMode = NSLineBreakByTruncatingHead;前面部分文字
-以……方式省略，显示尾部文字内容。
-label.lineBreakMode = NSLineBreakByTruncatingMiddle;中间的内容
-以……方式省略，显示头尾的文字内容。
-label.lineBreakMode = NSLineBreakByTruncatingTail;结尾部分的内容
-以……方式省略，显示头的文字内容。
-label.lineBreakMode = NSLineBreakByWordWrapping;以单词为显示单位显
-示，后面部分省略不显示。
+label.lineBreakMode = NSLineBreakByCharWrapping; //以字符为显示单位显示，后面部分省略不显示。
+label.lineBreakMode = NSLineBreakByClipping; //剪切与文本宽度相同的内容长度，后半部分被删除。
+label.lineBreakMode = NSLineBreakByTruncatingHead; //前面部分文字以……方式省略，显示尾部文字内容。
+label.lineBreakMode = NSLineBreakByTruncatingMiddle; //中间的内容以……方式省略，显示头尾的文字内容。
+label.lineBreakMode = NSLineBreakByTruncatingTail; //结尾部分的内容以……方式省略，显示头的文字内容。
+label.lineBreakMode = NSLineBreakByWordWrapping; //以单词为显示单位显示，后面部分省略不显示。
 ```
 
 15\.  adjustsFontSizeToFitWidth //设置字体大小适应label宽度  
@@ -129,7 +121,7 @@ label.lineBreakMode = NSLineBreakByWordWrapping;以单词为显示单位显
 label.adjustsFontSizeToFitWidth = YES;
 ```
 
-16\. attributedText：设置标签属性文本。
+16\. attributedText：//设置标签属性文本。
 
 ```swift
 NSString *text = @"first";
@@ -172,9 +164,7 @@ msgLabel.backgroundColor = [UIColor lightTextColor];
 msgLabel.lineBreakMode = UILineBreakModeWordWrap;
 msgLabel.font = [UIFont fontWithName:@"Arial" size:12];
 CGSize size = CGSizeMake(290, 1000);
-msgLabel.text = @"获取到的deviceToken，我们可以通过webservice服务提
-交给.net应用程序，这里我简单处理，直接打印出来，拷贝到.net应用环境中使
-用。";
+msgLabel.text = @"获取到的deviceToken，我们可以通过webservice服务提交给.net应用程序，这里我简单处理，直接打印出来，拷贝到.net应用环境中使用。";
 CGSize msgSie = [msgLabel.text sizeWithFont:fonts
 constrainedToSize:size];
 [msgLabel setFrame:CGRectMake(15, 45, 290, msgSie.height)];
