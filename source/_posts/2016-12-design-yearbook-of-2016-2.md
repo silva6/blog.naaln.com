@@ -13,47 +13,63 @@ tags:
 
 希望你能喜欢今年的设计年鉴。
 
-## TOP 5 设计新闻
+## TOP 5 UI趋势
 
-### 1. Uber 品牌的重塑
+### 行动呼吁的趋势
 
-数百万的用户打开他们的手机，寻找黑白相间的Uber的图标的时，发现原来的图标不见了。取而代之的是彩色的多边形围绕着一个铜钱样子的图形，而且在他们开车的时候是六边形，如果他们是骑手，则是圆形。不仅如此，不同国家的颜色和图案也各不相同，红色代表中国，松绿色代表印度，深绿色代表美国。无论在什么地方，Uber打开的时候会展现一个优雅的图案动画，欢迎用户来到新的Uber。
+对于手机或者网页来说，`行动呼吁 (Call To Action)`是最重要的东西。设计师们总是尝试着在页面中突出重点。行动呼吁是一个十分总要的趋势，我必须着重强调。
 
-![](https://cdn-images-1.medium.com/max/1600/1*ia9pXzRJLNzrUjCioyHsVA.png)
+![](https://cdn-images-1.medium.com/max/1600/1*2O_eLliR1nONH21v6xsc8A.png)
 
-Uber的重塑品牌不经让人们联想是不是Uber是不是走错了方向。而人们对新品牌的质疑也使Uber的首席设计师 Andrew Crow 的声誉跌入了低谷。
+![](https://cdn-images-1.medium.com/max/1600/1*YYnT3LbMM3ENyPGoB2vRng.png)
 
-### 2. Instagram 大改造
+> 译者注：Call To Action 是透过设计让用户自己想到要做某种行为，而不是要求、呼吁用户去做
 
-在 2016年5月11日, Instagram 成了 Twitter 上头条。因为它完全重新设计了自己，包括图标，以及整个App! 与之前的图标有着相同的概念，新的图标又一个更加简单的相机设计，渐变的彩虹的样式。它有着更加绚丽和活力的外观。
 
-![](https://cdn-images-1.medium.com/max/1600/1*rdgxYHPHeXAbSj5U0j92cA.png) 
+### 有梯度的双色设计
 
-人们有的喜欢，有的讨厌这个新的设计。大家都热烈的讨论着它。
+这是2016最最热门的Web设计! 我十分的喜欢他，它充满活力，色彩靓丽，好看。你一定觉得我为什么要用这个像横幅一样的设计呢。
 
-### 3. 没有什么东西是原创的
+Spotify 提出了这个设计理念，并且成了一个设计的趋势。每一天，都有新的网站变成了这种有梯度的双色风格。这种效果赋予一些旧照片新的活力。
 
-我确定，你一定会撤回这条 Twitter, 因为它让整个设计圈炸开了锅。
+![](https://cdn-images-1.medium.com/max/1600/1*5tE_e5fWL0KbxG_Kx7tvQg.png)
 
-![](https://cdn-images-1.medium.com/max/1600/1*aPu1e2RN_I1VOAeVZA-8QA.png)
+### 显著大胆用色
 
-中国在线零售商阿里巴巴市场营销和业务发展副总裁陈倩文，揭示了一些公司的标志和印刷在1989年设计书《世界商标和标志》中的相似之处，其中有有一些几乎完全相同，比如Airbnb，Flipboard 和 Beats。
-Twitter上的设计人员很快指出，这种事情在设计世界中常常发生，特别是在有抽象字母构造的的标志中。
+没有用错的颜色，只有用错颜色的人。新的趋势是用明亮的，大胆的颜色。颜色可以吸引人们的注意，影响人们的心情，改变人们的情绪，感知人们的行动。如果相让这些设计出现在手机或者网页上的时候，那么请用明亮，大胆的颜色。
 
-### 4. Facebook上不是所有的东西都是令人喜欢的
+![](https://cdn-images-1.medium.com/max/1600/1*xijYF5jC9tBAi1piGLGQfA.gif)
 
-Facebook的反馈系统突然多了很多表情。就像他们自己说的，网络中的信息不一地都是令人愉悦的。人们可能感到有趣，开心，悲伤或者。。。经过长期的研究，Facebook 加入了6个新的表情来正对不同的内容。
+![](https://cdn-images-1.medium.com/max/1600/1*A9gBTYVD_FkincwR6LaqUA.png)
 
-![](https://cdn-images-1.medium.com/max/1600/1*44tBDZJi4ZbVfNZcJHwg_w.gif)
+### 去除网格
 
-### 5. DC漫画 品牌的重塑
+在很长的时间里，设计师们喜欢使用网格，但是现在已经改变了。或者，我会说现在现在用使用一些有趣的网格。
 
-2016年5月，DC漫画更新了他们新的设计。借鉴了80年代的风格，新的设计汇集了经典设计和与品牌相关的复古字体，迎接新时代的到来。
+就和网格重要性一样，网格有着自己的限制，呆板，限制了设计师们的发挥。为了突变传统的呆板的体验，设计师们将通过打破网格来尝试新的布局。现在就是一种趋势。
 
-![](https://cdn-images-1.medium.com/max/1600/1*5biMv-HhOy0Wu0zVtkI_ng.png)
+![](https://cdn-images-1.medium.com/max/1600/1*6uGB8ROnIP9qqP4pKB_nUA.png)
 
-从 Twitter 上来看，DC 的忠实粉丝表示了对新的设计的大力支持。但是并不是所有人都喜欢有缺口的文字，圆形的图标。
+### 脱离图片的条条框框
 
----
+#### 异想天开的插图！
 
-原文：[A design yearbook of 2016](https://uxplanet.org/a-design-yearbook-of-2016-22ff9c81bd8#.avxmvxojr)
+插图提供了更加个性和感知的感觉，是传统摄影难以实现。用于手绘的效果使它更个性化。设计师可以更好的控制主题，使之成了一个趋势。
+
+此外，插图是相当通用的 - 可以是基于线的插图，也可以是基于面的手插图。他们完美地结合一个复杂的外观或一个有趣的界面。
+
+我最喜欢的网站有插图是
+
+*[intercom](https://www.intercom.com/)*
+
+![intercom](https://cdn-images-1.medium.com/max/1600/1*7a6Bi_QRlECA6Lyu1JDh9g.png)
+
+*[dropbox](https://www.dropbox.com/)*
+
+![dropbox](https://cdn-images-1.medium.com/max/1600/1*qwlPtnpKa6QEjnlEi5jTGg.png)
+
+#### 形状，只保留形状
+
+我最近看到了Zendesk的改造。他们在改造中使用的都是不同的形状。它是真正的享受，看看完整的产品的演绎和图形构建的过程！
+
+<iframe frameborder="0" width="640" height="498" src="https://v.qq.com/iframe/player.html?vid=c034322gql9&tiny=0&auto=0" allowfullscreen></iframe>
