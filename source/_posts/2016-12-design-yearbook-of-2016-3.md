@@ -1,13 +1,13 @@
 ---
 title: 2016设计年鉴（三）
-date: 2016-12-28 22:51:09
+date: 2016-12-29 22:51:09
 categories: 
 - 技术
 tags: 
 - 设计
 ---
 
-![](https://cdn-images-1.medium.com/max/2000/1*WCOEpb9gg4BAQH3LL5MV1g.png)
+![](https://ww1.sinaimg.cn/large/006tNc79gw1fb7lx7m7srj31jk0ep42q.jpg)
 
 随着2016年结束的临近，2016年有许多值得思考，值得细细的回味的地方，这将引领我们在新的一年继续前行。我想这是回顾这一年当中的热点或是趋势的最好时间。
 
