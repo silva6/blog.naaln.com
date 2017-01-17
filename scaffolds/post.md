@@ -1,5 +1,7 @@
 ---
 title: {{ title }}
 date: {{ date }}
-tags:
+categories: 
+- 随笔 技术
+tags: 
 ---
