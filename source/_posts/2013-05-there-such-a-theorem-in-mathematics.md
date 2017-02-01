@@ -27,7 +27,7 @@ tags:
 
 **不能抚平的毛球** 
 
-![](http://ww1.sinaimg.cn/large/006tNc79gw1fahpm9mi0sj30dw0ajmyt.jpg)
+![](http://ww3.sinaimg.cn/large/006tNc79gw1f5127yhdj9j30dw0dwq48.jpg)
 
 **定理：你永远不能理顺椰子上的毛。** 
 

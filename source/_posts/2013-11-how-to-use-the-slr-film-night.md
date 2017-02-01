@@ -91,11 +91,11 @@ RAW对白平衡的调整基本上是无损的，这在夜景中更是体现得�
 
 ![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq0fstkuj30go0b0taz.jpg)
 
-![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq0j65dqj30go0b0taz.jpg)
+![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq0kueaej30go0b2wg6.jpg)
 
 **当然，你还可以制作心形光圈，菱形光圈等等。**
 
-![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq0kueaej30go0b2wg6.jpg)
+![](https://ww3.sinaimg.cn/large/006y8lVagy1fcblesfqjrj30960643z3.jpg)
 
 **方法如图：**
 

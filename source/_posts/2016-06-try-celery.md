@@ -60,7 +60,7 @@ def starcase(info):
 
 第三个终端，运行脚本 `python tasks.py`
 
-![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq9ouoqqj30l20dswg9.jpg)
+![](http://ww4.sinaimg.cn/large/48910e01gw1f5bee8zhajj20is0butbc.jpg)
 
 可以看到 接受到了一个`4A9D2A83-E273-40CB-***` 的任务，并在8.2秒后执行完成，返回的结果是 10040。
 

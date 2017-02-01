@@ -45,7 +45,7 @@ tags:
 
 后来发现`Rundeck`和`Jenkins`的集成并不是很稳定，决定尝试`CircleCI` 持续整合＆持续交付工具。
 
-![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq8di57yj31f80jcjw4.jpg)
+![](http://ww4.sinaimg.cn/large/48910e01gw1f3zf4wl46qj20g10dw75i.jpg)
 
 - `CI`和接入版本控制
 

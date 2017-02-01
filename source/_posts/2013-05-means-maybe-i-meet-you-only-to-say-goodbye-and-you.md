@@ -7,7 +7,7 @@ categories:
 tags: 
 ---
 
-![](http://ww4.sinaimg.cn/large/006tNc79gw1fahplzqqavj30fa0cuadl.jpg)
+![](http://ww1.sinaimg.cn/large/006tNc79gw1f512c5d7mej30dw0990up)
 
 子墨：这世界，除非你同意，任何人都不可能伤害到你。我坦荡，我快乐，日月可以明鉴。心里的阳光，是要自己掌灯的。
 

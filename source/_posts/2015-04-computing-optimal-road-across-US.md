@@ -13,17 +13,15 @@ Last week, [Tracy Staedter](http://news.discovery.com/contributors/tracy-staedte
 
 One of the hardest parts of planning a road trip is deciding where to stop along the way. Given how large and diverse the U.S. is, it’s especially difficult to make a road trip that will appeal to everyone. To stand a chance at making an interesting road trip, Tracy and I laid out a few rules from the beginning:
 
-1.  The trip must make at least one stop in all 48 states in the contiguous U.S.
-
-2.  The trip would only make stops at National Natural Landmarks, National Historic Sites, National Parks, or National Monuments.
-
-3.  The trip must be taken by car and never leave the U.S.
+1. The trip must make at least one stop in all 48 states in the contiguous U.S.
+2. The trip would only make stops at National Natural Landmarks, National Historic Sites, National Parks, or National Monuments.
+3. The trip must be taken by car and never leave the U.S.
 
 With those objectives in mind, Tracy compiled a list of 50 major U.S. landmarks — one in each state excluding Alaska/Hawaii and including D.C., and two in California. Tracy wrote about that process on Discovery News [here](http://news.discovery.com/tech/gear-and-gadgets/how-to-really-drive-across-the-us-hitting-all-major-landmarks-150309.htm).
 
 The result was an epic itinerary with a mix of inner city exploration, must-see historical sites, and beautiful natural landscapes. All that was left was to figure out the path that would minimize our time spent driving and maximize our time spent enjoying the landmarks.
 
-![mount_rushmore_pictures](http://ww3.sinaimg.cn/large/006tNc79gw1fahq4r4h3fj30sg0iz0xm.jpg)
+![mount_rushmore_pictures](https://ww3.sinaimg.cn/large/006tNc79gy1fcblpxy3d7j30sg0iz0xm.jpg)
 
 Image credit: [Dean Franklin](http://commons.wikimedia.org/wiki/File:Dean_Franklin_-_06.04.03_Mount_Rushmore_Monument_(by-sa)-3_new.jpg)
 
@@ -41,7 +39,7 @@ To provide some context: If you started computing this problem on your home comp
 
 The traveling salesman problem is so notoriously difficult to solve that even [xkcd](http://xkcd.com/399/) poked fun at it:
 
-![travelling_salesman_problem](http://ww4.sinaimg.cn/large/006tNc79gw1fahq4t0v4bj30sg0iz0xm.jpg)
+![travelling_salesman_problem](https://ww1.sinaimg.cn/large/006tNc79gy1fcblpyrabwj30hs07v3zr.jpg)
 
 Clearly, we need a smarter solution if we want to take this epic road trip in our lifetime. Thankfully, the traveling salesman problem has been [well-studied](http://en.wikipedia.org/wiki/Travelling_salesman_problem#Computing_a_solution) over the years and there are many ways for us to solve it in a reasonable amount of time.
 
@@ -55,7 +53,7 @@ After less than a minute, the genetic algorithm reached a near-perfect solution 
 
 Note: There’s an extra stop in Cleveland to force the route between Vermont and Michigan to stay in the U.S. rather than go through Canada. If you’re able to drive through Canada without issue, then take the direct route through Canada instead.
 
-![best-road-trip-major-landmarks](http://ww2.sinaimg.cn/large/006tNc79gw1fahq4ualqjj30sg0iz0xm.jpg)
+![best-road-trip-major-landmarks](https://ww3.sinaimg.cn/large/006tNc79gy1fcblq1fjwrj30sg0f8atd.jpg)
 
 _Click [here](http://rhiever.github.io/optimal-roadtrip-usa/major-landmarks.html) for the interactive version_
 
@@ -67,105 +65,56 @@ Here’s the Google Maps of the route: [[1]](https://www.google.com/maps/dir/Gra
 
 Here’s the full list of landmarks in order:
 
-1.  Grand Canyon, AZ
-
-2.  Bryce Canyon National Park, UT
-
-3.  Craters of the Moon National Monument, ID
-
-4.  Yellowstone National Park, WY
-
-5.  Pikes Peak, CO
-
-6.  Carlsbad Caverns National Park, NM
-
-7.  The Alamo, TX
-
-8.  The Platt Historic District, OK
-
-9.  Toltec Mounds, AR
-
-10.  Elvis Presley’s Graceland, TN
-
-11.  Vicksburg National Military Park, MS
-
-12.  French Quarter, New Orleans, LA
-
-13.  USS Alabama, AL
-
-14.  Cape Canaveral Air Force Station, FL
-
-15.  Okefenokee Swamp Park, GA
-
-16.  Fort Sumter National Monument, SC
-
-17.  Lost World Caverns, WV
-
-18.  Wright Brothers National Memorial Visitor Center, NC
-
-19.  Mount Vernon, VA
-
-20.  White House, Washington, DC
-
-21.  Colonial Annapolis Historic District, MD
-
-22.  New Castle Historic District, Delaware
-
-23.  Cape May Historic District, NJ
-
-24.  Liberty Bell, PA
-
-25.  Statue of Liberty, NY
-
-26.  The Mark Twain House & Museum, CT
-
-27.  The Breakers, RI
-
-28.  USS Constitution, MA
-
-29.  Acadia National Park, ME
-
-30.  Mount Washington Hotel, NH
-
-31.  Shelburne Farms, VT
-
-32.  Fox Theater, Detroit, MI
-
-33.  Spring Grove Cemetery, OH
-
-34.  Mammoth Cave National Park, KY
-
-35.  West Baden Springs Hotel, IN
-
-36.  Abraham Lincoln’s Home, IL
-
-37.  Gateway Arch, MO
-
-38.  C. W. Parker Carousel Museum, KS
-
-39.  Terrace Hill Governor’s Mansion, IA
-
-40.  Taliesin, WI
-
-41.  Fort Snelling, MN
-
-42.  Ashfall Fossil Bed, NE
-
-43.  Mount Rushmore, SD
-
-44.  Fort Union Trading Post, ND
-
-45.  Glacier National Park, MT
-
-46.  Hanford Site, WA
-
-47.  Columbia River Highway, OR
-
-48.  San Francisco Cable Cars, CA
-
-49.  San Andreas Fault, CA
-
-50.  Hoover Dam, NV
+1. Grand Canyon, AZ
+2. Bryce Canyon National Park, UT
+3. Craters of the Moon National Monument, ID
+4. Yellowstone National Park, WY
+5. Pikes Peak, CO
+6. Carlsbad Caverns National Park, NM
+7. The Alamo, TX
+8. The Platt Historic District, OK
+9. Toltec Mounds, AR
+10. Elvis Presley’s Graceland, TN
+11. Vicksburg National Military Park, MS
+12. French Quarter, New Orleans, LA
+13. USS Alabama, AL
+14. Cape Canaveral Air Force Station, FL
+15. Okefenokee Swamp Park, GA
+16. Fort Sumter National Monument, SC
+17. Lost World Caverns, WV
+18. Wright Brothers National Memorial Visitor Center, NC
+19. Mount Vernon, VA
+20. White House, Washington, DC
+21. Colonial Annapolis Historic District, MD
+22. New Castle Historic District, Delaware
+23. Cape May Historic District, NJ
+24. Liberty Bell, PA
+25. Statue of Liberty, NY
+26. The Mark Twain House & Museum, CT
+27. The Breakers, RI
+28. USS Constitution, MA
+29. Acadia National Park, ME
+30. Mount Washington Hotel, NH
+31. Shelburne Farms, VT
+32. Fox Theater, Detroit, MI
+33. Spring Grove Cemetery, OH
+34. Mammoth Cave National Park, KY
+35. West Baden Springs Hotel, IN
+36. Abraham Lincoln’s Home, IL
+37. Gateway Arch, MO
+38. C. W. Parker Carousel Museum, KS
+39. Terrace Hill Governor’s Mansion, IA
+40. Taliesin, WI
+41. Fort Snelling, MN
+42. Ashfall Fossil Bed, NE
+43. Mount Rushmore, SD
+44. Fort Union Trading Post, ND
+45. Glacier National Park, MT
+46. Hanford Site, WA
+47. Columbia River Highway, OR
+48. San Francisco Cable Cars, CA
+49. San Andreas Fault, CA
+50. Hoover Dam, NV
 
 ### Bonus: Road trip stopping at popular U.S. cities
 
@@ -173,7 +122,7 @@ If you’re more of a city slicker, the road trip above may not look very appeal
 
 Note: Again, there’s an extra stop in Cleveland to force the route between New Hampshire and Michigan to stay in the U.S. rather than go through Canada. If you’re able to drive through Canada without issue, then take the direct route through Canada instead. But really, Cleveland is a nice city to stop in (ranked #53 on TripAdvisor).
 
-![best-road-trip-popular-cities](http://ww2.sinaimg.cn/large/006tNc79gw1fahq4y37knj30sg0f8jzl.jpg)
+![best-road-trip-popular-cities](https://ww4.sinaimg.cn/large/006tNc79gy1fcblq515sjj30sg0fbnfm.jpg)
 
 **Click [here](http://rhiever.github.io/optimal-roadtrip-usa/popular-cities.html) for the interactive version**
 
@@ -185,99 +134,53 @@ Here’s the Google Maps of the route: [[1]](https://www.google.com/maps/dir/Okl
 
 Here’s the full list of cities in order:
 
-1.  Oklahoma City, Oklahoma
-
-2.  Wichita, Kansas
-
-3.  Denver, Colorado
-
-4.  Albuquerque, New Mexico
-
-5.  Phoenix, Arizona
-
-6.  Las Vegas, Nevada
-
-7.  San Francisco, California
-
-8.  Portland, Oregon
-
-9.  Seattle, Washington
-
-10.  Boise, Idaho
-
-11.  Park City, Utah
-
-12.  Jackson, Wyoming
-
-13.  Billings, Montana
-
-14.  Sioux Falls, South Dakota
-
-15.  Omaha, Nebraska
-
-16.  Des Moines, Iowa
-
-17.  Minneapolis, Minnesota
-
-18.  Milwaukee, Wisconsin
-
-19.  Chicago, Illinois
-
-20.  Indianapolis, Indiana
-
-21.  Louisville, Kentucky
-
-22.  Columbus, Ohio
-
-23.  Detroit, Michigan
-
-24.  Cleveland, Ohio
-
-25.  Manchester, New Hampshire
-
-26.  Portland, Maine
-
-27.  Boston, Massachusetts
-
-28.  Providence, Rhode Island
-
-29.  New Haven, Connecticut
-
-30.  New York City, New York
-
-31.  Ocean City, New Jersey
-
-32.  Philadelphia, Pennsylvania
-
-33.  Wilmington, Delaware
-
-34.  Baltimore, Maryland
-
-35.  Washington, D.C.
-
-36.  Virginia Beach, Virginia
-
-37.  Charlotte, North Carolina
-
-38.  Charleston, South Carolina
-
-39.  Orlando, Florida
-
-40.  Atlanta, Georgia
-
-41.  Nashville, Tennessee
-
-42.  Birmingham, Alabama
-
-43.  Jackson, Mississippi
-
-44.  New Orleans, Louisiana
-
-45.  Houston, Texas
-
-46.  Little Rock, Arkansas
-
-47.  Branson, Missouri
+1. Oklahoma City, Oklahoma
+2. Wichita, Kansas
+3. Denver, Colorado
+4. Albuquerque, New Mexico
+5. Phoenix, Arizona
+6. Las Vegas, Nevada
+7. San Francisco, California
+8. Portland, Oregon
+9. Seattle, Washington
+10. Boise, Idaho
+11. Park City, Utah
+12. Jackson, Wyoming
+13. Billings, Montana
+14. Sioux Falls, South Dakota
+15. Omaha, Nebraska
+16. Des Moines, Iowa
+17. Minneapolis, Minnesota
+18. Milwaukee, Wisconsin
+19. Chicago, Illinois
+20. Indianapolis, Indiana
+21. Louisville, Kentucky
+22. Columbus, Ohio
+23. Detroit, Michigan
+24. Cleveland, Ohio
+25. Manchester, New Hampshire
+26. Portland, Maine
+27. Boston, Massachusetts
+28. Providence, Rhode Island
+29. New Haven, Connecticut
+30. New York City, New York
+31. Ocean City, New Jersey
+32. Philadelphia, Pennsylvania
+33. Wilmington, Delaware
+34. Baltimore, Maryland
+35. Washington, D.C.
+36. Virginia Beach, Virginia
+37. Charlotte, North Carolina
+38. Charleston, South Carolina
+39. Orlando, Florida
+40. Atlanta, Georgia
+41. Nashville, Tennessee
+42. Birmingham, Alabama
+43. Jackson, Mississippi
+44. New Orleans, Louisiana
+45. Houston, Texas
+46. Little Rock, Arkansas
+47. Branson, Missouri
 
 ### Make your own road trip
 

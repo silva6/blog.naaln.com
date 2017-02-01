@@ -9,81 +9,81 @@ tags:
 
 世界上其实根本没有感同深受这回事，针不刺到别人身上，他们就不知道有多痛。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194544469.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 用你的微笑去改变世界，而不是让这个世界改变了你的笑容。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194544995.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 爱情是容易被怀疑的幻觉，一旦被识破就自动灰飞烟灭。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194544326.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 不管你曾经被伤害得有多深，总会有一个人的出现，让你原谅之前生活对你所有的刁难。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194544155.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 我们可以吵架，但不能影响关系。无论友情还是爱情。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194544190.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 做事总三分钟热度的我，却爱了你这么久；平常总健忘丢三落四的我，却把你记那么清。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194544544.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 泪随睫毛滑行，落下一季不该上演的剧情。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194543710.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 即是说一千遍我爱你，但只要一句分手就可以结束，这就是爱情。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194544944.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 不要把自己的伤口揭开给别人看，世界上多的不是医师，多的是撒盐的人。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194546810.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 当你爱一个人时，你才发现，他是你心里的刺青，永远深深地印在你的心里。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194544782.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 只要内心不乱，外界就很难改变你什么。不要艳羡他人，不要输掉自己。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194545961.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 世界上最美妙的一件事，就是当你拥抱一个你爱的人，他竟然把你抱得更紧。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194544993.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 如果你真的足够在乎我，那么你总能挤出时间来陪我，没有借口、谎言，没有不兑现的诺言。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194544351.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 很多人问是该选爱自己的人还是自己爱的人？其实很简单，你强大，你就选自己爱的人；你不够强大，那就选爱自己的人了。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194544889.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 当一个女生坚强久了，好像她的坚强就变得理所当然。所以都忘记了 ，她也是女孩，也需要保护，需要依靠。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194543449.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 生命太短，没留时间给我们每日带着遗憾醒来。所以去爱那些对你好的人，忘掉那些不知珍惜你的人。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194543368.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 我们花了两年学会说话，却要花上六十年来学会闭嘴。大多数时候，我们说得越多，彼此的距离却越远，矛盾也越多。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194544441.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 我承认，我是自私的，至少在感情上。无论爱情友情，我一丝一毫都不愿意和别人分享，所以，我多么希望隐藏你的美好，只让我一人看到。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194543157.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 当爱一个人，却无法拥有他时，自己面对着一个选择：放弃还是继续。包括你在内的很多人都说：放弃吧，不要再浪费青春。但是，自己却明白，自己真的放不下。如果能放下，早都已经放下了，根本不会到现在的地步。所以，当黑夜来临的时候，我只能孤独的思念一个人。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194543461.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 
 其实对方不喜欢你，你再怎么追也没用，对方喜欢你，根本不需要挖空心思去追。或许真有一天他被你的诚意所打动，可最终大多还是会分手的。——因为爱情不是感动，你不是他心目中的理想伴侣，即使一时接受你，将来碰上他心仪的那一位，一样会离开你。
 
-[![来自有意思吧（www.u148.net）](http://file3.u148.net/2012/12/images/1355194544959.jpg "总会有一个人的出现，让你原谅之前生活对你所有的刁难")](http://www.u148.net/article/79083.html)
+![](http://www.u148.net/article/79083.html)
 

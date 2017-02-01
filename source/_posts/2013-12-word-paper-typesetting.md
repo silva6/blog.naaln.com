@@ -145,7 +145,7 @@ tags:
 
 同理，我们在节标题（标题 2）等，也如此设置。于是得到一个结构明了的文档框架了。
 
-![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq1m9cthj30by0biabc.jpg)
+![](https://ww3.sinaimg.cn/large/006tNc79gy1fcblkp7xwdj307b0e8jsa.jpg)
 
 值得注意的，在导航窗格中，我们选中某个标题，敲击回车，便可得到一个同级的新标题，这对布局相当管用，特别是对于编了章节号的标题，它也会自动生成相同格式的章节号，并且，在这里拖动章节标题的位置，会相当智能。
 
