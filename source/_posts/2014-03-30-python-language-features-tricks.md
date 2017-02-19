@@ -25,188 +25,248 @@ Roy Keyes 提了一个非常好的建议，把这个文章放在github上，让�
 #### 1.1 Unpacking
 
 ```python
->>> a, b, c = 1, 2, 3
->>> a, b, c
+>>>  a, b, c = 1, 2, 3
+
+>>>  a, b, c
 (1, 2, 3)
->>> a, b, c = [1, 2, 3]
->>> a, b, c
+
+>>>  a, b, c = [1, 2, 3]
+
+>>>  a, b, c
 (1, 2, 3)
->>> a, b, c = (2 * i + 1 for i in range(3))
->>> a, b, c
+
+>>>  a, b, c = (2 * i + 1 for i in range(3))
+
+>>>  a, b, c
 (1, 3, 5)
->>> a, (b, c), d = [1, (2, 3), 4]
->>> a
+
+>>>  a, (b, c), d = [1, (2, 3), 4]
+
+>>>  a
 1
->>> b
+
+>>>  b
 2
->>> c
+
+>>>  c
 3
->>> d
+
+>>>  d
 4
 ```
 
 #### 1.2 Unpacking for swapping variables
 
 ```python
->>> a, b = 1, 2
->>> a, b = b, a
->>> a, b
+>>>  a, b = 1, 2
+
+>>>  a, b = b, a
+
+>>>  a, b
 (2, 1)
 ```
 
 #### 1.3 Extended unpacking (Python 3 only)
 
 ```python
->>> a, *b, c = [1, 2, 3, 4, 5]
->>> a
+>>>  a, *b, c = [1, 2, 3, 4, 5]
+
+>>>  a
 1
->>> b
+
+>>>  b
 [2, 3, 4]
->>> c
+
+>>>  c
 5
 ```
 
 #### 1.4 Negative indexing
 
 ```python
->>> a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
->>> a[-1]
+>>>  a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+>>>  a[-1]
 10
->>> a[-3]
+
+>>>  a[-3]
 8
 ```
 
 #### 1.5 List slices (a[start:end])
 
 ```python
->>> a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
->>> a[2:8]
+>>>  a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+>>>  a[2:8]
 [2, 3, 4, 5, 6, 7]
 ```
 
 #### 1.6 List slices with negative indexing
 
 ```python
->>> a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
->>> a[-4:-2]
+>>>  a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+>>>  a[-4:-2]
 [7, 8]
 ```
 
 #### 1.7 List slices with step (a[start:end:step])
 
 ```python
->>> a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
->>> a[::2]
+>>>  a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+>>>  a[::2]
 [0, 2, 4, 6, 8, 10]
->>> a[::3]
+
+>>>  a[::3]
 [0, 3, 6, 9]
->>> a[2:8:2]
+
+>>>  a[2:8:2]
 [2, 4, 6]
 ```
 
 #### 1.8 List slices with negative step
 
 ```python
->>> a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
->>> a[::-1]
+>>>  a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+>>>  a[::-1]
 [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
->>> a[::-2]
+
+>>>  a[::-2]
 [10, 8, 6, 4, 2, 0]
 ```
 
 #### 1.9 List slice assignment
 
 ```python
->>> a = [1, 2, 3, 4, 5]
->>> a[2:3] = [0, 0]
->>> a
+>>>  a = [1, 2, 3, 4, 5]
+
+>>>  a[2:3] = [0, 0]
+
+>>>  a
 [1, 2, 0, 0, 4, 5]
->>> a[1:1] = [8, 9]
->>> a
+
+>>>  a[1:1] = [8, 9]
+
+>>>  a
 [1, 8, 9, 2, 0, 0, 4, 5]
->>> a[1:-1] = []
->>> a
+
+>>>  a[1:-1] = []
+
+>>>  a
 [1, 5]
 ```
 
 #### 1.10 Naming slices (slice(start, end, step))
 
 ```python
->>> a = [0, 1, 2, 3, 4, 5]
->>> LASTTHREE = slice(-3, None)
->>> LASTTHREE
+>>>  a = [0, 1, 2, 3, 4, 5]
+
+>>>  LASTTHREE = slice(-3, None)
+
+>>>  LASTTHREE
 slice(-3, None, None)
->>> a[LASTTHREE]
+
+>>>  a[LASTTHREE]
 [3, 4, 5]
 ```
 
 #### 1.11 Zipping and unzipping lists and iterables
 
 ```python
->>> a = [1, 2, 3]
->>> b = ['a', 'b', 'c']
->>> z = zip(a, b)
->>> z
+>>>  a = [1, 2, 3]
+
+>>>  b = ['a', 'b', 'c']
+
+>>>  z = zip(a, b)
+
+>>>  z
 [(1, 'a'), (2, 'b'), (3, 'c')]
->>> zip(*z)
+
+>>>  zip(*z)
 [(1, 2, 3), ('a', 'b', 'c')]
 ```
 
 #### 1.12 Grouping adjacent list items using zip
 
 ```python
->>> a = [1, 2, 3, 4, 5, 6]
->>> zip(*([iter(a)] * 2))
+>>>  a = [1, 2, 3, 4, 5, 6]
+
+>>>  zip(*([iter(a)] * 2))
 [(1, 2), (3, 4), (5, 6)]
->>> group_adjacent = lambda a, k: zip(*([iter(a)] * k))
->>> group_adjacent(a, 3)
+
+>>>  group_adjacent = lambda a, k: zip(*([iter(a)] * k))
+
+>>>  group_adjacent(a, 3)
 [(1, 2, 3), (4, 5, 6)]
->>> group_adjacent(a, 2)
+
+>>>  group_adjacent(a, 2)
 [(1, 2), (3, 4), (5, 6)]
->>> group_adjacent(a, 1)
+
+>>>  group_adjacent(a, 1)
 [(1,), (2,), (3,), (4,), (5,), (6,)]
->>> zip(a[::2], a[1::2])
+
+>>>  zip(a[::2], a[1::2])
 [(1, 2), (3, 4), (5, 6)]
->>> zip(a[::3], a[1::3], a[2::3])
+
+>>>  zip(a[::3], a[1::3], a[2::3])
 [(1, 2, 3), (4, 5, 6)]
->>> group_adjacent = lambda a, k: zip(*(a[i::k] for i in range(k)))
->>> group_adjacent(a, 3)
+
+>>>  group_adjacent = lambda a, k: zip(*(a[i::k] for i in range(k)))
+
+>>>  group_adjacent(a, 3)
 [(1, 2, 3), (4, 5, 6)]
->>> group_adjacent(a, 2)
+
+>>>  group_adjacent(a, 2)
 [(1, 2), (3, 4), (5, 6)]
->>> group_adjacent(a, 1)
+
+>>>  group_adjacent(a, 1)
 [(1,), (2,), (3,), (4,), (5,), (6,)]
 ```
 
 #### 1.13 Inverting a dictionary using zip
 
 ```python
->>> m = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
->>> m.items()
+>>>  m = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+>>>  m.items()
 [('a', 1), ('c', 3), ('b', 2), ('d', 4)]
->>> zip(m.values(), m.keys())
+
+>>>  zip(m.values(), m.keys())
 [(1, 'a'), (3, 'c'), (2, 'b'), (4, 'd')]
->>> mi = dict(zip(m.values(), m.keys()))
->>> mi
+
+>>>  mi = dict(zip(m.values(), m.keys()))
+
+>>>  mi
 {1: 'a', 2: 'b', 3: 'c', 4: 'd'}
 ```
 
 #### 1.14 Flattening lists:
 
 ```python
->>> a = [[1, 2], [3, 4], [5, 6]]
->>> list(itertools.chain.from_iterable(a))
+>>>  a = [[1, 2], [3, 4], [5, 6]]
+
+>>>  list(itertools.chain.from_iterable(a))
 [1, 2, 3, 4, 5, 6]
->>> sum(a, [])
+
+>>>  sum(a, [])
 [1, 2, 3, 4, 5, 6]
->>> [x for l in a for x in l]
+
+>>>  [x for l in a for x in l]
 [1, 2, 3, 4, 5, 6]
->>> a = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]
->>> [x for l1 in a for l2 in l1 for x in l2]
+
+>>>  a = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]
+
+>>>  [x for l1 in a for l2 in l1 for x in l2]
 [1, 2, 3, 4, 5, 6, 7, 8]
->>> a = [1, 2, [3, 4], [[5, 6], [7, 8]]]
->>> flatten = lambda x: [y for l in x for y in flatten(l)] if type(x) is list else [x]
->>> flatten(a)
+
+>>>  a = [1, 2, [3, 4], [[5, 6], [7, 8]]]
+
+>>>  flatten = lambda x: [y for l in x for y in flatten(l)] if type(x) is list else [x]
+
+>>>  flatten(a)
 [1, 2, 3, 4, 5, 6, 7, 8]
 Note: according to Python's documentation on sum, itertools.chain.from_iterable is the preferred method for this.
 ```
@@ -214,158 +274,208 @@ Note: according to Python's documentation on sum, itertools.chain.from_iterable 
 #### 1.15 Generator expressions
 
 ```python
->>> g = (x ** 2 for x in xrange(10))
->>> next(g)
+>>>  g = (x ** 2 for x in xrange(10))
+
+>>>  next(g)
 0
->>> next(g)
+
+>>>  next(g)
 1
->>> next(g)
+
+>>>  next(g)
 4
->>> next(g)
+
+>>>  next(g)
 9
->>> sum(x ** 3 for x in xrange(10))
+
+>>>  sum(x ** 3 for x in xrange(10))
 2025
->>> sum(x ** 3 for x in xrange(10) if x % 3 == 1)
+
+>>>  sum(x ** 3 for x in xrange(10) if x % 3 == 1)
 408
 ```
 
 #### 1.16 Dictionary comprehensions
 
 ```python
->>> m = {x: x ** 2 for x in range(5)}
->>> m
+>>>  m = {x: x ** 2 for x in range(5)}
+
+>>>  m
 {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
->>> m = {x: 'A' + str(x) for x in range(10)}
->>> m
+
+>>>  m = {x: 'A' + str(x) for x in range(10)}
+
+>>>  m
 {0: 'A0', 1: 'A1', 2: 'A2', 3: 'A3', 4: 'A4', 5: 'A5', 6: 'A6', 7: 'A7', 8: 'A8', 9: 'A9'}
 ```
 
 #### 1.17 Inverting a dictionary using a dictionary comprehension
 
 ```python
->>> m = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
->>> m
+>>>  m = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+>>>  m
 {'d': 4, 'a': 1, 'b': 2, 'c': 3}
->>> {v: k for k, v in m.items()}
+
+>>>  {v: k for k, v in m.items()}
 {1: 'a', 2: 'b', 3: 'c', 4: 'd'}
 ```
 
 #### 1.18 Named tuples (collections.namedtuple)
 
 ```python
->>> Point = collections.namedtuple('Point', ['x', 'y'])
->>> p = Point(x=1.0, y=2.0)
->>> p
+>>>  Point = collections.namedtuple('Point', ['x', 'y'])
+
+>>>  p = Point(x=1.0, y=2.0)
+
+>>>  p
 Point(x=1.0, y=2.0)
->>> p.x
+
+>>>  p.x
 ```
 
 #### 1.0
 
 ```python
->>> p.y
+>>>  p.y
 2.0
 ```
 
 #### 1.19 Inheriting from named tuples:
 
 ```python
->>> class Point(collections.namedtuple('PointBase', ['x', 'y'])):
+>>>  class Point(collections.namedtuple('PointBase', ['x', 'y'])):
 ...     __slots__ = ()
 ...     def __add__(self, other):
 ...             return Point(x=self.x + other.x, y=self.y + other.y)
 ...
->>> p = Point(x=1.0, y=2.0)
->>> q = Point(x=2.0, y=3.0)
->>> p + q
+
+>>>  p = Point(x=1.0, y=2.0)
+
+>>>  q = Point(x=2.0, y=3.0)
+
+>>>  p + q
 Point(x=3.0, y=5.0)
 ```
 
 #### 1.20 Sets and set operations
 
 ```python
->>> A = {1, 2, 3, 3}
->>> A
+>>>  A = {1, 2, 3, 3}
+
+>>>  A
 set([1, 2, 3])
->>> B = {3, 4, 5, 6, 7}
->>> B
+
+>>>  B = {3, 4, 5, 6, 7}
+
+>>>  B
 set([3, 4, 5, 6, 7])
->>> A | B
+
+>>>  A | B
 set([1, 2, 3, 4, 5, 6, 7])
->>> A & B
+
+>>>  A & B
 set([3])
->>> A - B
+
+>>>  A - B
 set([1, 2])
->>> B - A
+
+>>>  B - A
 set([4, 5, 6, 7])
->>> A ^ B
+
+>>>  A ^ B
 set([1, 2, 4, 5, 6, 7])
->>> (A ^ B) == ((A - B) | (B - A))
+
+>>>  (A ^ B) == ((A - B) | (B - A))
 True
 ```
 
 #### 1.21 Multisets and multiset operations (collections.Counter)
 
 ```python
->>> A = collections.Counter([1, 2, 2])
->>> B = collections.Counter([2, 2, 3])
->>> A
+>>>  A = collections.Counter([1, 2, 2])
+
+>>>  B = collections.Counter([2, 2, 3])
+
+>>>  A
 Counter({2: 2, 1: 1})
->>> B
+
+>>>  B
 Counter({2: 2, 3: 1})
->>> A | B
+
+>>>  A | B
 Counter({2: 2, 1: 1, 3: 1})
->>> A & B
+
+>>>  A & B
 Counter({2: 2})
->>> A + B
+
+>>>  A + B
 Counter({2: 4, 1: 1, 3: 1})
->>> A - B
+
+>>>  A - B
 Counter({1: 1})
->>> B - A
+
+>>>  B - A
 Counter({3: 1})
 ```
 
 #### 1.22 Most common elements in an iterable (collections.Counter)
 
 ```python
->>> A = collections.Counter([1, 1, 2, 2, 3, 3, 3, 3, 4, 5, 6, 7])
->>> A
+>>>  A = collections.Counter([1, 1, 2, 2, 3, 3, 3, 3, 4, 5, 6, 7])
+
+>>>  A
 Counter({3: 4, 1: 2, 2: 2, 4: 1, 5: 1, 6: 1, 7: 1})
->>> A.most_common(1)
+
+>>>  A.most_common(1)
 [(3, 4)]
->>> A.most_common(3)
+
+>>>  A.most_common(3)
 [(3, 4), (1, 2), (2, 2)]
 ```
 
 #### 1.23 Double-ended queue (collections.deque)
 
 ```python
->>> Q = collections.deque()
->>> Q.append(1)
->>> Q.appendleft(2)
->>> Q.extend([3, 4])
->>> Q.extendleft([5, 6])
->>> Q
+>>>  Q = collections.deque()
+
+>>>  Q.append(1)
+
+>>>  Q.appendleft(2)
+
+>>>  Q.extend([3, 4])
+
+>>>  Q.extendleft([5, 6])
+
+>>>  Q
 deque([6, 5, 2, 1, 3, 4])
->>> Q.pop()
+
+>>>  Q.pop()
 4
->>> Q.popleft()
+
+>>>  Q.popleft()
 6
->>> Q
+
+>>>  Q
 deque([5, 2, 1, 3])
->>> Q.rotate(3)
->>> Q
+
+>>>  Q.rotate(3)
+
+>>>  Q
 deque([2, 1, 3, 5])
->>> Q.rotate(-3)
->>> Q
+
+>>>  Q.rotate(-3)
+
+>>>  Q
 deque([5, 2, 1, 3])
 ```
 
 #### 1.24 Double-ended queue with maximum length (collections.deque)
 
 ```python
->>> last_three = collections.deque(maxlen=3)
->>> for i in xrange(10):
+>>>  last_three = collections.deque(maxlen=3)
+
+>>>  for i in xrange(10):
 ...     last_three.append(i)
 ...     print ', '.join(str(x) for x in last_three)
 ...
@@ -384,59 +494,87 @@ deque([5, 2, 1, 3])
 #### 1.25 Ordered dictionaries (collections.OrderedDict)
 
 ```python
->>> m = dict((str(x), x) for x in range(10))
->>> print ', '.join(m.keys())
+>>>  m = dict((str(x), x) for x in range(10))
+
+>>>  print ', '.join(m.keys())
 1, 0, 3, 2, 5, 4, 7, 6, 9, 8
->>> m = collections.OrderedDict((str(x), x) for x in range(10))
->>> print ', '.join(m.keys())
+
+>>>  m = collections.OrderedDict((str(x), x) for x in range(10))
+
+>>>  print ', '.join(m.keys())
 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
->>> m = collections.OrderedDict((str(x), x) for x in range(10, 0, -1))
->>> print ', '.join(m.keys())
+
+>>>  m = collections.OrderedDict((str(x), x) for x in range(10, 0, -1))
+
+>>>  print ', '.join(m.keys())
 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
 ```
 
 #### 1.26 Default dictionaries (collections.defaultdict)
 
 ```python
->>> m = dict()
->>> m['a']
+>>>  m = dict()
+
+>>>  m['a']
 Traceback (most recent call last):
  File "<stdin>", line 1, in <module>
 KeyError: 'a'
->>>
->>> m = collections.defaultdict(int)
->>> m['a']
+
+>>> 
+
+>>>  m = collections.defaultdict(int)
+
+>>>  m['a']
 0
->>> m['b']
+
+>>>  m['b']
 0
->>> m = collections.defaultdict(str)
->>> m['a']
+
+>>>  m = collections.defaultdict(str)
+
+>>>  m['a']
 ''
->>> m['b'] += 'a'
->>> m['b']
+
+>>>  m['b'] += 'a'
+
+>>>  m['b']
 'a'
->>> m = collections.defaultdict(lambda: '[default value]')
->>> m['a']
+
+>>>  m = collections.defaultdict(lambda: '[default value]')
+
+>>>  m['a']
 '[default value]'
->>> m['b']
+
+>>>  m['b']
 '[default value]'
 ```
 
 #### 1.27 Using default dictionaries to represent simple trees
 
 ```python
->>> import json
->>> tree = lambda: collections.defaultdict(tree)
->>> root = tree()
->>> root['menu']['id'] = 'file'
->>> root['menu']['value'] = 'File'
->>> root['menu']['menuitems']['new']['value'] = 'New'
->>> root['menu']['menuitems']['new']['onclick'] = 'new();'
->>> root['menu']['menuitems']['open']['value'] = 'Open'
->>> root['menu']['menuitems']['open']['onclick'] = 'open();'
->>> root['menu']['menuitems']['close']['value'] = 'Close'
->>> root['menu']['menuitems']['close']['onclick'] = 'close();'
->>> print json.dumps(root, sort_keys=True, indent=4, separators=(',', ': '))
+>>>  import json
+
+>>>  tree = lambda: collections.defaultdict(tree)
+
+>>>  root = tree()
+
+>>>  root['menu']['id'] = 'file'
+
+>>>  root['menu']['value'] = 'File'
+
+>>>  root['menu']['menuitems']['new']['value'] = 'New'
+
+>>>  root['menu']['menuitems']['new']['onclick'] = 'new();'
+
+>>>  root['menu']['menuitems']['open']['value'] = 'Open'
+
+>>>  root['menu']['menuitems']['open']['onclick'] = 'open();'
+
+>>>  root['menu']['menuitems']['close']['value'] = 'Close'
+
+>>>  root['menu']['menuitems']['close']['onclick'] = 'close();'
+
+>>>  print json.dumps(root, sort_keys=True, indent=4, separators=(',', ': '))
 {
    "menu": {
        "id": "file",
@@ -463,41 +601,50 @@ KeyError: 'a'
 #### 1.28 Mapping objects to unique counting numbers (collections.defaultdict)
 
 ```python
->>> import itertools, collections
->>> value_to_numeric_map = collections.defaultdict(itertools.count().next)
->>> value_to_numeric_map['a']
+>>>  import itertools, collections
+
+>>>  value_to_numeric_map = collections.defaultdict(itertools.count().next)
+
+>>>  value_to_numeric_map['a']
 0
->>> value_to_numeric_map['b']
+
+>>>  value_to_numeric_map['b']
 1
->>> value_to_numeric_map['c']
+
+>>>  value_to_numeric_map['c']
 2
->>> value_to_numeric_map['a']
+
+>>>  value_to_numeric_map['a']
 0
->>> value_to_numeric_map['b']
+
+>>>  value_to_numeric_map['b']
 1
 ```
 
 #### 1.29 Largest and smallest elements (heapq.nlargest and heapq.nsmallest)
 
 ```python
->>> a = [random.randint(0, 100) for __ in xrange(100)]
->>> heapq.nsmallest(5, a)
+>>>  a = [random.randint(0, 100) for __ in xrange(100)]
+
+>>>  heapq.nsmallest(5, a)
 [3, 3, 5, 6, 8]
->>> heapq.nlargest(5, a)
+
+>>>  heapq.nlargest(5, a)
 [100, 100, 99, 98, 98]
 ```
 
 #### 1.30 Cartesian products (itertools.product)
 
 ```python
->>> for p in itertools.product([1, 2, 3], [4, 5]):
+>>>  for p in itertools.product([1, 2, 3], [4, 5]):
 (1, 4)
 (1, 5)
 (2, 4)
 (2, 5)
 (3, 4)
 (3, 5)
->>> for p in itertools.product([0, 1], repeat=4):
+
+>>>  for p in itertools.product([0, 1], repeat=4):
 ...     print ''.join(str(x) for x in p)
 ...
 0000
@@ -521,7 +668,7 @@ KeyError: 'a'
 #### 1.31 Combinations and combinations with replacement (itertools.combinations and itertools.combinations_with_replacement)
 
 ```python
->>> for c in itertools.combinations([1, 2, 3, 4, 5], 3):
+>>>  for c in itertools.combinations([1, 2, 3, 4, 5], 3):
 ...     print ''.join(str(x) for x in c)
 ...
 123
@@ -534,7 +681,8 @@ KeyError: 'a'
 235
 245
 345
->>> for c in itertools.combinations_with_replacement([1, 2, 3], 2):
+
+>>>  for c in itertools.combinations_with_replacement([1, 2, 3], 2):
 ...     print ''.join(str(x) for x in c)
 ...
 11
@@ -548,7 +696,7 @@ KeyError: 'a'
 #### 1.32 Permutations (itertools.permutations)
 
 ```python
->>> for p in itertools.permutations([1, 2, 3, 4]):
+>>>  for p in itertools.permutations([1, 2, 3, 4]):
 ...     print ''.join(str(x) for x in p)
 ...
 1234
@@ -580,8 +728,9 @@ KeyError: 'a'
 #### 1.33 Chaining iterables (itertools.chain)
 
 ```python
->>> a = [1, 2, 3, 4]
->>> for p in itertools.chain(itertools.combinations(a, 2), itertools.combinations(a, 3)):
+>>>  a = [1, 2, 3, 4]
+
+>>>  for p in itertools.chain(itertools.combinations(a, 2), itertools.combinations(a, 3)):
 … print p
 …
 (1, 2)
@@ -594,7 +743,8 @@ KeyError: 'a'
 (1, 2, 4)
 (1, 3, 4)
 (2, 3, 4)
->>> for subset in itertools.chain.from_iterable(itertools.combinations(a, n) for n in range(len(a) + 1))
+
+>>>  for subset in itertools.chain.from_iterable(itertools.combinations(a, n) for n in range(len(a) + 1))
 … print subset
 …
 ()
@@ -618,15 +768,19 @@ KeyError: 'a'
 #### 1.34 Grouping rows by a given key (itertools.groupby)
 
 ```python
->>> import itertools
->>> with open(‘contactlenses.csv’, ‘r’) as infile:
+>>>  import itertools
+
+>>>  with open(‘contactlenses.csv’, ‘r’) as infile:
 … data = [line.strip().split(‘,’) for line in infile]
 …
->>> data = data[1:]
->>> def print_data(rows):
+
+>>>  data = data[1:]
+
+>>>  def print_data(rows):
 … print ‘\n’.join(‘\t’.join(‘{: <16}’.format(s) for s in row) for row in rows)
 …
->>> print_data(data)
+
+>>>  print_data(data)
 young myope no reduced none
 young myope no normal soft
 young myope yes reduced none
@@ -651,8 +805,10 @@ presbyopic hypermetrope no reduced none
 presbyopic hypermetrope no normal soft
 presbyopic hypermetrope yes reduced none
 presbyopic hypermetrope yes normal none
->>> data.sort(key=lambda r: r[-1])
->>> for value, group in itertools.groupby(data, lambda r: r[-1]):
+
+>>>  data.sort(key=lambda r: r[-1])
+
+>>>  for value, group in itertools.groupby(data, lambda r: r[-1]):
 … print ‘———–’
 … print ‘Group: ‘ + value
 … print_data(group)
