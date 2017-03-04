@@ -2,7 +2,7 @@
 title: vuejs中methods中的互相调用
 date: 2017-01-18 04:32:10
 categories: 
-- 随笔 技术
+- 技术
 tags: 
 ---
 

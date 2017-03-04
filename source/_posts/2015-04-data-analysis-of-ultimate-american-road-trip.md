@@ -3,7 +3,6 @@ layout: post
 title: 数据分析美国公路的终极路线
 date: 2015/04/25 19:07:37
 categories: 
-- 技术
 - 旅行
 tags: 
 ---
