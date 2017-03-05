@@ -99,5 +99,5 @@ algolia:
     - date
     - slug
     - permalink
-    - content
+    - excerpt
     - excerpt:strip
