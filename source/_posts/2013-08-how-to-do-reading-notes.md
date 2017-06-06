@@ -7,7 +7,7 @@ categories:
 tags: 
 ---
 
-[<img class="attachment-full" title="c414c6b7ff4cc6822f87b279d866c355_m" src="http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/c414c6b7ff4cc6822f87b279d866c355_m.jpg" alt="c414c6b7ff4cc6822f87b279d866c355_m" width="600" height="348" />][1]
+![](https://ws3.sinaimg.cn/large/006tNbRwgy1fgd0mdw87yj30hs0gnmxe.jpg)
 
 你知道的，中国老话说，好记性不如烂笔头。其实，我自己对这句话的理解经历了三个阶段。
 
@@ -81,8 +81,4 @@ tags:
 
 嗯嗯。废话好多啊。你不要见怪了啊。权且看之，仅供参考。最重要的，找到合适自己的方法，培养自己的习惯。
 
- 
-
 via:<http://zhuanlan.zhihu.com/huangjian/19570684>
-
-[1]: http://ww4.sinaimg.cn/large/006tNc79gw1f511z129kzj30go09o3z4

@@ -7,8 +7,6 @@ categories:
 tags: 
 ---
 
-![][1]
-
 巴黎，一座城市，Paris——A Night A City 暮春的黄昏夹带着几丝淡淡的感伤和惆怅，夕阳的余晖温柔地洒落在古老的砖石路上，洒落在林荫道那些鳞次栉比露天酒吧的餐桌和笑脸上，这里荡漾着一种安详宁静的氛围。
 
 巴黎的露天酒吧与在马德里所见的不同，作为客居西班牙多年的我，能够感受到两者之间那种貌合神离的微妙差异。在我眼里，巴黎的露天酒吧犹如古典贵族小姐隐隐透着矜持清冷的傲气，而马德里的露天酒吧则像乡间布衣素面的女子散发着亲切热情的粗俗。
@@ -19,74 +17,37 @@ tags:
 
 巴黎的夜是奢华的，也是安详的。当你还在街道上蜂拥的人流里穿行，整个巴黎城已是华灯尽上，这个时候回到家里，或者登上高楼，俯瞰整片巴黎，顿时发现白日拥攘的车流被昏黄的城市之光所笼罩，就算华丽的Eiffel 铁塔也被跳跃的灯光埋没在浓重的夜色中。一切的一切，整座城市就像一只疲惫的眼睛，等待进入梦乡……只有街道上依然在营业的咖啡馆，酒吧，和那些习惯了夜生活的人们依然延续着白日的欢愉。他们化身不屈的斗士，在漫长的黑夜中，维持着这座城市生生不息的vitality……
 
-![][2]
 
-![][3]
+![](https://ws1.sinaimg.cn/large/006tNbRwgy1fgd0jj15mxj30dw0983yx.jpg)
 
-![][4]
+![](https://ws4.sinaimg.cn/large/006tNbRwgy1fgd0jjuijaj30dw098dgu.jpg)
 
-![][5]
+![](https://ws4.sinaimg.cn/large/006tNbRwgy1fgd0jkmzpoj30dw098t9v.jpg)
 
-![][6]
+![](https://ws2.sinaimg.cn/large/006tNbRwgy1fgd0jl3pv8j30dw098gm3.jpg)
 
-![][7]
+![](https://ws4.sinaimg.cn/large/006tNbRwgy1fgd0jmkh1rj30dw098gm8.jpg)
 
-![][8]
+![](https://ws4.sinaimg.cn/large/006tNbRwgy1fgd0jn6apaj30dw098aa9.jpg)
 
-![][9]
+![](https://ws4.sinaimg.cn/large/006tNbRwgy1fgd0jnj1epj30dw098dgf.jpg)
 
-![][10]
+![](https://ws4.sinaimg.cn/large/006tNbRwgy1fgd0joohecj30dw098mxq.jpg)
 
-![][11]
+![](https://ws2.sinaimg.cn/large/006tNbRwgy1fgd0jov1z6j30dw098wfg.jpg)
 
-![][12]
+![](https://ws4.sinaimg.cn/large/006tNbRwgy1fgd0jpv3nvj30dw098gml.jpg)
 
-![][13]
+![](https://ws4.sinaimg.cn/large/006tNbRwgy1fgd0jqkj82j30dw09875y.jpg)
 
-![][14]
+![](https://ws4.sinaimg.cn/large/006tNbRwgy1fgd0jr8argj30dw098jrr.jpg)
 
-![][15]
+![](https://ws2.sinaimg.cn/large/006tNbRwgy1fgd0js524fj30dw0980tn.jpg)
 
-![][16]
+![](https://ws3.sinaimg.cn/large/006tNbRwgy1fgd0jsoo2ij30dw098mxv.jpg)
 
-![][17]
+![](https://ws4.sinaimg.cn/large/006tNbRwgy1fgd0jtordwj30dw098jsj.jpg)
 
-![][18]
+![](https://ws4.sinaimg.cn/large/006tNbRwgy1fgd0judmq2j30dw095q3i.jpg)
 
-via:http://www.u148.net/article/81619.html">http://www.u148.net/article/81619.html
-
-[1]: http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/1359437987966.jpg
-
-[2]: http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/1359437986166.jpg
-
-[3]: http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/1359437987729.jpg
-
-[4]: http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/1359437986335.jpg
-
-[5]: http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/1359437986951.jpg
-
-[6]: http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/1359437986502.jpg
-
-[7]: http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/1359437986684.jpg
-
-[8]: http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/1359437986282.jpg
-
-[9]: http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/1359437986482.jpg
-
-[10]: http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/1359437986981.jpg
-
-[11]: http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/1359437986233.jpg
-
-[12]: http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/1359437986693.jpg
-
-[13]: http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/1359437987447.jpg
-
-[14]: http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/1359437986933.jpg
-
-[15]: http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/1359437986531.jpg
-
-[16]: http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/1359437986691.jpg
-
-[17]: http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/1359437987491.jpg
-
-[18]: http://naalnblog-wordpress.stor.sinaapp.com/uploads/2013/08/1359437986480.jpg
+![](https://ws2.sinaimg.cn/large/006tNbRwgy1fgd0jv6b86j30dw098wfa.jpg)
