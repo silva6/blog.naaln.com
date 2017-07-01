@@ -91,24 +91,24 @@ tags:
 
 以上就是关于提升线框原型沟通能力的十点建议。可以参考我们之前的文章“[线框原型的本质及实践应用概述][11]”，了解更多关于线框原型的基本理念及运用方法。
 
- [1]: http://ww1.sinaimg.cn/large/006tNc79gw1f5108qxitej30qv0v0jvd
+ [1]: https://ww1.sinaimg.cn/large/006tNc79gw1f5108qxitej30qv0v0jvd
 
- [2]: http://ww2.sinaimg.cn/large/006tNc79gw1f51092y5fdj30qs0v0gpf
+ [2]: https://ww2.sinaimg.cn/large/006tNc79gw1f51092y5fdj30qs0v0gpf
 
- [3]: http://ww4.sinaimg.cn/large/006tNc79gw1f5109d635qj30jn0dat9y
+ [3]: https://ww4.sinaimg.cn/large/006tNc79gw1f5109d635qj30jn0dat9y
 
  [4]: http://beforweb.com/node/24
 
  [5]: http://beforweb.com/node/40
 
- [6]: http://ww3.sinaimg.cn/large/006tNc79gw1f5109q49scj30jq0dbjtd
+ [6]: https://ww3.sinaimg.cn/large/006tNc79gw1f5109q49scj30jq0dbjtd
 
- [7]: http://ww1.sinaimg.cn/large/006tNc79gw1f5109ztq92j308n05xgln
+ [7]: https://ww1.sinaimg.cn/large/006tNc79gw1f5109ztq92j308n05xgln
 
  [8]: http://beforweb.com/node/23
 
- [9]: http://ww4.sinaimg.cn/large/006tNc79gw1f510abig61j318g0uraeu
+ [9]: https://ww4.sinaimg.cn/large/006tNc79gw1f510abig61j318g0uraeu
 
- [10]: http://ww3.sinaimg.cn/large/006tNc79gw1f510agdxrbj30fl082dgp
+ [10]: https://ww3.sinaimg.cn/large/006tNc79gw1f510agdxrbj30fl082dgp
 
  [11]: http://beforweb.com/node/20

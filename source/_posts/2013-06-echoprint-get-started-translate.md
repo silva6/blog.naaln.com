@@ -91,7 +91,7 @@ tags:
 
  [11]: http://twitter.com/echonest
 
- [12]: http://ww1.sinaimg.cn/large/006tNc79gw1f5122w03sfj306y028748
+ [12]: https://ww1.sinaimg.cn/large/006tNc79gw1f5122w03sfj306y028748
 
  [13]: https://github.com/echonest/echoprint-server/blob/master/README.md
 

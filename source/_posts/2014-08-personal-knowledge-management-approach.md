@@ -379,7 +379,7 @@ RSS源或者高价值博客推荐，选择原则：（1）新文章好；（2）
 
 [22]: http://blog.sina.com.cn/cmmi
 
-[23]: http://ww2.sinaimg.cn/large/617ccc0ctw1ee3vh488t4j206o0ecgmm.jpg
+[23]: https://ww2.sinaimg.cn/large/617ccc0ctw1ee3vh488t4j206o0ecgmm.jpg
 
 [24]: http://mindhacks.cn/2008/09/17/learning-habits-part3/
 

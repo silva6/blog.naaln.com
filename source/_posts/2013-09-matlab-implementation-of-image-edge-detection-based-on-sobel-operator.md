@@ -52,10 +52,10 @@ figure,imshow(SFST45),title('45度角图像边缘检测') ;
 ![][4]
 
 
-[1]: http://ww3.sinaimg.cn/large/006tNc79gw1f511k9cucfj30nj0iqwg8
+[1]: https://ww3.sinaimg.cn/large/006tNc79gw1f511k9cucfj30nj0iqwg8
 
-[2]: http://ww1.sinaimg.cn/large/006tNc79gw1f511kfyl0kj30nk0ictaf
+[2]: https://ww1.sinaimg.cn/large/006tNc79gw1f511kfyl0kj30nk0ictaf
 
-[3]: http://ww4.sinaimg.cn/large/006tNc79gw1f511ko2cm8j30nh0ibgna
+[3]: https://ww4.sinaimg.cn/large/006tNc79gw1f511ko2cm8j30nh0ibgna
 
-[4]: http://ww3.sinaimg.cn/large/006tNc79gw1f511kx0hplj30ng0ia79g
+[4]: https://ww3.sinaimg.cn/large/006tNc79gw1f511kx0hplj30ng0ia79g

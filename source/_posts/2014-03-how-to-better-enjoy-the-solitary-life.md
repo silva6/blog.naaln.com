@@ -35,4 +35,4 @@ tags:
 
 最重要的是千万别一个人呆着的时候又觉得委屈似的想“为什么偏偏是我一个人”，想享受这种生活，就要知道，这是自己的一个选择。
 
-[1]: http://ww2.sinaimg.cn/large/006tNc79gw1f511031i2ij30hs0hsgmx
+[1]: https://ww2.sinaimg.cn/large/006tNc79gw1f511031i2ij30hs0hsgmx

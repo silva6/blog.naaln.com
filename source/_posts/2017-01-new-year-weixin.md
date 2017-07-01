@@ -43,7 +43,7 @@ tags:
 
 * 向微信朋友发送**带有你的昵称的拜年表情包**，这种表情才好玩呢：
 
-![](https://ww4.sinaimg.cn/mw690/006tNc79gy1fc3hwt32ucg306u078diz.gif) ![](http://ww1.sinaimg.cn/mw690/48910e01gy1fc3hyw0a4yg206s08642l.gif) ![](https://ww4.sinaimg.cn/mw690/006tNc79gy1fc3i48nuaeg306u07qwfy.gif)
+![](https://ww4.sinaimg.cn/mw690/006tNc79gy1fc3hwt32ucg306u078diz.gif) ![](https://ww1.sinaimg.cn/mw690/48910e01gy1fc3hyw0a4yg206s08642l.gif) ![](https://ww4.sinaimg.cn/mw690/006tNc79gy1fc3i48nuaeg306u07qwfy.gif)
 
 现在一共有三种定制模式 「新春快乐」，「讨红包」，「谢谢老板」，快来试一试吧
 

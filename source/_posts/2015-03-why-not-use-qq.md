@@ -33,6 +33,6 @@ Telegram的创始者是来自俄罗斯的富豪及社交网络领导者Pavel 和
 
 via：[我为什么不再使用 QQ][2]
 
- [1]: http://ww4.sinaimg.cn/large/c334041bjw1eqial3gmkaj20ag06z0u8.jpg
+ [1]: https://ww4.sinaimg.cn/large/c334041bjw1eqial3gmkaj20ag06z0u8.jpg
 
  [2]: http://linux.im/2015/03/25/not-to-use-qq.html

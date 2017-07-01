@@ -32,4 +32,4 @@ tags:
 
 像徐志摩写的那样：“轻轻的我走了，正如我轻轻的来。”再饮一杯酒，道声珍重，毕业了，一路走好！
 
-[1]: http://ww3.sinaimg.cn/large/006tNc79gw1f510tiy73kj311y0o50yt
+[1]: https://ww3.sinaimg.cn/large/006tNc79gw1f510tiy73kj311y0o50yt

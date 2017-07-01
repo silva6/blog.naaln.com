@@ -43,4 +43,4 @@ tags:
 
 不管怎样，我觉得她是幸福的，因为她心中无恶，也无杂念，吃点苦受点累算什么，她相信这个世界有美好的东西，那就是佛法带给她的力量。
 
-[1]: http://ww1.sinaimg.cn/large/006tNc79gw1f5121fcdlij30du095q4q
+[1]: https://ww1.sinaimg.cn/large/006tNc79gw1f5121fcdlij30du095q4q

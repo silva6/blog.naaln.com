@@ -30,15 +30,17 @@ You can use `/etc/dnsmasq.conf` in addition, see above.
 
 Example: By default, dnsmasq comes configured to put your hosts into the `.lan` domain. This is specified in the configuration file as: 
 
+```
    # allow /etc/hosts and dhcp lookups via *.lan
-
    local=/lan/
-
    domain=lan
+```
 
 You can change this to whatever you'd like your home domain to be. Also, if you want your hosts to be available via your home domain without having to specify the domain in your 
 
+```
    /etc/hosts
+```
 
 file, add the `expand-hosts` directive to your `/etc/dnsmasq.conf`-file. 
 
@@ -55,16 +57,17 @@ In `/etc/ethers` static lease entries can be assigned. See → [static_leases](h
 In `/etc/hosts` DNS entries are configured. dnsmasq will utilize these entries to answer DNS queries on your network. 
 
 Format: 
-
+```
    [IP_address] host_name host_name_short ...
+```
 
 Example: 
 
+```
    192.168.1.1 router OpenWrt localhost
-
    192.168.1.2 debian-server
-
    192.168.1.3 ubuntu-laptop
+```
 
 ### DNS and DHCP Ports
 
@@ -76,101 +79,91 @@ DNS needs TCP and UDP port 53 open on the firewall. DHCP needs UDP ports 67 and 
 
 What to do if you already have a DNS server(secondary DNS server) but you want your router(primary DNS server) to resolve some of the DNS queries? Simply do the following: 
 
+```
    rm /etc/resolv.conf
+```
 
 That will remove the resolv.conf symlink. Then we will add the ip address of the secondary DNS inside the /etc/resolv.conf file 
-
+```
    echo "nameserver 192.168.1.2"&gt;/etc/resolv.conf
+```
 
 Replace 192.168.1.2 by the ip of your dns server then reboot or restart the dnsmasq service. 
-
+```
    reboot
+```
 
 or 
-
+```
    killall dnsmasq
-
    /etc/init.d/dnsmasq start
+```
 
 Then you'll need to set up your secondary dns for resolving internet's DNS queries: ssh into your router then: 
-
+```
    cat /tmp/resolv.conf.auto
+```
 
 it will give you something like this: 
-
+```
    nameserver 212.68.193.110
-
    nameserver 212.68.193.196
+```
 
 Copy the information and then add it to your secondary DNS's /etc/resolv.conf: into your secondary dns do: 
-
+```
    rm /etc/resolv.conf
-
    echo "nameserver 212.68.193.110"&gt;&gt;/etc/resolv.conf
-
    echo "nameserver 212.68.193.196"&gt;&gt;/etc/resolv.conf
+```
 
 Replace 212.68.193.110 and 212.68.193.196 with the IP addresses you have gotten with the cat /tmp/resolv.conf.auto command. 
 
 ### Configuring dnsmasq to forward dns requests to public dns servers
 
-If you want to use public dns servers<sup>[1)](#fn__1)</sup> to resolve public dns queries, you can configure dnsmasq for it. You can even specify more than three nameservers<sup>[2)](#fn__2)</sup>. 
+If you want to use public dns servers*[1)](#fn__1)* to resolve public dns queries, you can configure dnsmasq for it. You can even specify more than three nameservers*[2)](#fn__2)*. 
 
 Just add the following lines to /etc/dnsmasq.conf to use Google Public DNS. 
-
+```
    server=8.8.8.8
-
    server=8.8.4.4
+```
 
 In case you prefer to use [OpenWrt UCI](http://wiki.openwrt.org/doc/techref/uci "doc:techref:uci"), you may issue the following commands. 
-
+```
    uci add_list dhcp.@dnsmasq[-1].server=8.8.8.8
-
    uci add_list dhcp.@dnsmasq[-1].server=8.8.4.4
-
    uci commit dhcp
+```
 
 You may also edit /etc/config/dhcp directly. 
 
+```
    config dnsmasq
-
        option domainneeded '1'
-
        option boguspriv '1'
-
        option localise_queries '1'
-
        option local '/lan/'
-
        option domain 'lan'
-
        option expandhosts '1'
-
        option authoritative '1'
-
        option readethers '1'
-
        option leasefile '/tmp/dhcp.leases'
-
        option resolvfile '/tmp/resolv.conf.auto'
-
        option rebind_protection '0'
-
        option server '8.8.8.8'
-
        option server '8.8.4.4'
+```
 
 In case you want to use OpenDNS (there are 4 public dns servers) 
 
+```
    uci add_list dhcp.@dnsmasq[-1].server=202.67.222.222
-
    uci add_list dhcp.@dnsmasq[-1].server=202.67.220.220
-
    uci add_list dhcp.@dnsmasq[-1].server=202.67.222.220
-
    uci add_list dhcp.@dnsmasq[-1].server=202.67.220.222
-
    uci commit dhcp
+```
 
 Of course, you can use another dns servers. Just send a SIGHUP to dnsmasq process or restart dnsmasq service to apply the newly added forwarding DNS servers. 
 
@@ -178,57 +171,52 @@ Of course, you can use another dns servers. Just send a SIGHUP to dnsmasq proces
 
 Suppose you have the following: 
 
+```
    vlan0     Link encap:Ethernet  HWaddr XX:XX:XX:XX:XX:XX
-
              inet addr:192.168.1.1    Bcast:192.168.1.255    Mask:255.255.255.0
-
    eth1      Link encap:Ethernet  HWaddr XX:XX:XX:XX:XX:XX
-
              inet addr:10.75.9.1      Bcast:10.75.9.255      Mask:255.255.255.0
+```
 
 Simply put 2 "dhcp-range" options in your 
 
+```
    /etc/dnsmasq.conf
+```
 
 file:
 
+```
    # dhcp-range=[network-id,],[[,],][,]
-
    dhcp-range=lan,192.168.1.101,192.168.1.104,255.255.255.0,24h
-
    dhcp-range=wlan,10.75.9.111,10.75.9.119,255.255.255.0,2h
+```
 
 You can then use the different "network-id" values with "dhcp-option" to customize the options your DHCP server will supply to your wired and wireless DHCP clients. 
 
 for example 
 
+```
    set the default route for dhcp clients on the wlan side to 10.10.6.33
-
    dhcp-option=wlan,3,10.10.6.33
-
    #set the dns server for the dhcp clients on the wlan side to 10.10.6.33
-
    dhcp-option=wlan,6,10.10.6.33
-
    #set the default route for dhcp clients on the lan side to 10.10.6.1
-
    dhcp-option=lan,3,10.10.6.1
-
    #set the dns server for the dhcp clients on the lan side to 10.10.6.1
-
    dhcp-option=lan,6,10.10.6.1
+```
 
 ### Configuring dnsmasq to generate DHCP responses to ONLY known clients
 
 There are situations where you want dnsmasq to generate DHCP addresses for only known clients (as defined in `/etc/ethers`). First, set `lan_dhcp_num=0` to indicate that no addresses are to be generated. Then, modify the file 
 
+```
 `/etc/init.d/S60dnsmasq` to included the lines 
-
        if [ "${num:-150}" = "0" ]; then
-
                END=static
-
        fi
+```
 
 after the calls to 
 
@@ -240,9 +228,10 @@ You will need the following lines in your
 
 `/etc/dnsmasq.conf` file: (Adjust IP address if your router is not 192.168.1.1) 
 
+```
    dhcp-option=3,192.168.1.1
-
    dhcp-option=6,192.168.1.1
+```
 
 That's it for dnsmasq on the router. The trick is that the DHCP client must send its hostname during the DHCP negotiation. The 
 
@@ -266,13 +255,12 @@ The following change to your `/etc/dnsmasq.conf` file will allow for automatic c
 
 Or you can do the same in `/etc/config/dhcp`: 
 
+```
    ...
-
    config 'dhcp' 'lan'
-
        list 'dhcp_option' '6,ipaddress1,ipaddress2'
-
    ...
+```
 
 As your machines release and renew their DHCP configuration they will obtain the address of the new DNS servers automatically. 
 
@@ -290,11 +278,11 @@ Commented out in `/etc/dnsmasq.conf` or de-activate it in the web-interface.
 
 Or you can do the same in `/etc/config/dhcp`: 
 
+```
    config 'dnsmasq'
-
        option 'filterwin2k' '0'
-
    ...
+```
 
 ### DNS filtering
 
@@ -305,17 +293,12 @@ Or you can do the same in `/etc/config/dhcp`:
 ### log continuously filled with DHCPINFORM / DHCPACK
 
 Windows 7 among others ask for proxy settings using DHCP. The issue is that they do not stop asking until they have received an answer. This results in that the log contains a lot information about these requests, an example can be found below (thanks for [http://wiki.excito.org](http://wiki.excito.org "http://wiki.excito.org") for the info). 
-
    Jul 1 06:34:09 MorganB3 dnsmasq-dhcp[1638]: DHCPINFORM(br0) 10.69.10.59 00:23:14:c5:33:fc
-
    Jul 1 06:34:09 MorganB3 dnsmasq-dhcp[1638]: DHCPACK(br0) 10.69.10.59 00:23:14:c5:33:fc MorgansVaioF12Z
 
 To solve this, edit /etc/dnsmasq.conf and add the following lines: 
-
    # This will tell DHCP clients to not ask for proxy information
-
    # Some clients, like Windows 7, will constantly ask if not told NO
-
    dhcp-option=252,"\n"
 
 and restart dnsmasq with /etc/init.d/dnsmasq restart 
@@ -325,7 +308,6 @@ and restart dnsmasq with /etc/init.d/dnsmasq restart
 The queryport is not the dns server port used by dhcp clients, it is the outgoing port dnsmasq uses to query other servers, and is integral to dnsmasq succesfully assigning DNS values to the DHCP clients. The default settings create arbitrary high port number connections on a range of ports. By assigning an option line like " option queryport '30000' " in /etc/config/dhcp, one can constrain those connections to a port you assign. Be certain that your firewall allows outbound connections from the router on the query port that you assign. 
 
 As a caution, dnsmasq runs as user "nobody" on openwrt so it is not allowed to create listening sockets on ports < 1024\. Using the standard DNS port 53 for these queries will fail. The failure can be found in the logs. Logread will show an "ignoring nameserver" error line like: 
-
    Jan 01 01:01:01 MyRoutersName daemon.warn dnsmasq[3490]: ignoring nameserver 8.8.8.8 - cannot make/bind socket: Permission denied
 
 Do not assign query ports less than 1024 to the queryport. 
@@ -338,4 +320,4 @@ Do not assign query ports less than 1024 to the queryport.
 
 *   Tutorial [http://martybugs.net/wireless/openwrt/dnsmasq.cgi](http://martybugs.net/wireless/openwrt/dnsmasq.cgi "http://martybugs.net/wireless/openwrt/dnsmasq.cgi")
 
-<sup>[1)](#fnt__1)</sup> such as [Google Public DNS](https://developers.google.com/speed/public-dns/docs/using "https://developers.google.com/speed/public-dns/docs/using") and [OpenDNS](https://www.opendns.com "https://www.opendns.com")<sup>[2)](#fnt__2)</sup> currently, linux /etc/resolv.conf file is limited to three nameservers, [see resolv.conf(5) manpage](http://manpages.ubuntu.com/manpages/trusty/man5/resolver.5.html "http://manpages.ubuntu.com/manpages/trusty/man5/resolver.5.html")
+*[1)](#fnt__1)* such as [Google Public DNS](https://developers.google.com/speed/public-dns/docs/using "https://developers.google.com/speed/public-dns/docs/using") and [OpenDNS](https://www.opendns.com "https://www.opendns.com")*[2)](#fnt__2)* currently, linux /etc/resolv.conf file is limited to three nameservers, [see resolv.conf(5) manpage](http://manpages.ubuntu.com/manpages/trusty/man5/resolver.5.html "http://manpages.ubuntu.com/manpages/trusty/man5/resolver.5.html")

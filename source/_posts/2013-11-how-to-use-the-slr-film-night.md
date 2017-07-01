@@ -25,7 +25,7 @@ tags:
 
 这时候的天空肉眼看上去基本上已经算是全暗了，但因为相机的长曝光，所以你还是能看到些许的云彩和晚霞的余光。
 
-![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq02auw8j30go0a076s.jpg)
+![](https://ww3.sinaimg.cn/large/006tNc79gw1fahq02auw8j30go0a076s.jpg)
 
 **二：三脚架，快门线，低ISO。**
 
@@ -47,13 +47,13 @@ RAW对白平衡的调整基本上是无损的，这在夜景中更是体现得�
 
 为什么要选天桥？相信有人已经猜到了，天桥可以很好的运用车流，而车流营造的光线正是我们需要的，车流的灯光一是可以形成一条自然的延伸线，二是可以增强画面的色彩，比如黄色的车灯，红色的车灯等。
 
-![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq03i6uwj30go09wq6y.jpg)
+![](https://ww3.sinaimg.cn/large/006tNc79gw1fahq03i6uwj30go09wq6y.jpg)
 
 ** 2：水边。**
 
 如果你住在长江边，如果你家在西湖边，恭喜你，你在夜景拍摄上就比人家的基点高了一点儿。这点我就不展开讲了，总之就是利用水的倒影营造梦幻夜景。水面的好处就是：一：可以营造对称美。 二：可以增强画面的整体亮度和色彩的丰富度。
 
-![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq05ykhtj30go07qgnq.jpg)
+![](https://ww1.sinaimg.cn/large/006tNc79gw1fahq05ykhtj30go07qgnq.jpg)
 
 **3：人行道。**
 
@@ -61,7 +61,7 @@ RAW对白平衡的调整基本上是无损的，这在夜景中更是体现得�
 
 在人行道（不要太多人的），架上三脚架，对着夜景测光，让人从镜头四周走过，最后形成的效果就是“人流”（不是堕胎啊同学）与夜景的相得益彰。不过这个有一点儿难度，特别是脸皮要厚一点儿。
 
-![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq08jyj8j30go0bbdis.jpg)
+![](https://ww1.sinaimg.cn/large/006tNc79gw1fahq08jyj8j30go0bbdis.jpg)
 
 **五：创意玩法。**
 
@@ -71,13 +71,13 @@ RAW对白平衡的调整基本上是无损的，这在夜景中更是体现得�
 
 这个大家都知道了，不展开讲了。出效果很容易，出彩啊，难！
 
-![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq0bdf1cj30go0awgo5.jpg)
+![](https://ww1.sinaimg.cn/large/006tNc79gw1fahq0bdf1cj30go0awgo5.jpg)
 
 **2：变焦摄影。**
 
 这个应该大家也玩得多把，选好机位是关键，
 
-![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq0dhv20j30go0adwgf.jpg)
+![](https://ww1.sinaimg.cn/large/006tNc79gw1fahq0dhv20j30go0adwgf.jpg)
 
 **3：追焦摄影。**
 
@@ -89,9 +89,9 @@ RAW对白平衡的调整基本上是无损的，这在夜景中更是体现得�
 
 大光圈可以拥有梦幻般的的焦外，小光圈可以获得更久的曝光时间和星星般的点光，根据你的需要选择光圈。
 
-![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq0fstkuj30go0b0taz.jpg)
+![](https://ww1.sinaimg.cn/large/006tNc79gw1fahq0fstkuj30go0b0taz.jpg)
 
-![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq0kueaej30go0b2wg6.jpg)
+![](https://ww4.sinaimg.cn/large/006tNc79gw1fahq0kueaej30go0b2wg6.jpg)
 
 **当然，你还可以制作心形光圈，菱形光圈等等。**
 
@@ -99,6 +99,6 @@ RAW对白平衡的调整基本上是无损的，这在夜景中更是体现得�
 
 **方法如图：**
 
-![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq0odvplj30dc08oq3b.jpg)
+![](https://ww4.sinaimg.cn/large/006tNc79gw1fahq0odvplj30dc08oq3b.jpg)
 
 **还有一些最基本的我就不赘述了，先写这些吧，有新的内容再更新吧。**

@@ -9,8 +9,9 @@ tags:
 ---
 
 gae不用多说了，wall也行，反正全天开着
-
+```
     https://www.google.com/ncr 
+```
 
 这个不用多说了，去掉根据ip跳转，不过清除cooike后需要再进来一次撒，貌似以后不能再进去任何hk的域名，首页可以设置这个撒 非SSL版的google触发敏感词后会有90秒的时间无法访问google任何服务 Quote:
 
@@ -21,10 +22,10 @@ gae不用多说了，wall也行，反正全天开着
 [][1]
 
 记得当初寻找，记录，筛选这些ip费了一天的事
-
+```
 dns 8.8.8.8  
-
 8.8.4.4
+```
 
 关闭 google 安全搜索 ncr进去后点击右上角齿轮选择语言为简体中文，之后关掉，或者hk进去点击google in english再弄 
 
@@ -36,11 +37,11 @@ dns 8.8.8.8 
 
 修改默认的搜索引擎，都是ssl的，登陆谷歌账户的话默认都是ssl 
 
+```
 台湾的     https://www.google.com.tw/search?hl=zh- CN&q=%s 
-
 国产       https://www.google.com/search?hl=zh-CN&q=%s 
-
 hk        https: //www.google.com.hk/search?hl=zh-CN&q=%s
+```
 
 http://www.googlestable.com/ https://encrypted.google.com/search?q=%s 这两个搜索串哪个好呢，太多了，对比不出来了 Quote:
 
@@ -104,10 +105,10 @@ https://webcache.googleusercontent.com/search?strip=1&q=cache:%s
 
 把%s 替换成网址就行了
 
-[1]: http://ww3.sinaimg.cn/large/006tNc79gw1f511rguqdmj30j609xac1
+[1]: https://ww3.sinaimg.cn/large/006tNc79gw1f511rguqdmj30j609xac1
 
-[2]: http://ww3.sinaimg.cn/large/006tNc79gw1f511ro3zvaj30j604ft8t
+[2]: https://ww3.sinaimg.cn/large/006tNc79gw1f511ro3zvaj30j604ft8t
 
-[3]: http://ww3.sinaimg.cn/large/006tNc79gw1f511ru3k67j30j60ao74y
+[3]: https://ww3.sinaimg.cn/large/006tNc79gw1f511ru3k67j30j60ao74y
 
-[4]: http://ww4.sinaimg.cn/large/006tNc79gw1f511s123gbj30j60bu3zh
+[4]: https://ww4.sinaimg.cn/large/006tNc79gw1f511s123gbj30j60bu3zh

@@ -51,44 +51,44 @@ tags:
 
 ![][21] 此kml文件仅能提供谷歌地图网页与手机谷歌地图使用，如果导入到谷歌地球中，仍会有很大的漂移。 再补充一句，晚上装了个追星快手，才算是真正GPS定位了。在室外用追星获取坐标之后，再启动谷歌地图，并在设置中打开GPS定位，就能获取10m左右的定位精度。上文其实一直是在A-GPS的环境下进行，并未实现最高精度的A-GPS定位。这在山区某些单基站覆盖条件下可能带来较大误差。
 
-[1]: http://ww2.sinaimg.cn/large/006tNc79gw1f50zaqbvxbj30b006cgm0
+[1]: https://ww2.sinaimg.cn/large/006tNc79gw1f50zaqbvxbj30b006cgm0
 
-[2]: http://ww1.sinaimg.cn/large/006tNc79gw1f50zbchr28j30jx06dt9s
+[2]: https://ww1.sinaimg.cn/large/006tNc79gw1f50zbchr28j30jx06dt9s
 
-[3]: http://ww4.sinaimg.cn/large/006tNc79gw1f50zbo0w55j30ou0c8tcl
+[3]: https://ww4.sinaimg.cn/large/006tNc79gw1f50zbo0w55j30ou0c8tcl
 
-[4]: http://ww4.sinaimg.cn/large/006tNc79gw1f50zbw88x1j30by076gm6
+[4]: https://ww4.sinaimg.cn/large/006tNc79gw1f50zbw88x1j30by076gm6
 
-[5]: http://ww3.sinaimg.cn/large/006tNc79gw1f50zc5csxpj30cr08674u
+[5]: https://ww3.sinaimg.cn/large/006tNc79gw1f50zc5csxpj30cr08674u
 
-[6]: http://ww1.sinaimg.cn/large/006tNc79gw1f50zcbz909j306o08wjrx
+[6]: https://ww1.sinaimg.cn/large/006tNc79gw1f50zcbz909j306o08wjrx
 
-[7]: http://ww2.sinaimg.cn/large/006tNc79gw1f50zcib2ojj306o08wdgu
+[7]: https://ww2.sinaimg.cn/large/006tNc79gw1f50zcib2ojj306o08wdgu
 
-[8]: http://ww3.sinaimg.cn/large/006tNc79gw1f50zcp4z90j306o08wgme
+[8]: https://ww3.sinaimg.cn/large/006tNc79gw1f50zcp4z90j306o08wgme
 
-[9]: http://ww3.sinaimg.cn/large/006tNc79gw1f50zcvdlghj306o08wq3j
+[9]: https://ww3.sinaimg.cn/large/006tNc79gw1f50zcvdlghj306o08wq3j
 
-[10]: http://ww3.sinaimg.cn/large/006tNc79gw1f50zd4afskj306o08wq3t
+[10]: https://ww3.sinaimg.cn/large/006tNc79gw1f50zd4afskj306o08wq3t
 
-[11]: http://ww2.sinaimg.cn/large/006tNc79gw1f50zdbjv4ij306o08w0tf
+[11]: https://ww2.sinaimg.cn/large/006tNc79gw1f50zdbjv4ij306o08w0tf
 
-[12]: http://ww2.sinaimg.cn/large/006tNc79gw1f50zdjohgpj306o08wq3b
+[12]: https://ww2.sinaimg.cn/large/006tNc79gw1f50zdjohgpj306o08wq3b
 
-[13]: http://ww2.sinaimg.cn/large/006tNc79gw1f50zds8cdlj306o08w3yv
+[13]: https://ww2.sinaimg.cn/large/006tNc79gw1f50zds8cdlj306o08w3yv
 
-[14]: http://ww3.sinaimg.cn/large/006tNc79gw1f50zdydvavj306o08wmy6
+[14]: https://ww3.sinaimg.cn/large/006tNc79gw1f50zdydvavj306o08wmy6
 
-[15]: http://ww2.sinaimg.cn/large/006tNc79gw1f50ze4lrc1j306o08w750
+[15]: https://ww2.sinaimg.cn/large/006tNc79gw1f50ze4lrc1j306o08w750
 
-[16]: http://ww2.sinaimg.cn/large/006tNc79gw1f50zen49klj306o08wjs6
+[16]: https://ww2.sinaimg.cn/large/006tNc79gw1f50zen49klj306o08wjs6
 
-[17]: http://ww3.sinaimg.cn/large/006tNc79gw1f50zeycsgsj306o08w74w
+[17]: https://ww3.sinaimg.cn/large/006tNc79gw1f50zeycsgsj306o08w74w
 
-[18]: http://ww3.sinaimg.cn/large/006tNc79gw1f50zf7semdj30hu0bs40w
+[18]: https://ww3.sinaimg.cn/large/006tNc79gw1f50zf7semdj30hu0bs40w
 
-[19]: http://ww2.sinaimg.cn/large/006tNc79gw1f50zffn7snj30fs0asq4u
+[19]: https://ww2.sinaimg.cn/large/006tNc79gw1f50zffn7snj30fs0asq4u
 
-[20]: http://ww4.sinaimg.cn/large/006tNc79gw1f50zfq1ol3j30hu0b1tbj
+[20]: https://ww4.sinaimg.cn/large/006tNc79gw1f50zfq1ol3j30hu0b1tbj
 
-[21]: http://ww3.sinaimg.cn/large/006tNc79gw1f50zfx9eywj30fc0aigmz
+[21]: https://ww3.sinaimg.cn/large/006tNc79gw1f50zfx9eywj30fc0aigmz

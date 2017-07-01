@@ -125,16 +125,16 @@ PS：这里是可以加路径的 比如 rails C://test，具体可以看官方AP
 
  [17]: http://hivelogic.com/articles/2005/12/01/ruby_rails_lighttpd_mysql_tiger
 
- [18]: http://ww4.sinaimg.cn/large/006tNc79gw1f512g5o2z7j30cq01w3yt
+ [18]: https://ww4.sinaimg.cn/large/006tNc79gw1f512g5o2z7j30cq01w3yt
 
- [19]: http://ww4.sinaimg.cn/large/006tNc79gw1f512gcjzszj30br018jrc
+ [19]: https://ww4.sinaimg.cn/large/006tNc79gw1f512gcjzszj30br018jrc
 
- [20]: http://ww2.sinaimg.cn/large/006tNc79gw1f512gkr98nj30et0hsq5y
+ [20]: https://ww2.sinaimg.cn/large/006tNc79gw1f512gkr98nj30et0hsq5y
 
- [21]: http://ww1.sinaimg.cn/large/006tNc79gw1f512gs4bm4j30e40hyq6p
+ [21]: https://ww1.sinaimg.cn/large/006tNc79gw1f512gs4bm4j30e40hyq6p
 
  [22]: http://api.rubyonrails.org/
 
- [23]: http://ww2.sinaimg.cn/large/006tNc79gw1f512h00glcj30hb04qq44
+ [23]: https://ww2.sinaimg.cn/large/006tNc79gw1f512h00glcj30hb04qq44
 
- [24]: http://ww4.sinaimg.cn/large/006tNc79gw1f512h6u9jcj30i80fp769
+ [24]: https://ww4.sinaimg.cn/large/006tNc79gw1f512h6u9jcj30i80fp769

@@ -55,7 +55,9 @@ Echo Nest 的歌曲ID —- 歌手的名字 —- 歌曲的名字 Echo Nest 的歌
 
 按照以下的命令行用git下载 Echoprint Codegen ：
 
+```
    $ git clone -b release-4.12 git@github.com:echonest/echoprint-codegen.git
+```
 
 这个方法克隆仓库，然后切换到 release-4.12的分支。根据README.md 中的介绍，这个软件将会被编译和安装。
 
@@ -155,7 +157,7 @@ Echoprint— 服务主要在Echo Nest上启用和服务于查询歌曲的识别�
 
  [11]: http://twitter.com/echonest
 
- [12]: http://ww1.sinaimg.cn/large/006tNc79gw1f5122w03sfj306y028748
+ [12]: https://ww1.sinaimg.cn/large/006tNc79gw1f5122w03sfj306y028748
 
  [13]: http://echoprint.me/
 

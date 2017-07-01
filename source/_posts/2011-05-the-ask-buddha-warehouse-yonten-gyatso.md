@@ -261,4 +261,4 @@ tags:
 
 于是,佛曰：苍生难渡……
 
- [1]: http://ww3.sinaimg.cn/large/006tNc79gw1f50zgctz50j30g00a6mxk
+ [1]: https://ww3.sinaimg.cn/large/006tNc79gw1f50zgctz50j30g00a6mxk

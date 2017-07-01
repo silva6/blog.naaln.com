@@ -35,4 +35,4 @@ Kit List Nikon D800 DSLR Nikon D7100 DSLR Nikon D7100 DSLR Nikon D3200 DSLR Niko
 
 ![Barcelona GO][1]
 
-[1]: http://ww4.sinaimg.cn/large/006tNc79gw1f510bme68ej30jg0awgnl
+[1]: https://ww4.sinaimg.cn/large/006tNc79gw1f510bme68ej30jg0awgnl

@@ -45,6 +45,6 @@ DEMO: <http://jour.u2sb.com/> (看这域名就知道我原来是在模仿 V2EX �
 
 [1]: http://photo.naaln.com/
 
-[2]: http://ww3.sinaimg.cn/large/48910e01gw1ejwz04oiuhj21kw0svqeg.jpg
+[2]: https://ww3.sinaimg.cn/large/48910e01gw1ejwz04oiuhj21kw0svqeg.jpg
 
-[3]: http://ww3.sinaimg.cn/large/48910e01gw1ejwze3wxgmj21kw0rnwjv.jpg
+[3]: https://ww3.sinaimg.cn/large/48910e01gw1ejwze3wxgmj21kw0rnwjv.jpg

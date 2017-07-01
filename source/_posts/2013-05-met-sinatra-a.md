@@ -202,8 +202,8 @@ Sinatra 是一个基于 Ruby 语言，以最小精力为代价快速创建 we
 
 表单被提交的时候，它会将 params[:task] 的值设置为我们在页面输入的东西。用相同的办法，可以通过引用 params 哈希表存取任意值。 你可以试着在http://localhost:4567/创建一些新的任务，不过现在我们还不能创建任务清单，也没有办法删除修改它们。我们需要某种方式来保存这些任务，这些内容我们会在本教程的第二章中详述。 本章例子：Sinatra 例子-1 (22) 参考： [http://rubysource.com/just-do-it-learn-sinatra-i/][3]
 
- [1]: http://ww2.sinaimg.cn/large/006tNc79gw1f5129xaev4j304m0423yh
+ [1]: https://ww2.sinaimg.cn/large/006tNc79gw1f5129xaev4j304m0423yh
 
- [2]: http://ww3.sinaimg.cn/large/006tNc79gw1f512a3subsj304u03ugll
+ [2]: https://ww3.sinaimg.cn/large/006tNc79gw1f512a3subsj304u03ugll
 
  [3]: http://rubysource.com/just-do-it-learn-sinatra-i/

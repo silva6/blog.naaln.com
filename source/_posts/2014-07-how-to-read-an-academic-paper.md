@@ -73,10 +73,10 @@ via: [如何读懂一篇学术论文？][5]
 
 [1]: http://www.guokr.com/i/0477320017/
 
-[2]: http://ww4.sinaimg.cn/large/006tNc79gw1f510qfcnfzj308506xaak
+[2]: https://ww4.sinaimg.cn/large/006tNc79gw1f510qfcnfzj308506xaak
 
-[3]: http://ww4.sinaimg.cn/large/006tNc79gw1f510qu7z7fj30hs07xabz
+[3]: https://ww4.sinaimg.cn/large/006tNc79gw1f510qu7z7fj30hs07xabz
 
-[4]: http://ww3.sinaimg.cn/large/006tNc79gw1f510r40exfj30b409fwfj
+[4]: https://ww3.sinaimg.cn/large/006tNc79gw1f510r40exfj30b409fwfj
 
 [5]: http://www.guokr.com/article/438755/

@@ -21,21 +21,13 @@ tags:
 ```bash
 
 ➜  ~ bash '/Applications/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'
-
                        ##         .
-
                  ## ## ##        ==
-
               ## ## ## ## ##    ===
-
           /"""""""""""""""""\___/ ===
-
      ~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~
-
           \______ o           __/
-
             \    \         __/
-
              \____\_______/
 
 docker is configured to use the default machine with IP 192.168.99.100
@@ -166,7 +158,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 然后我们可以去 Docker Hub 上查看，
 
-![](http://ww1.sinaimg.cn/large/48910e01gw1f41mnprjovj21kw0lwadx.jpg)
+![](https://ww1.sinaimg.cn/large/48910e01gw1f41mnprjovj21kw0lwadx.jpg)
 
 ----------
 

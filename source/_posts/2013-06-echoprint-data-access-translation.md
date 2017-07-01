@@ -139,7 +139,7 @@ e. The following provisions survive termination: Sections: 4, 7, 8, and 9, toget
 
  [11]: http://twitter.com/echonest
 
- [12]: http://ww1.sinaimg.cn/large/006tNc79gw1f5122w03sfj306y028748
+ [12]: https://ww1.sinaimg.cn/large/006tNc79gw1f5122w03sfj306y028748
 
  [15]: http://echoprint.me/data
 

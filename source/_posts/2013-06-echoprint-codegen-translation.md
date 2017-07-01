@@ -71,7 +71,7 @@ CODEGEN Echoprint 的操作模式有两种：
 
  [11]: http://twitter.com/echonest
 
- [12]: http://ww1.sinaimg.cn/large/006tNc79gw1f5122w03sfj306y028748
+ [12]: https://ww1.sinaimg.cn/large/006tNc79gw1f5122w03sfj306y028748
 
  [15]: http://echoprint.me/codegen
 

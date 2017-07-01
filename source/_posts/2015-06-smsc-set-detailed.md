@@ -39,4 +39,4 @@ tags:
 
  [1]: http://www.twit88.com/home/utility/sms-pdu-encode-decode
 
- [2]: http://ww1.sinaimg.cn/large/48910e01gw1etgviefux6j21aa0ewdhd.jpg
+ [2]: https://ww1.sinaimg.cn/large/48910e01gw1etgviefux6j21aa0ewdhd.jpg

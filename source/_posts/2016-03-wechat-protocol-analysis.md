@@ -17,17 +17,11 @@ tags:
 数据结构：
 
 ```
-
 typedef struct wx_header_s {
-
    u_int32_t packet_len; /* 前4字节表示数据包长度，可变* */
-
    u_int16_t header_len; /*2个字节表示头部长度,固定值，0x10*/
-
    u_int16_t thx_ver; /*2个字节表示谢意版本，固定值，0x01*/
-
    u_int32_t operation_code; /*4个字节操作说明数字，可变*/
-
    u_int32_t serial_number; /*序列号，可变*/
 
 }wx_header_t;

@@ -25,8 +25,8 @@ tags:
 
 微信的启动画面就是用了这张“蓝色弹珠”，人类最近一次在太空中远眺母星的景象。作为一种人际沟通工具，没有第二张图能更好地表达出人类内心的孤独，以及地球家园的美好。所以，整个画面有一种孤清中的淡淡暖意，给人的感觉是文艺到死。等你知道了背后的故事，又会觉得闷骚到死。  
 
-[1]: http://ww3.sinaimg.cn/large/006tNc79gw1f5113p1sgdj30ci0erwfj
+[1]: https://ww3.sinaimg.cn/large/006tNc79gw1f5113p1sgdj30ci0erwfj
 
-[2]: http://ww4.sinaimg.cn/large/006tNc79gw1f5113wjhnhj30bo0l8di3
+[2]: https://ww4.sinaimg.cn/large/006tNc79gw1f5113wjhnhj30bo0l8di3
 
-[3]: http://ww3.sinaimg.cn/large/006tNc79gw1f511457ew9j30d108ctaa
+[3]: https://ww3.sinaimg.cn/large/006tNc79gw1f511457ew9j30d108ctaa

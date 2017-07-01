@@ -79,9 +79,9 @@ Codegen 4.12 is “gold” —— 一个重大的版本，直到没有进一
 
  [11]: http://twitter.com/echonest
 
- [12]: http://ww1.sinaimg.cn/large/006tNc79gw1f5122w03sfj306y028748
+ [12]: https://ww1.sinaimg.cn/large/006tNc79gw1f5122w03sfj306y028748
 
- [13]: http://ww4.sinaimg.cn/large/006tNc79gw1f51237xiarj30g108h0te
+ [13]: https://ww4.sinaimg.cn/large/006tNc79gw1f51237xiarj30g108h0te
 
  [14]: http://musicbrainz.org/
 

@@ -29,74 +29,46 @@ tags:
 ## Sass逐步解说
 
 是否需要每一处都要改变，比方说，你的样式表里需要换一套颜色，你必须要找到好几处地方，并且替换好几次颜色属性值。那么你希望这样处理css吗？
-
+```
    $brand-color: #fc3;
-
    a {
-
        color: $brand-color;
-
    }
-
    nav {
-
        background-color: $brand-color;
-
    }
-
-   
+```
 
 如果你能够在只改变某一处的属性值，其他地方的属性也会随之相应改变？那么你可以使用sass！
 
 或者是在整个样式表里，重复的风格在不同地点使用呢?
-
+```
    p {
-
        margin-bottom: 20px; 
-
        font-size: 14px; 
-
        line-height: 1.5;
-
    }
-
    footer {
-
        margin-bottom: 20px;
-
        font-size: 14px;
-
        line-height: 1.5;
-
    }
-
-   
+```
 
 岂不是很神奇?把那些共用的东西，规划成一个可重用块，只需要定义一次,然后引用到你需要的地方即可。
-
+```
    @mixin default-type {
-
       margin-bottom: 20px;
-
       font-size: 14px;
-
       line-height: 1.5;
-
    }
-
    p {
-
        @include default-type;
-
    }
-
    footer {
-
        @include default-type;
-
    }
-
-   
+```
 
 这也是Sass可以做到的，这两个非常简单的、几乎只是涉及点Sass皮毛的例子，向您展示了使用Sass编写的样式，是怎样把css样式写得如何更快,更容易,更灵活。这是在网页设计的世界里，一个非常受欢迎的助手。因为创建过一个网站的人都知道这样将会带来怎样的好处的…。
 

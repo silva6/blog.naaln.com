@@ -8,7 +8,7 @@ tags:
 - alfred
 ---
 
-首先感谢[deanishe][1]为Alfred Workflow添加了Python框架库支持，自定义Workflow仅需要通过Python完成输入和输出的转换，最后输出到Alfred即可。这大大方便了我这种不会`PHP`开发的程序员
+首先感谢 [deanishe][1] 为Alfred Workflow添加了 Python 框架库支持，自定义 Workflow 仅需要通过 Python 完成输入和输出的转换，最后输出到 Alfred 即可。这大大方便了我这种不会`PHP`开发的程序员
 
 我想写的第一个自定义Alfred Workflow是有道翻译,它支持在Alfred中直接进行关键词翻译并直接展示翻译结果。
 
@@ -20,71 +20,55 @@ tags:
 
 我们先点击左下角新建一个`Blank Workflow`
 
-![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq559xxdj30ds08y0tc.jpg)
+![](https://ww1.sinaimg.cn/large/006tNc79gw1fahq559xxdj30ds08y0tc.jpg)
 
 填入想要的信息如：
 
-![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq568gp9j30uc0my43k.jpg)
+![](https://ww4.sinaimg.cn/large/006tNc79gw1fahq568gp9j30uc0my43k.jpg)
 
 点击确认`save`后开始编写`Workflow`
 
 我们先建立一个`script filter`
 
-![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq58jtaqj30g406sjs8.jpg)
+![](https://ww3.sinaimg.cn/large/006tNc79gw1fahq58jtaqj30g406sjs8.jpg)
 
 然后填入一下的信息
 
-![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq5bvbatj312i0xkn5d.jpg)
+![](https://ww1.sinaimg.cn/large/006tNc79gw1fahq5bvbatj312i0xkn5d.jpg)
 
 然后我们进入文件所在的目录
 
-![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq5exr0hj30g40auabb.jpg)
+![](https://ww1.sinaimg.cn/large/006tNc79gw1fahq5exr0hj30g40auabb.jpg)
 
 首先下载[deanishe][2]提供的`alfred-workflow`python包，在新建一个`youdao.py`的文件。里面写上需要执行的代码：
 
-   # -*- coding: utf-8 -*-
+```
+  # -*- coding: utf-8 -*-
+  
+  import re
+  import urllib
+  from workflow import Workflow, ICON_WEB, web
+  import sys
+  reload(sys)
+  sys.setdefaultencoding('utf8')
 
-   
+  #这是不完整的代码
+  if __name__ == '__main__':
+  wf = Workflow(update_settings={
+     'github_slug': 'liszd/whyliam.workflows.youdao',
+     'frequency': 7
+  })
 
-   import re
-
-   import urllib
-
-   from workflow import Workflow, ICON_WEB, web
-
-   import sys
-
-   reload(sys)
-
-   sys.setdefaultencoding('utf8')
-
-   
-
-   #这是不完整的代码
-
-   if __name__ == '__main__':
-
-       wf = Workflow(update_settings={
-
-           'github_slug': 'liszd/whyliam.workflows.youdao',
-
-           'frequency': 7
-
-       })
-
-   
-
-       sys.exit(wf.run(main))
-
-       if wf.update_available:
-
-           wf.start_update()
+  sys.exit(wf.run(main))
+  if wf.update_available:
+     wf.start_update()
+```
 
 在[https://github.com/liszd/whyliam.workflows.youdao/blob/master/youdao.py][3]查看代码
 
 然后新建`Copoy to Clipborad`
 
-![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq5gnw2jj30j60ahdhe.jpg)
+![](https://ww3.sinaimg.cn/large/006tNc79gw1fahq5gnw2jj30j60ahdhe.jpg)
 
 用线连起来就是了。
 

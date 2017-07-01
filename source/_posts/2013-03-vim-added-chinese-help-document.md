@@ -35,7 +35,9 @@ vim中文文档的主页是：
 
 在终端输入代码：
 
-   $wget http://nchc.dl.sourceforge.net/sourceforge/vimcdoc/vimcdoc-1.8.0.tar.gz 
+```
+$wget http://nchc.dl.sourceforge.net/sourceforge/vimcdoc/vimcdoc-1.8.0.tar.gz 
+```
 
 PS：wget命令下载到当前目录，例如：你在home目录下执行wget命令的话，下载后压缩文件vimcdoc-1.8.0.tar.gz 将在home目录下。
 
@@ -49,11 +51,15 @@ PS：wget命令下载到当前目录，例如：你在home目录下执行wget命
 
 a. 如果无法显示中文, 在`home/.vimrc`中增加下面这句试试：
 
-      set helplang=cn
+```
+set helplang=cn
+```
 
 b. 帮助文件的文本是utf-8编码的, 如果想用vim直接查看, 需要在`home/.vimrc`中设置：
 
-      set encoding=utf-8
+```
+set encoding=utf-8
+```
 
 另外：
 
@@ -61,11 +67,11 @@ vim中文文档不会覆盖原英文文档，安装后vim默认使用中文文�
 
 若想使用英文文档，可在`home/.vimrc`中执行以下命令： 
 
-`:set helplang=en （即将cn改为en`）
+`:set helplang=en （即将cn改为en）`
 
 简要介绍一下vim的配置文件： `/etc/vim/vimrc` 和 `home/.vimrc`
 
-. `/etc/vim/vimrc`是全局的配置文件，修改这个配置文件将改变所有用户的vim配置。
+`/etc/vim/vimrc`是全局的配置文件，修改这个配置文件将改变所有用户的vim配置。
 
 这个文件还在目录`/usr/share/vim`目录下创建了链接文件。
 

@@ -17,46 +17,25 @@ tags:
 通俗点说就是A对象(被观察)通知另一个(一些)对象（观察者)自己发生改变了，改变了什么，至于你们这些对象要做什么就不关我的事了，你们自己做去吧！耦合度就此降低了。。。 
 
 一段简单的Ruby 观察者模式的实现： 
-
-   
-
+```
    #!/usr/bin/env ruby
-
    require 'observer'
-
    class CheckWaterTemperature
-
      include Observable
-
      def run
-
        loop do
-
          changed()
-
          notify_observers(Time.now)
-
          sleep 1
-
        end
-
      end
-
    end
-
    class ClockView
-
      def update (time)
-
        puts time
-
      end
-
    end
-
    checker = CheckWaterTemperature.new
-
    checker.add_observer(ClockView.new)
-
    checker.run
-
+```

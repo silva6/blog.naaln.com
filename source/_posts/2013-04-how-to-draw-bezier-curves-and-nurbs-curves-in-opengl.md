@@ -38,133 +38,73 @@ order：阶数，等于次数加1，与控制点数相等。
 
 ```
    #include <GL/glut.h>
-
    #include <stdlib.h>
-
-   GLfloat ctrlpoints[9][3] = {{0,-0.2,0},{-1.2,-0.5,0},{-1.6,-1,0},{-1.4,-1.5,0},
-
-   {-1,-2.2,0},{-0.5,-2.7,0},{-0.35,-3.2,0},{-0.6,-3.7,0},{-1.6,-4.2,0}};//控制点</p>
-
-   <p>void init(void)
-
+   GLfloat ctrlpoints[9][3] = {{0,-0.2,0},{-1.2,-0.5,0},{-1.6,-1,0},{-1.4,-1.5,0},{-1,-2.2,0},{-0.5,-2.7,0},{-0.35,-3.2,0},{-0.6,-3.7,0},{-1.6,-4.2,0}};//控制点
+   
+   void init(void)
    {
-
       glClearColor(0.0, 0.0, 0.0, 0.0);
-
       glShadeModel(GL_FLAT);
-
       glMap1f(GL_MAP1_VERTEX_3, 0.0, 1.0, 3, 9, &ctrlpoints[0][0]);
-
       glEnable(GL_MAP1_VERTEX_3);
-
    }
-
+   
    void display(void)
-
    {
-
       int i;
-
       glClear(GL_COLOR_BUFFER_BIT);
-
       glColor3f(1.0, 1.0, 1.0);
-
       glBegin(GL_POINTS);//(GL_LINE_STRIP);
-
          for (i = 0; i <= 30; i++)
-
             glEvalCoord1f((GLfloat) i/30.0);
-
       glEnd();
-
       /* The following code displays the control points as dots. */
-
       glPointSize(5.0);
-
       glColor3f(1.0, 1.0, 0.0);
-
       glBegin(GL_POINTS);
-
          for (i = 0; i < 9; i++)
-
             glVertex3fv(&ctrlpoints[i][0]);
-
       glEnd();
-
       glFlush();
-
    }
 
    void reshape(int w, int h)
-
    {
-
       glViewport(0, 0, (GLsizei) w, (GLsizei) h);
-
       glMatrixMode(GL_PROJECTION);
-
       glLoadIdentity();
-
       if (w <= h)
-
          glOrtho(-5.0, 5.0, -5.0*(GLfloat)h/(GLfloat)w,
-
                   5.0*(GLfloat)h/(GLfloat)w, -5.0, 5.0);
-
       else
-
          glOrtho(-5.0*(GLfloat)w/(GLfloat)h,
-
                   5.0*(GLfloat)w/(GLfloat)h, -5.0, 5.0, -5.0, 5.0);
-
       glMatrixMode(GL_MODELVIEW);
-
       glLoadIdentity();
-
    }
 
    void keyboard(unsigned char key, int x, int y)
-
    {
-
       switch (key) {
-
          case 27:
-
             exit(0);
-
             break;
-
       }
-
    }
 
    int main(int argc, char** argv)
-
    {
-
       glutInit(&argc, argv);
-
       glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
-
       glutInitWindowSize (500, 500);
-
       glutInitWindowPosition (100, 100);
-
       glutCreateWindow (argv[0]);
-
       init ();
-
       glutDisplayFunc(display);
-
       glutReshapeFunc(reshape);
-
       glutKeyboardFunc (keyboard);
-
       glutMainLoop();
-
       return 0;
-
    }
 ```
 
@@ -206,129 +146,68 @@ value：设置指定属性的值。
 
 ```
    #include <windows.h>
-
-   #include <GL/glut.h></p>
-
-   <p>GLUnurbsObj *theNurb;
-
-   GLfloat ctrlpoints[9][3] = {{0,-0.2,0},{-1.2,-0.5,0},{-1.6,-1,0},{-1.4,-1.5,0},
-
-   {-1,-2.2,0},{-0.5,-2.7,0},{-0.35,-3.2,0},{-0.6,-3.7,0},{-1.6,-4.2,0}};//控制点
-
-   GLfloat color[9][3]={{1.0,0.0,0.0},{1.0,1.0,0.0},{0.0,1.0,0.0},{-1.0,1.0,0.0},
-
-   {-1.0,0.0,0.0},{-1.0,-1.0,0.0},{0.0,-1.0,0.0},{1.0,-1.0,0.0},{1.0,-1.0,0.0}};</p>
-
-   <p>void myInit(void)
-
+   #include <GL/glut.h>
+   GLUnurbsObj *theNurb;
+   GLfloat ctrlpoints[9][3] = {{0,-0.2,0},{-1.2,-0.5,0},{-1.6,-1,0},{-1.4,-1.5,0},{-1,-2.2,0},{-0.5,-2.7,0},{-0.35,-3.2,0},{-0.6,-3.7,0},{-1.6,-4.2,0}};//控制点
+   GLfloat color[9][3]={{1.0,0.0,0.0},{1.0,1.0,0.0},{0.0,1.0,0.0},{-1.0,1.0,0.0},{-1.0,0.0,0.0},{-1.0,-1.0,0.0},{0.0,-1.0,0.0},{1.0,-1.0,0.0},{1.0,-1.0,0.0}};
+   
+   void myInit(void)
    {
-
        glClearColor(1.0,1.0,1.0,0.0);//设置背景色
-
        theNurb = gluNewNurbsRenderer();//创建NURBS对象theNurb
-
        gluNurbsProperty(theNurb,GLU_SAMPLING_TOLERANCE,10);
-
    }
 
    /*绘制曲线*/
-
    void myDisplay(void)
-
    {
-
        int i;
-
        glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-
        glColor3f(0.0,0.0,0.0);
-
        glLineWidth(3.0);
-
        /*绘制曲线*/
-
        gluBeginCurve(theNurb);
-
        gluNurbsCurve(theNurb,13,knots,3,&ctrlpoints[0][0],4,GL_MAP1_VERTEX_3);
-
        gluNurbsCurve(theNurb,13,knots,3,&color[0][0],4,GL_MAP1_COLOR_4);
-
        gluEndCurve(theNurb);
-
        /*绘制点*/
-
        glColor3f(1.0,0.0,0.0);
-
        glPointSize(5.0);
-
        glBegin(GL_POINTS);
-
        for(i = 0;i < 9;i++)
-
            glVertex2fv(&ctrlpoints[i][0]);
-
        glEnd();
-
        glutSwapBuffers();
-
    }
 
    void myReshape(GLsizei w,GLsizei h)
-
    {
-
        glViewport(0,0,w,h);
-
        glMatrixMode(GL_PROJECTION);
-
        glLoadIdentity();
-
        if(w <=h)
-
-           glOrtho(-10.0,10.0,-10.0*(GLfloat)h/(GLfloat)w,10.0*(GLfloat)h/</p>
-
-   <p>(GLfloat)w,-10.0,10.0);
-
+           glOrtho(-10.0,10.0,-10.0*(GLfloat)h/(GLfloat)w,10.0*(GLfloat)h/GLfloat)w,-10.0,10.0);
        else
-
-           glOrtho(-10.0*(GLfloat)w/(GLfloat)h,10.0*(GLfloat)w/(GLfloat)h,-</p>
-
-   <p>10.0,10.0,-10.0,10.0);
-
+           glOrtho(-10.0*(GLfloat)w/(GLfloat)h,10.0*(GLfloat)w/(GLfloat)h,-10.0,10.0,-10.0,10.0);
        glMatrixMode(GL_MODELVIEW);
-
        glLoadIdentity();
-
        glTranslatef(0.0,0.0,-9.0);
-
    }
 
    int main(int argc,char ** argv)
-
    {
-
        glutInit(&argc,argv);
-
        glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGB|GLUT_DEPTH);
-
        glutInitWindowSize(600,400);
-
        glutInitWindowPosition(200,200);
-
        glutCreateWindow("NURBS curve");
-
+       
        /*绘制与显示*/
-
        myInit();
-
        glutReshapeFunc(myReshape);
-
        glutDisplayFunc(myDisplay);
-
        glutMainLoop();
-
        return(0);
-
    }
 ```
 

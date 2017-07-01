@@ -51,14 +51,16 @@ Android 推荐的 IDE 为 Eclipse，打开软件中心搜索eclipse，安装即�
 
 **6.改变解压后的sdk目录的权限：**
 
-   chmod -R adt-bundle-linux-x86 
+```
+chmod -R adt-bundle-linux-x86 
+```
 
 如果不改的话没发运行sdk下的程序； 此刻 Android SDK 配置完成，可以开始 Android 平台应用软件的开发啦！
 
  [1]: http://developer.android.com/sdk/
 
- [2]: http://ww3.sinaimg.cn/large/006tNc79gw1f50zynlnwpj30d809cwfl
+ [2]: https://ww3.sinaimg.cn/large/006tNc79gw1f50zynlnwpj30d809cwfl
 
- [3]: http://ww1.sinaimg.cn/large/006tNc79gw1f50zz93lp0j30j6059dgb
+ [3]: https://ww1.sinaimg.cn/large/006tNc79gw1f50zz93lp0j30j6059dgb
 
- [4]: hhttp://ww1.sinaimg.cn/large/006tNc79gw1f50zzvj9cbj30j605iwex
+ [4]: hhttps://ww1.sinaimg.cn/large/006tNc79gw1f50zzvj9cbj30j605iwex

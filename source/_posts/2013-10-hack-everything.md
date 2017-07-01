@@ -32,4 +32,4 @@ tags:
 9.  **對任何事情充滿關心、好奇** — 身為一個宅男，我會陪我老婆去逛街 — 事實上，她的很多衣服都是我挑的。我可以跟她時尚圈的同事朋友聊天，即使去她的高中、大學同學聚會我也玩得非常開心。
 10. **影響你身邊的人** — 你看，看完這篇文章你是不是也被我的 Hacker 精神感染了？ So, Happy Hacking, Everyone!
 
-[1]: http://ww1.sinaimg.cn/large/006tNc79gw1f511ak7o53j30fa0bewg3
+[1]: https://ww1.sinaimg.cn/large/006tNc79gw1f511ak7o53j30fa0bewg3

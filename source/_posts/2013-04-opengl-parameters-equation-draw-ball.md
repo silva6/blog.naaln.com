@@ -16,295 +16,156 @@ tags:
 
 程序的代码 
 
+```
 Sphere.h 
-
    #pragma once
-
    
-
    // Windows Header Files
-
    #include <windows.h>
-
    
-
    // C RunTime Header Files
-
    #include <stdlib.h>
-
    #include <malloc.h>
-
    #include <memory.h>
-
    #include <tchar.h>
-
    #include <math.h>
+```
 
+```
 Sphere.h 
-
    #include "Sphere.h"
-
    #include <glut.h>
-
    
-
    #define pi 3.1415926
-
    #define SOLID 3000
-
    #define WIRE  3001
-
    
-
    typedef int SPHERE_MODE;
-
    
-
    typedef struct Point3f
-
    {
-
     GLfloat x;
-
     GLfloat y;
-
     GLfloat z;
-
    }point;
-
    
-
    void init(void);
-
    void reshape(int w,int h);
-
    void display(void);
-
    int getPoint(GLfloat radius,GLfloat a,GLfloat b,point &p);
-
    void drawSlice(point &p1,point &p2,point &p3,point &p4,SPHERE_MODE mode);
-
    point* getPointMatrix(GLfloat radius,GLint slices);
-
    int drawSphere(GLfloat radius,GLint slices,SPHERE_MODE mode);
-
    
-
    int APIENTRY _tWinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPTSTR lpCmdLine,int nCmdShow)
-
    {
-
     glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH); 
-
     glutInitWindowSize (500, 500);
-
     glutInitWindowPosition (100, 100);
-
     glutCreateWindow("Sphere");
-
     init ();
-
     glutReshapeFunc(reshape);
-
     glutDisplayFunc(display);
-
     glutMainLoop();
-
     return 0;
-
    }
-
    void init (void)
-
    { 
-
     glClearColor (0.0, 0.0, 0.0, 0.0);
-
     glClearDepth(1);
-
     glShadeModel(GL_SMOOTH);
-
     GLfloat _ambient[]={1.0,1.0,1.0,1.0};
-
     GLfloat _diffuse[]={1.0,1.0,1.0,1.0};
-
     GLfloat _specular[]={1.0,1.0,1.0,1.0};
-
     GLfloat _position[]={200,200,200,0};
-
     glLightfv(GL_LIGHT0,GL_AMBIENT,_ambient);
-
     glLightfv(GL_LIGHT0,GL_DIFFUSE,_diffuse);
-
     glLightfv(GL_LIGHT0,GL_SPECULAR,_specular);
-
     glLightfv(GL_LIGHT0,GL_POSITION,_position);
-
     glEnable(GL_TEXTURE_2D);
-
     glEnable(GL_LIGHTING);
-
     glEnable(GL_LIGHT0);
-
     glEnable(GL_DEPTH_TEST);
-
     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
-
    }
-
    void reshape(int w, int h)
-
    {
-
     glViewport (0, 0, (GLsizei) w, (GLsizei) h);
-
     glMatrixMode(GL_PROJECTION);
-
     glLoadIdentity();
-
     glOrtho(0.0, 500, 0.0, 500, -500, 500);
-
     glMatrixMode(GL_MODELVIEW);
-
     glLoadIdentity();
-
    }
-
    void display(void)
-
    {
-
     glMatrixMode(GL_MODELVIEW);
-
     glLoadIdentity();
-
     glClear (GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-
     glTranslated(250,250,0);
-
     glRotated(30,1,0,0);
-
     glRotated(60,0,1,0);
-
     glRotated(90,0,0,1);
-
     glColor3f(1.0,1.0,1.0);
-
     drawSphere(200,20,WIRE); 
-
     glFlush();
-
    }
-
    int getPoint(GLfloat radius,GLfloat a,GLfloat b,point &p)
-
    {
-
     p.x=radius*sin(a*pi/180.0)*cos(b*pi/180.0);
-
     p.y=radius*sin(a*pi/180.0)*sin(b*pi/180.0);
-
     p.z=radius*cos(a*pi/180.0);
-
     return 1;
-
    }
-
    void drawSlice(point &p1,point &p2,point &p3,point &p4,SPHERE_MODE mode)
-
    {
-
     switch(mode)
-
     {
-
     case SOLID:
-
      glBegin(GL_QUADS);
-
      break;
-
     case WIRE:
-
      glBegin(GL_LINE_LOOP);
-
      break;
-
     }
-
     glColor3f(1,0,0);
-
     glVertex3f(p1.x,p1.y,p1.z);
-
     glVertex3f(p2.x,p2.y,p2.z);
-
     glVertex3f(p3.x,p3.y,p3.z);
-
     glVertex3f(p4.x,p4.y,p4.z);
-
     glEnd();
-
    }
-
    point* getPointMatrix(GLfloat radius,GLint slices)
-
    {
-
     int i,j,w=2*slices,h=slices;
-
     float a=0.0,b=0.0;
-
     float hStep=180.0/(h-1);
-
     float wStep=360.0/w;
-
     int length=w*h;
-
     point *matrix;
-
     matrix=(point *)malloc(length*sizeof(point));
-
     if(!matrix)return NULL;
-
     for(a=0.0,i=0;i<h;i++,a+=hStep)
-
      for(b=0.0,j=0;j<w;j++,b+=wStep)  
-
       getPoint(radius,a,b,matrix[i*w+j]); 
-
     return matrix;
-
    }
-
    int drawSphere(GLfloat radius,GLint slices,SPHERE_MODE mode)
-
    {
-
     int i=0,j=0,w=2*slices,h=slices;
-
     point *mx;
-
     mx=getPointMatrix(radius,slices);
-
     if(!mx)return 0;
-
     for(;i<h-1;i++)
-
     {
-
      for(j=0;j<w-1;j++)
-
       drawSlice(mx[i*w+j],mx[i*w+j+1],mx[(i+1)*w+j+1],mx[(i+1)*w+j],mode);
-
      drawSlice(mx[i*w+j],mx[i*w],mx[(i+1)*w],mx[(i+1)*w+j],mode);
-
     }
-
     free(mx);
-
     return 1;
-
    }
+```
 
 首先要声明的是如果想运行上面的程序，在你的计算机上必须装有GLUT开发工具，并要将GLUT的头文件和库文件添加到你开发环境的头文件和库文件的目录中，并且让编译器能找到GLUT的动态连接库，即GLUT32.DLL。具体请参见GLUT的安装方法……
 
@@ -316,51 +177,49 @@ Sphere.h
 
 **2 自定义宏、类型和结构体**
 
-   #define pi 3.1415926
+```
+#define pi 3.1415926
+```
 
 定义圆周率pi，后面计算坐标时要用到
 
-   #define SOLID 3000
-
-   #define WIRE  3001
+```
+#define SOLID 3000
+#define WIRE  3001
+```
 
 定义画球的模式，SOLID表示画实面球，WIRE表示画网格球
 
-   typedef int SPHERE_MODE;
+```
+typedef int SPHERE_MODE;
+```
 
 定义画球模式的类型，其实是个int整形
 
-   typedef struct Point3f
-
+```
+typedef struct Point3f
    {
-
     GLfloat x;
-
     GLfloat y;
-
     GLfloat z;
-
    }point;
+```
 
 定义记录空间点坐标的结构体point，GLfloat类型其实就是GLUT里面定义的float类型
 
 **3 函数声明和实现**
 
+```
    void init(void);
-
    void reshape(int w,int h);
-
    void display(void);
-
    int getPoint(GLfloat radius,GLfloat a,GLfloat b,point &p);
-
    void drawSlice(point &p1,point &p2,point &p3,point &p4,SPHERE_MODE mode);
-
    point* getPointMatrix(GLfloat radius,GLint slices);
-
    int drawSphere(GLfloat radius,GLint slices,SPHERE_MODE mode);
+```
 
-init()、reshape()和display()这3个函数是OpenGL绘图的一般过程所用的函数，这3个函数的函数名可以不同，但形参部分的形参类型必须一样（注），且这3个函数在主函数中是依次调用的。
+`init()`、`reshape()`和`display()`这3个函数是OpenGL绘图的一般过程所用的函数，这3个函数的函数名可以不同，但形参部分的形参类型必须一样（注），且这3个函数在主函数中是依次调用的。
 
 （注： void reshape(int w,int h); 也可作 void resizeWindow(int width,int height)）
 
@@ -398,31 +257,29 @@ reshape()函数里面，对视口和投影矩阵进行设置；
 
 利用球的空间坐标参数方程
 
+```
    x=r·sin(α)·cos(β)
-
    y=r·sin(α)·sin(β)
-
    z=r·cos(α)
+```
 
 r是球的半径，α角是半径与Z轴正向的夹角，β角是半径在xy平面的投影与x轴正向的夹角，他们的取值范围是
 
+```
 0≤r≤∞    0≤α≤π    0≤β≤2π
+```
 
 因此函数 getPoint() 就是通过此参数方程来获得空间点的坐标；
 
+```
    int getPoint(GLfloat radius,GLfloat a,GLfloat b,point &p)
-
    {
-
     p.x=radius*sin(a*pi/180.0)*cos(b*pi/180.0);
-
     p.y=radius*sin(a*pi/180.0)*sin(b*pi/180.0);
-
     p.z=radius*cos(a*pi/180.0);
-
     return 1;
-
    }
+```
 
 值得注意的是 sin() 和 cos() 函数的参数是弧度角，而形参传入的是角度角，因此需要进行转换。
 
@@ -432,73 +289,46 @@ r是球的半径，α角是半径与Z轴正向的夹角，β角是半径在xy平
 
 α角的大小是0~180度，β角的大小是0~360度，因此我们在z轴方向，每隔180/(slice-1)取一横列的点作为α角，在垂直于z轴的平面上，每隔360/slice取一纵列的点作为β角。由于β角的范围是α角的两倍，所以矩阵横向取点的个数是纵向取点的两倍。接下来就是动态分配内存空间，然后通过循环为矩阵中的元素，即球面上的点的坐标赋值。这里调用 getPoint() 这个函数来计算空间点坐标。虽然分配出来的空间是线性的，但可以通过元素的下标计算确定该元素在线性空间的位置。
 
+```
    point* getPointMatrix(GLfloat radius,GLint slices)
-
    {
-
     int i,j,w=2*slices,h=slices;
-
     float a=0.0,b=0.0;
-
     float hStep=180.0/(h-1);
-
     float wStep=360.0/w;
-
     int length=w*h;
-
     point *matrix;
-
     matrix=(point *)malloc(length*sizeof(point));
-
     if(!matrix)return NULL;
-
     for(a=0.0,i=0;i<h;i++,a+=hStep)
-
      for(b=0.0,j=0;j<w;j++,b+=wStep)  
-
       getPoint(radius,a,b,matrix[i*w+j]); 
-
     return matrix;
-
    }
+```
 
 四点绘面
 
+```
    void drawSlice(point &p1,point &p2,point &p3,point &p4,SPHERE_MODE mode)
-
    {
-
     switch(mode)
-
     {
-
     case SOLID:
-
      glBegin(GL_QUADS);
-
      break;
-
     case WIRE:
-
      glBegin(GL_LINE_LOOP);
-
      break;
-
     }
-
     glColor3f(1,0,0);
-
     glVertex3f(p1.x,p1.y,p1.z);
-
     glVertex3f(p2.x,p2.y,p2.z);
-
     glVertex3f(p3.x,p3.y,p3.z);
-
     glVertex3f(p4.x,p4.y,p4.z);
-
     glEnd();
-
    }
+```
 
 形参mode确定了绘图的模式，当其为SOLID时，用GL_QUADS模式绘实平面，当为WIRE时，就用
 
@@ -506,35 +336,23 @@ GL_LINE_LOOP绘制首尾相连的四条线。注意最后要用 glEnd() 结束�
 
 绘制球面
 
+```
    int drawSphere(GLfloat radius,GLint slices,SPHERE_MODE mode)
-
    {
-
     int i=0,j=0,w=2*slices,h=slices;
-
     point *mx;
-
     mx=getPointMatrix(radius,slices);
-
     if(!mx)return 0;
-
     for(;i<h-1;i++)
-
     {
-
      for(j=0;j<w-1;j++)
-
       drawSlice(mx[i*w+j],mx[i*w+j+1],mx[(i+1)*w+j+1],mx[(i+1)*w+j],mode);
-
      drawSlice(mx[i*w+j],mx[i*w],mx[(i+1)*w],mx[(i+1)*w+j],mode);
-
     }
-
     free(mx);
-
     return 1;
-
    }
+```
 
 这就是绘制球面的主框架函数了，先调用 getPointMatrix() 来产生球面点矩阵，并用局部变量mx记录该矩阵在内存中的位置。接下来就是把该矩阵上记录的点用 drawSlice() 函数绘成平面。例如mx[0,0]，mx[0,1]，mx[1,1]，mx[1,0]这四个元素中记录的就是沿逆时针方向构成球面上第一个平面的4个点了。要注意的是，在矩阵的横向上，最后一列点需要和第一列点连起来再绘制平面，这样产生的球面才是封闭的。在函数最后要把动态分配的内存空间释放掉，不然会造成内存泄露。如果绘制成功，函数返回1，否则返回0。
 

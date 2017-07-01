@@ -99,4 +99,4 @@ tags:
 
 <embed src="http://player.video.qiyi.com/15ec8f6023eb48e9b6e5e5f5c1887509/0/255/yinyue/20130110/61c8ea764e2d09e5.swf-albumId=292710-tvId=353875-isPurchase=0" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
 
-[1]: http://ww4.sinaimg.cn/large/006tNc79gw1f511viil05j30fo0kmabx
+[1]: https://ww4.sinaimg.cn/large/006tNc79gw1f511viil05j30fo0kmabx

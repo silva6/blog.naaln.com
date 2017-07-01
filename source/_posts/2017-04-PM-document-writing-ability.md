@@ -7,7 +7,7 @@ tags:
   - 产品经理
 ---
 
-![](http://ww3.sinaimg.cn/large/006tKfTcgy1fetash3tahj31kw1k4gyt.jpg)
+![](https://ww3.sinaimg.cn/large/006tKfTcgy1fetash3tahj31kw1k4gyt.jpg)
 
 ### 三大文档
 

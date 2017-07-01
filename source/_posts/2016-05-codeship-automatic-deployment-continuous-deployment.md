@@ -62,11 +62,11 @@ tags:
 
 9. 等待部署成功
 
-![](http://ww1.sinaimg.cn/large/48910e01gw1f40jg5yqayj20ov0fl41v.jpg)
+![](https://ww1.sinaimg.cn/large/48910e01gw1f40jg5yqayj20ov0fl41v.jpg)
 
 在 `codedeply`中可以看到部署结果
 
-![](http://ww1.sinaimg.cn/large/48910e01gw1f40j0zdgsaj20zh06z3zq.jpg)
+![](https://ww1.sinaimg.cn/large/48910e01gw1f40j0zdgsaj20zh06z3zq.jpg)
 
 打开网页可以执行结果
 

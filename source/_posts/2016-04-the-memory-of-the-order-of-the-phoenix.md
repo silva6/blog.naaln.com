@@ -7,13 +7,13 @@ categories:
 tags: 
 ---
 
-![](http://ww3.sinaimg.cn/large/48910e01jw1f2tpkxfwx9j20j60crwg1.jpg)
+![](https://ww3.sinaimg.cn/large/48910e01jw1f2tpkxfwx9j20j60crwg1.jpg)
 
 以前的我总是看到杂志里的旅行者背着70升的旅行包，穿梭于世界的每一个角落。自然，年少的我对这种生活方式充满了向往，但直到我工作了，也没有踏上过这种旅途。
 
 以前最流行的一句话是 要么读书，要么旅行，身体和灵魂必须有一个在路上。这句话来自于罗马假日 “You can either travel or read, but either your body or soul must be on the way”.  
 
-![](http://ww3.sinaimg.cn/large/48910e01jw1f2tplbw2z7j20kv09mtbz.jpgg)
+![](https://ww3.sinaimg.cn/large/48910e01jw1f2tplbw2z7j20kv09mtbz.jpgg)
 
 诚然，我并不能对这句话说出个一二三四，但是就是觉得是这么个事儿。
 

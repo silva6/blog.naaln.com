@@ -11,7 +11,7 @@ tags:
 
 ### iTerm2+zsh+tmux的终端环境
 
-![](http://ww1.sinaimg.cn/large/006tNc79gw1fahq3nmnljj30vq0irtbf.jpg)
+![](https://ww1.sinaimg.cn/large/006tNc79gw1fahq3nmnljj30vq0irtbf.jpg)
 
 # iTerm2
 
@@ -65,12 +65,12 @@ tags:
 
 * 支持256色。方便配置vi配色。但是在某些远超服务器上不支持256色，则只要在`Prefences->Profiles->Terminal`里设置为xterm。
 
-[1]: http://ww3.sinaimg.cn/large/006tNc79gw1f510mjg2u0j317008c78m
+[1]: https://ww3.sinaimg.cn/large/006tNc79gw1f510mjg2u0j317008c78m
 
-[2]: http://ww4.sinaimg.cn/large/006tNc79gw1f510ms8jkqj315a0bg44h
+[2]: https://ww4.sinaimg.cn/large/006tNc79gw1f510ms8jkqj315a0bg44h
 
-[3]: http://ww3.sinaimg.cn/large/006tNc79gw1f510nmup8dj31kw0ur137
+[3]: https://ww3.sinaimg.cn/large/006tNc79gw1f510nmup8dj31kw0ur137
 
-[4]: http://ww2.sinaimg.cn/large/006tNc79gw1f510nuwj21j30iw04ujrq
+[4]: https://ww2.sinaimg.cn/large/006tNc79gw1f510nuwj21j30iw04ujrq
 
-[5]: http://ww2.sinaimg.cn/large/006tNc79gw1f510o38ewlj311e08kabq
+[5]: https://ww2.sinaimg.cn/large/006tNc79gw1f510o38ewlj311e08kabq

@@ -56,4 +56,4 @@ tags:
 
 17. 尽量使用新技术。
 
-[1]: http://ww1.sinaimg.cn/large/006tNc79gw1f51182lqt9j30m80cimzc
+[1]: https://ww1.sinaimg.cn/large/006tNc79gw1f51182lqt9j30m80cimzc

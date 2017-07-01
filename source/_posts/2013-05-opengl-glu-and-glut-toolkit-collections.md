@@ -10,49 +10,30 @@ tags:
 
 GLUT工具箱提供几种图形3维图形的函数：
 
+```
    void glutWireSphere(GLdouble radius, GLint slices, GLint stacks);  丝状球
-
    void glutSolidSphere(GLdouble radius, GLint slices, GLint stacks); 实心球
-
    void glutWireCube(GLdouble size); 丝状立方体
-
    void glutSolidCube(GLdouble size); 实心立方体
-
    void glutWireTorus(GLdouble innerRadius, GLdouble outerRadius,
-
    GLint nsides, GLint rings); 丝状花环
-
    void glutSolidTorus(GLdouble innerRadius, GLdouble outerRadius,
-
    GLint nsides, GLint rings); 实心花环
-
    void glutWireIcosahedron(void); 丝状20面体
-
    void glutSolidIcosahedron(void); 实心20面体
-
    void glutWireOctahedron(void); 丝状8面体 
-
    void glutSolidOctahedron(void); 实心8面体
-
    void glutWireTetrahedron(void); 丝状4面体
-
    void glutSolidTetrahedron(void); 实心4面体                                  
-
    void glutWireDodecahedron(GLdouble radius); 丝状12面体
-
    void glutSolidDodecahedron(GLdouble radius); 实心12面体
-
    void glutWireCone(GLdouble radius, GLdouble height, GLint slices,
-
    GLint stacks); 丝状圆锥体
-
    void glutSolidCone(GLdouble radius, GLdouble height, GLint slices,
-
    GLint stacks); 实心圆锥体
-
    void glutWireTeapot(GLdouble size); 丝状茶壶
-
    void glutSolidTeapot(GLdouble size); 实心茶壶
+```
 
 如果需要用到长方体那就用glScalef(x,* y,* z); 做自己想要的长方体，这儿的x,* y,* z分别对应x,* y,* z轴的缩放比例
 
@@ -62,53 +43,43 @@ GLUT工具箱提供几种图形3维图形的函数：
 
 //创建一个半径为5，在经线和纬线方向细分数为10的球体  
 
+```
    GLUquadricObj *pobj;  
-
    pobj=gluNewQuadric();  
-
    gluQuadricDrawStyle(pobj,* GLU_LINE);//确定几何体的绘制模式（GLU_LINE)  
-
    gluSphere(pobj,* 5,* 10,* 10);创建圆环盘，innerRadius,* outerRadius分别指定了内径和外径创建圆柱体创建球体
+```
 
 下面是几个用于创建简单的2次曲面的GLU函数：  
 
+```
    GLUquadricObj* gluNewQuadric();  
-
    //创建一个新的2次曲面对象，并返回一个指向该对象的指针  
-
    void gluDeleteQuadric(GLUquadricObj*);  
-
    //删除又2次对象指针指定的2次曲面
-
    void gluSphere(GLUquadricObj* pobj,* GLdouble radius,* GLint silces,* GLint stacks);  
-
    void gluCylinder(GLUquadricObj* pobj,* GLdouble baseRadius,* GLdouble topRadius,* GLint slices,* GLint stacks);  
-
    void gluDisk(GLUquadricObj* pobj,* GLdouble innerRadius,* GLdouble outerRadius,* GLint slices,* GLint stacks);  
+```
 
 下面几个是创建GLUT对象的函数,* 是对GLU的补充  
 
+```
    void glutWireSphere(GLdouble radius,* GLint slices,* GLint stacks);  
-
    //创建线框球体  
-
    void glutSolidSphere(GLdouble radius,* GLint slices,* GLint stacks);  
-
    //创建实心球体  
-
    void glutWireCone(GLdouble baseRadius,* GLdouble height,* GLint slices,* GLint stacks);  
-
    void glutSolidCone(GLdouble baseRadius,* GLdouble height,* GLint slices,* GLint stacks);  
-
    void glutWireTorus(GLdouble innerRadius,* GLdouble outerRadius,* GLint slices,* GLint stacks);  
-
    void glutSolidTorus(GLdouble innerRadius,* GLdouble outerRadius,* GLint slices,* GLint stacks);  
+```
 
 ##仔细搜索了一下，找到了比较详细的介绍
 
 OpenGL函数库相关的API有核心库(gl)、实用库(glu)、辅助库(aux)、实用工具库(glut)、窗口库(glx、agl、wgl)和扩展函数库等。从图1可以看出，gl是核心，glu是对gl的部分封装。glx、agl、wgl 是针对不同窗口系统的函数。glut是为跨平台的OpenGL程序的工具包，比aux功能强大。扩展函数库是硬件厂商为实现硬件更新利用OpenGL的扩展机制开发的函数。下面逐一对这些库进行详细介绍。
 
-**1． OpenGL核心库**
+**1．OpenGL核心库**
 
 核心库包含有115个函数，函数名的前缀为gl。
 

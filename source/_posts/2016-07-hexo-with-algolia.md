@@ -19,7 +19,7 @@ Swiftype搜索最近停了，开始收费，不想收费又想有这个站内搜
 
 来到`API-KEYS`页面，上面有后面需要的信息（记得还有上面的INDEX名）。
 
-![](http://ww2.sinaimg.cn/large/006tNc79gw1fahq9ur9soj311a0d6788.jpg)
+![](https://ww2.sinaimg.cn/large/006tNc79gw1fahq9ur9soj311a0d6788.jpg)
 
 ### 第二步：上传数据到`Algolia`
 

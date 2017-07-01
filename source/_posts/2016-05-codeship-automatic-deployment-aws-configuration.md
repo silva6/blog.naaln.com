@@ -44,27 +44,16 @@ Secret Access Key:  Ze*******crCpZt
 ```
 
 {
-
    "Version": "2012-10-17",
-
    "Statement": [
-
        {
-
            "Action": [
-
                "s3:Get*",
-
                "s3:List*"
-
            ],
-
            "Effect": "Allow",
-
            "Resource": "*"
-
        }
-
    ]
 
 }
@@ -84,39 +73,22 @@ Secret Access Key:  Ze*******crCpZt
 ```
 
 {
-
    "Version": "2012-10-17",
-
    "Statement": [
-
        {
-
            "Action": [
-
                "autoscaling:PutLifecycleHook",
-
                "autoscaling:DeleteLifecycleHook",
-
                "autoscaling:RecordLifecycleActionHeartbeat",
-
                "autoscaling:CompleteLifecycleAction",
-
                "autoscaling:DescribeAutoscalingGroups",
-
                "autoscaling:PutInstanceInStandby",
-
                "autoscaling:PutInstanceInService",
-
                "ec2:Describe*"
-
            ],
-
            "Effect": "Allow",
-
            "Resource": "*"
-
        }
-
    ]
 
 }
@@ -136,29 +108,17 @@ Secret Access Key:  Ze*******crCpZt
 ```
 
 {
-
    "Version": "2012-10-17",
-
    "Statement": [
-
        {
-
            "Effect": "Allow",
-
            "Action": [
-
                "s3:PutObject"
-
            ],
-
            "Resource": [
-
                "arn:aws:s3::: YOUR_S3_BUCKET_NAME/*"
-
            ]
-
        }
-
    ]
 
 }
@@ -178,73 +138,39 @@ Secret Access Key:  Ze*******crCpZt
 ```  
 
 {
-
    "Version": "2012-10-17",
-
    "Statement": [     
-
        {
-
            "Effect": "Allow",
-
            "Action": [
-
                "codedeploy:RegisterApplicationRevision",
-
                "codedeploy:GetApplicationRevision"
-
            ],
-
            "Resource": [
-
                "arn:aws:codedeploy:YOUR_AWS_REGION:YOUR_AWS_ACCOUNT_ID:application:CODE_DEPLOY_APPLICATION_NAME"
-
            ]
-
        },
-
        {
-
            "Effect": "Allow",
-
            "Action": [
-
                "codedeploy:CreateDeployment",
-
                "codedeploy:GetDeployment"
-
            ],
-
            "Resource": [
-
                "arn:aws:codedeploy:YOUR_AWS_REGION:YOUR_AWS_ACCOUNT_ID:deploymentgroup:CODE_DEPLOY_APPLICATION_NAME/*"
-
            ]
-
        },
-
        {
-
            "Effect": "Allow",
-
            "Action": [
-
                "codedeploy:GetDeploymentConfig"
-
            ],
-
            "Resource": [
-
                "arn:aws:codedeploy:YOUR_AWS_REGION:YOUR_AWS_ACCOUNT_ID:deploymentconfig:CodeDeployDefault.OneAtATime",
-
                "arn:aws:codedeploy:YOUR_AWS_REGION:YOUR_AWS_ACCOUNT_ID:deploymentconfig:CodeDeployDefault.HalfAtATime",
-
                "arn:aws:codedeploy:YOUR_AWS_REGION:YOUR_AWS_ACCOUNT_ID:deploymentconfig:CodeDeployDefault.AllAtOnce"
-
            ]
-
        }
-
    ]
 
 }

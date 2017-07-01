@@ -29,47 +29,26 @@ Flask-
 |- scripts/                  #一些脚本
 
 |- flask/                    #要读的代码
-
     |- __init__.py
-
     |- __main__.py
-
     |- _compat.py
-
     |- app.py                #主体: Flask,Request,Response
-
     |- blueprints.py         #blueprint,蓝图
-
     |- cli.py
-
    D |- config.py            #项目配置文件的处理逻辑
-
     |- ctx.py                #上下文处理的一些方法
-
     |- debughelpers.py
-
     |- exthook.py
-
    D |- globals.py           #全局变量
-
     |- helpers.py            #一些辅助方法的实现
-
     |- json.py               #json相关
-
     |- logging.py
-
     |- sessions.py
-
     |- signals.py
-
     |- templating.py         #模板渲染相关
-
     |- testsuite/            #测试
-
     |- views.py
-
     |- wrappers.py
-
     |- ext/                  #扩展
 
 ```
@@ -173,7 +152,6 @@ import imp
 d = imp.new_module('config')
 
 with open(filename) as config_file:
-
    exec(compile(config_file.read(), filename, 'exec'), d.__dict__)
 
 ```
@@ -185,7 +163,6 @@ with open(filename) as config_file:
 import errno
 
 except IOError as e:
-
    if silent and e.errno in (errno.ENOENT, errno.EISDIR)
 
 ```
@@ -195,7 +172,6 @@ except IOError as e:
 ```
 
 def __init__(self, root_path, defaults=None):
-
    dict.__init__(self, defaults or {})
 
 ```
@@ -207,7 +183,6 @@ def __init__(self, root_path, defaults=None):
 from werkzeug.utils import import_string
 
 if isinstance(obj, string_types):
-
    obj = import_string(obj)
 
 ```
@@ -253,7 +228,6 @@ session = LocalProxy(partial(_lookup_req_object, 'session')) #session对象,从_
 ```
 
 if top is None:
-
    raise RuntimeError('working outside of application context')
 
 ```

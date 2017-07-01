@@ -67,7 +67,7 @@ Visit the echoprint-server GitHub page for the source and installation instructi
 
  [11]: http://twitter.com/echonest
 
- [12]: http://ww4.sinaimg.cn/large/006tNc79gw1f5123huzanj306y028748
+ [12]: https://ww4.sinaimg.cn/large/006tNc79gw1f5123huzanj306y028748
 
  [13]: http://lucene.apache.org/solr/
 

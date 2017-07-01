@@ -29,11 +29,11 @@ tags:
 
  [1]: http://www.randalolson.com/2015/02/03/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo/
 
- [2]: http://ww3.sinaimg.cn/large/006tNc79gw1f5106nb8nsj30dw07ngmu
+ [2]: https://ww3.sinaimg.cn/large/006tNc79gw1f5106nb8nsj30dw07ngmu
 
  [3]: http://www.randalolson.com/2015/02/03/heres-waldo-computing-the-optimal-search-strategy-for-finding-waldo/
 
- [4]: http://ww2.sinaimg.cn/large/006tNc79gw1f51086elr4j30iy0cwmyq
+ [4]: https://ww2.sinaimg.cn/large/006tNc79gw1f51086elr4j30iy0cwmyq
 
  [5]: http://blog.naaln.com/2015/04/computing-optimal-road-across-US
 

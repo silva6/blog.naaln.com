@@ -25,4 +25,4 @@ tags:
 
 一切难度好像都在于不可知，我们都以为人生的哲理都是远在云上不可触及。而事实上，我们都错了，我们要做的不是在寻找答案，而是说服自己去执着，这才是真正的“哥德巴赫猜想”！
 
- [1]: http://ww2.sinaimg.cn/large/006tNc79gw1f50zum319yj30e60amgm7
+ [1]: https://ww2.sinaimg.cn/large/006tNc79gw1f50zum319yj30e60amgm7

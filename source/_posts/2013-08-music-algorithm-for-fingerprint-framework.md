@@ -62,11 +62,11 @@ via：<http://hihell.github.io/music-fingerprinting/>
 
 [3]: http://111.13.109.34:82/1Q2W3E4R5T6Y7U8I9O0P1Z2X3C4V5B/www.ee.columbia.edu/~dpwe/papers/Wang03-shazam.pdf
 
-[4]: http://ww1.sinaimg.cn/large/006tNc79gw1f511wlvj3lj30dw07uglw
+[4]: https://ww1.sinaimg.cn/large/006tNc79gw1f511wlvj3lj30dw07uglw
 
-[5]: http://ww3.sinaimg.cn/large/006tNc79gw1f511wvc0xdj30ma0dwabn
+[5]: https://ww3.sinaimg.cn/large/006tNc79gw1f511wvc0xdj30ma0dwabn
 
-[6]: http://ww1.sinaimg.cn/large/006tNc79gw1f511x1mauuj30le0e5q4j
+[6]: https://ww1.sinaimg.cn/large/006tNc79gw1f511x1mauuj30le0e5q4j
 
 [7]: https://github.com/echonest/echoprint-codegen
 
@@ -76,6 +76,6 @@ via：<http://hihell.github.io/music-fingerprinting/>
 
 [10]: http://ismir2011.ismir.net/latebreaking/LB-7.pdf
 
-[11]: http://ww2.sinaimg.cn/large/006tNc79gw1f511xcuzl9j30dw07ujro
+[11]: https://ww2.sinaimg.cn/large/006tNc79gw1f511xcuzl9j30dw07ujro
 
-[12]: http://ww1.sinaimg.cn/large/006tNc79gw1f511xja5l8j30dw03j3yl
+[12]: https://ww1.sinaimg.cn/large/006tNc79gw1f511xja5l8j30dw03j3yl

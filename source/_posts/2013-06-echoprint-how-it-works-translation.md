@@ -79,9 +79,9 @@ Echoprint 在手机或者电脑上接收音乐，并识别它是什么歌曲。�
 
  [11]: http://twitter.com/echonest
 
- [12]: http://ww4.sinaimg.cn/large/006tNc79gw1f5123huzanj306y028748
+ [12]: https://ww4.sinaimg.cn/large/006tNc79gw1f5123huzanj306y028748
 
- [13]: http://ww3.sinaimg.cn/large/006tNc79gw1f512mu72ebj30g108h0te
+ [13]: https://ww3.sinaimg.cn/large/006tNc79gw1f512mu72ebj30g108h0te
 
  [14]: http://musicbrainz.org/
 

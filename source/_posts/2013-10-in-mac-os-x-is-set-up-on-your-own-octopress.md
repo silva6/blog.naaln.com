@@ -21,48 +21,47 @@ Octopress的安装不同于WordPress，WordPress是安装到服务器上面的�
 如果你已经安装了Xcode，则无需重负安装GCC 
 
 2. 安装[Homebrew][2]（或者你可以参考：[https://github.com/mxcl/homebrew/wiki/installation][3])： 
-
+```
    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"
-
    $ brew update
+```
 
 3. 安装Git： 
-
+```
    $ brew install git
+```
 
 4. 安装
 
 [RVM][4]（或者参考： [http://beginrescueend.com/rvm/install/][5] ）： 
-
-   
-
+```   
    $ bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
+```
 
 5. 安装Ruby 1.9.2 
-
+```
    $ rvm install 1.9.2
-
    $ rvm 1.9.2 --default
+```
 
 6. 安装Pow 
-
+```
    $ curl get.pow.cx | sh
+```
 
 7. 先cd到一个好的目录，比如Desktop，然后下载Octopress： 
-
+```
    $ git clone git://github.com/imathis/octopress.git octopress
-
    $ cd octopress
+```
 
 8. 安装一些东西： 
-
+```
    $ gem install bundler
-
    $ rbenv rehash
-
    $ bundle install
-
    $ rake install
+```
 
 这样，就安装好了Octopress了，输入`rake preview`，从localhost:4000可以预览结果 
 
@@ -71,28 +70,33 @@ Octopress的安装不同于WordPress，WordPress是安装到服务器上面的�
 1. 在GitHub名为 “http://你的GitHub用户名.github.com” 的repository。 
 
 2. 在Octopress目录里面设定资料： 
-
+```
    $ rake setup_github_pages
+```
 
 3. 生成HTML： 
-
+```
    $ rake generate
+```
 
 4. 发布： 
-
+```
    $ rake deploy
+```
 
 这样等待几分钟，就可以通过 http://你的GitHub用户名.github.com 查看你的全新的Octopress BLOG！ 
 
 ## 3.绑定域名
-
+```
    $ echo '你要绑定的域名' >> source/CNAME
+```
 
 然后，将你要绑定的域名CNAME到 http://你的GitHub用户名.github.com，如果是@纪录，需要加入207.97.227.245。 
 
 ## 4.发布文章
-
+```
    $ rake new_post['title']
+```
 
 运行上面的命令，Octopress会在source/_posts生成一个markdown（推荐阅读：[http://markdown.tw/][6]）文件 
 

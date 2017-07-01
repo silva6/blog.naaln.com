@@ -43,6 +43,6 @@ tags:
 
 最后来个总结，希望两方面读到它的朋友们都能有好处。一个学科（或者说得更大一点，任何一个事业）得传承都是非常重要的，人类才能克服时间上的障碍，将自己的智力资源源源不断地提供给后辈。而无论作为学生还是年轻的导师们，我们是否能够做好智力资源的传承和创新呢？
 
- [1]: http://ww3.sinaimg.cn/large/006tNc79gw1f511f1sxfwj30go0awab4
+ [1]: https://ww3.sinaimg.cn/large/006tNc79gw1f511f1sxfwj30go0awab4
 
  [2]: http://zhuanlan.zhihu.com/lesenratte/19574631

@@ -34,21 +34,21 @@ tags:
 
 #### 英译中
 
-![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq5j85trg313p0kbqhn.gif)
+![](https://ww3.sinaimg.cn/large/006tNc79gw1fahq5j85trg313p0kbqhn.gif)
 
 #### 英译中
 
-![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq5md01rg313p0kbk6q.gif)
+![](https://ww3.sinaimg.cn/large/006tNc79gw1fahq5md01rg313p0kbk6q.gif)
 
 #### 翻译短语
 
-![](http://ww4.sinaimg.cn/large/006tNc79gw1fahq5uie7gg313p0kbqhn.gif)
+![](https://ww4.sinaimg.cn/large/006tNc79gw1fahq5uie7gg313p0kbqhn.gif)
 
 #### 打开有道翻译页面 - 按`Ctrl+回车`
 
-![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq61dizwg313p0kbqhn.gif)
+![](https://ww3.sinaimg.cn/large/006tNc79gw1fahq61dizwg313p0kbqhn.gif)
 
 #### 直接在打出翻译结果 - 按`Command+回车`
 
-![](http://ww3.sinaimg.cn/large/006tNc79gw1fahq62mwz0g313p0kbqhn.gif)
+![](https://ww3.sinaimg.cn/large/006tNc79gw1fahq62mwz0g313p0kbqhn.gif)
 
