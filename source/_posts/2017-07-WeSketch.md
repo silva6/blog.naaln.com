@@ -7,15 +7,6 @@ tags:
   - Sketch
 ---
 
----
-title: 5分钟了解微信的 WeSketch
-categories:
-  - 技术
-date: 2017-07-09 09:50:04
-tags:
-  - Sketch
----
-
 ## 前言
 
 > 一个强大的 Sketch 插件合集，由微信设计团队量身打造，让设计师和开发者更佳高效的使用 Sketch。
@@ -72,7 +63,7 @@ Github：[weixin/WeSketch](https://github.com/weixin/WeSketch/blob/master/README
 
 四娃擅火，他希望大家叫他火娃。
 
-![](https://ws2.sinaimg.cn/large/006tNc79gy1fhddw0fq4ag30dc08ujy9.gif)
+![](https://ws4.sinaimg.cn/large/006tNc79gy1fhdfyq42f9g30dc08uwq5.gif)
 
 同样支持全文件以及当前页面的替换，但是用词和 Font 功能中不同，不知道是不是不同的工程师开发的。
 
