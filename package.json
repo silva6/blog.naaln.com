@@ -2,7 +2,11 @@
   "name": "hexo-site",
   "version": "0.0.0",
   "private": true,
+  "hexo": {
+    "version": ""
+  },
   "dependencies": {
+    "hexo": "^3.2.0",
     "hexo-algoliasearch": "^0.2.1",
     "hexo-deployer-git": "^0.1.0",
     "hexo-generator-archive": "^0.1.4",
