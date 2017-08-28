@@ -92,7 +92,7 @@ algolia:
   appId: 'XILKIWTAM9'
   applicationID: 'XILKIWTAM9'
   apiKey: '99d43a85f328d00214c5de8007ce7920'
-  adminApiKey: '90ebfa464a18a7b9af70c6dfc6ed9702'
+  adminApiKey: 'b38bccd205919992ffec326444bd3451'
   indexName: 'blog'
   chunkSize: 5000
   fields:
