@@ -22,7 +22,7 @@ install:
 - npm install hexo --save
 script:
 - git submodule update --init --recursive
-- hexo clean
+- hexo clean --config source/_data/next.yml
 - hexo algolia
 after_success:
-- hexo deploy
+- hexo deploy --config source/_data/next.yml
