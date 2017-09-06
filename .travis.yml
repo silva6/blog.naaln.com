@@ -23,6 +23,6 @@ install:
 script:
 - git submodule update --init --recursive
 - hexo clean --config source/_data/next.yml
-- hexo algolia
+- hexo algolia --config source/_data/next.yml
 after_success:
 - hexo deploy --config source/_data/next.yml
