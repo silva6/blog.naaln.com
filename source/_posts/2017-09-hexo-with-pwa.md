@@ -118,5 +118,3 @@ service_worker:
 比如我使用了 [hexo-theme-next](https://github.com/iissnan/hexo-theme-next)的主题，在`layout/_custom/header.swig` 中引用了`manifest.json`。
 
 接下开就看效果吧!
-
-![](https://ws4.sinaimg.cn/large/006tNc79gy1fjg0c58idxj30ku112n1d.jpg)
